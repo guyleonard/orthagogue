@@ -1,0 +1,57 @@
+--	 added -Wno-write-string
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+--	 added -Wno-write-string
+CMake_VERSION_MAJOR=
+CMake_VERSION_MINOR=
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx: In static member function ‘static uint mcl_format::write_file_headers(FILE**, taxa_t*, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx:651:82: warning: format not a string literal and no format arguments [-Wformat-security]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx: In static member function ‘static uint mcl_format::write_file_headers(FILE**, taxa_t*, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx:651:82: warning: format not a string literal and no format arguments [-Wformat-security]
+In file included from /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h:30:0,
+                 from /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/blast_common_main.cxx:34:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.h: In static member function ‘static void file_parse<T>::assert_class(bool) [with T = p_rel]’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/blast_common_main.cxx:48:24:   instantiated from here
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.h:844:12: warning: variable ‘temp_taxa’ set but not used [-Wunused-but-set-variable]
+--	 added -Wno-write-string
+CMake_VERSION_MAJOR=
+CMake_VERSION_MINOR=
+LOG_FOLDER_NAME = report_orthAgogue
+CMake Warning at /usr/share/cmake-2.8/Modules/CPack.cmake:236 (MESSAGE):
+  CPack.cmake has already been included!!
+Call Stack (most recent call first):
+  CMakeLists.txt:101 (INCLUDE)
+
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx: In static member function ‘static uint mcl_format::write_file_headers(FILE**, taxa_t*, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx:651:82: warning: format not a string literal and no format arguments [-Wformat-security]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx: In static member function ‘static uint mcl_format::write_file_headers(FILE**, taxa_t*, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_format.cxx:651:82: warning: format not a string literal and no format arguments [-Wformat-security]
+In file included from /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h:30:0,
+                 from /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/blast_common_main.cxx:34:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.h: In static member function ‘static void file_parse<T>::assert_class(bool) [with T = p_rel]’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/blast_common_main.cxx:48:24:   instantiated from here
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.h:844:12: warning: variable ‘temp_taxa’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx: In member function ‘void cmd_list::set_arguments(char**, int, bool)’:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:136:12: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:137:12: warning: variable ‘id_updated’ set but not used [-Wunused-but-set-variable]
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_list.cxx:160:10: warning: variable ‘cmd_found’ set but not used [-Wunused-but-set-variable]
