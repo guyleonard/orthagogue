@@ -1,0 +1,48 @@
+# Set version information in a config.h file
+#set(myproject_VERSION_MAJOR |) 
+#set(myproject_VERSION_MINOR 0)
+
+
+include(InstallRequiredSystemLibraries)
+SET(CPACK_PACKAGE_DESCRIPTION_SUMMARY "A parallel filtering tool for orthology estimation.")
+SET(CPACK_PACKAGE_VENDOR  "O.K. Ekseth (email: oekseth@gmail.com), High Performance Computing Group, NTNU, Norway")
+SET(CPACK_PACKAGE_DESCRIPTION_FILE "${CMAKE_CURRENT_SOURCE_DIR}/ReadMe.txt")
+SET(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/Copyright.txt")
+
+if(NOT CPACK_PACKAGE_VERSION_MAJOR)
+  SET(CPACK_PACKAGE_VERSION_MAJOR "1")
+endif()
+if(NOT CPACK_PACKAGE_VERSION_MINOR)
+  SET(CPACK_PACKAGE_VERSION_MINOR "0")
+endif()
+if(NOT CPACK_PACKAGE_VERSION_PATCH)
+  SET(CPACK_PACKAGE_VERSION_PATCH "0")
+endif()
+
+# FIXME: set to "RPM" when building on redhat 
+
+#! Debian pacakage generations
+SET(CPACK_GENERATOR "DEB") 
+#SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ole Kristian Ekseth") #required
+SET(CPACK_DEBIAN_PACKAGE_VERSION "1.0.0")
+
+
+SET(CPACK_BINARY_RPM "ON")
+SET(CPACK_RPM_COMPONENT_INSTALL "ON" )
+SET(CPACK_BINARY_DEB "ON")
+# SET(CPACK_BINARY_BUNDLE "ON") # Only for "OsX"
+ SET(CPACK_BINARY_ZIP "ON")
+ SET(CPACK_SOURCE_ZIP "ON")
+message("CMake_VERSION_MAJOR=${CMake_VERSION_MAJOR}")
+message("CMake_VERSION_MINOR=${CMake_VERSION_MINOR}")
+#TODO: Define the usage of the below variables:
+SET(CPACK_PACKAGE_INSTALL_DIRECTORY "CMake ${CMake_VERSION_MAJOR}.${CMake_VERSION_MINOR}")
+SET(CPACK_PACKAGE_EXECUTABLES "${EXECUTABLE_NAME}" "My ${EXECUTABLE_NAME}")
+SET(CPACK_PACKAGE_CONTACT "Ole Kristian Ekseth (oekseth@gmail.com)")
+
+# FIXME: Validate the below settings:
+SET(CPACK_SYSTEM_NAME "Linux_${CMAKE_SYSTEM}")
+SET(CPACK_TOPLEVEL_TAG "Linux-Source_${CMAKE_SYSTEM}")
+
+INCLUDE(CPack) 
