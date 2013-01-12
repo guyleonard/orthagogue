@@ -1,0 +1,419 @@
+#ifndef p_rel_h
+#define p_rel_h
+#include "types.h"
+#include "../configure.h"
+/**
+   @file
+   @class p_rel
+   @brief Like class 'rel', but with some extension for storing temporary blast-data.
+   @ingroup blastfile_container
+   @author Ole Kristian Ekseth (oekseth)
+   @date 19.08.2011 by oekseth (initial)
+**/
+class p_rel {
+ private:
+  overlap_t overlap_in;
+  overlap_t overlap_out;
+  uint cnt_max; // Counting the number of maxiumum-distance-hits (written as 0 in the blast input file)
+  uint ind_out; 
+  float distance; 
+  bool USE_BEST_BLAST_PAIR_SCORE; // If set, uses the best score found in the blast file, i.e. do not merges multiple scores for the same protein.
+ public:
+  /**
+     @brief In order to know the object type when writing temporary files.
+     @returns the unique class name     
+  **/
+  static char *get_class_name(){return "parse";}
+  //! Used for verifying existence of data:
+  bool is_equal(uint index) {return (ind_out == index);}
+  //! Used for verifying existence of data:
+  bool is_equal(p_rel arg) {
+    if(arg.get_ind_out()==ind_out && (arg.get_distance() == distance) && (arg.get_cnt_max() == cnt_max) /*&& (arg.get_overlap_out() == overlap_out) */&& (arg.get_overlap_in() == overlap_in)) return true;
+    else {
+      printf("err\tthis.overlap_in(%d), arg.overlpa_in(%d)  ", overlap_in, arg.get_overlap_in());
+      printf("err\tthis.overlap_out(%d), arg.overlpa_out(%d)\n", overlap_out, arg.get_overlap_out());
+      return false;
+      
+    }
+  }
+  //! Inits the data to empty values.
+  void init() {ind_out=0, distance=0.0, overlap_in = 0, overlap_out = 0, cnt_max = 0;}
+  //! Sets the outer index.
+  void set_ind_out(uint _ind) {ind_out = _ind;}
+  //! Sets the similiarity score for this object.
+  void set_distance(float d) {distance = d;}
+  //! Sets the overlap for the inner protein.
+  void set_overlap_in(short int d) {overlap_in = d;}
+  //! Sets the outer overlap value.
+  void set_overlap_out(short int d) {overlap_out = d;}
+  //! Sets the number of maximal scores (0-hits).
+  void set_cnt_max(int d) {cnt_max = (char)d;}
+  //! Sets the data for the pair.
+  void set_data(uint ind_o, float sim_score, short int o_in) {
+    ind_out = ind_o;
+    if(sim_score == 0.0) distance = 0.0, cnt_max =1; // The first protein met
+    else cnt_max = 0, distance = sim_score;	
+    overlap_in = o_in;
+  }
+  //! Sets the data given the input
+  void set_data(uint ind_o, float sim_score, short int o_in, short int o_out) {
+    set_data(ind_o, sim_score, o_in);
+    overlap_out = o_out;
+  }
+  /**
+     @brief Sets the scores for this object (p_rel pair).
+     @remarks if variable USE_BEST_BLAST_PAIR_SCORE is set, do not sum together the different scores.
+     @param <sim_score> The similarity value to use
+     @param <o_in> The overlap for the leftmost protein.
+  **/
+  bool increment_data(float sim_score, overlap_t o_in) {
+    if(USE_BEST_BLAST_PAIR_SCORE) {
+      if(cnt_max == 0) {
+	if(sim_score == 0) {cnt_max = 1, overlap_in = o_in; return true;}
+	else if(sim_score > distance) {distance = sim_score, overlap_in = o_in; return true;}
+      }
+      return false;
+    } else {
+      if(sim_score == 0.0) cnt_max++;
+      else distance += sim_score;
+      overlap_in += o_in;
+      return true;
+    }
+  }
+  /**
+     @brief Sets the scores for this object (p_rel pair).
+     @remarks if variable USE_BEST_BLAST_PAIR_SCORE is set, do not sum together the different scores.
+     @param <sim_score> The similarity value to use
+     @param <o_in> The overlap for the leftmost protein.
+     @param <o_out> The overlap for the rightmost protein.
+  **/
+  void increment_data(float sim_score, overlap_t o_in, overlap_t o_out) {
+    const bool sim_score_updated = increment_data(sim_score, o_in);
+    if(USE_BEST_BLAST_PAIR_SCORE) {
+      if(sim_score_updated) overlap_out = o_out;
+    } else overlap_out += o_out;
+  }
+  //! @returns the index out.
+  uint get_ind_out() {return ind_out;}
+  //! @returns the similarity score.
+  float get_distance(){return distance;}
+  //! @returns the overlap for the inner.
+  uint get_overlap_in(){return overlap_in;}
+  //! @returns the overlap for the outer.
+  uint get_overlap_out(){return overlap_out;}
+  //! @returns the number of '0' (max) hits.
+  uint get_cnt_max(){return (uint)cnt_max;}
+
+  /**
+     @return The similarity score, based upon the data: used in pipe_binary.cpp.
+     @date 01.01.2011 by oekseth
+  */
+  float getSimScore(float max_input_value) {
+    return (distance + (float)((int)cnt_max*(max_input_value+1)));
+  }
+  //! Prints the values set for this object.
+  void  print() {
+    printf("ind_out(%d), distance(%f), overlap_in(%d), overlap_out(%d), cnt_max(%d)\n",
+	   ind_out, distance, overlap_in, overlap_out, (int)cnt_max);
+  }
+  //! Prints the values set for this object using the names given as argument.
+  void print(char **name_out) {
+    printf("\t%s %u %u \t%f (%d)\n",
+	   name_out[ind_out], overlap_in, overlap_out, distance, (int)cnt_max);
+  }
+
+  /**
+     @brief Reserves a list for 'this'
+     @remarks 
+     - Do not initiate the data for the objects. 
+     - Consitutes the standard method in this class for reserving memory for several objects of this type. 
+     @param <buffer_size> The number of objects to produce, i.e. the length of the list returned.
+     @returns a list of objects of this class using the input as length of it
+  **/
+  static p_rel *reserve_list(uint buffer_size) {
+    return (p_rel*)malloc(sizeof(struct p_rel)*buffer_size);
+  }
+
+  /**
+     @brief Reserves- and initiates a list of p_rel objects.
+     @param <buffer_size> The number of objects to produce, i.e. the length of the list returned.
+     @param <_USE_BEST_BLAST_PAIR_SCORE> If set will not sum the scores when multiple scores are given for a pair (object of the p_rel type).
+     @returns a list of objects of this class using the input as length of it
+  **/
+  static p_rel *init_list(uint buffer_size, bool _USE_BEST_BLAST_PAIR_SCORE) {
+    p_rel *buffer = NULL;
+    // FIXME: Clean up in the below thing when the valgrind issue is solved!
+    //    if(false)    buffer = p_rel::reserve_list(buffer_size);    else
+    buffer = (p_rel*)malloc(sizeof(p_rel)*buffer_size);
+    //    memset(buffer, p_rel(), sizeof(p_rel)*buffer_size);
+    //    p_rel::init(buffer_size, buffer, _USE_BEST_BLAST_PAIR_SCORE);
+    // TODO: Below should be possible to remove, but included in order to avoid valgrind complaining
+    for(uint i = 0; i<buffer_size; i++) buffer[i] = p_rel(_USE_BEST_BLAST_PAIR_SCORE);
+    return buffer;
+  }  
+  /**
+     @brief Init a list of this class.  
+     @param <buffer_size> The number of objects to produce, i.e. the length of the list returned.
+     @param <buffer> The list contaning objects of this type (p_rel) to initialise.
+     @param <_USE_BEST_BLAST_PAIR_SCORE> If set will not sum the scores when multiple scores are given for a pair (object of the p_rel type).
+  **/
+  static void init(uint buffer_size, p_rel *&buffer, bool _USE_BEST_BLAST_PAIR_SCORE) {
+    init(0, buffer_size, buffer, _USE_BEST_BLAST_PAIR_SCORE);
+    //    for(uint i = 0; i<buffer_size; i++) buffer[i] = p_rel(_USE_BEST_BLAST_PAIR_SCORE);
+  }
+  /**
+     @brief Init a list of this class.
+     @param <start> The start position in the buffer to initialize.
+     @param <end> The (last-1) position in the buffer to initialize.
+     @param <buffer> The list contaning objects of this type (p_rel) to initialise.
+     @param <_USE_BEST_BLAST_PAIR_SCORE> If set will not sum the scores when multiple scores are given for a pair (object of the p_rel type).
+     @remarks
+     - Consitutes the standard method in this class for reserving memory for several objects of this type. 
+  **/
+  static void init(uint start, uint end, p_rel *&buffer, bool _USE_BEST_BLAST_PAIR_SCORE) {
+    //    fprintf(stderr, "start(%u), end(%u)\n", start, end);
+    for(;start<end; start++) buffer[start] = p_rel(_USE_BEST_BLAST_PAIR_SCORE);
+  }
+  
+  //! Deletes a list containing elements of this class.
+  static void delete_list(p_rel *&buffer) {close(buffer);}// free(buffer), buffer = NULL;} 
+  //! Deletes a list containing elements of this class.
+  static void close(p_rel *&buffer) { free(buffer), buffer = NULL;} 
+  //! Copies a list of these from second argument to first.
+  static void copy(p_rel *&destination, p_rel *source, uint size) {
+    if(true)	memcpy(destination, source, sizeof(p_rel)*size);
+    else {
+      for(mem_loc i = 0; i< size; i++) destination[i] = source[i];
+    }
+  }
+  //! Copies a list of these from second argument to first at specific position.
+  static void copy(p_rel *&destination, uint start_pos_destination, p_rel *source, uint start_pos_source, uint size) {
+    memcpy(destination+start_pos_destination, source+start_pos_source, sizeof(p_rel)*size); // Copies the data
+  }
+
+  /**
+     @brief Enlarges the given list.
+     @remakrs Thsi procedure makes empty room in front of it, in order to enable copying of data from a file into it.
+     @param <buffer> The buffer to be extended at its lower end.
+     @param <start_pos> The length of the empty room to be made in front of the (new) extended list.
+     @param <copy_length> The number ob p_rel objects to be copied from the old buffer into the new one.
+  **/
+  static void enlarge(p_rel *&buffer, uint new_size, uint start_pos, uint copy_length) {
+    //    fprintf(stderr, "new_size(%u), start_pos(%u), copy_length(%u)", new_size, start_pos, copy_length);
+    // FIXME: The name in this method is not the best:
+    //||---------------------|___old_data____||, and this seems a bit strange.
+    p_rel *buff_temp = reserve_list(new_size); //(p_rel*)malloc(sizeof(p_rel)*new_size);
+
+    assert(new_size <= (start_pos+copy_length)); // If procedure is used correct, this should hold. 
+    // Inserts the buffer in the front of the file (i.e. in
+    // order for the indexes to maintain their correct position pointers
+    memcpy(buff_temp +start_pos, buffer, sizeof(p_rel)*copy_length);
+    free(buffer);
+    buffer = buff_temp;
+  }
+
+  /**
+     @brief Writes the buffer given to a file:
+     @param <buffer> The object to write. Do not change any of its data, i.e. the data is still kept in the buffer after the file writing.
+     @param <file_name> The identifier later used reading the file now generated (or extended).
+     @param <size> The number of relevant objects in the buffer (i.e. the 'size'-those allocated, but not used.)
+     @param <file_length> The length of the current file.
+  **/
+  static void write_buffer(p_rel *&buffer, char *file_name, uint size, uint file_length) {
+    FILE *file = NULL;
+    if(file_length == 0) file = fopen(file_name, "wb");
+    else file = fopen(file_name, "ab");
+    if(file != NULL) {
+      fprintf(stderr, "writes the buffer of size(%u) and name(%s)\n", size, file_name);
+      if(size == 0 || size == 49) {  // FIXME: Remove this!!      
+	for(uint i = 0; i < size; i++) {
+	  fprintf(stderr, "[%u]\t%u\t%f\t%u\t%u\t%u\n", i, buffer[i].get_ind_out(), buffer[i].get_distance(), buffer[i].get_overlap_in(), buffer[i].get_overlap_out(), buffer[i].get_cnt_max());
+	}
+	fwrite(buffer, sizeof(p_rel), size, file);
+      }
+      fclose(file);
+      //	for(uint i = 0;i<buffer_in_mem_size;i++) buffer[i] = p_rel_t();  // Intializes
+    } else {
+      fprintf(stderr, "!!\tUnable to open '%s': Aborts\n", file_name);
+      exit(2);
+    }
+  }
+
+  /**
+     @brief Writes the buffer given to a file:
+     @param <file_name> The identifier later used reading the file now generated (or extended).
+     @param <buffer_one> The 1. object to write. Do not change any of its data, i.e. the data is still kept in the buffer after the file writing.
+     @param <buffer_one_size> The number of relevant objects in the 1. buffer (i.e. the 'size'-those allocated, but not used.)
+     @param <buffer_one> The 2. object to write. Do not change any of its data, i.e. the data is still kept in the buffer after the file writing.
+     @param <buffer_one_size> The number of relevant objects in the 2. buffer (i.e. the 'size'-those allocated, but not used.)
+     @param <file_length> The length of the current file.
+  **/
+  static void write_buffers(char *file_name, p_rel *buffer_one, uint buffer_one_size, p_rel *buffer_two, uint buffer_two_size, uint file_length) {    
+    FILE *file = NULL;
+    if(file_length == 0) file = fopen(file_name, "wb");
+    else file = fopen(file_name, "ab");
+    if(file != NULL) {
+      fwrite(buffer_one, sizeof(p_rel), buffer_one_size, file);
+      fwrite(buffer_two, sizeof(p_rel), buffer_two_size, file);
+      fclose(file);         
+    } else {
+      fprintf(stderr, "!!\tUnable to open '%s': Aborts\n", file_name);
+      exit(2);
+    }
+  }
+
+  /**
+     @brief Reads data from a file into the buffer
+     @param <file_name> The name of the file containing the data to get.
+     @param <buffer> The buffer to put data into.
+     @param <size> The number of objects to put into the given buffer. Requires that the size is at least equal to the number of elements allocated for the buffer.
+  **/
+  static p_rel *read_file(char *file_name, p_rel *buffer, uint size) {
+    if(buffer != NULL) {
+      FILE *file = fopen(file_name, "rb");
+      if (file != NULL) {
+	fread(buffer, sizeof(p_rel), size, file); // to avoid the intial char
+	fclose(file);
+      } else {
+	fprintf(stderr, "!!\tCould not open %s having count(%u) and size %f; Aborts at line %d in %s\n", file_name, size, (float)(sizeof(p_rel)*size), __LINE__, __FILE__);
+	exit(2);
+      } 
+    } else {
+      fprintf(stderr, "!!\tCould not reserve %u amounts of class 'p_rel'; Aborts at line %d in %s!\n", (uint)size, __LINE__, __FILE__);
+      exit(2);
+    }
+    return buffer;
+  }
+
+  /**
+     @brief Reads a bunch of p_rel objects from the file given.
+     @param <file_name> The name of the file to get the data from.
+     @param <start_pos> The index in the file to read the first object from.
+     @param <length> The number of objects to read.
+     @Returns A list containing the objects read.
+  **/
+  static p_rel* get_file_block(char *file_name, uint start_pos, uint length) {
+    FILE *file = fopen(file_name, "rb");
+    if (file != NULL) {
+      // FIXME: Er nedenforliggende 'ting' rett, dvs bruk av 'tbb' sin minneallokeringsting'??
+      p_rel *buffer_ret =  tbb::tbb_allocator<p_rel>().allocate(length);
+      if(buffer_ret != NULL) {
+	fseek(file, sizeof(p_rel)*start_pos, SEEK_SET);
+	fread(buffer_ret, sizeof(p_rel), length, file); // to avoid the intial char
+	fclose(file);
+	//	for(uint i = 0; i <length; i++) buffer_ret[i].print();
+	return buffer_ret;
+      } else { fprintf(stderr, "!!\tCould not allocate %u types of class p_rel; Aborts at line %d in %s!\n", length, __LINE__, __FILE__);
+	exit(2);
+      }
+    } else {
+      fprintf(stderr, "!!\tCould not open %s; Aborts at line %d in %s!\n", file_name, __LINE__, __FILE__);
+      exit(2);
+    }
+  }
+  /**
+     @brief Deallocates the object given.
+     @param <block> The block to de-allocate.
+     @param <size>  The number of elements to deallocate.
+  **/
+  static void free_file_block(p_rel *&block, uint size) {
+    {//						if(block =! NULL) {
+      tbb::tbb_allocator<p_rel>().deallocate((p_rel*)block, size);
+      block = NULL;
+    }
+  }
+  /**
+     @brief Enlarges the given block to its new size.
+     @param <buffer> The block to extend.
+     @param <old_size> The size of the buffer given as input.
+     @param <new_size>  The number of elements in the new list
+     @param <_USE_BEST_BLAST_PAIR_SCORE> If set will not sum the scores when multiple scores are given for a pair (object of the p_rel type).
+  **/
+  static void realloc_list(p_rel *&buffer, loint old_size, loint new_size, bool _USE_BEST_BLAST_PAIR_SCORE) {
+    if(!(old_size > new_size)) {
+      fprintf(stderr, "old_size=%llu, new_size=%llu\n");
+      assert(!(old_size > new_size));
+    }
+    //    assert(buffer!=NULL);
+    // FIXME: Validate this: correct settings, size && type (tbb vs c vs c++)    
+    if(buffer) buffer = (p_rel*)realloc(buffer, sizeof(p_rel)*new_size);
+    else buffer = reserve_list(new_size);
+    init(old_size, new_size, buffer, _USE_BEST_BLAST_PAIR_SCORE);
+  }
+
+  /**
+     @brief Tests if the object given has the protein (search index) stated.
+     @param <search_index> The index of the rightmost protein.
+     @param <buffer> The list to search through.
+     @param <start> The first index to do the searching at.
+     @param <end> The (last-1) index to do the searching at.
+     @Returns true if key-index is found in the data-set.
+  **/
+  static bool has_data(uint search_index, p_rel *buffer, uint start, uint end) {
+    for(uint k = start; k< end; k++) {
+      if(buffer[k].is_equal(search_index)) {
+	return true;
+      }
+    }
+    return false;
+  }
+
+  //! The constructor.
+  p_rel(uint _out, float _dist, short int _overlap_in, short int _overlap_out, unsigned char _cnt_max,
+	bool _USE_BEST_BLAST_PAIR_SCORE)   :
+   /*ind_out(_out), distance(_dist),*/ overlap_in(_overlap_in), overlap_out(_overlap_out),
+   cnt_max(_cnt_max), ind_out(_out), distance(_dist), USE_BEST_BLAST_PAIR_SCORE(_USE_BEST_BLAST_PAIR_SCORE) {}
+
+  //! The constructor.
+ p_rel(bool _USE_BEST_BLAST_PAIR_SCORE) : overlap_in(0), overlap_out(0),
+   cnt_max(), ind_out(0), distance(0.0), USE_BEST_BLAST_PAIR_SCORE(_USE_BEST_BLAST_PAIR_SCORE) {}
+
+  //! The constructor.
+ p_rel() : overlap_in(0), overlap_out(0),
+   cnt_max(), ind_out(0), distance(0.0), USE_BEST_BLAST_PAIR_SCORE(false) {}
+
+
+  //! The assert method for this class
+  static void assert_class(bool print_info) {
+    const static char *class_name = "p_rel_t";
+    if(print_info) printf("--\tStarts testing class %s\n", class_name);
+#ifdef assert_code
+    p_rel test = p_rel();
+    // Asserts when proteins equals:
+    test.set_data(0, 0.0, 2);
+    assert(test.get_overlap_in() == 2);
+    assert(test.get_distance() == 0.0);
+    assert(test.get_cnt_max() == 1);
+    test.increment_data(0.0, 2);
+    assert(test.get_overlap_in() == 4);
+    assert(test.get_distance() == 0.0);
+    assert(test.get_cnt_max() == 2);
+    assert(test.getSimScore(10.0) == (2*(10+1)));
+
+    // Asserts when proteins differs:
+    test.set_data(0, 2.0, 2);
+    assert(test.get_overlap_in() == 2);
+    assert(test.get_distance() == 2.0);
+    assert(test.get_cnt_max() == 0);
+    test.increment_data(2.0, 2);
+    assert(test.get_overlap_in() == 4);
+    assert(test.get_distance() == 4.0);
+    assert(test.get_cnt_max() == 0);
+    assert(test.getSimScore(1.0) == 4.0); // Sim-score should be the same.
+#ifndef NDEBUG
+    p_rel test_2 = p_rel(2, (float)3, 4, 5, 6);
+    p_rel test_3 = p_rel(2, (float)3, 4, 5, 6);
+    assert(test_2.is_equal(test_3));
+#endif
+#endif
+    if(print_info) printf("ok\tCompleted testing class %s\n", class_name);
+  }
+};
+
+/**
+   @brief Like class 'rel', but with some extension for storing temporary blast-data.
+   @ingroup blastfile_container
+   @author Ole Kristian Ekseth (oekseth)
+**/
+typedef class p_rel p_rel_t;
+#endif

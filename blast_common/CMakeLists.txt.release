@@ -1,0 +1,68 @@
+#cmake_minimum_required(VERSION 2.6)
+cmake_minimum_required(VERSION 2.6)
+
+
+#
+# Conditonal variables:
+#cmakedefine BUILD_MAN_PAGE
+#cmakedefine assert_code
+#cmakedefine NDEBUG
+#option (BUILD_MAN_PAGE "Build a man page for the TurboOrtho Software" ON) 
+#option (assert_code "Exectues logical software tests on the TurboOrtho Software" ON) 
+#option (assert_code "Exectues logical software tests on the TurboOrtho Software" ON) 
+#option (NDEBUG "Exectues in-line software tests on the TurboOrtho Software" ON) 
+
+
+# Paths:
+
+set(CMPH_PATH 
+#/usr/local/lib/libcmph.a  # Configuration at build on Klaremus computer
+/usr/src/redhat/BUILD/cmph-1.1/src/.libs/libcmph.a # Configuration at the Kongull cluster
+)
+
+# configure a header file to pass some of the CMake settings
+# to the source code
+#configure_file (   "${PROJECT_SOURCE_DIR}main.h.in"   "${PROJECT_BINARY_DIR}main.h"    )
+
+
+project(TurbOrtho)
+ADD_DEFINITIONS(
+"-O2"
+# "-W -Wall -ansi -g
+# -std=c++0x 
+#-pedantic -Wno-write-strings"
+#
+# 
+#
+)
+include_directories("${PROJECT_BINARY_DIR}")
+#add_subdirectory(mcl_format)
+#include_directories ("${PROJECT_SOURCE_DIR}/parsing_transfer")
+#add_subdirectory(parsing_transfer) 
+
+#add_library(internal_blast file_parse.cxx file_struct.cxx list_file_struct.cxx list_file_parse.cxx)
+#add_library(internal file_parse.cxx file_struct.cxx list_file_struct.cxx list_file_parse.cxx norm_t.cxx)
+#add_library(parsing_transfer_temp protein_relation.cxx prot_list.cxx)
+# subdir/CMakeLists.txt
+
+#ADD_EXECUTABLE(generated ${CMAKE_CURRENT_BINARY_DIR}/../mcl_format/mcl_format.cxx)
+# Tell CMake the source won't be available until build time.
+#SET_SOURCE_FILES_PROPERTIES(${CMAKE_CURRENT_BINARY_DIR}/../mcl_format/mcl_format.cxx PROPERTIES GENERATED 1)
+# Make sure the source is generated before the executable builds.
+#ADD_DEPENDENCIES(generated generate_foo)
+find_library(TBB_LIBRARY tbb)
+include(internal.cmake)
+add_library(internal_blast internal_blast.cxx)
+target_link_libraries(internal_blast tbb)
+#add_executable(x_internal_blast internal_blast.cxx)
+add_executable(x_internal_blast main.cxx)
+
+
+target_link_libraries(x_internal_blast internal_blast internal tbb 
+"${CMPH_PATH}"
+#/usr/src/redhat/BUILD/cmph-1.1/src/.libs/libcmph.a # Configuration at the Kongull cluster
+#/usr/local/lib/libcmph.a  # Configuration at build on Klaremus computer
+) # Links the gcd to the main
+
+
+#target_link_libraries(internal_blast /usr/local/lib/libcmph.a) # includes the cmph perfect hash lib
