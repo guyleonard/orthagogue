@@ -1,0 +1,64 @@
+.TH "bucket_norm" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bucket_norm \- 
+.PP
+Data container holding changes in the normative array.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <bucket_norm.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBfree_mem\fP (const uint taxon_length)"
+.br
+.RI "\fIDeallocates the memory. \fP"
+.ti -1c
+.RI "\fBbucket_norm\fP (norm_t **_arrNorm)"
+.br
+.RI "\fIConstructs the class given the input params. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBbucket_norm\fP * \fBinit\fP (norm_t **_arrNorm)"
+.br
+.RI "\fIInitializes the class. \fP"
+.ti -1c
+.RI "static void \fBassert_class\fP (const bool print_info)"
+.br
+.RI "\fIAsserts the class given with test functions. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "norm_t ** \fBarrNorm\fP"
+.br
+.RI "\fIHolds the basis for the normalization values. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Data container holding changes in the normative array. 
+
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+02.11.2011 by oekseth (initial) 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

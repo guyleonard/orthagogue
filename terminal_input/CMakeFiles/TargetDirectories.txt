@@ -1,0 +1,5 @@
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/CMakeFiles/blast_terminal.dir
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/CMakeFiles/cmd_argument.dir
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/CMakeFiles/cmd_line.dir
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/CMakeFiles/cmd_list.dir
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/CMakeFiles/x_terminal.dir

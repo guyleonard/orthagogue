@@ -1,0 +1,88 @@
+.TH "bucket_pipe_binary" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+bucket_pipe_binary \- 
+.PP
+A transport container.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <bucket_pipe_binary.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "bool \fBisNotEmpty\fP ()"
+.br
+.ti -1c
+.RI "void \fBfree_structdata\fP ()"
+.br
+.RI "\fIDe-allocates memory for the list_file_struct object. \fP"
+.ti -1c
+.RI "void \fBfree_arrNorm\fP (const uint taxon_length)"
+.br
+.RI "\fIDeallocates memory for the **norm object given the length of it. \fP"
+.ti -1c
+.RI "void \fBfree_mem\fP (const uint taxon_length)"
+.br
+.RI "\fIDeallocates the memory for this object. \fP"
+.ti -1c
+.RI "\fBbucket_pipe_binary\fP ()"
+.br
+.RI "\fIThe constructor. \fP"
+.ti -1c
+.RI "\fBbucket_pipe_binary\fP (norm_t **_arrNorm, list_file_struct_t *_structData)"
+.br
+.RI "\fIThe constructor. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "norm_t ** \fBarrNorm\fP"
+.br
+.ti -1c
+.RI "list_file_struct_t * \fBstructData\fP"
+.br
+.RI "\fIHolds the filtered blast data. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A transport container. 
+
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+21.12.2010 by oekseth (init). 
+.PP
+25.12.2011 by oekseth (cleanup). 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "bool bucket_pipe_binary::isNotEmpty ()"\fBReturns:\fP
+.RS 4
+true if data is set 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "norm_t** \fBbucket_pipe_binary::arrNorm\fP"\fBReturns:\fP
+.RS 4
+the **norm object holding the basis for the normalization procedure. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

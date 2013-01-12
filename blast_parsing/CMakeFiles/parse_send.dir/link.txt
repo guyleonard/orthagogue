@@ -1,0 +1,2 @@
+/usr/bin/ar cr libparse_send.a  CMakeFiles/parse_send.dir/parse_send.cxx.o
+/usr/bin/ranlib libparse_send.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libalgo_overlap.a  CMakeFiles/algo_overlap.dir/algo_overlap.cxx.o
+/usr/bin/ranlib libalgo_overlap.a

@@ -1,0 +1,104 @@
+.TH ""Storage of Filtered blast data"" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+"Storage of Filtered blast data" \- 
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBbuild_string\fP"
+.br
+.RI "\fIProduces a row of chars for the protein given. \fP"
+.in -1c
+.SS "Files"
+
+.in +1c
+.ti -1c
+.RI "file \fBblast_filtering_main.h\fP"
+.br
+.PP
+
+.RI "\fIThe launcher of the filtering library. \fP"
+.in -1c
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef \fBbuild_string\fP \fBbuild_string_t\fP"
+.br
+.RI "\fIProduces a row of chars for the protein given. \fP"
+.ti -1c
+.RI "typedef enum \fBwrite_list\fP \fBwrite_list_t\fP"
+.br
+.RI "\fIIn order to identify the files. \fP"
+.in -1c
+.SS "Enumerations"
+
+.in +1c
+.ti -1c
+.RI "enum \fBwrite_list\fP { \fBblast_ortho_pairs_list_numbers\fP, \fBblast_inparalog_list_numbers\fP, \fBblast_complete_list_numbers\fP, \fBblast_ortho_relations_list_numbers\fP }"
+.br
+.RI "\fIIn order to identify the files. \fP"
+.in -1c
+.SS "Variables"
+
+.in +1c
+.ti -1c
+.RI "static const uint \fBsize_write_list_t\fP = 4"
+.br
+.RI "\fIThe number of elements in the enum write_list. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Data container used during the filter- and output process. 
+.SH "Typedef Documentation"
+.PP 
+.SS "typedef \fBbuild_string\fP \fBbuild_string_t\fP"
+.PP
+Produces a row of chars for the protein given. \fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+16.09.2011 by oekseth (asserts) 
+.PP
+31.12.2011 by oekseth (cleanup) 
+.RE
+.PP
+
+.SS "typedef enum \fBwrite_list\fP \fBwrite_list_t\fP"
+.PP
+In order to identify the files. \fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth 
+.RE
+.PP
+
+.SH "Enumeration Type Documentation"
+.PP 
+.SS "enum \fBwrite_list\fP"
+.PP
+In order to identify the files. ; 
+.PP
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth 
+.RE
+.PP
+
+.SH "Variable Documentation"
+.PP 
+.SS "const uint \fBsize_write_list_t\fP = 4\fC [static]\fP"
+.PP
+The number of elements in the enum write_list. \fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

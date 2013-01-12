@@ -1,0 +1,2 @@
+/home/klatremus/Dokumenter/Work/orthaGogue_0.9.9.5/src/log_builder/CMakeFiles/log_builder.dir
+/home/klatremus/Dokumenter/Work/orthaGogue_0.9.9.5/src/log_builder/CMakeFiles/x_log_builder.dir

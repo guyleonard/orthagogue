@@ -1,0 +1,2 @@
+/usr/bin/ar cr libp_rel.a  CMakeFiles/p_rel.dir/p_rel.cxx.o
+/usr/bin/ranlib libp_rel.a

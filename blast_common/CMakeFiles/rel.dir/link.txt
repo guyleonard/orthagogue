@@ -1,0 +1,2 @@
+/usr/bin/ar cr librel.a  CMakeFiles/rel.dir/rel.cxx.o
+/usr/bin/ranlib librel.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libbuild_string.a  CMakeFiles/build_string.dir/build_string.cxx.o
+/usr/bin/ranlib libbuild_string.a

@@ -1,0 +1,1 @@
+/usr/bin/c++   -g    CMakeFiles/x_log_builder.dir/log_builder_main.cxx.o  -o x_log_builder -rdynamic liblog_builder.a ../terminal_input/libcmd_argument.a ../terminal_input/libcmd_list.a 

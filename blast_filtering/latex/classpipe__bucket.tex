@@ -1,0 +1,76 @@
+\hypertarget{classpipe__bucket}{
+\section{pipe\_\-bucket Class Reference}
+\label{classpipe__bucket}\index{pipe\_\-bucket@{pipe\_\-bucket}}
+}
+
+
+Produces buckets of numbered items to parse.  
+
+
+
+
+{\ttfamily \#include $<$pipe\_\-bucket.h$>$}
+
+
+
+Collaboration diagram for pipe\_\-bucket:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classpipe__bucket__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__bucket_ab748c79965b28322088075e169d2a6b7}{
+\hyperlink{classpipe__bucket_ab748c79965b28322088075e169d2a6b7}{pipe\_\-bucket} (const bool inpa\_\-ops, uint taxon\_\-start, uint taxon\_\-end, uint taxon\_\-length, log\_\-builder\_\-t $\ast$\_\-log, list\_\-file\_\-parse\_\-t $\ast$\&\_\-listParseData, list\_\-file\_\-struct\_\-t $\ast$\&\_\-listStructData, taxa\_\-t $\ast$\_\-listTaxa)}
+\label{classpipe__bucket_ab748c79965b28322088075e169d2a6b7}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__bucket_a00625ed2c91b93682543da468d76b9e3}{
+void $\ast$ \hyperlink{classpipe__bucket_a00625ed2c91b93682543da468d76b9e3}{operator()} (void $\ast$item)}
+\label{classpipe__bucket_a00625ed2c91b93682543da468d76b9e3}
+
+\begin{DoxyCompactList}\small\item\em The method of parallisation. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__bucket_a768f810546b7cca051a90d031651ebac}{
+void \hyperlink{classpipe__bucket_a768f810546b7cca051a90d031651ebac}{free\_\-data} ()}
+\label{classpipe__bucket_a768f810546b7cca051a90d031651ebac}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates the memory of this object. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__bucket_a84b54ed6a6ab8f48a2e280aad082f107}{
+void \hyperlink{classpipe__bucket_a84b54ed6a6ab8f48a2e280aad082f107}{free\_\-mem} ()}
+\label{classpipe__bucket_a84b54ed6a6ab8f48a2e280aad082f107}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates the memory of this object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__bucket_ac00383aa239df244c4af7adae652c303}{
+static void \hyperlink{classpipe__bucket_ac00383aa239df244c4af7adae652c303}{assert\_\-class} (const bool print\_\-info)}
+\label{classpipe__bucket_ac00383aa239df244c4af7adae652c303}
+
+\begin{DoxyCompactList}\small\item\em The main test function for this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Produces buckets of numbered items to parse. 
+
+Goal is to make the threads in the rest of the pipe effective: \begin{Desc}
+\item[\hyperlink{todo__todo000001}{Todo}]Should be considered removed, replaced by preestimated blocks used by each of the consquative threads \end{Desc}
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.12.2010 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pipe__bucket_8h}{pipe\_\-bucket.h}\end{DoxyCompactItemize}

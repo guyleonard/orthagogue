@@ -1,0 +1,2584 @@
+Protein found:         At1g01190_at|ath           At1g01190_at|ath   534    534    0.0000000
+Protein found:        Hs10835119_hs|hsa          Hs10835119_hs|hsa   1854   1854   0.0000000
+Protein found:         At1g01190_at|ath           At1g01280_at|ath   429    443    54.3979416
+Protein found:        Hs10835119_hs|hsa             YOR326w_sc|sce   1078   1074   0.0000000
+Protein found:         At1g01190_at|ath           At1g11600_at|ath   472    488    46.0000000
+Protein found:         At1g01190_at|ath          Hs10834998_hs|hsa   441    443    27.3979397
+Protein found:        Hs10835119_hs|hsa             YOR326w_sc|sce   391    410    26.6989708
+Protein found:        Hs10835119_hs|hsa             YAL029c_sc|sce   904    924    0.0000000
+Protein found:        Hs10835119_hs|hsa             YAL029c_sc|sce   128    125    7.0000000
+Protein found:        Hs10835119_hs|hsa           At1g04160_at|ath   1109   1066   0.0000000
+Protein found:         At1g01190_at|ath          Hs13699809_hs|hsa   427    430    27.3010292
+Protein found:         At1g01190_at|ath           Hs4503231_hs|hsa   245    242    23.0000000
+Protein found:         At1g01190_at|ath          Hs13449277_hs|hsa   351    353    19.0969105
+Protein found:         At1g01190_at|ath           Hs7949031_hs|hsa   396    401    19.0000000
+Protein found:         At1g01190_at|ath          Hs13699816_hs|hsa   437    440    18.3010292
+Protein found:        Hs10835119_hs|hsa           At1g04160_at|ath   179    184    9.1549015
+Protein found: Protein found:         At1g01190_at|ath           Hs4507383_hs|hsa   191    185    15.5228786
+       Hs10835119_hs|hsa           At5g20490_at|ath   1091   1041   0.0000000
+Protein found: Protein found:        Hs10835119_hs|hsa           At5g20490_at|ath   165    165    7.6989698
+        At1g01190_at|ath          Hs13699840_hs|hsa   131    130    8.3979397
+Protein found:        Hs10835119_hs|hsa           At3g19960_at|ath   845    815    0.0000000
+Protein found:         At1g01280_at|ath           At1g01280_at|ath   509    509    0.0000000
+Protein found:        Hs10835119_hs|hsa           At5g54280_at|ath   798    758    173.0457611
+Protein found:         At1g01280_at|ath           At1g01190_at|ath   468    455    57.6989708
+Protein found:        Hs10835119_hs|hsa           Hs4505301_hs|hsa   730    732    160.6989746
+Protein found:         At1g01280_at|ath           At1g11600_at|ath   499    503    49.2218475
+Protein found:         At1g01280_at|ath           Hs4503231_hs|hsa   440    425    36.3010292
+Protein found:         At1g01280_at|ath          Hs10834998_hs|hsa   492    480    36.2218475
+Protein found:         At1g01280_at|ath          Hs13699816_hs|hsa   464    452    33.6989708
+Protein found:         At1g01280_at|ath          Hs13699809_hs|hsa   475    457    30.6989708
+Protein found:         At1g01280_at|ath           Hs7949031_hs|hsa   433    420    23.3010292
+Protein found:         At1g01280_at|ath          Hs13449277_hs|hsa   432    420    22.3010292
+Protein found:         At1g01280_at|ath           Hs4507383_hs|hsa   436    453    13.0000000
+Protein found: Protein found:         At1g04160_at|ath           At1g04160_at|ath   1518   1518   0.0000000
+       Hs10835119_hs|hsa          Hs11024712_hs|hsa   730    735    158.3010254
+Protein found:         At1g04160_at|ath           At5g20490_at|ath   1466   1488   0.0000000
+Protein found:        Hs10835119_hs|hsa             YHR023w_sc|sce   771    799    153.1549072
+Protein found:         At1g04160_at|ath          Hs10835119_hs|hsa   1066   1109   0.0000000
+Protein found:        Hs10835119_hs|hsa           Hs7705901_hs|hsa   769    750    147.6989746
+Protein found: Protein found:         At1g04160_at|ath          Hs10835119_hs|hsa   483    458    9.5228786
+       Hs10835119_hs|hsa           Hs7705901_hs|hsa   73     71     7.1549020
+Protein found:         At1g04160_at|ath             YOR326w_sc|sce   1019   1079   0.0000000
+Protein found:        Hs10835119_hs|hsa           Hs4885503_hs|hsa   800    767    143.5228729
+Protein found:        Hs10835119_hs|hsa             YMR109w_sc|sce   732    712    123.0969086
+Protein found:        Hs10835119_hs|hsa             YKL129c_sc|sce   732    711    121.5228806
+Protein found:        Hs10835271_hs|hsa          Hs10835271_hs|hsa   728    728    0.0000000
+Protein found:        Hs10835271_hs|hsa           Hs4827008_hs|hsa   668    672    0.0000000
+Protein found:        Hs10835271_hs|hsa             YKR093w_sc|sce   367    375    23.0000000
+Protein found:         At1g04160_at|ath             YAL029c_sc|sce   937    998    0.0000000
+Protein found: Protein found:         At1g04160_at|ath           At3g19960_at|ath   810    811    0.0000000
+       Hs10835271_hs|hsa             YKR093w_sc|sce   55     55     10.5228786
+Protein found:         At1g04160_at|ath           At5g54280_at|ath   818    802    166.0457611
+Protein found:        Hs10835271_hs|hsa           At5g46040_at|ath   310    307    22.0969105
+Protein found:         At1g04160_at|ath           Hs7705901_hs|hsa   743    748    159.6989746
+Protein found:        Hs10835271_hs|hsa           At3g45690_at|ath   303    341    12.3010302
+Protein found:         At1g04160_at|ath           Hs4505301_hs|hsa   792    792    147.6989746
+Protein found:        Hs10835271_hs|hsa           Hs7706117_hs|hsa   373    429    10.6989698
+Protein found: Protein found:        Hs10835271_hs|hsa           Hs7706117_hs|hsa   56     56     8.5228786
+        At1g04160_at|ath          Hs11024712_hs|hsa   792    795    144.6989746
+Protein found:        Hs11024712_hs|hsa          Hs11024712_hs|hsa   1938   1938   0.0000000
+Protein found: Protein found:         At1g04160_at|ath             YHR023w_sc|sce   740    799    142.0969086
+       Hs11024712_hs|hsa           Hs4505301_hs|hsa   1936   1933   0.0000000
+Protein found:         At1g04160_at|ath           Hs4885503_hs|hsa   761    752    141.6989746
+Protein found:        Hs11024712_hs|hsa             YHR023w_sc|sce   1234   1155   0.0000000
+Protein found:         At1g04160_at|ath             YMR109w_sc|sce   740    744    129.1549072
+Protein found:        Hs11024712_hs|hsa          Hs10835119_hs|hsa   1191   1204   160.3979340
+Protein found:         At1g04160_at|ath             YKL129c_sc|sce   740    743    124.0457611
+Protein found:        Hs11024712_hs|hsa           At3g19960_at|ath   765    740    150.5228729
+Protein found:         At1g10260_at|ath           At1g10260_at|ath   193    193    114.2218475
+Protein found:        Hs11024712_hs|hsa           At1g04160_at|ath   1003   1028   145.3010254
+Protein found:         At1g10260_at|ath           At1g11265_at|ath   185    185    108.3979416
+Protein found:        Hs11024712_hs|hsa             YOR326w_sc|sce   745    757    143.1549072
+Protein found:         At1g11265_at|ath           At1g11265_at|ath   1351   1351   0.0000000
+Protein found:        Hs11024712_hs|hsa           At5g54280_at|ath   772    737    142.6989746
+Protein found:         At1g11265_at|ath           At1g10260_at|ath   185    185    107.3979416
+Protein found:        Hs11024712_hs|hsa             YAL029c_sc|sce   745    752    137.6989746
+Protein found:         At1g11265_at|ath             YJL113w_sc|sce   441    451    28.1549015
+Protein found: Protein found:         At1g11265_at|ath             YJL113w_sc|sce   418    447    23.3979397
+       Hs11024712_hs|hsa           Hs7705901_hs|hsa   740    718    126.2218475
+Protein found:         At1g11265_at|ath             YAR009c_sc|sce   495    510    27.0000000
+Protein found: Protein found:         At1g11265_at|ath             YAR009c_sc|sce   248    251    26.6989708
+       Hs11024712_hs|hsa           At5g20490_at|ath   788    753    126.0457611
+Protein found:         At1g11600_at|ath           At1g11600_at|ath   509    509    0.0000000
+Protein found:        Hs11024712_hs|hsa           Hs4885503_hs|hsa   720    710    118.3979416
+Protein found:         At1g11600_at|ath           At1g01190_at|ath   488    472    48.6989708
+Protein found:        Hs11024712_hs|hsa             YMR109w_sc|sce   714    697    111.6989670
+Protein found:         At1g11600_at|ath           At1g01280_at|ath   503    499    48.0000000
+Protein found:        Hs11024712_hs|hsa             YKL129c_sc|sce   724    706    104.0000000
+Protein found: Protein found:        Hs13449277_hs|hsa          Hs13449277_hs|hsa   503    503    0.0000000
+        At1g11600_at|ath          Hs13699809_hs|hsa   467    446    31.3979397
+Protein found:        Hs13449277_hs|hsa          Hs13699809_hs|hsa   478    476    141.0000000
+Protein found:         At1g11600_at|ath          Hs10834998_hs|hsa   463    442    30.0457573
+Protein found:        Hs13449277_hs|hsa           Hs7949031_hs|hsa   450    448    132.1549072
+Protein found:         At1g11600_at|ath           Hs4503231_hs|hsa   447    431    28.6989708
+Protein found:        Hs13449277_hs|hsa          Hs13699816_hs|hsa   469    467    120.0000000
+Protein found:         At1g11600_at|ath           Hs4507383_hs|hsa   185    179    24.5228786
+Protein found: Protein found:         At1g11600_at|ath           Hs4507383_hs|hsa   66     63     6.0000000
+       Hs13449277_hs|hsa          Hs10834998_hs|hsa   493    490    111.3010330
+Protein found:         At1g11600_at|ath           Hs7949031_hs|hsa   440    425    24.2218494
+Protein found: Protein found:        Hs13449277_hs|hsa           Hs4503231_hs|hsa   471    470    28.6989708
+        At1g11600_at|ath          Hs13699816_hs|hsa   457    437    23.6989708
+Protein found:         At1g11600_at|ath          Hs13449277_hs|hsa   426    413    17.0969105
+Protein found:        Hs13449277_hs|hsa           At1g01280_at|ath   433    444    25.1549015
+Protein found:         At1g11600_at|ath          Hs13699840_hs|hsa   127    127    16.0000000
+Protein found:        Hs13449277_hs|hsa           At1g11600_at|ath   469    486    21.0000000
+Protein found:         At1g11600_at|ath          Hs13699840_hs|hsa   66     63     6.1549020
+Protein found:        Hs13449277_hs|hsa           At1g01190_at|ath   449    447    20.5228786
+Protein found:         At1g19460_at|ath           At1g19460_at|ath   415    415    0.0000000
+Protein found:         At1g19460_at|ath           At5g39560_at|ath   354    372    35.1549034
+Protein found:         At1g21220_at|ath           At1g21220_at|ath   226    226    136.0000000
+Protein found:         At1g21220_at|ath           At1g21280_at|ath   223    228    71.6989670
+Protein found:         At1g21280_at|ath           At1g21280_at|ath   236    236    143.0000000
+Protein found:         At1g21280_at|ath           At1g21220_at|ath   228    223    71.6989670
+Protein found: Protein found:         At3g19960_at|ath           At3g19960_at|ath   1165   1165   0.0000000
+       Hs13449277_hs|hsa           Hs4507383_hs|hsa   176    175    12.5228786
+Protein found:         At3g19960_at|ath           At5g54280_at|ath   1061   1070   0.0000000
+Protein found:        Hs13449277_hs|hsa           Hs4507383_hs|hsa   152    149    7.6989698
+Protein found:         At3g19960_at|ath           At1g04160_at|ath   891    933    0.0000000
+Protein found:        Hs13449277_hs|hsa          Hs13699840_hs|hsa   152    149    7.6989698
+Protein found: Protein found:        Hs13449277_hs|hsa          Hs13699840_hs|hsa   118    118    6.6989698
+        At3g19960_at|ath          Hs10835119_hs|hsa   815    845    0.0000000
+Protein found:        Hs13699809_hs|hsa          Hs13699809_hs|hsa   493    493    0.0000000
+Protein found:         At3g19960_at|ath             YOR326w_sc|sce   850    928    164.0000000
+Protein found:        Hs13699809_hs|hsa           Hs7949031_hs|hsa   449    449    151.6989746
+Protein found:         At3g19960_at|ath           At5g20490_at|ath   810    813    160.3979340
+Protein found:        Hs13699809_hs|hsa          Hs13699816_hs|hsa   469    469    143.5228729
+Protein found:         At3g19960_at|ath             YAL029c_sc|sce   815    866    156.5228729
+Protein found:        Hs13699809_hs|hsa          Hs10834998_hs|hsa   485    484    139.3979340
+Protein found:         At3g19960_at|ath           Hs4505301_hs|hsa   739    761    153.1549072
+Protein found:        Hs13699809_hs|hsa          Hs13449277_hs|hsa   439    441    130.0000000
+Protein found:         At3g19960_at|ath           Hs7705901_hs|hsa   743    746    152.0457611
+Protein found:        Hs13699809_hs|hsa           At1g11600_at|ath   446    467    28.3010292
+Protein found:         At3g19960_at|ath          Hs11024712_hs|hsa   753    781    150.5228729
+Protein found:        Hs13699809_hs|hsa           At1g01190_at|ath   430    427    27.3010292
+Protein found:         At3g19960_at|ath             YHR023w_sc|sce   708    753    137.2218475
+Protein found:        Hs13699809_hs|hsa           At1g01280_at|ath   467    482    26.0969105
+Protein found:         At3g19960_at|ath           Hs4885503_hs|hsa   743    755    128.0000000
+Protein found:        Hs13699809_hs|hsa           Hs4503231_hs|hsa   428    426    25.6989708
+Protein found:         At3g19960_at|ath             YMR109w_sc|sce   720    723    119.1548996
+Protein found:        Hs13699809_hs|hsa           Hs4507383_hs|hsa   427    457    20.5228786
+Protein found:         At3g19960_at|ath             YKL129c_sc|sce   720    722    118.2218475
+Protein found: Protein found:         At3g45690_at|ath           At3g45690_at|ath   515    515    0.0000000
+       Hs13699809_hs|hsa          Hs13699840_hs|hsa   379    409    13.3010302
+Protein found: Protein found:         At3g45690_at|ath           At5g46040_at|ath   496    553    66.0000000
+       Hs13699816_hs|hsa          Hs13699816_hs|hsa   489    489    0.0000000
+Protein found:         At3g45690_at|ath           Hs4827008_hs|hsa   348    321    15.0000000
+Protein found:        Hs13699816_hs|hsa          Hs10834998_hs|hsa   485    484    175.5228729
+Protein found:         At3g45690_at|ath          Hs10835271_hs|hsa   341    303    12.5228786
+Protein found:        Hs13699816_hs|hsa          Hs13699809_hs|hsa   477    477    148.0000000
+Protein found:         At3g45690_at|ath           Hs7706117_hs|hsa   391    395    10.5228786
+Protein found: Protein found:         At5g20490_at|ath           At5g20490_at|ath   1543   1543   0.0000000
+       Hs13699816_hs|hsa           Hs7949031_hs|hsa   448    448    138.0000000
+Protein found:         At5g20490_at|ath           At1g04160_at|ath   1488   1466   0.0000000
+Protein found: Protein found:        Hs13699816_hs|hsa          Hs13449277_hs|hsa   440    442    112.6989670
+        At5g20490_at|ath          Hs10835119_hs|hsa   1041   1091   0.0000000
+Protein found: Protein found:         At5g20490_at|ath          Hs10835119_hs|hsa   388    361    9.0457573
+       Hs13699816_hs|hsa           At1g01280_at|ath   434    444    29.5228786
+Protein found:         At5g20490_at|ath             YOR326w_sc|sce   1084   1128   172.1549072
+Protein found:        Hs13699816_hs|hsa           Hs4503231_hs|hsa   427    425    27.5228786
+Protein found:         At5g20490_at|ath           At3g19960_at|ath   813    810    160.2218475
+Protein found:        Hs13699816_hs|hsa           At1g11600_at|ath   450    471    23.2218494
+Protein found:         At5g20490_at|ath             YAL029c_sc|sce   821    914    156.6989746
+Protein found:        Hs13699816_hs|hsa           Hs4507383_hs|hsa   440    474    22.6989708
+Protein found:         At5g20490_at|ath           At5g54280_at|ath   794    796    141.5228729
+Protein found:        Hs13699816_hs|hsa           At1g01190_at|ath   440    437    19.3010292
+Protein found:         At5g20490_at|ath           Hs7705901_hs|hsa   748    749    140.6989746
+Protein found:        Hs13699816_hs|hsa          Hs13699840_hs|hsa   392    426    15.5228786
+Protein found: Protein found:         At5g20490_at|ath          Hs11024712_hs|hsa   753    788    127.0000000
+       Hs13699840_hs|hsa          Hs13699840_hs|hsa   459    459    0.0000000
+Protein found:         At5g20490_at|ath             YHR023w_sc|sce   735    801    126.6989670
+Protein found:        Hs13699840_hs|hsa           Hs4507383_hs|hsa   456    456    0.0000000
+Protein found:         At5g20490_at|ath           Hs4505301_hs|hsa   753    785    126.0457611
+Protein found: Protein found:         At5g20490_at|ath           Hs4885503_hs|hsa   768    755    119.6989670
+       Hs13699840_hs|hsa           Hs4503231_hs|hsa   425    394    68.3979416
+Protein found: Protein found:        Hs13699840_hs|hsa          Hs10834998_hs|hsa   409    378    15.3979397
+        At5g20490_at|ath             YMR109w_sc|sce   680    696    113.0000000
+Protein found:        Hs13699840_hs|hsa           At1g11600_at|ath   127    127    15.0969105
+Protein found: Protein found:        Hs13699840_hs|hsa           At1g11600_at|ath   63     66     6.2218490
+Protein found:         At5g20490_at|ath             YKL129c_sc|sce   680    695    109.5228806
+       Hs13699840_hs|hsa          Hs13699816_hs|hsa   426    392    14.6989698
+Protein found:         At5g39560_at|ath           At5g39560_at|ath   394    394    0.0000000
+Protein found:        Hs13699840_hs|hsa          Hs13699809_hs|hsa   409    379    13.2218485
+Protein found:         At5g39560_at|ath           At1g19460_at|ath   354    342    40.0457573
+Protein found: Protein found:         At5g46040_at|ath           At5g46040_at|ath   585    585    0.0000000
+       Hs13699840_hs|hsa           Hs7949031_hs|hsa   396    365    10.2218485
+Protein found:         At5g46040_at|ath           At3g45690_at|ath   557    500    72.1548996
+Protein found:        Hs13699840_hs|hsa           At1g01190_at|ath   130    131    8.5228786
+Protein found:         At5g46040_at|ath           Hs7706117_hs|hsa   525    526    34.0457573
+Protein found:        Hs13699840_hs|hsa          Hs13449277_hs|hsa   118    118    6.6989698
+Protein found: Protein found:         At5g46040_at|ath           Hs4827008_hs|hsa   396    361    25.6989708
+        Hs4503231_hs|hsa           Hs4503231_hs|hsa   501    501    0.0000000
+Protein found:         At5g46040_at|ath           Hs4827008_hs|hsa   117    101    7.2218490
+Protein found:         Hs4503231_hs|hsa           Hs4507383_hs|hsa   470    502    89.3010330
+Protein found:         At5g46040_at|ath          Hs10835271_hs|hsa   397    351    23.0969105
+Protein found:         Hs4503231_hs|hsa          Hs13699840_hs|hsa   394    425    68.3979416
+Protein found:         At5g46040_at|ath             YKR093w_sc|sce   543    489    18.3010292
+Protein found: Protein found:         At5g54280_at|ath           At5g54280_at|ath   1110   1110   0.0000000
+        Hs4503231_hs|hsa           At1g01280_at|ath   397    412    33.5228806
+Protein found:         At5g54280_at|ath           At3g19960_at|ath   1070   1061   0.0000000
+Protein found:         Hs4503231_hs|hsa           At1g11600_at|ath   431    447    27.3979397
+Protein found:         At5g54280_at|ath          Hs10835119_hs|hsa   758    798    173.3010254
+Protein found:         Hs4503231_hs|hsa          Hs13699816_hs|hsa   425    427    26.6989708
+Protein found:         At5g54280_at|ath           At1g04160_at|ath   802    818    166.2218475
+Protein found:         Hs4503231_hs|hsa          Hs13699809_hs|hsa   426    428    26.0000000
+Protein found:         At5g54280_at|ath             YOR326w_sc|sce   776    808    154.1549072
+Protein found:         Hs4503231_hs|hsa           Hs7949031_hs|hsa   409    410    25.0457573
+Protein found:         At5g54280_at|ath           Hs4505301_hs|hsa   737    769    146.6989746
+Protein found:         Hs4503231_hs|hsa          Hs10834998_hs|hsa   459    458    24.6989708
+Protein found:         At5g54280_at|ath             YAL029c_sc|sce   753    782    145.3979340
+Protein found:         Hs4503231_hs|hsa           At1g01190_at|ath   242    245    23.0000000
+Protein found:         At5g54280_at|ath           Hs7705901_hs|hsa   710    723    143.6989746
+Protein found:         Hs4503231_hs|hsa          Hs13449277_hs|hsa   430    434    21.1549015
+Protein found: Protein found:         At5g54280_at|ath          Hs11024712_hs|hsa   720    755    143.0000000
+        Hs4505301_hs|hsa           Hs4505301_hs|hsa   1936   1936   0.0000000
+Protein found:         At5g54280_at|ath           At5g20490_at|ath   796    794    141.6989746
+Protein found:         Hs4505301_hs|hsa          Hs11024712_hs|hsa   1933   1936   0.0000000
+Protein found: Protein found:         At5g54280_at|ath             YHR023w_sc|sce   715    771    135.6989746
+        Hs4505301_hs|hsa             YHR023w_sc|sce   1178   1139   0.0000000
+Protein found:         At5g54280_at|ath           Hs4885503_hs|hsa   747    754    125.1548996
+Protein found:         Hs4505301_hs|hsa          Hs10835119_hs|hsa   732    730    162.6989746
+Protein found:         At5g54280_at|ath             YKL129c_sc|sce   692    706    116.6989670
+Protein found:         Hs4505301_hs|hsa           At3g19960_at|ath   761    739    154.3010254
+Protein found:         At5g54280_at|ath             YMR109w_sc|sce   683    698    116.3010330
+Protein found: Protein found:        Hs10834998_hs|hsa          Hs10834998_hs|hsa   492    492    0.0000000
+        Hs4505301_hs|hsa           At1g04160_at|ath   1000   1028   150.5228729
+Protein found:        Hs10834998_hs|hsa          Hs13699816_hs|hsa   468    469    170.0000000
+Protein found:         Hs4505301_hs|hsa           At5g54280_at|ath   769    737    147.2218475
+Protein found:         Hs4505301_hs|hsa             YOR326w_sc|sce   748    765    144.3010254
+Protein found:         Hs4505301_hs|hsa             YAL029c_sc|sce   770    802    140.0000000
+Protein found:         Hs4505301_hs|hsa           At5g20490_at|ath   785    753    126.5228806
+Protein found:         Hs4505301_hs|hsa           Hs7705901_hs|hsa   737    718    124.3010330
+Protein found:         Hs4505301_hs|hsa           Hs4885503_hs|hsa   717    710    122.5228806
+Protein found:         Hs4505301_hs|hsa             YMR109w_sc|sce   711    697    112.3979416
+Protein found:        Hs10834998_hs|hsa          Hs13699809_hs|hsa   475    476    138.6989746
+Protein found:         Hs4505301_hs|hsa             YKL129c_sc|sce   732    709    106.3979416
+Protein found: Protein found:         Hs4507383_hs|hsa           Hs4507383_hs|hsa   533    533    0.0000000
+       Hs10834998_hs|hsa           Hs7949031_hs|hsa   448    449    126.6989670
+Protein found:         Hs4507383_hs|hsa          Hs13699840_hs|hsa   456    456    0.0000000
+Protein found:        Hs10834998_hs|hsa          Hs13449277_hs|hsa   432    435    100.5228806
+Protein found:         Hs4507383_hs|hsa           Hs4503231_hs|hsa   502    470    89.3979416
+Protein found:        Hs10834998_hs|hsa           At1g01280_at|ath   480    492    30.6989708
+Protein found:         Hs4507383_hs|hsa           At1g11600_at|ath   179    185    23.6989708
+Protein found:         Hs4507383_hs|hsa           At1g11600_at|ath   63     66     6.0000000
+Protein found:         Hs4507383_hs|hsa          Hs13699816_hs|hsa   474    440    22.0000000
+Protein found:         Hs4507383_hs|hsa          Hs13699809_hs|hsa   457    427    20.6989708
+Protein found:         Hs4507383_hs|hsa          Hs10834998_hs|hsa   456    425    20.5228786
+Protein found:         Hs4507383_hs|hsa           At1g01190_at|ath   185    191    15.5228786
+Protein found:         Hs4507383_hs|hsa           Hs7949031_hs|hsa   440    409    14.6989698
+Protein found:         Hs4507383_hs|hsa           At1g01280_at|ath   430    413    12.6989698
+Protein found:         Hs4507383_hs|hsa          Hs13449277_hs|hsa   175    176    12.5228786
+Protein found:        Hs10834998_hs|hsa           At1g11600_at|ath   442    463    27.5228786
+Protein found:        Hs10834998_hs|hsa           At1g01190_at|ath   443    441    27.3979397
+Protein found:        Hs10834998_hs|hsa           Hs4503231_hs|hsa   428    427    24.3979397
+Protein found:        Hs10834998_hs|hsa           Hs4507383_hs|hsa   425    456    20.6989708
+Protein found:        Hs10834998_hs|hsa          Hs13699840_hs|hsa   378    409    15.2218485
+Protein found:           YOR326w_sc|sce             YOR326w_sc|sce   1573   1573   0.0000000
+Protein found:           YOR326w_sc|sce             YAL029c_sc|sce   1501   1419   0.0000000
+Protein found:         Hs4827008_hs|hsa           Hs4827008_hs|hsa   707    707    0.0000000
+Protein found:         Hs4827008_hs|hsa          Hs10835271_hs|hsa   672    668    0.0000000
+Protein found:           YOR326w_sc|sce          Hs10835119_hs|hsa   1074   1078   0.0000000
+Protein found:         Hs4827008_hs|hsa           At5g46040_at|ath   361    396    23.0969105
+Protein found:         Hs4827008_hs|hsa           At5g46040_at|ath   101    117    5.0000000
+Protein found:         Hs4827008_hs|hsa             YKR093w_sc|sce   395    383    23.0000000
+Protein found:         Hs4827008_hs|hsa             YKR093w_sc|sce   57     57     9.1549015
+Protein found:         Hs4827008_hs|hsa           At3g45690_at|ath   321    348    14.6989698
+Protein found:         Hs4827008_hs|hsa           Hs7706117_hs|hsa   362    393    14.3010302
+Protein found:         Hs4827008_hs|hsa           Hs7706117_hs|hsa   57     57     6.0457573
+Protein found:           YOR326w_sc|sce          Hs10835119_hs|hsa   410    391    29.0000000
+Protein found:         Hs4885503_hs|hsa           Hs4885503_hs|hsa   1042   1042   0.0000000
+Protein found:           YOR326w_sc|sce           At1g04160_at|ath   1079   1019   0.0000000
+Protein found:         Hs4885503_hs|hsa             YMR109w_sc|sce   704    694    151.3010254
+Protein found:         Hs4885503_hs|hsa             YKL129c_sc|sce   704    693    146.0000000
+Protein found:         Hs4885503_hs|hsa          Hs10835119_hs|hsa   767    800    143.6989746
+Protein found:         Hs4885503_hs|hsa           At1g04160_at|ath   752    761    142.0000000
+Protein found:         Hs4885503_hs|hsa           Hs7705901_hs|hsa   760    751    140.6989746
+Protein found:         Hs4885503_hs|hsa           At3g19960_at|ath   778    740    128.0000000
+Protein found:         Hs4885503_hs|hsa           At5g54280_at|ath   754    747    125.1548996
+Protein found:           YOR326w_sc|sce           At1g04160_at|ath   184    189    5.0000000
+Protein found:         Hs4885503_hs|hsa           Hs4505301_hs|hsa   710    717    122.1548996
+Protein found:           YOR326w_sc|sce           At5g20490_at|ath   1128   1084   172.3010254
+Protein found:         Hs4885503_hs|hsa             YOR326w_sc|sce   767    791    119.6989670
+Protein found:           YOR326w_sc|sce           At3g19960_at|ath   928    850    163.6989746
+Protein found:         Hs4885503_hs|hsa           At5g20490_at|ath   755    768    119.6989670
+Protein found:           YOR326w_sc|sce           At5g54280_at|ath   808    776    154.1549072
+Protein found:         Hs4885503_hs|hsa          Hs11024712_hs|hsa   710    720    119.0000000
+Protein found:           YOR326w_sc|sce           Hs7705901_hs|hsa   756    722    144.6989746
+Protein found:         Hs4885503_hs|hsa             YAL029c_sc|sce   767    782    118.2218475
+Protein found:           YOR326w_sc|sce             YHR023w_sc|sce   794    800    144.0969086
+Protein found:         Hs4885503_hs|hsa             YHR023w_sc|sce   722    755    114.5228806
+Protein found: Protein found:           YOR326w_sc|sce           Hs4505301_hs|hsa   765    748    142.0000000
+        Hs7705901_hs|hsa           Hs7705901_hs|hsa   3529   3529   0.0000000
+Protein found:           YOR326w_sc|sce          Hs11024712_hs|hsa   1020   1011   141.3979340
+Protein found:         Hs7705901_hs|hsa           At1g04160_at|ath   748    743    159.1549072
+Protein found:           YOR326w_sc|sce             YMR109w_sc|sce   725    693    124.5228806
+Protein found:         Hs7705901_hs|hsa           At3g19960_at|ath   746    743    151.5228729
+Protein found:           YOR326w_sc|sce             YKL129c_sc|sce   745    707    123.5228806
+Protein found:         Hs7705901_hs|hsa          Hs10835119_hs|hsa   750    769    147.1549072
+Protein found: Protein found:         Hs7705901_hs|hsa          Hs10835119_hs|hsa   71     73     7.0000000
+          YOR326w_sc|sce           Hs4885503_hs|hsa   791    767    119.6989670
+Protein found:         Hs7705901_hs|hsa             YOR326w_sc|sce   722    756    144.3010254
+Protein found:         Hs7705901_hs|hsa           At5g54280_at|ath   723    710    143.0000000
+got NOT a section here from the stringBuffer
+Protein found:         Hs7705901_hs|hsa           At5g20490_at|ath   749    748    140.0000000
+Protein found:         Hs7705901_hs|hsa           Hs4885503_hs|hsa   754    764    139.6989746
+Protein found:         Hs7705901_hs|hsa             YAL029c_sc|sce   746    777    138.5228729
+Protein found:         Hs7705901_hs|hsa             YMR109w_sc|sce   728    725    130.0000000
+Protein found:         Hs7705901_hs|hsa             YKL129c_sc|sce   743    754    129.2218475
+Protein found:         Hs7705901_hs|hsa          Hs11024712_hs|hsa   718    740    125.0000000
+Protein found:         Hs7705901_hs|hsa           Hs4505301_hs|hsa   718    737    123.0969086
+Protein found:         Hs7705901_hs|hsa             YHR023w_sc|sce   700    739    115.3979416
+Protein found:         Hs7706117_hs|hsa           Hs7706117_hs|hsa   580    580    0.0000000
+Protein found:         Hs7706117_hs|hsa           At5g46040_at|ath   524    525    39.0457573
+Protein found:         Hs7706117_hs|hsa           Hs4827008_hs|hsa   393    362    24.3010292
+Protein found:         Hs7706117_hs|hsa           Hs4827008_hs|hsa   57     57     6.0969100
+Protein found:         Hs7706117_hs|hsa             YKR093w_sc|sce   511    468    24.0969105
+Protein found:         Hs7706117_hs|hsa          Hs10835271_hs|hsa   395    353    19.6989708
+Protein found:         Hs7706117_hs|hsa          Hs10835271_hs|hsa   56     56     8.5228786
+Protein found:         Hs7706117_hs|hsa           At3g45690_at|ath   395    391    18.0000000
+Protein found:         Hs7949031_hs|hsa           Hs7949031_hs|hsa   490    490    0.0000000
+Protein found:         Hs7949031_hs|hsa          Hs13699809_hs|hsa   478    478    160.6989746
+Protein found:         Hs7949031_hs|hsa          Hs13699816_hs|hsa   468    468    142.2218475
+Protein found:         Hs7949031_hs|hsa          Hs10834998_hs|hsa   488    488    134.2218475
+Protein found:         Hs7949031_hs|hsa          Hs13449277_hs|hsa   439    441    129.6989746
+Protein found:         Hs7949031_hs|hsa           Hs4503231_hs|hsa   426    424    31.0000000
+Protein found:         Hs7949031_hs|hsa           At1g11600_at|ath   437    452    27.3979397
+Protein found:         Hs7949031_hs|hsa           At1g01280_at|ath   423    436    25.0000000
+Protein found:         Hs7949031_hs|hsa           At1g01190_at|ath   444    441    20.5228786
+Protein found:         Hs7949031_hs|hsa           Hs4507383_hs|hsa   423    453    17.2218494
+Protein found:         Hs7949031_hs|hsa          Hs13699840_hs|hsa   379    409    12.5228786
+Protein found:           YAL029c_sc|sce             YAL029c_sc|sce   1470   1470   0.0000000
+Protein found:           YAL029c_sc|sce             YOR326w_sc|sce   1419   1501   0.0000000
+Protein found:           YAL029c_sc|sce          Hs10835119_hs|hsa   924    904    0.0000000
+Protein found:           YAL029c_sc|sce          Hs10835119_hs|hsa   125    128    7.0000000
+Protein found:           YAL029c_sc|sce           At1g04160_at|ath   998    937    0.0000000
+Protein found:           YAL029c_sc|sce           At5g20490_at|ath   914    821    156.3979340
+Protein found:           YAL029c_sc|sce           At3g19960_at|ath   866    815    156.3979340
+Protein found:           YAL029c_sc|sce             YHR023w_sc|sce   802    812    145.5228729
+Protein found:           YAL029c_sc|sce           At5g54280_at|ath   782    753    145.3010254
+Protein found:           YAL029c_sc|sce           Hs7705901_hs|hsa   777    746    139.3979340
+Protein found:           YAL029c_sc|sce           Hs4505301_hs|hsa   802    770    138.3010254
+Protein found:           YAL029c_sc|sce          Hs11024712_hs|hsa   752    745    137.6989746
+Protein found:           YAL029c_sc|sce             YMR109w_sc|sce   740    708    121.0000000
+Protein found:           YAL029c_sc|sce             YKL129c_sc|sce   717    689    119.5228806
+Protein found:           YAL029c_sc|sce           Hs4885503_hs|hsa   782    767    118.0457611
+Protein found:           YAR009c_sc|sce             YAR009c_sc|sce   1195   1195   0.0000000
+Protein found:           YAR009c_sc|sce             YJL113w_sc|sce   539    535    66.3010330
+Protein found:           YAR009c_sc|sce             YJL113w_sc|sce   280    278    32.3979416
+Protein found:           YAR009c_sc|sce           At1g11265_at|ath   251    248    26.6989708
+Protein found:           YAR009c_sc|sce           At1g11265_at|ath   510    495    26.6989708
+Protein found:           YAR010c_sc|sce             YAR010c_sc|sce   439    439    0.0000000
+Protein found:           YAR010c_sc|sce             YJR028w_sc|sce   439    439    0.0000000
+Protein found:           YAR010c_sc|sce             YMR051c_sc|sce   439    439    0.0000000
+Protein found:           YHR023w_sc|sce             YHR023w_sc|sce   1927   1927   0.0000000
+Protein found:           YHR023w_sc|sce          Hs11024712_hs|hsa   1018   955    0.0000000
+Protein found:           YHR023w_sc|sce           Hs4505301_hs|hsa   877    839    0.0000000
+Protein found:           YHR023w_sc|sce          Hs10835119_hs|hsa   799    771    155.3979340
+Protein found:           YHR023w_sc|sce             YAL029c_sc|sce   812    802    146.6989746
+Protein found:           YHR023w_sc|sce             YOR326w_sc|sce   800    794    146.0000000
+Protein found:           YHR023w_sc|sce           At1g04160_at|ath   799    740    144.0000000
+Protein found:           YHR023w_sc|sce           At5g54280_at|ath   771    715    139.3010254
+Protein found:           YHR023w_sc|sce           At3g19960_at|ath   753    708    139.1549072
+Protein found:           YHR023w_sc|sce           At5g20490_at|ath   801    735    128.1549072
+Protein found:           YHR023w_sc|sce           Hs7705901_hs|hsa   739    700    118.1548996
+Protein found:           YHR023w_sc|sce           Hs4885503_hs|hsa   755    722    116.1548996
+Protein found:           YHR023w_sc|sce             YMR109w_sc|sce   759    730    105.5228806
+Protein found:           YHR023w_sc|sce             YKL129c_sc|sce   759    729    101.6989670
+Protein found:           YJL113w_sc|sce             YJL113w_sc|sce   1802   1802   0.0000000
+Protein found:           YJL113w_sc|sce             YAR009c_sc|sce   535    539    68.2218475
+Protein found:           YJL113w_sc|sce             YAR009c_sc|sce   278    280    32.2218475
+Protein found:           YJL113w_sc|sce           At1g11265_at|ath   451    441    31.6989708
+Protein found:           YJL113w_sc|sce           At1g11265_at|ath   447    418    23.5228786
+Protein found:           YJR028w_sc|sce             YJR028w_sc|sce   439    439    0.0000000
+Protein found:           YJR028w_sc|sce             YAR010c_sc|sce   439    439    0.0000000
+Protein found:           YJR028w_sc|sce             YMR051c_sc|sce   439    439    0.0000000
+Protein found:           YKL129c_sc|sce             YKL129c_sc|sce   1270   1270   0.0000000
+Protein found:           YKL129c_sc|sce             YMR109w_sc|sce   1183   1149   0.0000000
+Protein found:           YKL129c_sc|sce           Hs4885503_hs|hsa   693    704    145.6989746
+Protein found:           YKL129c_sc|sce           Hs7705901_hs|hsa   754    743    130.0000000
+Protein found:           YKL129c_sc|sce           At1g04160_at|ath   743    740    124.0000000
+Protein found:           YKL129c_sc|sce             YOR326w_sc|sce   707    745    123.3010330
+Protein found:           YKL129c_sc|sce          Hs10835119_hs|hsa   711    732    121.6989670
+Protein found:           YKL129c_sc|sce             YAL029c_sc|sce   689    717    119.3979416
+Protein found:           YKL129c_sc|sce           At3g19960_at|ath   722    720    118.3010330
+Protein found:           YKL129c_sc|sce           At5g54280_at|ath   706    692    117.0000000
+Protein found:           YKL129c_sc|sce           At5g20490_at|ath   695    680    109.5228806
+Protein found:           YKL129c_sc|sce           Hs4505301_hs|hsa   709    732    105.6989670
+Protein found:           YKL129c_sc|sce          Hs11024712_hs|hsa   707    725    104.3979416
+Protein found:           YKL129c_sc|sce             YHR023w_sc|sce   729    759    99.1548996
+Protein found:           YKR093w_sc|sce             YKR093w_sc|sce   600    600    0.0000000
+Protein found:           YKR093w_sc|sce           Hs4827008_hs|hsa   383    395    25.5228786
+Protein found:           YKR093w_sc|sce           Hs4827008_hs|hsa   57     57     9.2218485
+Protein found:           YKR093w_sc|sce          Hs10835271_hs|hsa   375    367    25.0000000
+Protein found:           YKR093w_sc|sce          Hs10835271_hs|hsa   55     55     10.5228786
+Protein found:           YKR093w_sc|sce           At5g46040_at|ath   455    497    19.0000000
+Protein found:           YKR093w_sc|sce           Hs7706117_hs|hsa   436    475    17.0969105
+Protein found:           YMR051c_sc|sce             YMR051c_sc|sce   439    439    0.0000000
+Protein found:           YMR051c_sc|sce             YJR028w_sc|sce   439    439    0.0000000
+Protein found:           YMR051c_sc|sce             YAR010c_sc|sce   439    439    0.0000000
+Protein found:           YMR109w_sc|sce             YMR109w_sc|sce   1218   1218   0.0000000
+Protein found:           YMR109w_sc|sce             YKL129c_sc|sce   1204   1255   0.0000000
+Protein found:           YMR109w_sc|sce           Hs4885503_hs|hsa   694    704    151.1549072
+Protein found:           YMR109w_sc|sce           Hs7705901_hs|hsa   725    728    131.0000000
+Protein found:           YMR109w_sc|sce           At1g04160_at|ath   723    719    129.3010254
+Protein found:           YMR109w_sc|sce             YOR326w_sc|sce   693    725    124.5228806
+Protein found:           YMR109w_sc|sce          Hs10835119_hs|hsa   712    732    123.5228806
+Protein found:           YMR109w_sc|sce             YAL029c_sc|sce   708    740    120.6989670
+Protein found:           YMR109w_sc|sce           At3g19960_at|ath   723    720    119.3010330
+Protein found:           YMR109w_sc|sce           At5g54280_at|ath   698    683    116.3010330
+Protein found:           YMR109w_sc|sce           At5g20490_at|ath   696    680    113.0000000
+Protein found:           YMR109w_sc|sce           Hs4505301_hs|hsa   697    711    112.3979416
+Protein found:           YMR109w_sc|sce          Hs11024712_hs|hsa   697    714    111.5228806
+Protein found:           YMR109w_sc|sce             YHR023w_sc|sce   730    759    103.0969086
+in taxon_pair.cxx uses file_name: 'report_orthaGogue/thread_allocation_list.log.2'
+(studies)	pair (YAL029c_sc, At1g04160_at) with sim_out_in(176.522873)
+(studies_1)	pair (YAL029c_sc, At1g04160_at) 
+(studies__2)	pair (YAL029c_sc, At1g04160_at) 
+(evaluates)	pair (YAL029c_sc, At1g04160_at) with averaged_similarity(176.522873)
+(inserts)	pair (YAL029c_sc, At1g04160_at) with averaged_similarity(176.522873)
+(studies)	pair (YAL029c_sc, At5g20490_at) with sim_out_in(156.698975)
+(studies_1)	pair (YAL029c_sc, At5g20490_at) 
+(studies__2)	pair (YAL029c_sc, At5g20490_at) 
+(evaluates)	pair (YAL029c_sc, At5g20490_at) with averaged_similarity(156.548462)
+(inserts)	pair (YAL029c_sc, At5g20490_at) with averaged_similarity(156.548462)
+(studies)	pair (YAL029c_sc, At3g19960_at) with sim_out_in(156.522873)
+(studies_1)	pair (YAL029c_sc, At3g19960_at) 
+(studies__2)	pair (YAL029c_sc, At3g19960_at) 
+(evaluates)	pair (YAL029c_sc, At3g19960_at) with averaged_similarity(156.460403)
+(inserts)	pair (YAL029c_sc, At3g19960_at) with averaged_similarity(156.460403)
+(studies)	pair (YAL029c_sc, At5g54280_at) with sim_out_in(145.397934)
+(studies_1)	pair (YAL029c_sc, At5g54280_at) 
+(studies__2)	pair (YAL029c_sc, At5g54280_at) 
+(evaluates)	pair (YAL029c_sc, At5g54280_at) with averaged_similarity(145.349487)
+(inserts)	pair (YAL029c_sc, At5g54280_at) with averaged_similarity(145.349487)
+(possible_ortholog)	pair (YAL029c_sc, At1g04160_at) with sim_score(176.522873)
+(studies)	pair (YHR023w_sc, At1g04160_at) with sim_out_in(142.096909)
+(studies_1)	pair (YHR023w_sc, At1g04160_at) 
+(studies__2)	pair (YHR023w_sc, At1g04160_at) 
+(evaluates)	pair (YHR023w_sc, At1g04160_at) with averaged_similarity(143.048462)
+(inserts)	pair (YHR023w_sc, At1g04160_at) with averaged_similarity(143.048462)
+(studies)	pair (YHR023w_sc, At5g54280_at) with sim_out_in(135.698975)
+(studies_1)	pair (YHR023w_sc, At5g54280_at) 
+(studies__2)	pair (YHR023w_sc, At5g54280_at) 
+(evaluates)	pair (YHR023w_sc, At5g54280_at) with averaged_similarity(137.500000)
+(inserts)	pair (YHR023w_sc, At5g54280_at) with averaged_similarity(137.500000)
+(studies)	pair (YHR023w_sc, At3g19960_at) with sim_out_in(137.221848)
+(studies_1)	pair (YHR023w_sc, At3g19960_at) 
+(studies__2)	pair (YHR023w_sc, At3g19960_at) 
+(evaluates)	pair (YHR023w_sc, At3g19960_at) with averaged_similarity(138.188385)
+(inserts)	pair (YHR023w_sc, At3g19960_at) with averaged_similarity(138.188385)
+(studies)	pair (YHR023w_sc, At5g20490_at) with sim_out_in(126.698967)
+(studies_1)	pair (YHR023w_sc, At5g20490_at) 
+(studies__2)	pair (YHR023w_sc, At5g20490_at) 
+(evaluates)	pair (YHR023w_sc, At5g20490_at) with averaged_similarity(127.426941)
+(inserts)	pair (YHR023w_sc, At5g20490_at) with averaged_similarity(127.426941)
+(possible_ortholog)	pair (YHR023w_sc, At1g04160_at) with sim_score(143.048462)
+(studies)	pair (YKR093w_sc, At5g46040_at) with sim_out_in(18.301029)
+(studies_1)	pair (YKR093w_sc, At5g46040_at) 
+(studies__2)	pair (YKR093w_sc, At5g46040_at) 
+(evaluates)	pair (YKR093w_sc, At5g46040_at) with averaged_similarity(18.650515)
+(inserts)	pair (YKR093w_sc, At5g46040_at) with averaged_similarity(18.650515)
+(possible_ortholog)	pair (YKR093w_sc, At5g46040_at) with sim_score(18.650515)
+(studies)	pair (YJL113w_sc, At1g11265_at) with sim_out_in(28.154902)
+(studies_1)	pair (YJL113w_sc, At1g11265_at) 
+(studies__2)	pair (YJL113w_sc, At1g11265_at) 
+(evaluates)	pair (YJL113w_sc, At1g11265_at) with averaged_similarity(29.926937)
+(inserts)	pair (YJL113w_sc, At1g11265_at) with averaged_similarity(29.926937)
+(possible_ortholog)	pair (YJL113w_sc, At1g11265_at) with sim_score(29.926937)
+(studies)	pair (YAR009c_sc, At1g11265_at) with sim_out_in(27.000000)
+(studies_1)	pair (YAR009c_sc, At1g11265_at) 
+(studies__2)	pair (YAR009c_sc, At1g11265_at) 
+(evaluates)	pair (YAR009c_sc, At1g11265_at) with averaged_similarity(26.849485)
+(inserts)	pair (YAR009c_sc, At1g11265_at) with averaged_similarity(26.849485)
+(possible_ortholog)	pair (YAR009c_sc, At1g11265_at) with sim_score(26.849485)
+(studies)	pair (YOR326w_sc, At1g04160_at) with sim_out_in(176.522873)
+(studies_1)	pair (YOR326w_sc, At1g04160_at) 
+(studies__2)	pair (YOR326w_sc, At1g04160_at) 
+(evaluates)	pair (YOR326w_sc, At1g04160_at) with averaged_similarity(176.522873)
+(inserts)	pair (YOR326w_sc, At1g04160_at) with averaged_similarity(176.522873)
+(studies)	pair (YOR326w_sc, At5g20490_at) with sim_out_in(172.154907)
+(studies_1)	pair (YOR326w_sc, At5g20490_at) 
+(studies__2)	pair (YOR326w_sc, At5g20490_at) 
+(evaluates)	pair (YOR326w_sc, At5g20490_at) with averaged_similarity(172.227966)
+(inserts)	pair (YOR326w_sc, At5g20490_at) with averaged_similarity(172.227966)
+(studies)	pair (YOR326w_sc, At3g19960_at) with sim_out_in(164.000000)
+(studies_1)	pair (YOR326w_sc, At3g19960_at) 
+(studies__2)	pair (YOR326w_sc, At3g19960_at) 
+(evaluates)	pair (YOR326w_sc, At3g19960_at) with averaged_similarity(163.849487)
+(inserts)	pair (YOR326w_sc, At3g19960_at) with averaged_similarity(163.849487)
+(studies)	pair (YOR326w_sc, At5g54280_at) with sim_out_in(154.154907)
+(studies_1)	pair (YOR326w_sc, At5g54280_at) 
+(studies__2)	pair (YOR326w_sc, At5g54280_at) 
+(evaluates)	pair (YOR326w_sc, At5g54280_at) with averaged_similarity(154.154907)
+(inserts)	pair (YOR326w_sc, At5g54280_at) with averaged_similarity(154.154907)
+(possible_ortholog)	pair (YOR326w_sc, At1g04160_at) with sim_score(176.522873)
+(studies)	pair (YMR109w_sc, At1g04160_at) with sim_out_in(129.154907)
+(studies_1)	pair (YMR109w_sc, At1g04160_at) 
+(studies__2)	pair (YMR109w_sc, At1g04160_at) 
+(evaluates)	pair (YMR109w_sc, At1g04160_at) with averaged_similarity(129.227966)
+(inserts)	pair (YMR109w_sc, At1g04160_at) with averaged_similarity(129.227966)
+(studies)	pair (YMR109w_sc, At3g19960_at) with sim_out_in(119.154900)
+(studies_1)	pair (YMR109w_sc, At3g19960_at) 
+(studies__2)	pair (YMR109w_sc, At3g19960_at) 
+(evaluates)	pair (YMR109w_sc, At3g19960_at) with averaged_similarity(119.227966)
+(inserts)	pair (YMR109w_sc, At3g19960_at) with averaged_similarity(119.227966)
+(studies)	pair (YMR109w_sc, At5g54280_at) with sim_out_in(116.301033)
+(studies_1)	pair (YMR109w_sc, At5g54280_at) 
+(studies__2)	pair (YMR109w_sc, At5g54280_at) 
+(evaluates)	pair (YMR109w_sc, At5g54280_at) with averaged_similarity(116.301033)
+(inserts)	pair (YMR109w_sc, At5g54280_at) with averaged_similarity(116.301033)
+(studies)	pair (YMR109w_sc, At5g20490_at) with sim_out_in(113.000000)
+(studies_1)	pair (YMR109w_sc, At5g20490_at) 
+(studies__2)	pair (YMR109w_sc, At5g20490_at) 
+(evaluates)	pair (YMR109w_sc, At5g20490_at) with averaged_similarity(113.000000)
+(inserts)	pair (YMR109w_sc, At5g20490_at) with averaged_similarity(113.000000)
+(possible_ortholog)	pair (YMR109w_sc, At1g04160_at) with sim_score(129.227966)
+(studies)	pair (YKL129c_sc, At1g04160_at) with sim_out_in(124.045761)
+(studies_1)	pair (YKL129c_sc, At1g04160_at) 
+(studies__2)	pair (YKL129c_sc, At1g04160_at) 
+(evaluates)	pair (YKL129c_sc, At1g04160_at) with averaged_similarity(124.022881)
+(inserts)	pair (YKL129c_sc, At1g04160_at) with averaged_similarity(124.022881)
+(studies)	pair (YKL129c_sc, At3g19960_at) with sim_out_in(118.221848)
+(studies_1)	pair (YKL129c_sc, At3g19960_at) 
+(studies__2)	pair (YKL129c_sc, At3g19960_at) 
+(evaluates)	pair (YKL129c_sc, At3g19960_at) with averaged_similarity(118.261444)
+(inserts)	pair (YKL129c_sc, At3g19960_at) with averaged_similarity(118.261444)
+(studies)	pair (YKL129c_sc, At5g54280_at) with sim_out_in(116.698967)
+(studies_1)	pair (YKL129c_sc, At5g54280_at) 
+(studies__2)	pair (YKL129c_sc, At5g54280_at) 
+(evaluates)	pair (YKL129c_sc, At5g54280_at) with averaged_similarity(116.849487)
+(inserts)	pair (YKL129c_sc, At5g54280_at) with averaged_similarity(116.849487)
+(studies)	pair (YKL129c_sc, At5g20490_at) with sim_out_in(109.522881)
+(studies_1)	pair (YKL129c_sc, At5g20490_at) 
+(studies__2)	pair (YKL129c_sc, At5g20490_at) 
+(evaluates)	pair (YKL129c_sc, At5g20490_at) with averaged_similarity(109.522881)
+(inserts)	pair (YKL129c_sc, At5g20490_at) with averaged_similarity(109.522881)
+(possible_ortholog)	pair (YKL129c_sc, At1g04160_at) with sim_score(124.022881)
+(studies)	pair (YAL029c_sc, Hs10835119_hs) with sim_out_in(176.522873)
+(studies_1)	pair (YAL029c_sc, Hs10835119_hs) 
+(studies__2)	pair (YAL029c_sc, Hs10835119_hs) 
+(evaluates)	pair (YAL029c_sc, Hs10835119_hs) with averaged_similarity(176.522873)
+(inserts)	pair (YAL029c_sc, Hs10835119_hs) with averaged_similarity(176.522873)
+(studies)	pair (YAL029c_sc, Hs7705901_hs) with sim_out_in(138.522873)
+(studies_1)	pair (YAL029c_sc, Hs7705901_hs) 
+(studies__2)	pair (YAL029c_sc, Hs7705901_hs) 
+(evaluates)	pair (YAL029c_sc, Hs7705901_hs) with averaged_similarity(138.960403)
+(inserts)	pair (YAL029c_sc, Hs7705901_hs) with averaged_similarity(138.960403)
+(studies)	pair (YAL029c_sc, Hs4505301_hs) with sim_out_in(140.000000)
+(studies_1)	pair (YAL029c_sc, Hs4505301_hs) 
+(studies__2)	pair (YAL029c_sc, Hs4505301_hs) 
+(evaluates)	pair (YAL029c_sc, Hs4505301_hs) with averaged_similarity(139.150513)
+(inserts)	pair (YAL029c_sc, Hs4505301_hs) with averaged_similarity(139.150513)
+(studies)	pair (YAL029c_sc, Hs11024712_hs) with sim_out_in(137.698975)
+(studies_1)	pair (YAL029c_sc, Hs11024712_hs) 
+(studies__2)	pair (YAL029c_sc, Hs11024712_hs) 
+(evaluates)	pair (YAL029c_sc, Hs11024712_hs) with averaged_similarity(137.698975)
+(inserts)	pair (YAL029c_sc, Hs11024712_hs) with averaged_similarity(137.698975)
+(studies)	pair (YAL029c_sc, Hs4885503_hs) with sim_out_in(118.221848)
+(studies_1)	pair (YAL029c_sc, Hs4885503_hs) 
+(studies__2)	pair (YAL029c_sc, Hs4885503_hs) 
+(evaluates)	pair (YAL029c_sc, Hs4885503_hs) with averaged_similarity(118.133804)
+(inserts)	pair (YAL029c_sc, Hs4885503_hs) with averaged_similarity(118.133804)
+(possible_ortholog)	pair (YAL029c_sc, Hs10835119_hs) with sim_score(176.522873)
+(studies)	pair (YHR023w_sc, Hs11024712_hs) with sim_out_in(176.522873)
+(studies_1)	pair (YHR023w_sc, Hs11024712_hs) 
+(studies__2)	pair (YHR023w_sc, Hs11024712_hs) 
+(evaluates)	pair (YHR023w_sc, Hs11024712_hs) with averaged_similarity(176.522873)
+(inserts)	pair (YHR023w_sc, Hs11024712_hs) with averaged_similarity(176.522873)
+(studies)	pair (YHR023w_sc, Hs4505301_hs) with sim_out_in(176.522873)
+(studies_1)	pair (YHR023w_sc, Hs4505301_hs) 
+(studies__2)	pair (YHR023w_sc, Hs4505301_hs) 
+(evaluates)	pair (YHR023w_sc, Hs4505301_hs) with averaged_similarity(176.522873)
+(inserts)	pair (YHR023w_sc, Hs4505301_hs) with averaged_similarity(176.522873)
+(studies)	pair (YHR023w_sc, Hs10835119_hs) with sim_out_in(153.154907)
+(studies_1)	pair (YHR023w_sc, Hs10835119_hs) 
+(studies__2)	pair (YHR023w_sc, Hs10835119_hs) 
+(evaluates)	pair (YHR023w_sc, Hs10835119_hs) with averaged_similarity(154.276428)
+(inserts)	pair (YHR023w_sc, Hs10835119_hs) with averaged_similarity(154.276428)
+(studies)	pair (YHR023w_sc, Hs7705901_hs) with sim_out_in(115.397942)
+(studies_1)	pair (YHR023w_sc, Hs7705901_hs) 
+(studies__2)	pair (YHR023w_sc, Hs7705901_hs) 
+(evaluates)	pair (YHR023w_sc, Hs7705901_hs) with averaged_similarity(116.776421)
+(inserts)	pair (YHR023w_sc, Hs7705901_hs) with averaged_similarity(116.776421)
+(studies)	pair (YHR023w_sc, Hs4885503_hs) with sim_out_in(114.522881)
+(studies_1)	pair (YHR023w_sc, Hs4885503_hs) 
+(studies__2)	pair (YHR023w_sc, Hs4885503_hs) 
+(evaluates)	pair (YHR023w_sc, Hs4885503_hs) with averaged_similarity(115.338890)
+(inserts)	pair (YHR023w_sc, Hs4885503_hs) with averaged_similarity(115.338890)
+(possible_ortholog)	pair (YHR023w_sc, Hs4505301_hs) with sim_score(176.522873)
+(possible_ortholog)	pair (YHR023w_sc, Hs11024712_hs) with sim_score(176.522873)
+(studies)	pair (YKR093w_sc, Hs4827008_hs) with sim_out_in(23.000000)
+(studies_1)	pair (YKR093w_sc, Hs4827008_hs) 
+(studies__2)	pair (YKR093w_sc, Hs4827008_hs) 
+(evaluates)	pair (YKR093w_sc, Hs4827008_hs) with averaged_similarity(24.261440)
+(inserts)	pair (YKR093w_sc, Hs4827008_hs) with averaged_similarity(24.261440)
+(studies)	pair (YKR093w_sc, Hs10835271_hs) with sim_out_in(23.000000)
+(studies_1)	pair (YKR093w_sc, Hs10835271_hs) 
+(studies__2)	pair (YKR093w_sc, Hs10835271_hs) 
+(evaluates)	pair (YKR093w_sc, Hs10835271_hs) with averaged_similarity(24.000000)
+(inserts)	pair (YKR093w_sc, Hs10835271_hs) with averaged_similarity(24.000000)
+(studies)	pair (YKR093w_sc, Hs7706117_hs) with sim_out_in(24.096910)
+(studies_1)	pair (YKR093w_sc, Hs7706117_hs) 
+(studies__2)	pair (YKR093w_sc, Hs7706117_hs) 
+(evaluates)	pair (YKR093w_sc, Hs7706117_hs) with averaged_similarity(20.596910)
+(inserts)	pair (YKR093w_sc, Hs7706117_hs) with averaged_similarity(20.596910)
+(possible_ortholog)	pair (YKR093w_sc, Hs4827008_hs) with sim_score(24.261440)
+(studies)	pair (YOR326w_sc, Hs10835119_hs) with sim_out_in(176.522873)
+(studies_1)	pair (YOR326w_sc, Hs10835119_hs) 
+(studies__2)	pair (YOR326w_sc, Hs10835119_hs) 
+(evaluates)	pair (YOR326w_sc, Hs10835119_hs) with averaged_similarity(176.522873)
+(inserts)	pair (YOR326w_sc, Hs10835119_hs) with averaged_similarity(176.522873)
+(studies)	pair (YOR326w_sc, Hs7705901_hs) with sim_out_in(144.301025)
+(studies_1)	pair (YOR326w_sc, Hs7705901_hs) 
+(studies__2)	pair (YOR326w_sc, Hs7705901_hs) 
+(evaluates)	pair (YOR326w_sc, Hs7705901_hs) with averaged_similarity(144.500000)
+(inserts)	pair (YOR326w_sc, Hs7705901_hs) with averaged_similarity(144.500000)
+(studies)	pair (YOR326w_sc, Hs4505301_hs) with sim_out_in(144.301025)
+(studies_1)	pair (YOR326w_sc, Hs4505301_hs) 
+(studies__2)	pair (YOR326w_sc, Hs4505301_hs) 
+(evaluates)	pair (YOR326w_sc, Hs4505301_hs) with averaged_similarity(143.150513)
+(inserts)	pair (YOR326w_sc, Hs4505301_hs) with averaged_similarity(143.150513)
+(studies)	pair (YOR326w_sc, Hs11024712_hs) with sim_out_in(143.154907)
+(studies_1)	pair (YOR326w_sc, Hs11024712_hs) 
+(studies__2)	pair (YOR326w_sc, Hs11024712_hs) 
+(evaluates)	pair (YOR326w_sc, Hs11024712_hs) with averaged_similarity(142.276428)
+(inserts)	pair (YOR326w_sc, Hs11024712_hs) with averaged_similarity(142.276428)
+(studies)	pair (YOR326w_sc, Hs4885503_hs) with sim_out_in(119.698967)
+(studies_1)	pair (YOR326w_sc, Hs4885503_hs) 
+(studies__2)	pair (YOR326w_sc, Hs4885503_hs) 
+(evaluates)	pair (YOR326w_sc, Hs4885503_hs) with averaged_similarity(119.698967)
+(inserts)	pair (YOR326w_sc, Hs4885503_hs) with averaged_similarity(119.698967)
+(possible_ortholog)	pair (YOR326w_sc, Hs10835119_hs) with sim_score(176.522873)
+(studies)	pair (YMR109w_sc, Hs4885503_hs) with sim_out_in(151.301025)
+(studies_1)	pair (YMR109w_sc, Hs4885503_hs) 
+(studies__2)	pair (YMR109w_sc, Hs4885503_hs) 
+(evaluates)	pair (YMR109w_sc, Hs4885503_hs) with averaged_similarity(151.227966)
+(inserts)	pair (YMR109w_sc, Hs4885503_hs) with averaged_similarity(151.227966)
+(studies)	pair (YMR109w_sc, Hs7705901_hs) with sim_out_in(130.000000)
+(studies_1)	pair (YMR109w_sc, Hs7705901_hs) 
+(studies__2)	pair (YMR109w_sc, Hs7705901_hs) 
+(evaluates)	pair (YMR109w_sc, Hs7705901_hs) with averaged_similarity(130.500000)
+(inserts)	pair (YMR109w_sc, Hs7705901_hs) with averaged_similarity(130.500000)
+(studies)	pair (YMR109w_sc, Hs10835119_hs) with sim_out_in(123.096909)
+(studies_1)	pair (YMR109w_sc, Hs10835119_hs) 
+(studies__2)	pair (YMR109w_sc, Hs10835119_hs) 
+(evaluates)	pair (YMR109w_sc, Hs10835119_hs) with averaged_similarity(123.309891)
+(inserts)	pair (YMR109w_sc, Hs10835119_hs) with averaged_similarity(123.309891)
+(studies)	pair (YMR109w_sc, Hs4505301_hs) with sim_out_in(112.397942)
+(studies_1)	pair (YMR109w_sc, Hs4505301_hs) 
+(studies__2)	pair (YMR109w_sc, Hs4505301_hs) 
+(evaluates)	pair (YMR109w_sc, Hs4505301_hs) with averaged_similarity(112.397942)
+(inserts)	pair (YMR109w_sc, Hs4505301_hs) with averaged_similarity(112.397942)
+(studies)	pair (YMR109w_sc, Hs11024712_hs) with sim_out_in(111.698967)
+(studies_1)	pair (YMR109w_sc, Hs11024712_hs) 
+(studies__2)	pair (YMR109w_sc, Hs11024712_hs) 
+(evaluates)	pair (YMR109w_sc, Hs11024712_hs) with averaged_similarity(111.610924)
+(inserts)	pair (YMR109w_sc, Hs11024712_hs) with averaged_similarity(111.610924)
+(possible_ortholog)	pair (YMR109w_sc, Hs4885503_hs) with sim_score(151.227966)
+(studies)	pair (YKL129c_sc, Hs4885503_hs) with sim_out_in(146.000000)
+(studies_1)	pair (YKL129c_sc, Hs4885503_hs) 
+(studies__2)	pair (YKL129c_sc, Hs4885503_hs) 
+(evaluates)	pair (YKL129c_sc, Hs4885503_hs) with averaged_similarity(145.849487)
+(inserts)	pair (YKL129c_sc, Hs4885503_hs) with averaged_similarity(145.849487)
+(studies)	pair (YKL129c_sc, Hs7705901_hs) with sim_out_in(129.221848)
+(studies_1)	pair (YKL129c_sc, Hs7705901_hs) 
+(studies__2)	pair (YKL129c_sc, Hs7705901_hs) 
+(evaluates)	pair (YKL129c_sc, Hs7705901_hs) with averaged_similarity(129.610931)
+(inserts)	pair (YKL129c_sc, Hs7705901_hs) with averaged_similarity(129.610931)
+(studies)	pair (YKL129c_sc, Hs10835119_hs) with sim_out_in(121.522881)
+(studies_1)	pair (YKL129c_sc, Hs10835119_hs) 
+(studies__2)	pair (YKL129c_sc, Hs10835119_hs) 
+(evaluates)	pair (YKL129c_sc, Hs10835119_hs) with averaged_similarity(121.610924)
+(inserts)	pair (YKL129c_sc, Hs10835119_hs) with averaged_similarity(121.610924)
+(studies)	pair (YKL129c_sc, Hs4505301_hs) with sim_out_in(106.397942)
+(studies_1)	pair (YKL129c_sc, Hs4505301_hs) 
+(studies__2)	pair (YKL129c_sc, Hs4505301_hs) 
+(evaluates)	pair (YKL129c_sc, Hs4505301_hs) with averaged_similarity(106.048454)
+(inserts)	pair (YKL129c_sc, Hs4505301_hs) with averaged_similarity(106.048454)
+(studies)	pair (YKL129c_sc, Hs11024712_hs) with sim_out_in(104.000000)
+(studies_1)	pair (YKL129c_sc, Hs11024712_hs) 
+(studies__2)	pair (YKL129c_sc, Hs11024712_hs) 
+(evaluates)	pair (YKL129c_sc, Hs11024712_hs) with averaged_similarity(104.198975)
+(inserts)	pair (YKL129c_sc, Hs11024712_hs) with averaged_similarity(104.198975)
+(possible_ortholog)	pair (YKL129c_sc, Hs4885503_hs) with sim_score(145.849487)
+(studies)	pair (At1g11265_at, YJL113w_sc) with sim_out_in(31.698971)
+(studies_1)	pair (At1g11265_at, YJL113w_sc) 
+(studies__2)	pair (At1g11265_at, YJL113w_sc) 
+(evaluates)	pair (At1g11265_at, YJL113w_sc) with averaged_similarity(29.926937)
+(inserts)	pair (At1g11265_at, YJL113w_sc) with averaged_similarity(29.926937)
+(studies)	pair (At1g11265_at, YAR009c_sc) with sim_out_in(26.698971)
+(studies_1)	pair (At1g11265_at, YAR009c_sc) 
+(studies__2)	pair (At1g11265_at, YAR009c_sc) 
+(evaluates)	pair (At1g11265_at, YAR009c_sc) with averaged_similarity(26.849485)
+(inserts)	pair (At1g11265_at, YAR009c_sc) with averaged_similarity(26.849485)
+(possible_ortholog)	pair (At1g11265_at, YJL113w_sc) with sim_score(29.926937)
+(studies)	pair (At5g20490_at, YOR326w_sc) with sim_out_in(172.301025)
+(studies_1)	pair (At5g20490_at, YOR326w_sc) 
+(studies__2)	pair (At5g20490_at, YOR326w_sc) 
+(evaluates)	pair (At5g20490_at, YOR326w_sc) with averaged_similarity(172.227966)
+(inserts)	pair (At5g20490_at, YOR326w_sc) with averaged_similarity(172.227966)
+(studies)	pair (At5g20490_at, YAL029c_sc) with sim_out_in(156.397934)
+(studies_1)	pair (At5g20490_at, YAL029c_sc) 
+(studies__2)	pair (At5g20490_at, YAL029c_sc) 
+(evaluates)	pair (At5g20490_at, YAL029c_sc) with averaged_similarity(156.548462)
+(inserts)	pair (At5g20490_at, YAL029c_sc) with averaged_similarity(156.548462)
+(studies)	pair (At5g20490_at, YHR023w_sc) with sim_out_in(128.154907)
+(studies_1)	pair (At5g20490_at, YHR023w_sc) 
+(studies__2)	pair (At5g20490_at, YHR023w_sc) 
+(evaluates)	pair (At5g20490_at, YHR023w_sc) with averaged_similarity(127.426941)
+(inserts)	pair (At5g20490_at, YHR023w_sc) with averaged_similarity(127.426941)
+(studies)	pair (At5g20490_at, YMR109w_sc) with sim_out_in(113.000000)
+(studies_1)	pair (At5g20490_at, YMR109w_sc) 
+(studies__2)	pair (At5g20490_at, YMR109w_sc) 
+(evaluates)	pair (At5g20490_at, YMR109w_sc) with averaged_similarity(113.000000)
+(inserts)	pair (At5g20490_at, YMR109w_sc) with averaged_similarity(113.000000)
+(studies)	pair (At5g20490_at, YKL129c_sc) with sim_out_in(109.522881)
+(studies_1)	pair (At5g20490_at, YKL129c_sc) 
+(studies__2)	pair (At5g20490_at, YKL129c_sc) 
+(evaluates)	pair (At5g20490_at, YKL129c_sc) with averaged_similarity(109.522881)
+(inserts)	pair (At5g20490_at, YKL129c_sc) with averaged_similarity(109.522881)
+(possible_ortholog)	pair (At5g20490_at, YOR326w_sc) with sim_score(172.227966)
+(studies)	pair (At5g46040_at, YKR093w_sc) with sim_out_in(19.000000)
+(studies_1)	pair (At5g46040_at, YKR093w_sc) 
+(studies__2)	pair (At5g46040_at, YKR093w_sc) 
+(evaluates)	pair (At5g46040_at, YKR093w_sc) with averaged_similarity(18.650515)
+(inserts)	pair (At5g46040_at, YKR093w_sc) with averaged_similarity(18.650515)
+(possible_ortholog)	pair (At5g46040_at, YKR093w_sc) with sim_score(18.650515)
+(studies)	pair (At5g54280_at, YOR326w_sc) with sim_out_in(154.154907)
+(studies_1)	pair (At5g54280_at, YOR326w_sc) 
+(studies__2)	pair (At5g54280_at, YOR326w_sc) 
+(evaluates)	pair (At5g54280_at, YOR326w_sc) with averaged_similarity(154.154907)
+(inserts)	pair (At5g54280_at, YOR326w_sc) with averaged_similarity(154.154907)
+(studies)	pair (At5g54280_at, YAL029c_sc) with sim_out_in(145.301025)
+(studies_1)	pair (At5g54280_at, YAL029c_sc) 
+(studies__2)	pair (At5g54280_at, YAL029c_sc) 
+(evaluates)	pair (At5g54280_at, YAL029c_sc) with averaged_similarity(145.349487)
+(inserts)	pair (At5g54280_at, YAL029c_sc) with averaged_similarity(145.349487)
+(studies)	pair (At5g54280_at, YHR023w_sc) with sim_out_in(139.301025)
+(studies_1)	pair (At5g54280_at, YHR023w_sc) 
+(studies__2)	pair (At5g54280_at, YHR023w_sc) 
+(evaluates)	pair (At5g54280_at, YHR023w_sc) with averaged_similarity(137.500000)
+(inserts)	pair (At5g54280_at, YHR023w_sc) with averaged_similarity(137.500000)
+(studies)	pair (At5g54280_at, YKL129c_sc) with sim_out_in(117.000000)
+(studies_1)	pair (At5g54280_at, YKL129c_sc) 
+(studies__2)	pair (At5g54280_at, YKL129c_sc) 
+(evaluates)	pair (At5g54280_at, YKL129c_sc) with averaged_similarity(116.849487)
+(inserts)	pair (At5g54280_at, YKL129c_sc) with averaged_similarity(116.849487)
+(studies)	pair (At5g54280_at, YMR109w_sc) with sim_out_in(116.301033)
+(studies_1)	pair (At5g54280_at, YMR109w_sc) 
+(studies__2)	pair (At5g54280_at, YMR109w_sc) 
+(evaluates)	pair (At5g54280_at, YMR109w_sc) with averaged_similarity(116.301033)
+(inserts)	pair (At5g54280_at, YMR109w_sc) with averaged_similarity(116.301033)
+(possible_ortholog)	pair (At5g54280_at, YOR326w_sc) with sim_score(154.154907)
+(studies)	pair (At1g04160_at, YOR326w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (At1g04160_at, YOR326w_sc) 
+(studies__2)	pair (At1g04160_at, YOR326w_sc) 
+(evaluates)	pair (At1g04160_at, YOR326w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (At1g04160_at, YOR326w_sc) with averaged_similarity(176.522873)
+(studies)	pair (At1g04160_at, YAL029c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (At1g04160_at, YAL029c_sc) 
+(studies__2)	pair (At1g04160_at, YAL029c_sc) 
+(evaluates)	pair (At1g04160_at, YAL029c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (At1g04160_at, YAL029c_sc) with averaged_similarity(176.522873)
+(studies)	pair (At1g04160_at, YHR023w_sc) with sim_out_in(144.000000)
+(studies_1)	pair (At1g04160_at, YHR023w_sc) 
+(studies__2)	pair (At1g04160_at, YHR023w_sc) 
+(evaluates)	pair (At1g04160_at, YHR023w_sc) with averaged_similarity(143.048462)
+(inserts)	pair (At1g04160_at, YHR023w_sc) with averaged_similarity(143.048462)
+(studies)	pair (At1g04160_at, YMR109w_sc) with sim_out_in(129.301025)
+(studies_1)	pair (At1g04160_at, YMR109w_sc) 
+(studies__2)	pair (At1g04160_at, YMR109w_sc) 
+(evaluates)	pair (At1g04160_at, YMR109w_sc) with averaged_similarity(129.227966)
+(inserts)	pair (At1g04160_at, YMR109w_sc) with averaged_similarity(129.227966)
+(studies)	pair (At1g04160_at, YKL129c_sc) with sim_out_in(124.000000)
+(studies_1)	pair (At1g04160_at, YKL129c_sc) 
+(studies__2)	pair (At1g04160_at, YKL129c_sc) 
+(evaluates)	pair (At1g04160_at, YKL129c_sc) with averaged_similarity(124.022881)
+(inserts)	pair (At1g04160_at, YKL129c_sc) with averaged_similarity(124.022881)
+(possible_ortholog)	pair (At1g04160_at, YAL029c_sc) with sim_score(176.522873)
+(possible_ortholog)	pair (At1g04160_at, YOR326w_sc) with sim_score(176.522873)
+(studies)	pair (At5g20490_at, Hs10835119_hs) with sim_out_in(176.522873)
+(studies_1)	pair (At5g20490_at, Hs10835119_hs) 
+(studies__2)	pair (At5g20490_at, Hs10835119_hs) 
+(evaluates)	pair (At5g20490_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(inserts)	pair (At5g20490_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(studies)	pair (At5g20490_at, Hs7705901_hs) with sim_out_in(140.000000)
+(studies_1)	pair (At5g20490_at, Hs7705901_hs) 
+(studies__2)	pair (At5g20490_at, Hs7705901_hs) 
+(evaluates)	pair (At5g20490_at, Hs7705901_hs) with averaged_similarity(140.349487)
+(inserts)	pair (At5g20490_at, Hs7705901_hs) with averaged_similarity(140.349487)
+(studies)	pair (At5g20490_at, Hs11024712_hs) with sim_out_in(126.045761)
+(studies_1)	pair (At5g20490_at, Hs11024712_hs) 
+(studies__2)	pair (At5g20490_at, Hs11024712_hs) 
+(evaluates)	pair (At5g20490_at, Hs11024712_hs) with averaged_similarity(126.522881)
+(inserts)	pair (At5g20490_at, Hs11024712_hs) with averaged_similarity(126.522881)
+(studies)	pair (At5g20490_at, Hs4505301_hs) with sim_out_in(126.522881)
+(studies_1)	pair (At5g20490_at, Hs4505301_hs) 
+(studies__2)	pair (At5g20490_at, Hs4505301_hs) 
+(evaluates)	pair (At5g20490_at, Hs4505301_hs) with averaged_similarity(126.284317)
+(inserts)	pair (At5g20490_at, Hs4505301_hs) with averaged_similarity(126.284317)
+(studies)	pair (At5g20490_at, Hs4885503_hs) with sim_out_in(119.698967)
+(studies_1)	pair (At5g20490_at, Hs4885503_hs) 
+(studies__2)	pair (At5g20490_at, Hs4885503_hs) 
+(evaluates)	pair (At5g20490_at, Hs4885503_hs) with averaged_similarity(119.698967)
+(inserts)	pair (At5g20490_at, Hs4885503_hs) with averaged_similarity(119.698967)
+(possible_ortholog)	pair (At5g20490_at, Hs10835119_hs) with sim_score(176.522873)
+(studies)	pair (At5g46040_at, Hs7706117_hs) with sim_out_in(39.045757)
+(studies_1)	pair (At5g46040_at, Hs7706117_hs) 
+(studies__2)	pair (At5g46040_at, Hs7706117_hs) 
+(evaluates)	pair (At5g46040_at, Hs7706117_hs) with averaged_similarity(36.545757)
+(inserts)	pair (At5g46040_at, Hs7706117_hs) with averaged_similarity(36.545757)
+(studies)	pair (At5g46040_at, Hs4827008_hs) with sim_out_in(23.096910)
+(studies_1)	pair (At5g46040_at, Hs4827008_hs) 
+(studies__2)	pair (At5g46040_at, Hs4827008_hs) 
+(evaluates)	pair (At5g46040_at, Hs4827008_hs) with averaged_similarity(24.397942)
+(inserts)	pair (At5g46040_at, Hs4827008_hs) with averaged_similarity(24.397942)
+(studies)	pair (At5g46040_at, Hs10835271_hs) with sim_out_in(22.096910)
+(studies_1)	pair (At5g46040_at, Hs10835271_hs) 
+(studies__2)	pair (At5g46040_at, Hs10835271_hs) 
+(evaluates)	pair (At5g46040_at, Hs10835271_hs) with averaged_similarity(22.596910)
+(inserts)	pair (At5g46040_at, Hs10835271_hs) with averaged_similarity(22.596910)
+(possible_ortholog)	pair (At5g46040_at, Hs7706117_hs) with sim_score(36.545757)
+(studies)	pair (At5g54280_at, Hs10835119_hs) with sim_out_in(173.045761)
+(studies_1)	pair (At5g54280_at, Hs10835119_hs) 
+(studies__2)	pair (At5g54280_at, Hs10835119_hs) 
+(evaluates)	pair (At5g54280_at, Hs10835119_hs) with averaged_similarity(173.173401)
+(inserts)	pair (At5g54280_at, Hs10835119_hs) with averaged_similarity(173.173401)
+(studies)	pair (At5g54280_at, Hs4505301_hs) with sim_out_in(147.221848)
+(studies_1)	pair (At5g54280_at, Hs4505301_hs) 
+(studies__2)	pair (At5g54280_at, Hs4505301_hs) 
+(evaluates)	pair (At5g54280_at, Hs4505301_hs) with averaged_similarity(146.960419)
+(inserts)	pair (At5g54280_at, Hs4505301_hs) with averaged_similarity(146.960419)
+(studies)	pair (At5g54280_at, Hs7705901_hs) with sim_out_in(143.000000)
+(studies_1)	pair (At5g54280_at, Hs7705901_hs) 
+(studies__2)	pair (At5g54280_at, Hs7705901_hs) 
+(evaluates)	pair (At5g54280_at, Hs7705901_hs) with averaged_similarity(143.349487)
+(inserts)	pair (At5g54280_at, Hs7705901_hs) with averaged_similarity(143.349487)
+(studies)	pair (At5g54280_at, Hs11024712_hs) with sim_out_in(142.698975)
+(studies_1)	pair (At5g54280_at, Hs11024712_hs) 
+(studies__2)	pair (At5g54280_at, Hs11024712_hs) 
+(evaluates)	pair (At5g54280_at, Hs11024712_hs) with averaged_similarity(142.849487)
+(inserts)	pair (At5g54280_at, Hs11024712_hs) with averaged_similarity(142.849487)
+(studies)	pair (At5g54280_at, Hs4885503_hs) with sim_out_in(125.154900)
+(studies_1)	pair (At5g54280_at, Hs4885503_hs) 
+(studies__2)	pair (At5g54280_at, Hs4885503_hs) 
+(evaluates)	pair (At5g54280_at, Hs4885503_hs) with averaged_similarity(125.154900)
+(inserts)	pair (At5g54280_at, Hs4885503_hs) with averaged_similarity(125.154900)
+(possible_ortholog)	pair (At5g54280_at, Hs10835119_hs) with sim_score(173.173401)
+(studies)	pair (At3g45690_at, Hs4827008_hs) with sim_out_in(14.698970)
+(studies_1)	pair (At3g45690_at, Hs4827008_hs) 
+(studies__2)	pair (At3g45690_at, Hs4827008_hs) 
+(evaluates)	pair (At3g45690_at, Hs4827008_hs) with averaged_similarity(14.849485)
+(inserts)	pair (At3g45690_at, Hs4827008_hs) with averaged_similarity(14.849485)
+(studies)	pair (At3g45690_at, Hs10835271_hs) with sim_out_in(12.301030)
+(studies_1)	pair (At3g45690_at, Hs10835271_hs) 
+(studies__2)	pair (At3g45690_at, Hs10835271_hs) 
+(evaluates)	pair (At3g45690_at, Hs10835271_hs) with averaged_similarity(12.411955)
+(inserts)	pair (At3g45690_at, Hs10835271_hs) with averaged_similarity(12.411955)
+(studies)	pair (At3g45690_at, Hs7706117_hs) with sim_out_in(18.000000)
+(studies_1)	pair (At3g45690_at, Hs7706117_hs) 
+(studies__2)	pair (At3g45690_at, Hs7706117_hs) 
+(evaluates)	pair (At3g45690_at, Hs7706117_hs) with averaged_similarity(14.261439)
+(inserts)	pair (At3g45690_at, Hs7706117_hs) with averaged_similarity(14.261439)
+(possible_ortholog)	pair (At3g45690_at, Hs4827008_hs) with sim_score(14.849485)
+(studies)	pair (At1g01280_at, Hs4503231_hs) with sim_out_in(33.522881)
+(studies_1)	pair (At1g01280_at, Hs4503231_hs) 
+(studies__2)	pair (At1g01280_at, Hs4503231_hs) 
+(evaluates)	pair (At1g01280_at, Hs4503231_hs) with averaged_similarity(34.911957)
+(inserts)	pair (At1g01280_at, Hs4503231_hs) with averaged_similarity(34.911957)
+(studies)	pair (At1g01280_at, Hs10834998_hs) with sim_out_in(30.698971)
+(studies_1)	pair (At1g01280_at, Hs10834998_hs) 
+(studies__2)	pair (At1g01280_at, Hs10834998_hs) 
+(evaluates)	pair (At1g01280_at, Hs10834998_hs) with averaged_similarity(33.460411)
+(inserts)	pair (At1g01280_at, Hs10834998_hs) with averaged_similarity(33.460411)
+(studies)	pair (At1g01280_at, Hs13699816_hs) with sim_out_in(29.522879)
+(studies_1)	pair (At1g01280_at, Hs13699816_hs) 
+(studies__2)	pair (At1g01280_at, Hs13699816_hs) 
+(evaluates)	pair (At1g01280_at, Hs13699816_hs) with averaged_similarity(31.610924)
+(inserts)	pair (At1g01280_at, Hs13699816_hs) with averaged_similarity(31.610924)
+(studies)	pair (At1g01280_at, Hs13699809_hs) with sim_out_in(26.096910)
+(studies_1)	pair (At1g01280_at, Hs13699809_hs) 
+(studies__2)	pair (At1g01280_at, Hs13699809_hs) 
+(evaluates)	pair (At1g01280_at, Hs13699809_hs) with averaged_similarity(28.397942)
+(inserts)	pair (At1g01280_at, Hs13699809_hs) with averaged_similarity(28.397942)
+(studies)	pair (At1g01280_at, Hs7949031_hs) with sim_out_in(25.000000)
+(studies_1)	pair (At1g01280_at, Hs7949031_hs) 
+(studies__2)	pair (At1g01280_at, Hs7949031_hs) 
+(evaluates)	pair (At1g01280_at, Hs7949031_hs) with averaged_similarity(24.150515)
+(inserts)	pair (At1g01280_at, Hs7949031_hs) with averaged_similarity(24.150515)
+(studies)	pair (At1g01280_at, Hs13449277_hs) with sim_out_in(25.154902)
+(studies_1)	pair (At1g01280_at, Hs13449277_hs) 
+(studies__2)	pair (At1g01280_at, Hs13449277_hs) 
+(evaluates)	pair (At1g01280_at, Hs13449277_hs) with averaged_similarity(23.727966)
+(inserts)	pair (At1g01280_at, Hs13449277_hs) with averaged_similarity(23.727966)
+(studies)	pair (At1g01280_at, Hs4507383_hs) with sim_out_in(12.698970)
+(studies_1)	pair (At1g01280_at, Hs4507383_hs) 
+(studies__2)	pair (At1g01280_at, Hs4507383_hs) 
+(evaluates)	pair (At1g01280_at, Hs4507383_hs) with averaged_similarity(12.849485)
+(inserts)	pair (At1g01280_at, Hs4507383_hs) with averaged_similarity(12.849485)
+(possible_ortholog)	pair (At1g01280_at, Hs4503231_hs) with sim_score(34.911957)
+(studies)	pair (At1g11600_at, Hs13699809_hs) with sim_out_in(28.301029)
+(studies_1)	pair (At1g11600_at, Hs13699809_hs) 
+(studies__2)	pair (At1g11600_at, Hs13699809_hs) 
+(evaluates)	pair (At1g11600_at, Hs13699809_hs) with averaged_similarity(29.849483)
+(inserts)	pair (At1g11600_at, Hs13699809_hs) with averaged_similarity(29.849483)
+(studies)	pair (At1g11600_at, Hs10834998_hs) with sim_out_in(27.522879)
+(studies_1)	pair (At1g11600_at, Hs10834998_hs) 
+(studies__2)	pair (At1g11600_at, Hs10834998_hs) 
+(evaluates)	pair (At1g11600_at, Hs10834998_hs) with averaged_similarity(28.784317)
+(inserts)	pair (At1g11600_at, Hs10834998_hs) with averaged_similarity(28.784317)
+(studies)	pair (At1g11600_at, Hs4503231_hs) with sim_out_in(27.397940)
+(studies_1)	pair (At1g11600_at, Hs4503231_hs) 
+(studies__2)	pair (At1g11600_at, Hs4503231_hs) 
+(evaluates)	pair (At1g11600_at, Hs4503231_hs) with averaged_similarity(28.048454)
+(inserts)	pair (At1g11600_at, Hs4503231_hs) with averaged_similarity(28.048454)
+(studies)	pair (At1g11600_at, Hs4507383_hs) with sim_out_in(23.698971)
+(studies_1)	pair (At1g11600_at, Hs4507383_hs) 
+(studies__2)	pair (At1g11600_at, Hs4507383_hs) 
+(evaluates)	pair (At1g11600_at, Hs4507383_hs) with averaged_similarity(24.110924)
+(inserts)	pair (At1g11600_at, Hs4507383_hs) with averaged_similarity(24.110924)
+(studies)	pair (At1g11600_at, Hs7949031_hs) with sim_out_in(27.397940)
+(studies_1)	pair (At1g11600_at, Hs7949031_hs) 
+(studies__2)	pair (At1g11600_at, Hs7949031_hs) 
+(evaluates)	pair (At1g11600_at, Hs7949031_hs) with averaged_similarity(25.809895)
+(inserts)	pair (At1g11600_at, Hs7949031_hs) with averaged_similarity(25.809895)
+(studies)	pair (At1g11600_at, Hs13699816_hs) with sim_out_in(23.221849)
+(studies_1)	pair (At1g11600_at, Hs13699816_hs) 
+(studies__2)	pair (At1g11600_at, Hs13699816_hs) 
+(evaluates)	pair (At1g11600_at, Hs13699816_hs) with averaged_similarity(23.460411)
+(inserts)	pair (At1g11600_at, Hs13699816_hs) with averaged_similarity(23.460411)
+(studies)	pair (At1g11600_at, Hs13449277_hs) with sim_out_in(21.000000)
+(studies_1)	pair (At1g11600_at, Hs13449277_hs) 
+(studies__2)	pair (At1g11600_at, Hs13449277_hs) 
+(evaluates)	pair (At1g11600_at, Hs13449277_hs) with averaged_similarity(19.048454)
+(inserts)	pair (At1g11600_at, Hs13449277_hs) with averaged_similarity(19.048454)
+(studies)	pair (At1g11600_at, Hs13699840_hs) with sim_out_in(15.096910)
+(studies_1)	pair (At1g11600_at, Hs13699840_hs) 
+(studies__2)	pair (At1g11600_at, Hs13699840_hs) 
+(evaluates)	pair (At1g11600_at, Hs13699840_hs) with averaged_similarity(15.548455)
+(inserts)	pair (At1g11600_at, Hs13699840_hs) with averaged_similarity(15.548455)
+(possible_ortholog)	pair (At1g11600_at, Hs13699809_hs) with sim_score(29.849483)
+(studies)	pair (At1g04160_at, Hs10835119_hs) with sim_out_in(176.522873)
+(studies_1)	pair (At1g04160_at, Hs10835119_hs) 
+(studies__2)	pair (At1g04160_at, Hs10835119_hs) 
+(evaluates)	pair (At1g04160_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(inserts)	pair (At1g04160_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(studies)	pair (At1g04160_at, Hs7705901_hs) with sim_out_in(159.154907)
+(studies_1)	pair (At1g04160_at, Hs7705901_hs) 
+(studies__2)	pair (At1g04160_at, Hs7705901_hs) 
+(evaluates)	pair (At1g04160_at, Hs7705901_hs) with averaged_similarity(159.426941)
+(inserts)	pair (At1g04160_at, Hs7705901_hs) with averaged_similarity(159.426941)
+(studies)	pair (At1g04160_at, Hs4505301_hs) with sim_out_in(150.522873)
+(studies_1)	pair (At1g04160_at, Hs4505301_hs) 
+(studies__2)	pair (At1g04160_at, Hs4505301_hs) 
+(evaluates)	pair (At1g04160_at, Hs4505301_hs) with averaged_similarity(149.110931)
+(inserts)	pair (At1g04160_at, Hs4505301_hs) with averaged_similarity(149.110931)
+(studies)	pair (At1g04160_at, Hs11024712_hs) with sim_out_in(145.301025)
+(studies_1)	pair (At1g04160_at, Hs11024712_hs) 
+(studies__2)	pair (At1g04160_at, Hs11024712_hs) 
+(evaluates)	pair (At1g04160_at, Hs11024712_hs) with averaged_similarity(145.000000)
+(inserts)	pair (At1g04160_at, Hs11024712_hs) with averaged_similarity(145.000000)
+(studies)	pair (At1g04160_at, Hs4885503_hs) with sim_out_in(142.000000)
+(studies_1)	pair (At1g04160_at, Hs4885503_hs) 
+(studies__2)	pair (At1g04160_at, Hs4885503_hs) 
+(evaluates)	pair (At1g04160_at, Hs4885503_hs) with averaged_similarity(141.849487)
+(inserts)	pair (At1g04160_at, Hs4885503_hs) with averaged_similarity(141.849487)
+(possible_ortholog)	pair (At1g04160_at, Hs10835119_hs) with sim_score(176.522873)
+(studies)	pair (At1g01190_at, Hs10834998_hs) with sim_out_in(27.397940)
+(studies_1)	pair (At1g01190_at, Hs10834998_hs) 
+(studies__2)	pair (At1g01190_at, Hs10834998_hs) 
+(evaluates)	pair (At1g01190_at, Hs10834998_hs) with averaged_similarity(27.397940)
+(inserts)	pair (At1g01190_at, Hs10834998_hs) with averaged_similarity(27.397940)
+(studies)	pair (At1g01190_at, Hs13699809_hs) with sim_out_in(27.301029)
+(studies_1)	pair (At1g01190_at, Hs13699809_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699809_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699809_hs) with averaged_similarity(27.301029)
+(inserts)	pair (At1g01190_at, Hs13699809_hs) with averaged_similarity(27.301029)
+(studies)	pair (At1g01190_at, Hs4503231_hs) with sim_out_in(23.000000)
+(studies_1)	pair (At1g01190_at, Hs4503231_hs) 
+(studies__2)	pair (At1g01190_at, Hs4503231_hs) 
+(evaluates)	pair (At1g01190_at, Hs4503231_hs) with averaged_similarity(23.000000)
+(inserts)	pair (At1g01190_at, Hs4503231_hs) with averaged_similarity(23.000000)
+(studies)	pair (At1g01190_at, Hs13449277_hs) with sim_out_in(20.522879)
+(studies_1)	pair (At1g01190_at, Hs13449277_hs) 
+(studies__2)	pair (At1g01190_at, Hs13449277_hs) 
+(evaluates)	pair (At1g01190_at, Hs13449277_hs) with averaged_similarity(19.809895)
+(inserts)	pair (At1g01190_at, Hs13449277_hs) with averaged_similarity(19.809895)
+(studies)	pair (At1g01190_at, Hs7949031_hs) with sim_out_in(20.522879)
+(studies_1)	pair (At1g01190_at, Hs7949031_hs) 
+(studies__2)	pair (At1g01190_at, Hs7949031_hs) 
+(evaluates)	pair (At1g01190_at, Hs7949031_hs) with averaged_similarity(19.761440)
+(inserts)	pair (At1g01190_at, Hs7949031_hs) with averaged_similarity(19.761440)
+(studies)	pair (At1g01190_at, Hs13699816_hs) with sim_out_in(19.301029)
+(studies_1)	pair (At1g01190_at, Hs13699816_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699816_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699816_hs) with averaged_similarity(18.801029)
+(inserts)	pair (At1g01190_at, Hs13699816_hs) with averaged_similarity(18.801029)
+(studies)	pair (At1g01190_at, Hs4507383_hs) with sim_out_in(15.522879)
+(studies_1)	pair (At1g01190_at, Hs4507383_hs) 
+(studies__2)	pair (At1g01190_at, Hs4507383_hs) 
+(evaluates)	pair (At1g01190_at, Hs4507383_hs) with averaged_similarity(15.522879)
+(inserts)	pair (At1g01190_at, Hs4507383_hs) with averaged_similarity(15.522879)
+(studies)	pair (At1g01190_at, Hs13699840_hs) with sim_out_in(8.522879)
+(studies_1)	pair (At1g01190_at, Hs13699840_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699840_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699840_hs) with averaged_similarity(8.460409)
+(inserts)	pair (At1g01190_at, Hs13699840_hs) with averaged_similarity(8.460409)
+(possible_ortholog)	pair (At1g01190_at, Hs10834998_hs) with sim_score(27.397940)
+(studies)	pair (At3g19960_at, YOR326w_sc) with sim_out_in(163.698975)
+(studies_1)	pair (At3g19960_at, YOR326w_sc) 
+(studies__2)	pair (At3g19960_at, YOR326w_sc) 
+(evaluates)	pair (At3g19960_at, YOR326w_sc) with averaged_similarity(163.849487)
+(inserts)	pair (At3g19960_at, YOR326w_sc) with averaged_similarity(163.849487)
+(studies)	pair (At3g19960_at, YAL029c_sc) with sim_out_in(156.397934)
+(studies_1)	pair (At3g19960_at, YAL029c_sc) 
+(studies__2)	pair (At3g19960_at, YAL029c_sc) 
+(evaluates)	pair (At3g19960_at, YAL029c_sc) with averaged_similarity(156.460403)
+(inserts)	pair (At3g19960_at, YAL029c_sc) with averaged_similarity(156.460403)
+(studies)	pair (At3g19960_at, YHR023w_sc) with sim_out_in(139.154907)
+(studies_1)	pair (At3g19960_at, YHR023w_sc) 
+(studies__2)	pair (At3g19960_at, YHR023w_sc) 
+(evaluates)	pair (At3g19960_at, YHR023w_sc) with averaged_similarity(138.188385)
+(inserts)	pair (At3g19960_at, YHR023w_sc) with averaged_similarity(138.188385)
+(studies)	pair (At3g19960_at, YMR109w_sc) with sim_out_in(119.301033)
+(studies_1)	pair (At3g19960_at, YMR109w_sc) 
+(studies__2)	pair (At3g19960_at, YMR109w_sc) 
+(evaluates)	pair (At3g19960_at, YMR109w_sc) with averaged_similarity(119.227966)
+(inserts)	pair (At3g19960_at, YMR109w_sc) with averaged_similarity(119.227966)
+(studies)	pair (At3g19960_at, YKL129c_sc) with sim_out_in(118.301033)
+(studies_1)	pair (At3g19960_at, YKL129c_sc) 
+(studies__2)	pair (At3g19960_at, YKL129c_sc) 
+(evaluates)	pair (At3g19960_at, YKL129c_sc) with averaged_similarity(118.261444)
+(inserts)	pair (At3g19960_at, YKL129c_sc) with averaged_similarity(118.261444)
+(possible_ortholog)	pair (At3g19960_at, YOR326w_sc) with sim_score(163.849487)
+(studies)	pair (At1g01190_at, Hs10834998_hs) with sim_out_in(27.397940)
+(studies_1)	pair (At1g01190_at, Hs10834998_hs) 
+(studies__2)	pair (At1g01190_at, Hs10834998_hs) 
+(evaluates)	pair (At1g01190_at, Hs10834998_hs) with averaged_similarity(27.397940)
+(inserts)	pair (At1g01190_at, Hs10834998_hs) with averaged_similarity(27.397940)
+(studies)	pair (At1g01190_at, Hs13699809_hs) with sim_out_in(27.301029)
+(studies_1)	pair (At1g01190_at, Hs13699809_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699809_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699809_hs) with averaged_similarity(27.301029)
+(inserts)	pair (At1g01190_at, Hs13699809_hs) with averaged_similarity(27.301029)
+(studies)	pair (At1g01190_at, Hs4503231_hs) with sim_out_in(23.000000)
+(studies_1)	pair (At1g01190_at, Hs4503231_hs) 
+(studies__2)	pair (At1g01190_at, Hs4503231_hs) 
+(evaluates)	pair (At1g01190_at, Hs4503231_hs) with averaged_similarity(23.000000)
+(inserts)	pair (At1g01190_at, Hs4503231_hs) with averaged_similarity(23.000000)
+(studies)	pair (At1g01190_at, Hs13449277_hs) with sim_out_in(20.522879)
+(studies_1)	pair (At1g01190_at, Hs13449277_hs) 
+(studies__2)	pair (At1g01190_at, Hs13449277_hs) 
+(evaluates)	pair (At1g01190_at, Hs13449277_hs) with averaged_similarity(19.809895)
+(inserts)	pair (At1g01190_at, Hs13449277_hs) with averaged_similarity(19.809895)
+(studies)	pair (At1g01190_at, Hs7949031_hs) with sim_out_in(20.522879)
+(studies_1)	pair (At1g01190_at, Hs7949031_hs) 
+(studies__2)	pair (At1g01190_at, Hs7949031_hs) 
+(evaluates)	pair (At1g01190_at, Hs7949031_hs) with averaged_similarity(19.761440)
+(inserts)	pair (At1g01190_at, Hs7949031_hs) with averaged_similarity(19.761440)
+(studies)	pair (At1g01190_at, Hs13699816_hs) with sim_out_in(19.301029)
+(studies_1)	pair (At1g01190_at, Hs13699816_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699816_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699816_hs) with averaged_similarity(18.801029)
+(inserts)	pair (At1g01190_at, Hs13699816_hs) with averaged_similarity(18.801029)
+(studies)	pair (At1g01190_at, Hs4507383_hs) with sim_out_in(15.522879)
+(studies_1)	pair (At1g01190_at, Hs4507383_hs) 
+(studies__2)	pair (At1g01190_at, Hs4507383_hs) 
+(evaluates)	pair (At1g01190_at, Hs4507383_hs) with averaged_similarity(15.522879)
+(inserts)	pair (At1g01190_at, Hs4507383_hs) with averaged_similarity(15.522879)
+(studies)	pair (At1g01190_at, Hs13699840_hs) with sim_out_in(8.522879)
+(studies_1)	pair (At1g01190_at, Hs13699840_hs) 
+(studies__2)	pair (At1g01190_at, Hs13699840_hs) 
+(evaluates)	pair (At1g01190_at, Hs13699840_hs) with averaged_similarity(8.460409)
+(inserts)	pair (At1g01190_at, Hs13699840_hs) with averaged_similarity(8.460409)
+(possible_ortholog)	pair (At1g01190_at, Hs10834998_hs) with sim_score(27.397940)
+(studies)	pair (At3g19960_at, Hs10835119_hs) with sim_out_in(176.522873)
+(studies_1)	pair (At3g19960_at, Hs10835119_hs) 
+(studies__2)	pair (At3g19960_at, Hs10835119_hs) 
+(evaluates)	pair (At3g19960_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(inserts)	pair (At3g19960_at, Hs10835119_hs) with averaged_similarity(176.522873)
+(studies)	pair (At3g19960_at, Hs4505301_hs) with sim_out_in(154.301025)
+(studies_1)	pair (At3g19960_at, Hs4505301_hs) 
+(studies__2)	pair (At3g19960_at, Hs4505301_hs) 
+(evaluates)	pair (At3g19960_at, Hs4505301_hs) with averaged_similarity(153.727966)
+(inserts)	pair (At3g19960_at, Hs4505301_hs) with averaged_similarity(153.727966)
+(studies)	pair (At3g19960_at, Hs7705901_hs) with sim_out_in(151.522873)
+(studies_1)	pair (At3g19960_at, Hs7705901_hs) 
+(studies__2)	pair (At3g19960_at, Hs7705901_hs) 
+(evaluates)	pair (At3g19960_at, Hs7705901_hs) with averaged_similarity(151.784317)
+(inserts)	pair (At3g19960_at, Hs7705901_hs) with averaged_similarity(151.784317)
+(studies)	pair (At3g19960_at, Hs11024712_hs) with sim_out_in(150.522873)
+(studies_1)	pair (At3g19960_at, Hs11024712_hs) 
+(studies__2)	pair (At3g19960_at, Hs11024712_hs) 
+(evaluates)	pair (At3g19960_at, Hs11024712_hs) with averaged_similarity(150.522873)
+(inserts)	pair (At3g19960_at, Hs11024712_hs) with averaged_similarity(150.522873)
+(studies)	pair (At3g19960_at, Hs4885503_hs) with sim_out_in(128.000000)
+(studies_1)	pair (At3g19960_at, Hs4885503_hs) 
+(studies__2)	pair (At3g19960_at, Hs4885503_hs) 
+(evaluates)	pair (At3g19960_at, Hs4885503_hs) with averaged_similarity(128.000000)
+(inserts)	pair (At3g19960_at, Hs4885503_hs) with averaged_similarity(128.000000)
+(possible_ortholog)	pair (At3g19960_at, Hs10835119_hs) with sim_score(176.522873)
+(studies)	pair (Hs7706117_hs, YKR093w_sc) with sim_out_in(17.096910)
+(studies_1)	pair (Hs7706117_hs, YKR093w_sc) 
+(studies__2)	pair (Hs7706117_hs, YKR093w_sc) 
+(evaluates)	pair (Hs7706117_hs, YKR093w_sc) with averaged_similarity(20.596910)
+(inserts)	pair (Hs7706117_hs, YKR093w_sc) with averaged_similarity(20.596910)
+(possible_ortholog)	pair (Hs7706117_hs, YKR093w_sc) with sim_score(20.596910)
+(studies)	pair (Hs4827008_hs, YKR093w_sc) with sim_out_in(25.522879)
+(studies_1)	pair (Hs4827008_hs, YKR093w_sc) 
+(studies__2)	pair (Hs4827008_hs, YKR093w_sc) 
+(evaluates)	pair (Hs4827008_hs, YKR093w_sc) with averaged_similarity(24.261440)
+(inserts)	pair (Hs4827008_hs, YKR093w_sc) with averaged_similarity(24.261440)
+(possible_ortholog)	pair (Hs4827008_hs, YKR093w_sc) with sim_score(24.261440)
+(studies)	pair (Hs11024712_hs, YHR023w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (Hs11024712_hs, YHR023w_sc) 
+(studies__2)	pair (Hs11024712_hs, YHR023w_sc) 
+(evaluates)	pair (Hs11024712_hs, YHR023w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (Hs11024712_hs, YHR023w_sc) with averaged_similarity(176.522873)
+(studies)	pair (Hs11024712_hs, YOR326w_sc) with sim_out_in(141.397934)
+(studies_1)	pair (Hs11024712_hs, YOR326w_sc) 
+(studies__2)	pair (Hs11024712_hs, YOR326w_sc) 
+(evaluates)	pair (Hs11024712_hs, YOR326w_sc) with averaged_similarity(142.276428)
+(inserts)	pair (Hs11024712_hs, YOR326w_sc) with averaged_similarity(142.276428)
+(studies)	pair (Hs11024712_hs, YAL029c_sc) with sim_out_in(137.698975)
+(studies_1)	pair (Hs11024712_hs, YAL029c_sc) 
+(studies__2)	pair (Hs11024712_hs, YAL029c_sc) 
+(evaluates)	pair (Hs11024712_hs, YAL029c_sc) with averaged_similarity(137.698975)
+(inserts)	pair (Hs11024712_hs, YAL029c_sc) with averaged_similarity(137.698975)
+(studies)	pair (Hs11024712_hs, YMR109w_sc) with sim_out_in(111.522881)
+(studies_1)	pair (Hs11024712_hs, YMR109w_sc) 
+(studies__2)	pair (Hs11024712_hs, YMR109w_sc) 
+(evaluates)	pair (Hs11024712_hs, YMR109w_sc) with averaged_similarity(111.610924)
+(inserts)	pair (Hs11024712_hs, YMR109w_sc) with averaged_similarity(111.610924)
+(studies)	pair (Hs11024712_hs, YKL129c_sc) with sim_out_in(104.397942)
+(studies_1)	pair (Hs11024712_hs, YKL129c_sc) 
+(studies__2)	pair (Hs11024712_hs, YKL129c_sc) 
+(evaluates)	pair (Hs11024712_hs, YKL129c_sc) with averaged_similarity(104.198975)
+(inserts)	pair (Hs11024712_hs, YKL129c_sc) with averaged_similarity(104.198975)
+(possible_ortholog)	pair (Hs11024712_hs, YHR023w_sc) with sim_score(176.522873)
+(studies)	pair (Hs7705901_hs, YOR326w_sc) with sim_out_in(144.698975)
+(studies_1)	pair (Hs7705901_hs, YOR326w_sc) 
+(studies__2)	pair (Hs7705901_hs, YOR326w_sc) 
+(evaluates)	pair (Hs7705901_hs, YOR326w_sc) with averaged_similarity(144.500000)
+(inserts)	pair (Hs7705901_hs, YOR326w_sc) with averaged_similarity(144.500000)
+(studies)	pair (Hs7705901_hs, YAL029c_sc) with sim_out_in(139.397934)
+(studies_1)	pair (Hs7705901_hs, YAL029c_sc) 
+(studies__2)	pair (Hs7705901_hs, YAL029c_sc) 
+(evaluates)	pair (Hs7705901_hs, YAL029c_sc) with averaged_similarity(138.960403)
+(inserts)	pair (Hs7705901_hs, YAL029c_sc) with averaged_similarity(138.960403)
+(studies)	pair (Hs7705901_hs, YMR109w_sc) with sim_out_in(131.000000)
+(studies_1)	pair (Hs7705901_hs, YMR109w_sc) 
+(studies__2)	pair (Hs7705901_hs, YMR109w_sc) 
+(evaluates)	pair (Hs7705901_hs, YMR109w_sc) with averaged_similarity(130.500000)
+(inserts)	pair (Hs7705901_hs, YMR109w_sc) with averaged_similarity(130.500000)
+(studies)	pair (Hs7705901_hs, YKL129c_sc) with sim_out_in(130.000000)
+(studies_1)	pair (Hs7705901_hs, YKL129c_sc) 
+(studies__2)	pair (Hs7705901_hs, YKL129c_sc) 
+(evaluates)	pair (Hs7705901_hs, YKL129c_sc) with averaged_similarity(129.610931)
+(inserts)	pair (Hs7705901_hs, YKL129c_sc) with averaged_similarity(129.610931)
+(studies)	pair (Hs7705901_hs, YHR023w_sc) with sim_out_in(118.154900)
+(studies_1)	pair (Hs7705901_hs, YHR023w_sc) 
+(studies__2)	pair (Hs7705901_hs, YHR023w_sc) 
+(evaluates)	pair (Hs7705901_hs, YHR023w_sc) with averaged_similarity(116.776421)
+(inserts)	pair (Hs7705901_hs, YHR023w_sc) with averaged_similarity(116.776421)
+(possible_ortholog)	pair (Hs7705901_hs, YOR326w_sc) with sim_score(144.500000)
+(studies)	pair (Hs4885503_hs, YMR109w_sc) with sim_out_in(151.154907)
+(studies_1)	pair (Hs4885503_hs, YMR109w_sc) 
+(studies__2)	pair (Hs4885503_hs, YMR109w_sc) 
+(evaluates)	pair (Hs4885503_hs, YMR109w_sc) with averaged_similarity(151.227966)
+(inserts)	pair (Hs4885503_hs, YMR109w_sc) with averaged_similarity(151.227966)
+(studies)	pair (Hs4885503_hs, YKL129c_sc) with sim_out_in(145.698975)
+(studies_1)	pair (Hs4885503_hs, YKL129c_sc) 
+(studies__2)	pair (Hs4885503_hs, YKL129c_sc) 
+(evaluates)	pair (Hs4885503_hs, YKL129c_sc) with averaged_similarity(145.849487)
+(inserts)	pair (Hs4885503_hs, YKL129c_sc) with averaged_similarity(145.849487)
+(studies)	pair (Hs4885503_hs, YOR326w_sc) with sim_out_in(119.698967)
+(studies_1)	pair (Hs4885503_hs, YOR326w_sc) 
+(studies__2)	pair (Hs4885503_hs, YOR326w_sc) 
+(evaluates)	pair (Hs4885503_hs, YOR326w_sc) with averaged_similarity(119.698967)
+(inserts)	pair (Hs4885503_hs, YOR326w_sc) with averaged_similarity(119.698967)
+(studies)	pair (Hs4885503_hs, YAL029c_sc) with sim_out_in(118.045761)
+(studies_1)	pair (Hs4885503_hs, YAL029c_sc) 
+(studies__2)	pair (Hs4885503_hs, YAL029c_sc) 
+(evaluates)	pair (Hs4885503_hs, YAL029c_sc) with averaged_similarity(118.133804)
+(inserts)	pair (Hs4885503_hs, YAL029c_sc) with averaged_similarity(118.133804)
+(studies)	pair (Hs4885503_hs, YHR023w_sc) with sim_out_in(116.154900)
+(studies_1)	pair (Hs4885503_hs, YHR023w_sc) 
+(studies__2)	pair (Hs4885503_hs, YHR023w_sc) 
+(evaluates)	pair (Hs4885503_hs, YHR023w_sc) with averaged_similarity(115.338890)
+(inserts)	pair (Hs4885503_hs, YHR023w_sc) with averaged_similarity(115.338890)
+(possible_ortholog)	pair (Hs4885503_hs, YMR109w_sc) with sim_score(151.227966)
+(studies)	pair (Hs4505301_hs, YHR023w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (Hs4505301_hs, YHR023w_sc) 
+(studies__2)	pair (Hs4505301_hs, YHR023w_sc) 
+(evaluates)	pair (Hs4505301_hs, YHR023w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (Hs4505301_hs, YHR023w_sc) with averaged_similarity(176.522873)
+(studies)	pair (Hs4505301_hs, YOR326w_sc) with sim_out_in(142.000000)
+(studies_1)	pair (Hs4505301_hs, YOR326w_sc) 
+(studies__2)	pair (Hs4505301_hs, YOR326w_sc) 
+(evaluates)	pair (Hs4505301_hs, YOR326w_sc) with averaged_similarity(143.150513)
+(inserts)	pair (Hs4505301_hs, YOR326w_sc) with averaged_similarity(143.150513)
+(studies)	pair (Hs4505301_hs, YAL029c_sc) with sim_out_in(138.301025)
+(studies_1)	pair (Hs4505301_hs, YAL029c_sc) 
+(studies__2)	pair (Hs4505301_hs, YAL029c_sc) 
+(evaluates)	pair (Hs4505301_hs, YAL029c_sc) with averaged_similarity(139.150513)
+(inserts)	pair (Hs4505301_hs, YAL029c_sc) with averaged_similarity(139.150513)
+(studies)	pair (Hs4505301_hs, YMR109w_sc) with sim_out_in(112.397942)
+(studies_1)	pair (Hs4505301_hs, YMR109w_sc) 
+(studies__2)	pair (Hs4505301_hs, YMR109w_sc) 
+(evaluates)	pair (Hs4505301_hs, YMR109w_sc) with averaged_similarity(112.397942)
+(inserts)	pair (Hs4505301_hs, YMR109w_sc) with averaged_similarity(112.397942)
+(studies)	pair (Hs4505301_hs, YKL129c_sc) with sim_out_in(105.698967)
+(studies_1)	pair (Hs4505301_hs, YKL129c_sc) 
+(studies__2)	pair (Hs4505301_hs, YKL129c_sc) 
+(evaluates)	pair (Hs4505301_hs, YKL129c_sc) with averaged_similarity(106.048454)
+(inserts)	pair (Hs4505301_hs, YKL129c_sc) with averaged_similarity(106.048454)
+(possible_ortholog)	pair (Hs4505301_hs, YHR023w_sc) with sim_score(176.522873)
+(studies)	pair (Hs13699809_hs, At1g11600_at) with sim_out_in(31.397940)
+(studies_1)	pair (Hs13699809_hs, At1g11600_at) 
+(studies__2)	pair (Hs13699809_hs, At1g11600_at) 
+(evaluates)	pair (Hs13699809_hs, At1g11600_at) with averaged_similarity(29.849483)
+(inserts)	pair (Hs13699809_hs, At1g11600_at) with averaged_similarity(29.849483)
+(studies)	pair (Hs13699809_hs, At1g01190_at) with sim_out_in(27.301029)
+(studies_1)	pair (Hs13699809_hs, At1g01190_at) 
+(studies__2)	pair (Hs13699809_hs, At1g01190_at) 
+(evaluates)	pair (Hs13699809_hs, At1g01190_at) with averaged_similarity(27.301029)
+(inserts)	pair (Hs13699809_hs, At1g01190_at) with averaged_similarity(27.301029)
+(studies)	pair (Hs13699809_hs, At1g01280_at) with sim_out_in(30.698971)
+(studies_1)	pair (Hs13699809_hs, At1g01280_at) 
+(studies__2)	pair (Hs13699809_hs, At1g01280_at) 
+(evaluates)	pair (Hs13699809_hs, At1g01280_at) with averaged_similarity(28.397942)
+(inserts)	pair (Hs13699809_hs, At1g01280_at) with averaged_similarity(28.397942)
+(possible_ortholog)	pair (Hs13699809_hs, At1g11600_at) with sim_score(29.849483)
+(studies)	pair (Hs7706117_hs, At5g46040_at) with sim_out_in(34.045757)
+(studies_1)	pair (Hs7706117_hs, At5g46040_at) 
+(studies__2)	pair (Hs7706117_hs, At5g46040_at) 
+(evaluates)	pair (Hs7706117_hs, At5g46040_at) with averaged_similarity(36.545757)
+(inserts)	pair (Hs7706117_hs, At5g46040_at) with averaged_similarity(36.545757)
+(studies)	pair (Hs7706117_hs, At3g45690_at) with sim_out_in(10.522879)
+(studies_1)	pair (Hs7706117_hs, At3g45690_at) 
+(studies__2)	pair (Hs7706117_hs, At3g45690_at) 
+(evaluates)	pair (Hs7706117_hs, At3g45690_at) with averaged_similarity(14.261439)
+(inserts)	pair (Hs7706117_hs, At3g45690_at) with averaged_similarity(14.261439)
+(possible_ortholog)	pair (Hs7706117_hs, At5g46040_at) with sim_score(36.545757)
+(studies)	pair (Hs4507383_hs, At1g11600_at) with sim_out_in(24.522879)
+(studies_1)	pair (Hs4507383_hs, At1g11600_at) 
+(studies__2)	pair (Hs4507383_hs, At1g11600_at) 
+(evaluates)	pair (Hs4507383_hs, At1g11600_at) with averaged_similarity(24.110924)
+(inserts)	pair (Hs4507383_hs, At1g11600_at) with averaged_similarity(24.110924)
+(studies)	pair (Hs4507383_hs, At1g01190_at) with sim_out_in(15.522879)
+(studies_1)	pair (Hs4507383_hs, At1g01190_at) 
+(studies__2)	pair (Hs4507383_hs, At1g01190_at) 
+(evaluates)	pair (Hs4507383_hs, At1g01190_at) with averaged_similarity(15.522879)
+(inserts)	pair (Hs4507383_hs, At1g01190_at) with averaged_similarity(15.522879)
+(studies)	pair (Hs4507383_hs, At1g01280_at) with sim_out_in(13.000000)
+(studies_1)	pair (Hs4507383_hs, At1g01280_at) 
+(studies__2)	pair (Hs4507383_hs, At1g01280_at) 
+(evaluates)	pair (Hs4507383_hs, At1g01280_at) with averaged_similarity(12.849485)
+(inserts)	pair (Hs4507383_hs, At1g01280_at) with averaged_similarity(12.849485)
+(possible_ortholog)	pair (Hs4507383_hs, At1g11600_at) with sim_score(24.110924)
+(studies)	pair (Hs4827008_hs, At5g46040_at) with sim_out_in(25.698971)
+(studies_1)	pair (Hs4827008_hs, At5g46040_at) 
+(studies__2)	pair (Hs4827008_hs, At5g46040_at) 
+(evaluates)	pair (Hs4827008_hs, At5g46040_at) with averaged_similarity(24.397942)
+(inserts)	pair (Hs4827008_hs, At5g46040_at) with averaged_similarity(24.397942)
+(studies)	pair (Hs4827008_hs, At3g45690_at) with sim_out_in(15.000000)
+(studies_1)	pair (Hs4827008_hs, At3g45690_at) 
+(studies__2)	pair (Hs4827008_hs, At3g45690_at) 
+(evaluates)	pair (Hs4827008_hs, At3g45690_at) with averaged_similarity(14.849485)
+(inserts)	pair (Hs4827008_hs, At3g45690_at) with averaged_similarity(14.849485)
+(possible_ortholog)	pair (Hs4827008_hs, At5g46040_at) with sim_score(24.397942)
+(studies)	pair (Hs11024712_hs, At3g19960_at) with sim_out_in(150.522873)
+(studies_1)	pair (Hs11024712_hs, At3g19960_at) 
+(studies__2)	pair (Hs11024712_hs, At3g19960_at) 
+(evaluates)	pair (Hs11024712_hs, At3g19960_at) with averaged_similarity(150.522873)
+(inserts)	pair (Hs11024712_hs, At3g19960_at) with averaged_similarity(150.522873)
+(studies)	pair (Hs11024712_hs, At1g04160_at) with sim_out_in(144.698975)
+(studies_1)	pair (Hs11024712_hs, At1g04160_at) 
+(studies__2)	pair (Hs11024712_hs, At1g04160_at) 
+(evaluates)	pair (Hs11024712_hs, At1g04160_at) with averaged_similarity(145.000000)
+(inserts)	pair (Hs11024712_hs, At1g04160_at) with averaged_similarity(145.000000)
+(studies)	pair (Hs11024712_hs, At5g54280_at) with sim_out_in(143.000000)
+(studies_1)	pair (Hs11024712_hs, At5g54280_at) 
+(studies__2)	pair (Hs11024712_hs, At5g54280_at) 
+(evaluates)	pair (Hs11024712_hs, At5g54280_at) with averaged_similarity(142.849487)
+(inserts)	pair (Hs11024712_hs, At5g54280_at) with averaged_similarity(142.849487)
+(studies)	pair (Hs11024712_hs, At5g20490_at) with sim_out_in(127.000000)
+(studies_1)	pair (Hs11024712_hs, At5g20490_at) 
+(studies__2)	pair (Hs11024712_hs, At5g20490_at) 
+(evaluates)	pair (Hs11024712_hs, At5g20490_at) with averaged_similarity(126.522881)
+(inserts)	pair (Hs11024712_hs, At5g20490_at) with averaged_similarity(126.522881)
+(possible_ortholog)	pair (Hs11024712_hs, At3g19960_at) with sim_score(150.522873)
+(studies)	pair (Hs7705901_hs, At1g04160_at) with sim_out_in(159.698975)
+(studies_1)	pair (Hs7705901_hs, At1g04160_at) 
+(studies__2)	pair (Hs7705901_hs, At1g04160_at) 
+(evaluates)	pair (Hs7705901_hs, At1g04160_at) with averaged_similarity(159.426941)
+(inserts)	pair (Hs7705901_hs, At1g04160_at) with averaged_similarity(159.426941)
+(studies)	pair (Hs7705901_hs, At3g19960_at) with sim_out_in(152.045761)
+(studies_1)	pair (Hs7705901_hs, At3g19960_at) 
+(studies__2)	pair (Hs7705901_hs, At3g19960_at) 
+(evaluates)	pair (Hs7705901_hs, At3g19960_at) with averaged_similarity(151.784317)
+(inserts)	pair (Hs7705901_hs, At3g19960_at) with averaged_similarity(151.784317)
+(studies)	pair (Hs7705901_hs, At5g54280_at) with sim_out_in(143.698975)
+(studies_1)	pair (Hs7705901_hs, At5g54280_at) 
+(studies__2)	pair (Hs7705901_hs, At5g54280_at) 
+(evaluates)	pair (Hs7705901_hs, At5g54280_at) with averaged_similarity(143.349487)
+(inserts)	pair (Hs7705901_hs, At5g54280_at) with averaged_similarity(143.349487)
+(studies)	pair (Hs7705901_hs, At5g20490_at) with sim_out_in(140.698975)
+(studies_1)	pair (Hs7705901_hs, At5g20490_at) 
+(studies__2)	pair (Hs7705901_hs, At5g20490_at) 
+(evaluates)	pair (Hs7705901_hs, At5g20490_at) with averaged_similarity(140.349487)
+(inserts)	pair (Hs7705901_hs, At5g20490_at) with averaged_similarity(140.349487)
+(possible_ortholog)	pair (Hs7705901_hs, At1g04160_at) with sim_score(159.426941)
+(studies)	pair (Hs13699840_hs, At1g11600_at) with sim_out_in(16.000000)
+(studies_1)	pair (Hs13699840_hs, At1g11600_at) 
+(studies__2)	pair (Hs13699840_hs, At1g11600_at) 
+(evaluates)	pair (Hs13699840_hs, At1g11600_at) with averaged_similarity(15.548455)
+(inserts)	pair (Hs13699840_hs, At1g11600_at) with averaged_similarity(15.548455)
+(studies)	pair (Hs13699840_hs, At1g01190_at) with sim_out_in(8.397940)
+(studies_1)	pair (Hs13699840_hs, At1g01190_at) 
+(studies__2)	pair (Hs13699840_hs, At1g01190_at) 
+(evaluates)	pair (Hs13699840_hs, At1g01190_at) with averaged_similarity(8.460409)
+(inserts)	pair (Hs13699840_hs, At1g01190_at) with averaged_similarity(8.460409)
+(possible_ortholog)	pair (Hs13699840_hs, At1g11600_at) with sim_score(15.548455)
+(studies)	pair (Hs4885503_hs, At1g04160_at) with sim_out_in(141.698975)
+(studies_1)	pair (Hs4885503_hs, At1g04160_at) 
+(studies__2)	pair (Hs4885503_hs, At1g04160_at) 
+(evaluates)	pair (Hs4885503_hs, At1g04160_at) with averaged_similarity(141.849487)
+(inserts)	pair (Hs4885503_hs, At1g04160_at) with averaged_similarity(141.849487)
+(studies)	pair (Hs4885503_hs, At3g19960_at) with sim_out_in(128.000000)
+(studies_1)	pair (Hs4885503_hs, At3g19960_at) 
+(studies__2)	pair (Hs4885503_hs, At3g19960_at) 
+(evaluates)	pair (Hs4885503_hs, At3g19960_at) with averaged_similarity(128.000000)
+(inserts)	pair (Hs4885503_hs, At3g19960_at) with averaged_similarity(128.000000)
+(studies)	pair (Hs4885503_hs, At5g54280_at) with sim_out_in(125.154900)
+(studies_1)	pair (Hs4885503_hs, At5g54280_at) 
+(studies__2)	pair (Hs4885503_hs, At5g54280_at) 
+(evaluates)	pair (Hs4885503_hs, At5g54280_at) with averaged_similarity(125.154900)
+(inserts)	pair (Hs4885503_hs, At5g54280_at) with averaged_similarity(125.154900)
+(studies)	pair (Hs4885503_hs, At5g20490_at) with sim_out_in(119.698967)
+(studies_1)	pair (Hs4885503_hs, At5g20490_at) 
+(studies__2)	pair (Hs4885503_hs, At5g20490_at) 
+(evaluates)	pair (Hs4885503_hs, At5g20490_at) with averaged_similarity(119.698967)
+(inserts)	pair (Hs4885503_hs, At5g20490_at) with averaged_similarity(119.698967)
+(possible_ortholog)	pair (Hs4885503_hs, At1g04160_at) with sim_score(141.849487)
+(studies)	pair (Hs4505301_hs, At3g19960_at) with sim_out_in(153.154907)
+(studies_1)	pair (Hs4505301_hs, At3g19960_at) 
+(studies__2)	pair (Hs4505301_hs, At3g19960_at) 
+(evaluates)	pair (Hs4505301_hs, At3g19960_at) with averaged_similarity(153.727966)
+(inserts)	pair (Hs4505301_hs, At3g19960_at) with averaged_similarity(153.727966)
+(studies)	pair (Hs4505301_hs, At1g04160_at) with sim_out_in(147.698975)
+(studies_1)	pair (Hs4505301_hs, At1g04160_at) 
+(studies__2)	pair (Hs4505301_hs, At1g04160_at) 
+(evaluates)	pair (Hs4505301_hs, At1g04160_at) with averaged_similarity(149.110931)
+(inserts)	pair (Hs4505301_hs, At1g04160_at) with averaged_similarity(149.110931)
+(studies)	pair (Hs4505301_hs, At5g54280_at) with sim_out_in(146.698975)
+(studies_1)	pair (Hs4505301_hs, At5g54280_at) 
+(studies__2)	pair (Hs4505301_hs, At5g54280_at) 
+(evaluates)	pair (Hs4505301_hs, At5g54280_at) with averaged_similarity(146.960419)
+(inserts)	pair (Hs4505301_hs, At5g54280_at) with averaged_similarity(146.960419)
+(studies)	pair (Hs4505301_hs, At5g20490_at) with sim_out_in(126.045761)
+(studies_1)	pair (Hs4505301_hs, At5g20490_at) 
+(studies__2)	pair (Hs4505301_hs, At5g20490_at) 
+(evaluates)	pair (Hs4505301_hs, At5g20490_at) with averaged_similarity(126.284317)
+(inserts)	pair (Hs4505301_hs, At5g20490_at) with averaged_similarity(126.284317)
+(possible_ortholog)	pair (Hs4505301_hs, At3g19960_at) with sim_score(153.727966)
+(studies)	pair (Hs10834998_hs, At1g01280_at) with sim_out_in(36.221848)
+(studies_1)	pair (Hs10834998_hs, At1g01280_at) 
+(studies__2)	pair (Hs10834998_hs, At1g01280_at) 
+(evaluates)	pair (Hs10834998_hs, At1g01280_at) with averaged_similarity(33.460411)
+(inserts)	pair (Hs10834998_hs, At1g01280_at) with averaged_similarity(33.460411)
+(studies)	pair (Hs10834998_hs, At1g11600_at) with sim_out_in(30.045757)
+(studies_1)	pair (Hs10834998_hs, At1g11600_at) 
+(studies__2)	pair (Hs10834998_hs, At1g11600_at) 
+(evaluates)	pair (Hs10834998_hs, At1g11600_at) with averaged_similarity(28.784317)
+(inserts)	pair (Hs10834998_hs, At1g11600_at) with averaged_similarity(28.784317)
+(studies)	pair (Hs10834998_hs, At1g01190_at) with sim_out_in(27.397940)
+(studies_1)	pair (Hs10834998_hs, At1g01190_at) 
+(studies__2)	pair (Hs10834998_hs, At1g01190_at) 
+(evaluates)	pair (Hs10834998_hs, At1g01190_at) with averaged_similarity(27.397940)
+(inserts)	pair (Hs10834998_hs, At1g01190_at) with averaged_similarity(27.397940)
+(possible_ortholog)	pair (Hs10834998_hs, At1g01280_at) with sim_score(33.460411)
+(studies)	pair (Hs10835271_hs, YKR093w_sc) with sim_out_in(25.000000)
+(studies_1)	pair (Hs10835271_hs, YKR093w_sc) 
+(studies__2)	pair (Hs10835271_hs, YKR093w_sc) 
+(evaluates)	pair (Hs10835271_hs, YKR093w_sc) with averaged_similarity(24.000000)
+(inserts)	pair (Hs10835271_hs, YKR093w_sc) with averaged_similarity(24.000000)
+(possible_ortholog)	pair (Hs10835271_hs, YKR093w_sc) with sim_score(24.000000)
+(studies)	pair (Hs10835119_hs, YOR326w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835119_hs, YOR326w_sc) 
+(studies__2)	pair (Hs10835119_hs, YOR326w_sc) 
+(evaluates)	pair (Hs10835119_hs, YOR326w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835119_hs, YOR326w_sc) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835119_hs, YAL029c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835119_hs, YAL029c_sc) 
+(studies__2)	pair (Hs10835119_hs, YAL029c_sc) 
+(evaluates)	pair (Hs10835119_hs, YAL029c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835119_hs, YAL029c_sc) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835119_hs, YHR023w_sc) with sim_out_in(155.397934)
+(studies_1)	pair (Hs10835119_hs, YHR023w_sc) 
+(studies__2)	pair (Hs10835119_hs, YHR023w_sc) 
+(evaluates)	pair (Hs10835119_hs, YHR023w_sc) with averaged_similarity(154.276428)
+(inserts)	pair (Hs10835119_hs, YHR023w_sc) with averaged_similarity(154.276428)
+(studies)	pair (Hs10835119_hs, YMR109w_sc) with sim_out_in(123.522881)
+(studies_1)	pair (Hs10835119_hs, YMR109w_sc) 
+(studies__2)	pair (Hs10835119_hs, YMR109w_sc) 
+(evaluates)	pair (Hs10835119_hs, YMR109w_sc) with averaged_similarity(123.309891)
+(inserts)	pair (Hs10835119_hs, YMR109w_sc) with averaged_similarity(123.309891)
+(studies)	pair (Hs10835119_hs, YKL129c_sc) with sim_out_in(121.698967)
+(studies_1)	pair (Hs10835119_hs, YKL129c_sc) 
+(studies__2)	pair (Hs10835119_hs, YKL129c_sc) 
+(evaluates)	pair (Hs10835119_hs, YKL129c_sc) with averaged_similarity(121.610924)
+(inserts)	pair (Hs10835119_hs, YKL129c_sc) with averaged_similarity(121.610924)
+(possible_ortholog)	pair (Hs10835119_hs, YAL029c_sc) with sim_score(176.522873)
+(possible_ortholog)	pair (Hs10835119_hs, YOR326w_sc) with sim_score(176.522873)
+(studies)	pair (Hs10834998_hs, At1g01280_at) with sim_out_in(36.221848)
+(studies_1)	pair (Hs10834998_hs, At1g01280_at) 
+(studies__2)	pair (Hs10834998_hs, At1g01280_at) 
+(evaluates)	pair (Hs10834998_hs, At1g01280_at) with averaged_similarity(33.460411)
+(inserts)	pair (Hs10834998_hs, At1g01280_at) with averaged_similarity(33.460411)
+(studies)	pair (Hs10834998_hs, At1g11600_at) with sim_out_in(30.045757)
+(studies_1)	pair (Hs10834998_hs, At1g11600_at) 
+(studies__2)	pair (Hs10834998_hs, At1g11600_at) 
+(evaluates)	pair (Hs10834998_hs, At1g11600_at) with averaged_similarity(28.784317)
+(inserts)	pair (Hs10834998_hs, At1g11600_at) with averaged_similarity(28.784317)
+(studies)	pair (Hs10834998_hs, At1g01190_at) with sim_out_in(27.397940)
+(studies_1)	pair (Hs10834998_hs, At1g01190_at) 
+(studies__2)	pair (Hs10834998_hs, At1g01190_at) 
+(evaluates)	pair (Hs10834998_hs, At1g01190_at) with averaged_similarity(27.397940)
+(inserts)	pair (Hs10834998_hs, At1g01190_at) with averaged_similarity(27.397940)
+(possible_ortholog)	pair (Hs10834998_hs, At1g01280_at) with sim_score(33.460411)
+(studies)	pair (Hs13699816_hs, At1g01280_at) with sim_out_in(33.698971)
+(studies_1)	pair (Hs13699816_hs, At1g01280_at) 
+(studies__2)	pair (Hs13699816_hs, At1g01280_at) 
+(evaluates)	pair (Hs13699816_hs, At1g01280_at) with averaged_similarity(31.610924)
+(inserts)	pair (Hs13699816_hs, At1g01280_at) with averaged_similarity(31.610924)
+(studies)	pair (Hs13699816_hs, At1g11600_at) with sim_out_in(23.698971)
+(studies_1)	pair (Hs13699816_hs, At1g11600_at) 
+(studies__2)	pair (Hs13699816_hs, At1g11600_at) 
+(evaluates)	pair (Hs13699816_hs, At1g11600_at) with averaged_similarity(23.460411)
+(inserts)	pair (Hs13699816_hs, At1g11600_at) with averaged_similarity(23.460411)
+(studies)	pair (Hs13699816_hs, At1g01190_at) with sim_out_in(18.301029)
+(studies_1)	pair (Hs13699816_hs, At1g01190_at) 
+(studies__2)	pair (Hs13699816_hs, At1g01190_at) 
+(evaluates)	pair (Hs13699816_hs, At1g01190_at) with averaged_similarity(18.801029)
+(inserts)	pair (Hs13699816_hs, At1g01190_at) with averaged_similarity(18.801029)
+(possible_ortholog)	pair (Hs13699816_hs, At1g01280_at) with sim_score(31.610924)
+(studies)	pair (Hs4503231_hs, At1g01280_at) with sim_out_in(36.301029)
+(studies_1)	pair (Hs4503231_hs, At1g01280_at) 
+(studies__2)	pair (Hs4503231_hs, At1g01280_at) 
+(evaluates)	pair (Hs4503231_hs, At1g01280_at) with averaged_similarity(34.911957)
+(inserts)	pair (Hs4503231_hs, At1g01280_at) with averaged_similarity(34.911957)
+(studies)	pair (Hs4503231_hs, At1g11600_at) with sim_out_in(28.698971)
+(studies_1)	pair (Hs4503231_hs, At1g11600_at) 
+(studies__2)	pair (Hs4503231_hs, At1g11600_at) 
+(evaluates)	pair (Hs4503231_hs, At1g11600_at) with averaged_similarity(28.048454)
+(inserts)	pair (Hs4503231_hs, At1g11600_at) with averaged_similarity(28.048454)
+(studies)	pair (Hs4503231_hs, At1g01190_at) with sim_out_in(23.000000)
+(studies_1)	pair (Hs4503231_hs, At1g01190_at) 
+(studies__2)	pair (Hs4503231_hs, At1g01190_at) 
+(evaluates)	pair (Hs4503231_hs, At1g01190_at) with averaged_similarity(23.000000)
+(inserts)	pair (Hs4503231_hs, At1g01190_at) with averaged_similarity(23.000000)
+(possible_ortholog)	pair (Hs4503231_hs, At1g01280_at) with sim_score(34.911957)
+(studies)	pair (Hs7949031_hs, At1g11600_at) with sim_out_in(24.221849)
+(studies_1)	pair (Hs7949031_hs, At1g11600_at) 
+(studies__2)	pair (Hs7949031_hs, At1g11600_at) 
+(evaluates)	pair (Hs7949031_hs, At1g11600_at) with averaged_similarity(25.809895)
+(inserts)	pair (Hs7949031_hs, At1g11600_at) with averaged_similarity(25.809895)
+(studies)	pair (Hs7949031_hs, At1g01280_at) with sim_out_in(23.301029)
+(studies_1)	pair (Hs7949031_hs, At1g01280_at) 
+(studies__2)	pair (Hs7949031_hs, At1g01280_at) 
+(evaluates)	pair (Hs7949031_hs, At1g01280_at) with averaged_similarity(24.150515)
+(inserts)	pair (Hs7949031_hs, At1g01280_at) with averaged_similarity(24.150515)
+(studies)	pair (Hs7949031_hs, At1g01190_at) with sim_out_in(19.000000)
+(studies_1)	pair (Hs7949031_hs, At1g01190_at) 
+(studies__2)	pair (Hs7949031_hs, At1g01190_at) 
+(evaluates)	pair (Hs7949031_hs, At1g01190_at) with averaged_similarity(19.761440)
+(inserts)	pair (Hs7949031_hs, At1g01190_at) with averaged_similarity(19.761440)
+(possible_ortholog)	pair (Hs7949031_hs, At1g11600_at) with sim_score(25.809895)
+(studies)	pair (Hs10835271_hs, At5g46040_at) with sim_out_in(23.096910)
+(studies_1)	pair (Hs10835271_hs, At5g46040_at) 
+(studies__2)	pair (Hs10835271_hs, At5g46040_at) 
+(evaluates)	pair (Hs10835271_hs, At5g46040_at) with averaged_similarity(22.596910)
+(inserts)	pair (Hs10835271_hs, At5g46040_at) with averaged_similarity(22.596910)
+(studies)	pair (Hs10835271_hs, At3g45690_at) with sim_out_in(12.522879)
+(studies_1)	pair (Hs10835271_hs, At3g45690_at) 
+(studies__2)	pair (Hs10835271_hs, At3g45690_at) 
+(evaluates)	pair (Hs10835271_hs, At3g45690_at) with averaged_similarity(12.411955)
+(inserts)	pair (Hs10835271_hs, At3g45690_at) with averaged_similarity(12.411955)
+(possible_ortholog)	pair (Hs10835271_hs, At5g46040_at) with sim_score(22.596910)
+(studies)	pair (Hs13449277_hs, At1g01280_at) with sim_out_in(22.301029)
+(studies_1)	pair (Hs13449277_hs, At1g01280_at) 
+(studies__2)	pair (Hs13449277_hs, At1g01280_at) 
+(evaluates)	pair (Hs13449277_hs, At1g01280_at) with averaged_similarity(23.727966)
+(inserts)	pair (Hs13449277_hs, At1g01280_at) with averaged_similarity(23.727966)
+(studies)	pair (Hs13449277_hs, At1g11600_at) with sim_out_in(17.096910)
+(studies_1)	pair (Hs13449277_hs, At1g11600_at) 
+(studies__2)	pair (Hs13449277_hs, At1g11600_at) 
+(evaluates)	pair (Hs13449277_hs, At1g11600_at) with averaged_similarity(19.048454)
+(inserts)	pair (Hs13449277_hs, At1g11600_at) with averaged_similarity(19.048454)
+(studies)	pair (Hs13449277_hs, At1g01190_at) with sim_out_in(19.096910)
+(studies_1)	pair (Hs13449277_hs, At1g01190_at) 
+(studies__2)	pair (Hs13449277_hs, At1g01190_at) 
+(evaluates)	pair (Hs13449277_hs, At1g01190_at) with averaged_similarity(19.809895)
+(inserts)	pair (Hs13449277_hs, At1g01190_at) with averaged_similarity(19.809895)
+(possible_ortholog)	pair (Hs13449277_hs, At1g01280_at) with sim_score(23.727966)
+(studies)	pair (Hs10835119_hs, At1g04160_at) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835119_hs, At1g04160_at) 
+(studies__2)	pair (Hs10835119_hs, At1g04160_at) 
+(evaluates)	pair (Hs10835119_hs, At1g04160_at) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835119_hs, At1g04160_at) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835119_hs, At5g20490_at) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835119_hs, At5g20490_at) 
+(studies__2)	pair (Hs10835119_hs, At5g20490_at) 
+(evaluates)	pair (Hs10835119_hs, At5g20490_at) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835119_hs, At5g20490_at) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835119_hs, At3g19960_at) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835119_hs, At3g19960_at) 
+(studies__2)	pair (Hs10835119_hs, At3g19960_at) 
+(evaluates)	pair (Hs10835119_hs, At3g19960_at) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835119_hs, At3g19960_at) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835119_hs, At5g54280_at) with sim_out_in(173.301025)
+(studies_1)	pair (Hs10835119_hs, At5g54280_at) 
+(studies__2)	pair (Hs10835119_hs, At5g54280_at) 
+(evaluates)	pair (Hs10835119_hs, At5g54280_at) with averaged_similarity(173.173401)
+(inserts)	pair (Hs10835119_hs, At5g54280_at) with averaged_similarity(173.173401)
+(possible_ortholog)	pair (Hs10835119_hs, At3g19960_at) with sim_score(176.522873)
+(possible_ortholog)	pair (Hs10835119_hs, At5g20490_at) with sim_score(176.522873)
+(possible_ortholog)	pair (Hs10835119_hs, At1g04160_at) with sim_score(176.522873)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (YHR023w_sc, At1g04160_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (YAR009c_sc, At1g11265_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (YMR109w_sc, At1g04160_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (YKL129c_sc, At1g04160_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (YKL129c_sc, Hs4885503_hs)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At5g20490_at, YOR326w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At5g54280_at, YOR326w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At5g54280_at, Hs10835119_hs)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At3g45690_at, Hs4827008_hs)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At1g01190_at, Hs10834998_hs)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At1g01190_at, Hs10834998_hs)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (At3g19960_at, YOR326w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs7706117_hs, YKR093w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs4507383_hs, At1g11600_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs4827008_hs, At5g46040_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs11024712_hs, At3g19960_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs7705901_hs, YOR326w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs7705901_hs, At1g04160_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs13699840_hs, At1g11600_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs4885503_hs, At1g04160_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs4505301_hs, At3g19960_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs10834998_hs, At1g01280_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs10834998_hs, At1g01280_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs13699816_hs, At1g01280_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs7949031_hs, At1g11600_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs10835271_hs, YKR093w_sc)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs10835271_hs, At5g46040_at)
+(possible-ortholog-pair-discarded-due-to-non-reciproc)	pair (Hs13449277_hs, At1g01280_at)
+#	The data for 'turbo/all_vm/0_0.struct' ([0][0]) are: 
+- 	index_size=11, index_size=11, buffer_in_mem_pos=0, buffer_mem_size=1000, file_cnt_structs=0
+#	The data for 'turbo/all_vm/0_1.struct' ([0][1]) are: 
+- 	index_size=11, index_size=11, buffer_in_mem_pos=23, buffer_mem_size=40, file_cnt_structs=0
+	[YAL029c_sc]	 .start = 0, .length=4:
+[0](0)-->[1](10)		YAL029c_sc	At1g04160_at 	176.522873 
+[0](0)-->[1](3)		YAL029c_sc	At5g20490_at 	156.548462 
+[0](0)-->[1](14)		YAL029c_sc	At3g19960_at 	156.460403 
+[0](0)-->[1](5)		YAL029c_sc	At5g54280_at 	145.349487 
+	[YHR023w_sc]	 .start = 4, .length=4:
+[0](1)-->[1](10)		YHR023w_sc	At1g04160_at 	143.048462 
+[0](1)-->[1](5)		YHR023w_sc	At5g54280_at 	137.500000 
+[0](1)-->[1](14)		YHR023w_sc	At3g19960_at 	138.188385 
+[0](1)-->[1](3)		YHR023w_sc	At5g20490_at 	127.426941 
+	[YKR093w_sc]	 .start = 8, .length=1:
+[0](2)-->[1](4)		YKR093w_sc	At5g46040_at 	18.650515 
+	[YJL113w_sc]	 .start = 9, .length=1:
+[0](3)-->[1](0)		YJL113w_sc	At1g11265_at 	29.926937 
+	[YAR009c_sc]	 .start = 10, .length=1:
+[0](4)-->[1](0)		YAR009c_sc	At1g11265_at 	26.849485 
+	[YOR326w_sc]	 .start = 11, .length=4:
+[0](5)-->[1](10)		YOR326w_sc	At1g04160_at 	176.522873 
+[0](5)-->[1](3)		YOR326w_sc	At5g20490_at 	172.227966 
+[0](5)-->[1](14)		YOR326w_sc	At3g19960_at 	163.849487 
+[0](5)-->[1](5)		YOR326w_sc	At5g54280_at 	154.154907 
+	[YMR109w_sc]	 .start = 15, .length=4:
+[0](6)-->[1](10)		YMR109w_sc	At1g04160_at 	129.227966 
+[0](6)-->[1](14)		YMR109w_sc	At3g19960_at 	119.227966 
+[0](6)-->[1](5)		YMR109w_sc	At5g54280_at 	116.301033 
+[0](6)-->[1](3)		YMR109w_sc	At5g20490_at 	113.000000 
+	[YKL129c_sc]	 .start = 19, .length=4:
+[0](8)-->[1](10)		YKL129c_sc	At1g04160_at 	124.022881 
+[0](8)-->[1](14)		YKL129c_sc	At3g19960_at 	118.261444 
+[0](8)-->[1](5)		YKL129c_sc	At5g54280_at 	116.849487 
+[0](8)-->[1](3)		YKL129c_sc	At5g20490_at 	109.522881 
+#	The data for 'turbo/all_vm/0_2.struct' ([0][2]) are: 
+- 	index_size=11, index_size=11, buffer_in_mem_pos=28, buffer_mem_size=40, file_cnt_structs=0
+	[YAL029c_sc]	 .start = 0, .length=5:
+[0](0)-->[2](15)		YAL029c_sc	Hs10835119_hs 	176.522873 
+[0](0)-->[2](5)		YAL029c_sc	Hs7705901_hs 	138.960403 
+[0](0)-->[2](8)		YAL029c_sc	Hs4505301_hs 	139.150513 
+[0](0)-->[2](4)		YAL029c_sc	Hs11024712_hs 	137.698975 
+[0](0)-->[2](7)		YAL029c_sc	Hs4885503_hs 	118.133804 
+	[YHR023w_sc]	 .start = 5, .length=5:
+[0](1)-->[2](4)		YHR023w_sc	Hs11024712_hs 	176.522873 
+[0](1)-->[2](8)		YHR023w_sc	Hs4505301_hs 	176.522873 
+[0](1)-->[2](15)		YHR023w_sc	Hs10835119_hs 	154.276428 
+[0](1)-->[2](5)		YHR023w_sc	Hs7705901_hs 	116.776421 
+[0](1)-->[2](7)		YHR023w_sc	Hs4885503_hs 	115.338890 
+	[YKR093w_sc]	 .start = 10, .length=3:
+[0](2)-->[2](3)		YKR093w_sc	Hs4827008_hs 	24.261440 
+[0](2)-->[2](13)		YKR093w_sc	Hs10835271_hs 	24.000000 
+[0](2)-->[2](1)		YKR093w_sc	Hs7706117_hs 	20.596910 
+	[YOR326w_sc]	 .start = 13, .length=5:
+[0](5)-->[2](15)		YOR326w_sc	Hs10835119_hs 	176.522873 
+[0](5)-->[2](5)		YOR326w_sc	Hs7705901_hs 	144.500000 
+[0](5)-->[2](8)		YOR326w_sc	Hs4505301_hs 	143.150513 
+[0](5)-->[2](4)		YOR326w_sc	Hs11024712_hs 	142.276428 
+[0](5)-->[2](7)		YOR326w_sc	Hs4885503_hs 	119.698967 
+	[YMR109w_sc]	 .start = 18, .length=5:
+[0](6)-->[2](7)		YMR109w_sc	Hs4885503_hs 	151.227966 
+[0](6)-->[2](5)		YMR109w_sc	Hs7705901_hs 	130.500000 
+[0](6)-->[2](15)		YMR109w_sc	Hs10835119_hs 	123.309891 
+[0](6)-->[2](8)		YMR109w_sc	Hs4505301_hs 	112.397942 
+[0](6)-->[2](4)		YMR109w_sc	Hs11024712_hs 	111.610924 
+	[YKL129c_sc]	 .start = 23, .length=5:
+[0](8)-->[2](7)		YKL129c_sc	Hs4885503_hs 	145.849487 
+[0](8)-->[2](5)		YKL129c_sc	Hs7705901_hs 	129.610931 
+[0](8)-->[2](15)		YKL129c_sc	Hs10835119_hs 	121.610924 
+[0](8)-->[2](8)		YKL129c_sc	Hs4505301_hs 	106.048454 
+[0](8)-->[2](4)		YKL129c_sc	Hs11024712_hs 	104.198975 
+-------------
+
+#	The data for 'turbo/all_vm/1_0.struct' ([1][0]) are: 
+- 	index_size=15, index_size=15, buffer_in_mem_pos=23, buffer_mem_size=1000, file_cnt_structs=0
+	[At1g11265_at]	 .start = 0, .length=2:
+[1](0)-->[0](3)		At1g11265_at	YJL113w_sc 	29.926937 
+[1](0)-->[0](4)		At1g11265_at	YAR009c_sc 	26.849485 
+	[At5g20490_at]	 .start = 2, .length=5:
+[1](3)-->[0](5)		At5g20490_at	YOR326w_sc 	172.227966 
+[1](3)-->[0](0)		At5g20490_at	YAL029c_sc 	156.548462 
+[1](3)-->[0](1)		At5g20490_at	YHR023w_sc 	127.426941 
+[1](3)-->[0](6)		At5g20490_at	YMR109w_sc 	113.000000 
+[1](3)-->[0](8)		At5g20490_at	YKL129c_sc 	109.522881 
+	[At5g46040_at]	 .start = 7, .length=1:
+[1](4)-->[0](2)		At5g46040_at	YKR093w_sc 	18.650515 
+	[At5g54280_at]	 .start = 8, .length=5:
+[1](5)-->[0](5)		At5g54280_at	YOR326w_sc 	154.154907 
+[1](5)-->[0](0)		At5g54280_at	YAL029c_sc 	145.349487 
+[1](5)-->[0](1)		At5g54280_at	YHR023w_sc 	137.500000 
+[1](5)-->[0](8)		At5g54280_at	YKL129c_sc 	116.849487 
+[1](5)-->[0](6)		At5g54280_at	YMR109w_sc 	116.301033 
+	[At1g04160_at]	 .start = 13, .length=5:
+[1](10)-->[0](5)		At1g04160_at	YOR326w_sc 	176.522873 
+[1](10)-->[0](0)		At1g04160_at	YAL029c_sc 	176.522873 
+[1](10)-->[0](1)		At1g04160_at	YHR023w_sc 	143.048462 
+[1](10)-->[0](6)		At1g04160_at	YMR109w_sc 	129.227966 
+[1](10)-->[0](8)		At1g04160_at	YKL129c_sc 	124.022881 
+	[At3g19960_at]	 .start = 18, .length=5:
+[1](14)-->[0](5)		At3g19960_at	YOR326w_sc 	163.849487 
+[1](14)-->[0](0)		At3g19960_at	YAL029c_sc 	156.460403 
+[1](14)-->[0](1)		At3g19960_at	YHR023w_sc 	138.188385 
+[1](14)-->[0](6)		At3g19960_at	YMR109w_sc 	119.227966 
+[1](14)-->[0](8)		At3g19960_at	YKL129c_sc 	118.261444 
+#	The data for 'turbo/all_vm/1_1.struct' ([1][1]) are: 
+- 	index_size=15, index_size=15, buffer_in_mem_pos=0, buffer_mem_size=1000, file_cnt_structs=0
+#	The data for 'turbo/all_vm/1_2.struct' ([1][2]) are: 
+- 	index_size=15, index_size=15, buffer_in_mem_pos=57, buffer_mem_size=1000, file_cnt_structs=0
+	[At5g20490_at]	 .start = 0, .length=5:
+[1](3)-->[2](15)		At5g20490_at	Hs10835119_hs 	176.522873 
+[1](3)-->[2](5)		At5g20490_at	Hs7705901_hs 	140.349487 
+[1](3)-->[2](4)		At5g20490_at	Hs11024712_hs 	126.522881 
+[1](3)-->[2](8)		At5g20490_at	Hs4505301_hs 	126.284317 
+[1](3)-->[2](7)		At5g20490_at	Hs4885503_hs 	119.698967 
+	[At5g46040_at]	 .start = 5, .length=3:
+[1](4)-->[2](1)		At5g46040_at	Hs7706117_hs 	36.545757 
+[1](4)-->[2](3)		At5g46040_at	Hs4827008_hs 	24.397942 
+[1](4)-->[2](13)		At5g46040_at	Hs10835271_hs 	22.596910 
+	[At5g54280_at]	 .start = 8, .length=5:
+[1](5)-->[2](15)		At5g54280_at	Hs10835119_hs 	173.173401 
+[1](5)-->[2](8)		At5g54280_at	Hs4505301_hs 	146.960419 
+[1](5)-->[2](5)		At5g54280_at	Hs7705901_hs 	143.349487 
+[1](5)-->[2](4)		At5g54280_at	Hs11024712_hs 	142.849487 
+[1](5)-->[2](7)		At5g54280_at	Hs4885503_hs 	125.154900 
+	[At3g45690_at]	 .start = 13, .length=3:
+[1](6)-->[2](3)		At3g45690_at	Hs4827008_hs 	14.849485 
+[1](6)-->[2](13)		At3g45690_at	Hs10835271_hs 	12.411955 
+[1](6)-->[2](1)		At3g45690_at	Hs7706117_hs 	14.261439 
+	[At1g01280_at]	 .start = 16, .length=7:
+[1](7)-->[2](11)		At1g01280_at	Hs4503231_hs 	34.911957 
+[1](7)-->[2](9)		At1g01280_at	Hs10834998_hs 	33.460411 
+[1](7)-->[2](10)		At1g01280_at	Hs13699816_hs 	31.610924 
+[1](7)-->[2](0)		At1g01280_at	Hs13699809_hs 	28.397942 
+[1](7)-->[2](12)		At1g01280_at	Hs7949031_hs 	24.150515 
+[1](7)-->[2](14)		At1g01280_at	Hs13449277_hs 	23.727966 
+[1](7)-->[2](2)		At1g01280_at	Hs4507383_hs 	12.849485 
+	[At1g11600_at]	 .start = 23, .length=8:
+[1](9)-->[2](0)		At1g11600_at	Hs13699809_hs 	29.849483 
+[1](9)-->[2](9)		At1g11600_at	Hs10834998_hs 	28.784317 
+[1](9)-->[2](11)		At1g11600_at	Hs4503231_hs 	28.048454 
+[1](9)-->[2](2)		At1g11600_at	Hs4507383_hs 	24.110924 
+[1](9)-->[2](12)		At1g11600_at	Hs7949031_hs 	25.809895 
+[1](9)-->[2](10)		At1g11600_at	Hs13699816_hs 	23.460411 
+[1](9)-->[2](14)		At1g11600_at	Hs13449277_hs 	19.048454 
+[1](9)-->[2](6)		At1g11600_at	Hs13699840_hs 	15.548455 
+	[At1g04160_at]	 .start = 31, .length=5:
+[1](10)-->[2](15)		At1g04160_at	Hs10835119_hs 	176.522873 
+[1](10)-->[2](5)		At1g04160_at	Hs7705901_hs 	159.426941 
+[1](10)-->[2](8)		At1g04160_at	Hs4505301_hs 	149.110931 
+[1](10)-->[2](4)		At1g04160_at	Hs11024712_hs 	145.000000 
+[1](10)-->[2](7)		At1g04160_at	Hs4885503_hs 	141.849487 
+	[At1g01190_at]	 .start = 44, .length=8:
+[1](11)-->[2](9)		At1g01190_at	Hs10834998_hs 	27.397940 
+[1](11)-->[2](0)		At1g01190_at	Hs13699809_hs 	27.301029 
+[1](11)-->[2](11)		At1g01190_at	Hs4503231_hs 	23.000000 
+[1](11)-->[2](14)		At1g01190_at	Hs13449277_hs 	19.809895 
+[1](11)-->[2](12)		At1g01190_at	Hs7949031_hs 	19.761440 
+[1](11)-->[2](10)		At1g01190_at	Hs13699816_hs 	18.801029 
+[1](11)-->[2](2)		At1g01190_at	Hs4507383_hs 	15.522879 
+[1](11)-->[2](6)		At1g01190_at	Hs13699840_hs 	8.460409 
+	[At3g19960_at]	 .start = 52, .length=5:
+[1](14)-->[2](15)		At3g19960_at	Hs10835119_hs 	176.522873 
+[1](14)-->[2](8)		At3g19960_at	Hs4505301_hs 	153.727966 
+[1](14)-->[2](5)		At3g19960_at	Hs7705901_hs 	151.784317 
+[1](14)-->[2](4)		At3g19960_at	Hs11024712_hs 	150.522873 
+[1](14)-->[2](7)		At3g19960_at	Hs4885503_hs 	128.000000 
+-------------
+
+#	The data for 'turbo/all_vm/2_0.struct' ([2][0]) are: 
+- 	index_size=16, index_size=16, buffer_in_mem_pos=28, buffer_mem_size=1000, file_cnt_structs=0
+	[Hs7706117_hs]	 .start = 0, .length=1:
+[2](1)-->[0](2)		Hs7706117_hs	YKR093w_sc 	20.596910 
+	[Hs4827008_hs]	 .start = 1, .length=1:
+[2](3)-->[0](2)		Hs4827008_hs	YKR093w_sc 	24.261440 
+	[Hs11024712_hs]	 .start = 2, .length=5:
+[2](4)-->[0](1)		Hs11024712_hs	YHR023w_sc 	176.522873 
+[2](4)-->[0](5)		Hs11024712_hs	YOR326w_sc 	142.276428 
+[2](4)-->[0](0)		Hs11024712_hs	YAL029c_sc 	137.698975 
+[2](4)-->[0](6)		Hs11024712_hs	YMR109w_sc 	111.610924 
+[2](4)-->[0](8)		Hs11024712_hs	YKL129c_sc 	104.198975 
+	[Hs7705901_hs]	 .start = 7, .length=5:
+[2](5)-->[0](5)		Hs7705901_hs	YOR326w_sc 	144.500000 
+[2](5)-->[0](0)		Hs7705901_hs	YAL029c_sc 	138.960403 
+[2](5)-->[0](6)		Hs7705901_hs	YMR109w_sc 	130.500000 
+[2](5)-->[0](8)		Hs7705901_hs	YKL129c_sc 	129.610931 
+[2](5)-->[0](1)		Hs7705901_hs	YHR023w_sc 	116.776421 
+	[Hs4885503_hs]	 .start = 12, .length=5:
+[2](7)-->[0](6)		Hs4885503_hs	YMR109w_sc 	151.227966 
+[2](7)-->[0](8)		Hs4885503_hs	YKL129c_sc 	145.849487 
+[2](7)-->[0](5)		Hs4885503_hs	YOR326w_sc 	119.698967 
+[2](7)-->[0](0)		Hs4885503_hs	YAL029c_sc 	118.133804 
+[2](7)-->[0](1)		Hs4885503_hs	YHR023w_sc 	115.338890 
+	[Hs4505301_hs]	 .start = 17, .length=5:
+[2](8)-->[0](1)		Hs4505301_hs	YHR023w_sc 	176.522873 
+[2](8)-->[0](5)		Hs4505301_hs	YOR326w_sc 	143.150513 
+[2](8)-->[0](0)		Hs4505301_hs	YAL029c_sc 	139.150513 
+[2](8)-->[0](6)		Hs4505301_hs	YMR109w_sc 	112.397942 
+[2](8)-->[0](8)		Hs4505301_hs	YKL129c_sc 	106.048454 
+	[Hs10835271_hs]	 .start = 22, .length=1:
+[2](13)-->[0](2)		Hs10835271_hs	YKR093w_sc 	24.000000 
+	[Hs10835119_hs]	 .start = 23, .length=5:
+[2](15)-->[0](5)		Hs10835119_hs	YOR326w_sc 	176.522873 
+[2](15)-->[0](0)		Hs10835119_hs	YAL029c_sc 	176.522873 
+[2](15)-->[0](1)		Hs10835119_hs	YHR023w_sc 	154.276428 
+[2](15)-->[0](6)		Hs10835119_hs	YMR109w_sc 	123.309891 
+[2](15)-->[0](8)		Hs10835119_hs	YKL129c_sc 	121.610924 
+#	The data for 'turbo/all_vm/2_1.struct' ([2][1]) are: 
+- 	index_size=16, index_size=16, buffer_in_mem_pos=52, buffer_mem_size=1000, file_cnt_structs=0
+	[Hs13699809_hs]	 .start = 0, .length=3:
+[2](0)-->[1](9)		Hs13699809_hs	At1g11600_at 	29.849483 
+[2](0)-->[1](11)		Hs13699809_hs	At1g01190_at 	27.301029 
+[2](0)-->[1](7)		Hs13699809_hs	At1g01280_at 	28.397942 
+	[Hs7706117_hs]	 .start = 3, .length=2:
+[2](1)-->[1](4)		Hs7706117_hs	At5g46040_at 	36.545757 
+[2](1)-->[1](6)		Hs7706117_hs	At3g45690_at 	14.261439 
+	[Hs4507383_hs]	 .start = 5, .length=3:
+[2](2)-->[1](9)		Hs4507383_hs	At1g11600_at 	24.110924 
+[2](2)-->[1](11)		Hs4507383_hs	At1g01190_at 	15.522879 
+[2](2)-->[1](7)		Hs4507383_hs	At1g01280_at 	12.849485 
+	[Hs4827008_hs]	 .start = 8, .length=2:
+[2](3)-->[1](4)		Hs4827008_hs	At5g46040_at 	24.397942 
+[2](3)-->[1](6)		Hs4827008_hs	At3g45690_at 	14.849485 
+	[Hs11024712_hs]	 .start = 10, .length=4:
+[2](4)-->[1](14)		Hs11024712_hs	At3g19960_at 	150.522873 
+[2](4)-->[1](10)		Hs11024712_hs	At1g04160_at 	145.000000 
+[2](4)-->[1](5)		Hs11024712_hs	At5g54280_at 	142.849487 
+[2](4)-->[1](3)		Hs11024712_hs	At5g20490_at 	126.522881 
+	[Hs7705901_hs]	 .start = 14, .length=4:
+[2](5)-->[1](10)		Hs7705901_hs	At1g04160_at 	159.426941 
+[2](5)-->[1](14)		Hs7705901_hs	At3g19960_at 	151.784317 
+[2](5)-->[1](5)		Hs7705901_hs	At5g54280_at 	143.349487 
+[2](5)-->[1](3)		Hs7705901_hs	At5g20490_at 	140.349487 
+	[Hs13699840_hs]	 .start = 18, .length=2:
+[2](6)-->[1](9)		Hs13699840_hs	At1g11600_at 	15.548455 
+[2](6)-->[1](11)		Hs13699840_hs	At1g01190_at 	8.460409 
+	[Hs4885503_hs]	 .start = 20, .length=4:
+[2](7)-->[1](10)		Hs4885503_hs	At1g04160_at 	141.849487 
+[2](7)-->[1](14)		Hs4885503_hs	At3g19960_at 	128.000000 
+[2](7)-->[1](5)		Hs4885503_hs	At5g54280_at 	125.154900 
+[2](7)-->[1](3)		Hs4885503_hs	At5g20490_at 	119.698967 
+	[Hs4505301_hs]	 .start = 24, .length=4:
+[2](8)-->[1](14)		Hs4505301_hs	At3g19960_at 	153.727966 
+[2](8)-->[1](10)		Hs4505301_hs	At1g04160_at 	149.110931 
+[2](8)-->[1](5)		Hs4505301_hs	At5g54280_at 	146.960419 
+[2](8)-->[1](3)		Hs4505301_hs	At5g20490_at 	126.284317 
+	[Hs10834998_hs]	 .start = 31, .length=3:
+[2](9)-->[1](7)		Hs10834998_hs	At1g01280_at 	33.460411 
+[2](9)-->[1](9)		Hs10834998_hs	At1g11600_at 	28.784317 
+[2](9)-->[1](11)		Hs10834998_hs	At1g01190_at 	27.397940 
+	[Hs13699816_hs]	 .start = 34, .length=3:
+[2](10)-->[1](7)		Hs13699816_hs	At1g01280_at 	31.610924 
+[2](10)-->[1](9)		Hs13699816_hs	At1g11600_at 	23.460411 
+[2](10)-->[1](11)		Hs13699816_hs	At1g01190_at 	18.801029 
+	[Hs4503231_hs]	 .start = 37, .length=3:
+[2](11)-->[1](7)		Hs4503231_hs	At1g01280_at 	34.911957 
+[2](11)-->[1](9)		Hs4503231_hs	At1g11600_at 	28.048454 
+[2](11)-->[1](11)		Hs4503231_hs	At1g01190_at 	23.000000 
+	[Hs7949031_hs]	 .start = 40, .length=3:
+[2](12)-->[1](9)		Hs7949031_hs	At1g11600_at 	25.809895 
+[2](12)-->[1](7)		Hs7949031_hs	At1g01280_at 	24.150515 
+[2](12)-->[1](11)		Hs7949031_hs	At1g01190_at 	19.761440 
+	[Hs10835271_hs]	 .start = 43, .length=2:
+[2](13)-->[1](4)		Hs10835271_hs	At5g46040_at 	22.596910 
+[2](13)-->[1](6)		Hs10835271_hs	At3g45690_at 	12.411955 
+	[Hs13449277_hs]	 .start = 45, .length=3:
+[2](14)-->[1](7)		Hs13449277_hs	At1g01280_at 	23.727966 
+[2](14)-->[1](9)		Hs13449277_hs	At1g11600_at 	19.048454 
+[2](14)-->[1](11)		Hs13449277_hs	At1g01190_at 	19.809895 
+	[Hs10835119_hs]	 .start = 48, .length=4:
+[2](15)-->[1](10)		Hs10835119_hs	At1g04160_at 	176.522873 
+[2](15)-->[1](3)		Hs10835119_hs	At5g20490_at 	176.522873 
+[2](15)-->[1](14)		Hs10835119_hs	At3g19960_at 	176.522873 
+[2](15)-->[1](5)		Hs10835119_hs	At5g54280_at 	173.173401 
+#	The data for 'turbo/all_vm/2_2.struct' ([2][2]) are: 
+- 	index_size=16, index_size=16, buffer_in_mem_pos=0, buffer_mem_size=1000, file_cnt_structs=0
+-------------
+
+in taxon_pair.cxx uses file_name: 'report_orthaGogue/thread_allocation_list.log.2'
+(studies)	pair (YAL029c_sc, YOR326w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YAL029c_sc, YOR326w_sc) 
+(studies__2)	pair (YAL029c_sc, YOR326w_sc) 
+(evaluates)	pair (YAL029c_sc, YOR326w_sc) with averaged_similarity(176.522873)
+(discarded)	pair (YAL029c_sc, YOR326w_sc) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YAL029c_sc, YHR023w_sc) with sim_out_in(146.698975)
+(studies_1)	pair (YAL029c_sc, YHR023w_sc) 
+(studies__2)	pair (YAL029c_sc, YHR023w_sc) 
+(evaluates)	pair (YAL029c_sc, YHR023w_sc) with averaged_similarity(146.110931)
+(discarded)	pair (YAL029c_sc, YHR023w_sc) with averaged_similarity(146.110931) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YAL029c_sc, YMR109w_sc) with sim_out_in(120.698967)
+(studies_1)	pair (YAL029c_sc, YMR109w_sc) 
+(studies__2)	pair (YAL029c_sc, YMR109w_sc) 
+(evaluates)	pair (YAL029c_sc, YMR109w_sc) with averaged_similarity(120.849487)
+(studies)	pair (At1g11265_at, At1g10260_at) with sim_out_in(108.397942)
+(studies_1)	pair (At1g11265_at, At1g10260_at) 
+(discarded)	pair (YAL029c_sc, YMR109w_sc) with averaged_similarity(120.849487) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YAL029c_sc, YKL129c_sc) with sim_out_in(119.397942)
+(studies_1)	pair (YAL029c_sc, YKL129c_sc) 
+(studies__2)	pair (YAL029c_sc, YKL129c_sc) 
+(evaluates)	pair (YAL029c_sc, YKL129c_sc) with averaged_similarity(119.460411)
+(discarded)	pair (YAL029c_sc, YKL129c_sc) with averaged_similarity(119.460411) < the leftmost_ortholog_limit(176.522873)
+(studies__2)	pair (At1g11265_at, At1g10260_at) 
+(evaluates)	pair (At1g11265_at, At1g10260_at) with averaged_similarity(107.897942)
+(studies)	pair (YHR023w_sc, YAL029c_sc) with sim_out_in(145.522873)
+(studies_1)	pair (YHR023w_sc, YAL029c_sc) 
+(studies__2)	pair (YHR023w_sc, YAL029c_sc) 
+(evaluates)	pair (YHR023w_sc, YAL029c_sc) with averaged_similarity(146.110931)
+(discarded)	pair (YHR023w_sc, YAL029c_sc) with averaged_similarity(146.110931) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YHR023w_sc, YOR326w_sc) with sim_out_in(144.096909)
+(studies_1)	pair (YHR023w_sc, YOR326w_sc) 
+(studies__2)	pair (YHR023w_sc, YOR326w_sc) 
+(evaluates)	pair (YHR023w_sc, YOR326w_sc) with averaged_similarity(145.048462)
+(discarded)	pair (YHR023w_sc, YOR326w_sc) with averaged_similarity(145.048462) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YHR023w_sc, YMR109w_sc) with sim_out_in(103.096909)
+(studies_1)	pair (YHR023w_sc, YMR109w_sc) 
+(studies__2)	pair (YHR023w_sc, YMR109w_sc) 
+(evaluates)	pair (YHR023w_sc, YMR109w_sc) with averaged_similarity(104.309891)
+(discarded)	pair (YHR023w_sc, YMR109w_sc) with averaged_similarity(104.309891) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YHR023w_sc, YKL129c_sc) with sim_out_in(99.154900)
+(studies_1)	pair (YHR023w_sc, YKL129c_sc) 
+(studies__2)	pair (YHR023w_sc, YKL129c_sc) 
+(evaluates)	pair (YHR023w_sc, YKL129c_sc) with averaged_similarity(100.426933)
+(discarded)	pair (YHR023w_sc, YKL129c_sc) with averaged_similarity(100.426933) < the leftmost_ortholog_limit(176.522873)
+(inserts)	pair (At1g11265_at, At1g10260_at) with averaged_similarity(107.897942)
+(studies)	pair (YJL113w_sc, YAR009c_sc) with sim_out_in(66.301033)
+(studies_1)	pair (YJL113w_sc, YAR009c_sc) 
+(studies__2)	pair (YJL113w_sc, YAR009c_sc) 
+(evaluates)	pair (YJL113w_sc, YAR009c_sc) with averaged_similarity(67.261444)
+(inserts)	pair (YJL113w_sc, YAR009c_sc) with averaged_similarity(67.261444)
+(studies)	pair (At5g39560_at, At1g19460_at) with sim_out_in(35.154903)
+(studies_1)	pair (At5g39560_at, At1g19460_at) 
+(studies__2)	pair (At5g39560_at, At1g19460_at) 
+(evaluates)	pair (At5g39560_at, At1g19460_at) with averaged_similarity(37.600330)
+(inserts)	pair (At5g39560_at, At1g19460_at) with averaged_similarity(37.600330)
+(studies)	pair (YAR009c_sc, YJL113w_sc) with sim_out_in(68.221848)
+(studies)	pair (At1g21220_at, At1g21280_at) with sim_out_in(71.698967)
+(studies_1)	pair (At1g21220_at, At1g21280_at) 
+(studies__2)	pair (At1g21220_at, At1g21280_at) 
+(evaluates)	pair (At1g21220_at, At1g21280_at) with averaged_similarity(71.698967)
+(inserts)	pair (At1g21220_at, At1g21280_at) with averaged_similarity(71.698967)
+(studies_1)	pair (YAR009c_sc, YJL113w_sc) 
+(studies__2)	pair (YAR009c_sc, YJL113w_sc) 
+(studies)	pair (At5g20490_at, At1g04160_at) with sim_out_in(176.522873)
+(studies_1)	pair (At5g20490_at, At1g04160_at) 
+(studies__2)	pair (At5g20490_at, At1g04160_at) 
+(evaluates)	pair (At5g20490_at, At1g04160_at) with averaged_similarity(176.522873)
+(discarded)	pair (At5g20490_at, At1g04160_at) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At5g20490_at, At3g19960_at) with sim_out_in(160.397934)
+(studies_1)	pair (At5g20490_at, At3g19960_at) 
+(studies__2)	pair (At5g20490_at, At3g19960_at) 
+(evaluates)	pair (At5g20490_at, At3g19960_at) with averaged_similarity(160.309891)
+(discarded)	pair (At5g20490_at, At3g19960_at) with averaged_similarity(160.309891) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At5g20490_at, At5g54280_at) with sim_out_in(141.698975)
+(studies_1)	pair (At5g20490_at, At5g54280_at) 
+(studies__2)	pair (At5g20490_at, At5g54280_at) 
+(evaluates)	pair (At5g20490_at, At5g54280_at) with averaged_similarity(141.610931)
+(discarded)	pair (At5g20490_at, At5g54280_at) with averaged_similarity(141.610931) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At5g46040_at, At3g45690_at) with sim_out_in(66.000000)
+(studies_1)	pair (At5g46040_at, At3g45690_at) 
+(studies__2)	pair (At5g46040_at, At3g45690_at) 
+(evaluates)	pair (At5g46040_at, At3g45690_at) with averaged_similarity(69.077454)
+(inserts)	pair (At5g46040_at, At3g45690_at) with averaged_similarity(69.077454)
+(evaluates)	pair (YAR009c_sc, YJL113w_sc) with averaged_similarity(67.261444)
+(inserts)	pair (YAR009c_sc, YJL113w_sc) with averaged_similarity(67.261444)
+(studies)	pair (At5g54280_at, At3g19960_at) with sim_out_in(176.522873)
+(studies_1)	pair (At5g54280_at, At3g19960_at) 
+(studies__2)	pair (At5g54280_at, At3g19960_at) 
+(evaluates)	pair (At5g54280_at, At3g19960_at) with averaged_similarity(176.522873)
+(discarded)	pair (At5g54280_at, At3g19960_at) with averaged_similarity(176.522873) < the rightmost_ortholog_limit(176.522873)
+(studies)	pair (At5g54280_at, At1g04160_at) with sim_out_in(166.045761)
+(studies_1)	pair (At5g54280_at, At1g04160_at) 
+(studies__2)	pair (At5g54280_at, At1g04160_at) 
+(evaluates)	pair (At5g54280_at, At1g04160_at) with averaged_similarity(166.133804)
+(discarded)	pair (At5g54280_at, At1g04160_at) with averaged_similarity(166.133804) < the leftmost_ortholog_limit(173.173401)
+(studies)	pair (At5g54280_at, At5g20490_at) with sim_out_in(141.522873)
+(studies_1)	pair (At5g54280_at, At5g20490_at) 
+(studies__2)	pair (At5g54280_at, At5g20490_at) 
+(evaluates)	pair (At5g54280_at, At5g20490_at) with averaged_similarity(141.610931)
+(discarded)	pair (At5g54280_at, At5g20490_at) with averaged_similarity(141.610931) < the leftmost_ortholog_limit(173.173401)
+(studies)	pair (At3g45690_at, At5g46040_at) with sim_out_in(72.154900)
+(studies_1)	pair (At3g45690_at, At5g46040_at) 
+(studies__2)	pair (At3g45690_at, At5g46040_at) 
+(evaluates)	pair (At3g45690_at, At5g46040_at) with averaged_similarity(69.077454)
+(inserts)	pair (At3g45690_at, At5g46040_at) with averaged_similarity(69.077454)
+(studies)	pair (At1g01280_at, At1g01190_at) with sim_out_in(54.397942)
+(studies_1)	pair (At1g01280_at, At1g01190_at) 
+(studies__2)	pair (At1g01280_at, At1g01190_at) 
+(evaluates)	pair (At1g01280_at, At1g01190_at) with averaged_similarity(56.048454)
+(inserts)	pair (At1g01280_at, At1g01190_at) with averaged_similarity(56.048454)
+(studies)	pair (At1g01280_at, At1g11600_at) with sim_out_in(48.000000)
+(studies_1)	pair (At1g01280_at, At1g11600_at) 
+(studies__2)	pair (At1g01280_at, At1g11600_at) 
+(studies)	pair (YOR326w_sc, YAL029c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YOR326w_sc, YAL029c_sc) 
+(studies__2)	pair (YOR326w_sc, YAL029c_sc) 
+(evaluates)	pair (YOR326w_sc, YAL029c_sc) with averaged_similarity(176.522873)
+(discarded)	pair (YOR326w_sc, YAL029c_sc) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YOR326w_sc, YHR023w_sc) with sim_out_in(146.000000)
+(studies_1)	pair (YOR326w_sc, YHR023w_sc) 
+(studies__2)	pair (YOR326w_sc, YHR023w_sc) 
+(evaluates)	pair (YOR326w_sc, YHR023w_sc) with averaged_similarity(145.048462)
+(discarded)	pair (YOR326w_sc, YHR023w_sc) with averaged_similarity(145.048462) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YOR326w_sc, YMR109w_sc) with sim_out_in(124.522881)
+(studies_1)	pair (YOR326w_sc, YMR109w_sc) 
+(studies__2)	pair (YOR326w_sc, YMR109w_sc) 
+(evaluates)	pair (YOR326w_sc, YMR109w_sc) with averaged_similarity(124.522881)
+(discarded)	pair (YOR326w_sc, YMR109w_sc) with averaged_similarity(124.522881) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YOR326w_sc, YKL129c_sc) with sim_out_in(123.301033)
+(evaluates)	pair (At1g01280_at, At1g11600_at) with averaged_similarity(48.610924)
+(inserts)	pair (At1g01280_at, At1g11600_at) with averaged_similarity(48.610924)
+(studies_1)	pair (YOR326w_sc, YKL129c_sc) 
+(studies)	pair (At1g21280_at, At1g21220_at) with sim_out_in(71.698967)
+(studies__2)	pair (YOR326w_sc, YKL129c_sc) 
+(evaluates)	pair (YOR326w_sc, YKL129c_sc) with averaged_similarity(123.411957)
+(discarded)	pair (YOR326w_sc, YKL129c_sc) with averaged_similarity(123.411957) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (YMR109w_sc, YKL129c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YMR109w_sc, YKL129c_sc) 
+(studies__2)	pair (YMR109w_sc, YKL129c_sc) 
+(evaluates)	pair (YMR109w_sc, YKL129c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YMR109w_sc, YKL129c_sc) with averaged_similarity(176.522873)
+(studies)	pair (YMR109w_sc, YOR326w_sc) with sim_out_in(124.522881)
+(studies_1)	pair (YMR109w_sc, YOR326w_sc) 
+(studies__2)	pair (YMR109w_sc, YOR326w_sc) 
+(evaluates)	pair (YMR109w_sc, YOR326w_sc) with averaged_similarity(124.522881)
+(discarded)	pair (YMR109w_sc, YOR326w_sc) with averaged_similarity(124.522881) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (YMR109w_sc, YAL029c_sc) with sim_out_in(121.000000)
+(studies_1)	pair (At1g21280_at, At1g21220_at) 
+(studies_1)	pair (YMR109w_sc, YAL029c_sc) 
+(studies__2)	pair (YMR109w_sc, YAL029c_sc) 
+(evaluates)	pair (YMR109w_sc, YAL029c_sc) with averaged_similarity(120.849487)
+(discarded)	pair (YMR109w_sc, YAL029c_sc) with averaged_similarity(120.849487) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (YMR109w_sc, YHR023w_sc) with sim_out_in(105.522881)
+(studies_1)	pair (YMR109w_sc, YHR023w_sc) 
+(studies__2)	pair (YMR109w_sc, YHR023w_sc) 
+(evaluates)	pair (YMR109w_sc, YHR023w_sc) with averaged_similarity(104.309891)
+(discarded)	pair (YMR109w_sc, YHR023w_sc) with averaged_similarity(104.309891) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (YAR010c_sc, YJR028w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YAR010c_sc, YJR028w_sc) 
+(studies__2)	pair (YAR010c_sc, YJR028w_sc) 
+(evaluates)	pair (YAR010c_sc, YJR028w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YAR010c_sc, YJR028w_sc) with averaged_similarity(176.522873)
+(studies)	pair (YAR010c_sc, YMR051c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YAR010c_sc, YMR051c_sc) 
+(studies__2)	pair (YAR010c_sc, YMR051c_sc) 
+(evaluates)	pair (YAR010c_sc, YMR051c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YAR010c_sc, YMR051c_sc) with averaged_similarity(176.522873)
+(studies)	pair (YKL129c_sc, YMR109w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YKL129c_sc, YMR109w_sc) 
+(studies__2)	pair (YKL129c_sc, YMR109w_sc) 
+(evaluates)	pair (YKL129c_sc, YMR109w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YKL129c_sc, YMR109w_sc) with averaged_similarity(176.522873)
+(studies)	pair (YKL129c_sc, YOR326w_sc) with sim_out_in(123.522881)
+(studies_1)	pair (YKL129c_sc, YOR326w_sc) 
+(studies__2)	pair (YKL129c_sc, YOR326w_sc) 
+(evaluates)	pair (YKL129c_sc, YOR326w_sc) with averaged_similarity(123.411957)
+(discarded)	pair (YKL129c_sc, YOR326w_sc) with averaged_similarity(123.411957) < the leftmost_ortholog_limit(145.849487)
+(studies)	pair (YKL129c_sc, YAL029c_sc) with sim_out_in(119.522881)
+(studies_1)	pair (YKL129c_sc, YAL029c_sc) 
+(studies__2)	pair (YKL129c_sc, YAL029c_sc) 
+(evaluates)	pair (YKL129c_sc, YAL029c_sc) with averaged_similarity(119.460411)
+(discarded)	pair (YKL129c_sc, YAL029c_sc) with averaged_similarity(119.460411) < the leftmost_ortholog_limit(145.849487)
+(studies)	pair (YKL129c_sc, YHR023w_sc) with sim_out_in(101.698967)
+(studies_1)	pair (YKL129c_sc, YHR023w_sc) 
+(studies__2)	pair (YKL129c_sc, YHR023w_sc) 
+(evaluates)	pair (YKL129c_sc, YHR023w_sc) with averaged_similarity(100.426933)
+(discarded)	pair (YKL129c_sc, YHR023w_sc) with averaged_similarity(100.426933) < the leftmost_ortholog_limit(145.849487)
+(studies)	pair (YJR028w_sc, YAR010c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YJR028w_sc, YAR010c_sc) 
+(studies__2)	pair (YJR028w_sc, YAR010c_sc) 
+(evaluates)	pair (YJR028w_sc, YAR010c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YJR028w_sc, YAR010c_sc) with averaged_similarity(176.522873)
+(studies)	pair (YJR028w_sc, YMR051c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YJR028w_sc, YMR051c_sc) 
+(studies__2)	pair (YJR028w_sc, YMR051c_sc) 
+(evaluates)	pair (YJR028w_sc, YMR051c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YJR028w_sc, YMR051c_sc) with averaged_similarity(176.522873)
+(studies)	pair (YMR051c_sc, YJR028w_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YMR051c_sc, YJR028w_sc) 
+(studies__2)	pair (YMR051c_sc, YJR028w_sc) 
+(evaluates)	pair (YMR051c_sc, YJR028w_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YMR051c_sc, YJR028w_sc) with averaged_similarity(176.522873)
+(studies)	pair (YMR051c_sc, YAR010c_sc) with sim_out_in(176.522873)
+(studies_1)	pair (YMR051c_sc, YAR010c_sc) 
+(studies__2)	pair (YMR051c_sc, YAR010c_sc) 
+(evaluates)	pair (YMR051c_sc, YAR010c_sc) with averaged_similarity(176.522873)
+(inserts)	pair (YMR051c_sc, YAR010c_sc) with averaged_similarity(176.522873)
+(studies__2)	pair (At1g21280_at, At1g21220_at) 
+(evaluates)	pair (At1g21280_at, At1g21220_at) with averaged_similarity(71.698967)
+(inserts)	pair (At1g21280_at, At1g21220_at) with averaged_similarity(71.698967)
+(studies)	pair (Hs13699809_hs, Hs7949031_hs) with sim_out_in(160.698975)
+(studies_1)	pair (Hs13699809_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs13699809_hs, Hs7949031_hs) with averaged_similarity(156.198975)
+(inserts)	pair (Hs13699809_hs, Hs7949031_hs) with averaged_similarity(156.198975)
+(studies)	pair (Hs13699809_hs, Hs13699816_hs) with sim_out_in(148.000000)
+(studies)	pair (At1g11600_at, At1g01190_at) with sim_out_in(46.000000)
+(studies_1)	pair (At1g11600_at, At1g01190_at) 
+(studies__2)	pair (At1g11600_at, At1g01190_at) 
+(evaluates)	pair (At1g11600_at, At1g01190_at) with averaged_similarity(47.349487)
+(inserts)	pair (At1g11600_at, At1g01190_at) with averaged_similarity(47.349487)
+(studies_1)	pair (Hs13699809_hs, Hs13699816_hs) 
+(studies)	pair (At1g11600_at, At1g01280_at) with sim_out_in(49.221848)
+(studies_1)	pair (At1g11600_at, At1g01280_at) 
+(studies__2)	pair (At1g11600_at, At1g01280_at) 
+(evaluates)	pair (At1g11600_at, At1g01280_at) with averaged_similarity(48.610924)
+(inserts)	pair (At1g11600_at, At1g01280_at) with averaged_similarity(48.610924)
+(studies__2)	pair (Hs13699809_hs, Hs13699816_hs) 
+(studies)	pair (At1g04160_at, At5g20490_at) with sim_out_in(176.522873)
+(studies_1)	pair (At1g04160_at, At5g20490_at) 
+(studies__2)	pair (At1g04160_at, At5g20490_at) 
+(evaluates)	pair (At1g04160_at, At5g20490_at) with averaged_similarity(176.522873)
+(discarded)	pair (At1g04160_at, At5g20490_at) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At1g04160_at, At3g19960_at) with sim_out_in(176.522873)
+(evaluates)	pair (Hs13699809_hs, Hs13699816_hs) with averaged_similarity(145.761444)
+(inserts)	pair (Hs13699809_hs, Hs13699816_hs) with averaged_similarity(145.761444)
+(studies_1)	pair (At1g04160_at, At3g19960_at) 
+(studies)	pair (Hs13699809_hs, Hs10834998_hs) with sim_out_in(138.698975)
+(studies_1)	pair (Hs13699809_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs13699809_hs, Hs10834998_hs) with averaged_similarity(139.048462)
+(inserts)	pair (Hs13699809_hs, Hs10834998_hs) with averaged_similarity(139.048462)
+(studies__2)	pair (At1g04160_at, At3g19960_at) 
+(studies)	pair (Hs13699809_hs, Hs13449277_hs) with sim_out_in(141.000000)
+(studies_1)	pair (Hs13699809_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs13699809_hs, Hs13449277_hs) with averaged_similarity(135.500000)
+(inserts)	pair (Hs13699809_hs, Hs13449277_hs) with averaged_similarity(135.500000)
+(evaluates)	pair (At1g04160_at, At3g19960_at) with averaged_similarity(176.522873)
+(discarded)	pair (At1g04160_at, At3g19960_at) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At1g04160_at, At5g54280_at) with sim_out_in(166.221848)
+(studies_1)	pair (At1g04160_at, At5g54280_at) 
+(studies__2)	pair (At1g04160_at, At5g54280_at) 
+(evaluates)	pair (At1g04160_at, At5g54280_at) with averaged_similarity(166.133804)
+(discarded)	pair (At1g04160_at, At5g54280_at) with averaged_similarity(166.133804) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At1g01190_at, At1g01280_at) with sim_out_in(57.698971)
+(studies_1)	pair (At1g01190_at, At1g01280_at) 
+(studies__2)	pair (At1g01190_at, At1g01280_at) 
+(evaluates)	pair (At1g01190_at, At1g01280_at) with averaged_similarity(56.048454)
+(studies)	pair (Hs13699809_hs, Hs4503231_hs) with sim_out_in(26.000000)
+(studies_1)	pair (Hs13699809_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs13699809_hs, Hs4503231_hs) with averaged_similarity(25.849485)
+(discarded)	pair (Hs13699809_hs, Hs4503231_hs) with averaged_similarity(25.849485) < the leftmost_ortholog_limit(29.849483)
+(studies)	pair (Hs13699809_hs, Hs4507383_hs) with sim_out_in(20.698971)
+(studies_1)	pair (Hs13699809_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs13699809_hs, Hs4507383_hs) with averaged_similarity(20.610924)
+(discarded)	pair (Hs13699809_hs, Hs4507383_hs) with averaged_similarity(20.610924) < the leftmost_ortholog_limit(29.849483)
+(studies)	pair (Hs13699809_hs, Hs13699840_hs) with sim_out_in(13.221848)
+(inserts)	pair (At1g01190_at, At1g01280_at) with averaged_similarity(56.048454)
+(studies)	pair (At1g01190_at, At1g11600_at) with sim_out_in(48.698971)
+(studies_1)	pair (At1g01190_at, At1g11600_at) 
+(studies__2)	pair (At1g01190_at, At1g11600_at) 
+(evaluates)	pair (At1g01190_at, At1g11600_at) with averaged_similarity(47.349487)
+(inserts)	pair (At1g01190_at, At1g11600_at) with averaged_similarity(47.349487)
+(studies_1)	pair (Hs13699809_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs13699809_hs, Hs13699840_hs) 
+(studies)	pair (At1g10260_at, At1g11265_at) with sim_out_in(107.397942)
+(studies_1)	pair (At1g10260_at, At1g11265_at) 
+(studies__2)	pair (At1g10260_at, At1g11265_at) 
+(evaluates)	pair (At1g10260_at, At1g11265_at) with averaged_similarity(107.897942)
+(inserts)	pair (At1g10260_at, At1g11265_at) with averaged_similarity(107.897942)
+(evaluates)	pair (Hs13699809_hs, Hs13699840_hs) with averaged_similarity(13.261439)
+(discarded)	pair (Hs13699809_hs, Hs13699840_hs) with averaged_similarity(13.261439) < the leftmost_ortholog_limit(29.849483)
+(studies)	pair (Hs7706117_hs, Hs4827008_hs) with sim_out_in(14.301030)
+(studies_1)	pair (Hs7706117_hs, Hs4827008_hs) 
+(studies__2)	pair (Hs7706117_hs, Hs4827008_hs) 
+(evaluates)	pair (Hs7706117_hs, Hs4827008_hs) with averaged_similarity(19.301029)
+(discarded)	pair (Hs7706117_hs, Hs4827008_hs) with averaged_similarity(19.301029) < the leftmost_ortholog_limit(36.545757)
+(studies)	pair (Hs7706117_hs, Hs10835271_hs) with sim_out_in(10.698970)
+(studies_1)	pair (Hs7706117_hs, Hs10835271_hs) 
+(studies__2)	pair (Hs7706117_hs, Hs10835271_hs) 
+(evaluates)	pair (Hs7706117_hs, Hs10835271_hs) with averaged_similarity(15.198971)
+(discarded)	pair (Hs7706117_hs, Hs10835271_hs) with averaged_similarity(15.198971) < the leftmost_ortholog_limit(36.545757)
+(studies)	pair (Hs4507383_hs, Hs13699840_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs4507383_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs13699840_hs) with averaged_similarity(176.522873)
+(inserts)	pair (Hs4507383_hs, Hs13699840_hs) with averaged_similarity(176.522873)
+(studies)	pair (Hs4507383_hs, Hs4503231_hs) with sim_out_in(89.301033)
+(studies)	pair (At1g19460_at, At5g39560_at) with sim_out_in(40.045757)
+(studies_1)	pair (At1g19460_at, At5g39560_at) 
+(studies__2)	pair (At1g19460_at, At5g39560_at) 
+(evaluates)	pair (At1g19460_at, At5g39560_at) with averaged_similarity(37.600330)
+(inserts)	pair (At1g19460_at, At5g39560_at) with averaged_similarity(37.600330)
+(studies_1)	pair (Hs4507383_hs, Hs4503231_hs) 
+(studies)	pair (At3g19960_at, At5g54280_at) with sim_out_in(176.522873)
+(studies_1)	pair (At3g19960_at, At5g54280_at) 
+(studies__2)	pair (At3g19960_at, At5g54280_at) 
+(evaluates)	pair (At3g19960_at, At5g54280_at) with averaged_similarity(176.522873)
+(discarded)	pair (At3g19960_at, At5g54280_at) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At3g19960_at, At1g04160_at) with sim_out_in(176.522873)
+(studies__2)	pair (Hs4507383_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs4503231_hs) with averaged_similarity(89.349487)
+(inserts)	pair (Hs4507383_hs, Hs4503231_hs) with averaged_similarity(89.349487)
+(studies)	pair (Hs4507383_hs, Hs13699816_hs) with sim_out_in(22.698971)
+(studies_1)	pair (At3g19960_at, At1g04160_at) 
+(studies__2)	pair (At3g19960_at, At1g04160_at) 
+(evaluates)	pair (At3g19960_at, At1g04160_at) with averaged_similarity(176.522873)
+(discarded)	pair (At3g19960_at, At1g04160_at) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (At3g19960_at, At5g20490_at) with sim_out_in(160.221848)
+(studies_1)	pair (At3g19960_at, At5g20490_at) 
+(studies__2)	pair (At3g19960_at, At5g20490_at) 
+(evaluates)	pair (At3g19960_at, At5g20490_at) with averaged_similarity(160.309891)
+(discarded)	pair (At3g19960_at, At5g20490_at) with averaged_similarity(160.309891) < the leftmost_ortholog_limit(176.522873)
+(studies_1)	pair (Hs4507383_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs13699816_hs) with averaged_similarity(22.349485)
+(discarded)	pair (Hs4507383_hs, Hs13699816_hs) with averaged_similarity(22.349485) < the leftmost_ortholog_limit(24.110924)
+(studies)	pair (Hs4507383_hs, Hs13699809_hs) with sim_out_in(20.522879)
+(studies_1)	pair (Hs4507383_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs13699809_hs) with averaged_similarity(20.610924)
+(discarded)	pair (Hs4507383_hs, Hs13699809_hs) with averaged_similarity(20.610924) < the leftmost_ortholog_limit(24.110924)
+(studies)	pair (Hs4507383_hs, Hs10834998_hs) with sim_out_in(20.698971)
+(studies_1)	pair (Hs4507383_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs10834998_hs) with averaged_similarity(20.610924)
+(discarded)	pair (Hs4507383_hs, Hs10834998_hs) with averaged_similarity(20.610924) < the leftmost_ortholog_limit(24.110924)
+(studies)	pair (Hs4507383_hs, Hs7949031_hs) with sim_out_in(17.221849)
+(studies_1)	pair (Hs4507383_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs7949031_hs) with averaged_similarity(15.960409)
+(discarded)	pair (Hs4507383_hs, Hs7949031_hs) with averaged_similarity(15.960409) < the leftmost_ortholog_limit(24.110924)
+(studies)	pair (Hs4507383_hs, Hs13449277_hs) with sim_out_in(12.522879)
+(studies)	pair (Hs4505301_hs, Hs11024712_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs4505301_hs, Hs11024712_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs11024712_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs11024712_hs) with averaged_similarity(176.522873)
+(discarded)	pair (Hs4505301_hs, Hs11024712_hs) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs10835119_hs) with sim_out_in(160.698975)
+(studies_1)	pair (Hs4505301_hs, Hs10835119_hs) 
+(studies_1)	pair (Hs4507383_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs4507383_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs4507383_hs, Hs13449277_hs) with averaged_similarity(12.522879)
+(discarded)	pair (Hs4507383_hs, Hs13449277_hs) with averaged_similarity(12.522879) < the leftmost_ortholog_limit(24.110924)
+(studies__2)	pair (Hs4505301_hs, Hs10835119_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs10835119_hs) with averaged_similarity(161.698975)
+(discarded)	pair (Hs4505301_hs, Hs10835119_hs) with averaged_similarity(161.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs7705901_hs) with sim_out_in(123.096909)
+(studies_1)	pair (Hs4505301_hs, Hs7705901_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs7705901_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs7705901_hs) with averaged_similarity(123.698975)
+(discarded)	pair (Hs4505301_hs, Hs7705901_hs) with averaged_similarity(123.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs4885503_hs) with sim_out_in(122.154900)
+(studies_1)	pair (Hs4505301_hs, Hs4885503_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs4885503_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs4885503_hs) with averaged_similarity(122.338890)
+(discarded)	pair (Hs4505301_hs, Hs4885503_hs) with averaged_similarity(122.338890) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4827008_hs, Hs10835271_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs4827008_hs, Hs10835271_hs) 
+(studies__2)	pair (Hs4827008_hs, Hs10835271_hs) 
+(evaluates)	pair (Hs4827008_hs, Hs10835271_hs) with averaged_similarity(176.522873)
+(inserts)	pair (Hs4827008_hs, Hs10835271_hs) with averaged_similarity(176.522873)
+(studies)	pair (Hs4827008_hs, Hs7706117_hs) with sim_out_in(24.301029)
+(studies_1)	pair (Hs4827008_hs, Hs7706117_hs) 
+(studies__2)	pair (Hs4827008_hs, Hs7706117_hs) 
+(evaluates)	pair (Hs4827008_hs, Hs7706117_hs) with averaged_similarity(19.301029)
+(discarded)	pair (Hs4827008_hs, Hs7706117_hs) with averaged_similarity(19.301029) < the leftmost_ortholog_limit(24.397942)
+(studies)	pair (Hs11024712_hs, Hs4505301_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs11024712_hs, Hs4505301_hs) 
+(studies__2)	pair (Hs11024712_hs, Hs4505301_hs) 
+(evaluates)	pair (Hs11024712_hs, Hs4505301_hs) with averaged_similarity(176.522873)
+(discarded)	pair (Hs11024712_hs, Hs4505301_hs) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs11024712_hs, Hs10835119_hs) with sim_out_in(158.301025)
+(studies_1)	pair (Hs11024712_hs, Hs10835119_hs) 
+(studies__2)	pair (Hs11024712_hs, Hs10835119_hs) 
+(evaluates)	pair (Hs11024712_hs, Hs10835119_hs) with averaged_similarity(159.349487)
+(discarded)	pair (Hs11024712_hs, Hs10835119_hs) with averaged_similarity(159.349487) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs11024712_hs, Hs7705901_hs) with sim_out_in(125.000000)
+(studies)	pair (Hs10834998_hs, Hs13699816_hs) with sim_out_in(175.522873)
+(studies_1)	pair (Hs10834998_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs13699816_hs) with averaged_similarity(172.761444)
+(inserts)	pair (Hs10834998_hs, Hs13699816_hs) with averaged_similarity(172.761444)
+(studies)	pair (Hs10834998_hs, Hs13699809_hs) with sim_out_in(139.397934)
+(studies_1)	pair (Hs10834998_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs13699809_hs) with averaged_similarity(139.048462)
+(inserts)	pair (Hs10834998_hs, Hs13699809_hs) with averaged_similarity(139.048462)
+(studies_1)	pair (Hs11024712_hs, Hs7705901_hs) 
+(studies)	pair (Hs10834998_hs, Hs7949031_hs) with sim_out_in(134.221848)
+(studies_1)	pair (Hs10834998_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs7949031_hs) with averaged_similarity(130.460403)
+(inserts)	pair (Hs10834998_hs, Hs7949031_hs) with averaged_similarity(130.460403)
+(studies__2)	pair (Hs11024712_hs, Hs7705901_hs) 
+(studies)	pair (Hs10834998_hs, Hs13449277_hs) with sim_out_in(111.301033)
+(studies_1)	pair (Hs10834998_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs13449277_hs) with averaged_similarity(105.911957)
+(inserts)	pair (Hs10834998_hs, Hs13449277_hs) with averaged_similarity(105.911957)
+(evaluates)	pair (Hs11024712_hs, Hs7705901_hs) with averaged_similarity(125.610924)
+(discarded)	pair (Hs11024712_hs, Hs7705901_hs) with averaged_similarity(125.610924) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs11024712_hs, Hs4885503_hs) with sim_out_in(119.000000)
+(studies)	pair (Hs10834998_hs, Hs4503231_hs) with sim_out_in(24.698971)
+(studies_1)	pair (Hs10834998_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs4503231_hs) with averaged_similarity(24.548454)
+(discarded)	pair (Hs10834998_hs, Hs4503231_hs) with averaged_similarity(24.548454) < the leftmost_ortholog_limit(33.460411)
+(studies)	pair (Hs10834998_hs, Hs4507383_hs) with sim_out_in(20.522879)
+(studies_1)	pair (Hs10834998_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs4507383_hs) with averaged_similarity(20.610924)
+(discarded)	pair (Hs10834998_hs, Hs4507383_hs) with averaged_similarity(20.610924) < the leftmost_ortholog_limit(33.460411)
+(studies)	pair (Hs10834998_hs, Hs13699840_hs) with sim_out_in(15.397940)
+(studies_1)	pair (Hs10834998_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs10834998_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs10834998_hs, Hs13699840_hs) with averaged_similarity(15.309895)
+(discarded)	pair (Hs10834998_hs, Hs13699840_hs) with averaged_similarity(15.309895) < the leftmost_ortholog_limit(33.460411)
+(studies_1)	pair (Hs11024712_hs, Hs4885503_hs) 
+(studies__2)	pair (Hs11024712_hs, Hs4885503_hs) 
+(evaluates)	pair (Hs11024712_hs, Hs4885503_hs) with averaged_similarity(118.698975)
+(discarded)	pair (Hs11024712_hs, Hs4885503_hs) with averaged_similarity(118.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs13699816_hs, Hs10834998_hs) with sim_out_in(170.000000)
+(studies_1)	pair (Hs13699816_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs10834998_hs) with averaged_similarity(172.761444)
+(inserts)	pair (Hs13699816_hs, Hs10834998_hs) with averaged_similarity(172.761444)
+(studies)	pair (Hs7705901_hs, Hs10835119_hs) with sim_out_in(147.698975)
+(studies_1)	pair (Hs7705901_hs, Hs10835119_hs) 
+(studies__2)	pair (Hs7705901_hs, Hs10835119_hs) 
+(evaluates)	pair (Hs7705901_hs, Hs10835119_hs) with averaged_similarity(147.426941)
+(discarded)	pair (Hs7705901_hs, Hs10835119_hs) with averaged_similarity(147.426941) < the leftmost_ortholog_limit(159.426941)
+(studies)	pair (Hs7705901_hs, Hs4885503_hs) with sim_out_in(140.698975)
+(studies_1)	pair (Hs7705901_hs, Hs4885503_hs) 
+(studies__2)	pair (Hs7705901_hs, Hs4885503_hs) 
+(evaluates)	pair (Hs7705901_hs, Hs4885503_hs) with averaged_similarity(140.198975)
+(discarded)	pair (Hs7705901_hs, Hs4885503_hs) with averaged_similarity(140.198975) < the leftmost_ortholog_limit(159.426941)
+(studies)	pair (Hs7705901_hs, Hs11024712_hs) with sim_out_in(126.221848)
+(studies_1)	pair (Hs7705901_hs, Hs11024712_hs) 
+(studies__2)	pair (Hs7705901_hs, Hs11024712_hs) 
+(evaluates)	pair (Hs7705901_hs, Hs11024712_hs) with averaged_similarity(125.610924)
+(discarded)	pair (Hs7705901_hs, Hs11024712_hs) with averaged_similarity(125.610924) < the leftmost_ortholog_limit(159.426941)
+(studies)	pair (Hs7705901_hs, Hs4505301_hs) with sim_out_in(124.301033)
+(studies)	pair (Hs13699816_hs, Hs13699809_hs) with sim_out_in(143.522873)
+(studies_1)	pair (Hs13699816_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs13699809_hs) with averaged_similarity(145.761444)
+(inserts)	pair (Hs13699816_hs, Hs13699809_hs) with averaged_similarity(145.761444)
+(studies_1)	pair (Hs7705901_hs, Hs4505301_hs) 
+(studies)	pair (Hs13699816_hs, Hs7949031_hs) with sim_out_in(142.221848)
+(studies_1)	pair (Hs13699816_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs7949031_hs) with averaged_similarity(140.110931)
+(inserts)	pair (Hs13699816_hs, Hs7949031_hs) with averaged_similarity(140.110931)
+(studies__2)	pair (Hs7705901_hs, Hs4505301_hs) 
+(evaluates)	pair (Hs7705901_hs, Hs4505301_hs) with averaged_similarity(123.698975)
+(discarded)	pair (Hs7705901_hs, Hs4505301_hs) with averaged_similarity(123.698975) < the leftmost_ortholog_limit(159.426941)
+(studies)	pair (Hs13699840_hs, Hs4507383_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs13699840_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs4507383_hs) with averaged_similarity(176.522873)
+(inserts)	pair (Hs13699840_hs, Hs4507383_hs) with averaged_similarity(176.522873)
+(studies)	pair (Hs13699816_hs, Hs13449277_hs) with sim_out_in(120.000000)
+(studies_1)	pair (Hs13699816_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs13449277_hs) with averaged_similarity(116.349487)
+(inserts)	pair (Hs13699816_hs, Hs13449277_hs) with averaged_similarity(116.349487)
+(studies)	pair (Hs13699840_hs, Hs4503231_hs) with sim_out_in(68.397942)
+(studies_1)	pair (Hs13699840_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs4503231_hs) with averaged_similarity(68.397942)
+(inserts)	pair (Hs13699840_hs, Hs4503231_hs) with averaged_similarity(68.397942)
+(studies)	pair (Hs13699816_hs, Hs4503231_hs) with sim_out_in(26.698971)
+(studies_1)	pair (Hs13699816_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs4503231_hs) with averaged_similarity(27.110924)
+(discarded)	pair (Hs13699816_hs, Hs4503231_hs) with averaged_similarity(27.110924) < the leftmost_ortholog_limit(31.610924)
+(studies)	pair (Hs13699816_hs, Hs4507383_hs) with sim_out_in(22.000000)
+(studies)	pair (Hs13699840_hs, Hs10834998_hs) with sim_out_in(15.221848)
+(studies_1)	pair (Hs13699840_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs10834998_hs) with averaged_similarity(15.309895)
+(discarded)	pair (Hs13699840_hs, Hs10834998_hs) with averaged_similarity(15.309895) < the leftmost_ortholog_limit(15.548455)
+(studies)	pair (Hs13699840_hs, Hs13699816_hs) with sim_out_in(15.522879)
+(studies_1)	pair (Hs13699840_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs13699816_hs) with averaged_similarity(15.110924)
+(discarded)	pair (Hs13699840_hs, Hs13699816_hs) with averaged_similarity(15.110924) < the leftmost_ortholog_limit(15.548455)
+(studies)	pair (Hs13699840_hs, Hs13699809_hs) with sim_out_in(13.301030)
+(studies_1)	pair (Hs13699816_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs4507383_hs) with averaged_similarity(22.349485)
+(discarded)	pair (Hs13699816_hs, Hs4507383_hs) with averaged_similarity(22.349485) < the leftmost_ortholog_limit(31.610924)
+(studies)	pair (Hs13699816_hs, Hs13699840_hs) with sim_out_in(14.698970)
+(studies_1)	pair (Hs13699816_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs13699816_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs13699816_hs, Hs13699840_hs) with averaged_similarity(15.110924)
+(discarded)	pair (Hs13699816_hs, Hs13699840_hs) with averaged_similarity(15.110924) < the leftmost_ortholog_limit(31.610924)
+(studies_1)	pair (Hs13699840_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs13699809_hs) with averaged_similarity(13.261439)
+(discarded)	pair (Hs13699840_hs, Hs13699809_hs) with averaged_similarity(13.261439) < the leftmost_ortholog_limit(15.548455)
+(studies)	pair (Hs13699840_hs, Hs7949031_hs) with sim_out_in(12.522879)
+(studies_1)	pair (Hs13699840_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs13699840_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs13699840_hs, Hs7949031_hs) with averaged_similarity(11.372364)
+(discarded)	pair (Hs13699840_hs, Hs7949031_hs) with averaged_similarity(11.372364) < the leftmost_ortholog_limit(15.548455)
+(studies)	pair (Hs13699840_hs, Hs13449277_hs) with sim_out_in(7.698970)
+(studies_1)	pair (Hs13699840_hs, Hs13449277_hs) 
+(studies)	pair (Hs4503231_hs, Hs4507383_hs) with sim_out_in(89.397942)
+(studies_1)	pair (Hs4503231_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs4507383_hs) with averaged_similarity(89.349487)
+(inserts)	pair (Hs4503231_hs, Hs4507383_hs) with averaged_similarity(89.349487)
+(studies__2)	pair (Hs13699840_hs, Hs13449277_hs) 
+(studies)	pair (Hs4503231_hs, Hs13699840_hs) with sim_out_in(68.397942)
+(evaluates)	pair (Hs13699840_hs, Hs13449277_hs) with averaged_similarity(7.198970)
+(discarded)	pair (Hs13699840_hs, Hs13449277_hs) with averaged_similarity(7.198970) < the leftmost_ortholog_limit(15.548455)
+(studies_1)	pair (Hs4503231_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs13699840_hs) with averaged_similarity(68.397942)
+(inserts)	pair (Hs4503231_hs, Hs13699840_hs) with averaged_similarity(68.397942)
+(studies)	pair (Hs4885503_hs, Hs10835119_hs) with sim_out_in(143.522873)
+(studies_1)	pair (Hs4885503_hs, Hs10835119_hs) 
+(studies__2)	pair (Hs4885503_hs, Hs10835119_hs) 
+(evaluates)	pair (Hs4885503_hs, Hs10835119_hs) with averaged_similarity(143.610931)
+(discarded)	pair (Hs4885503_hs, Hs10835119_hs) with averaged_similarity(143.610931) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (Hs4885503_hs, Hs7705901_hs) with sim_out_in(139.698975)
+(studies_1)	pair (Hs4885503_hs, Hs7705901_hs) 
+(studies__2)	pair (Hs4885503_hs, Hs7705901_hs) 
+(evaluates)	pair (Hs4885503_hs, Hs7705901_hs) with averaged_similarity(140.198975)
+(discarded)	pair (Hs4885503_hs, Hs7705901_hs) with averaged_similarity(140.198975) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (Hs4885503_hs, Hs4505301_hs) with sim_out_in(122.522881)
+(studies_1)	pair (Hs4885503_hs, Hs4505301_hs) 
+(studies__2)	pair (Hs4885503_hs, Hs4505301_hs) 
+(evaluates)	pair (Hs4885503_hs, Hs4505301_hs) with averaged_similarity(122.338890)
+(discarded)	pair (Hs4885503_hs, Hs4505301_hs) with averaged_similarity(122.338890) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (Hs4885503_hs, Hs11024712_hs) with sim_out_in(118.397942)
+(studies_1)	pair (Hs4885503_hs, Hs11024712_hs) 
+(studies__2)	pair (Hs4885503_hs, Hs11024712_hs) 
+(evaluates)	pair (Hs4885503_hs, Hs11024712_hs) with averaged_similarity(118.698975)
+(discarded)	pair (Hs4885503_hs, Hs11024712_hs) with averaged_similarity(118.698975) < the leftmost_ortholog_limit(151.227966)
+(studies)	pair (Hs4505301_hs, Hs11024712_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs4505301_hs, Hs11024712_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs11024712_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs11024712_hs) with averaged_similarity(176.522873)
+(studies)	pair (Hs4503231_hs, Hs13699816_hs) with sim_out_in(27.522879)
+(studies_1)	pair (Hs4503231_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs13699816_hs) with averaged_similarity(27.110924)
+(discarded)	pair (Hs4503231_hs, Hs13699816_hs) with averaged_similarity(27.110924) < the leftmost_ortholog_limit(34.911957)
+(studies)	pair (Hs4503231_hs, Hs13699809_hs) with sim_out_in(25.698971)
+(studies_1)	pair (Hs4503231_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs13699809_hs) with averaged_similarity(25.849485)
+(discarded)	pair (Hs4503231_hs, Hs13699809_hs) with averaged_similarity(25.849485) < the leftmost_ortholog_limit(34.911957)
+(studies)	pair (Hs4503231_hs, Hs7949031_hs) with sim_out_in(31.000000)
+(studies_1)	pair (Hs4503231_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs7949031_hs) with averaged_similarity(28.022879)
+(discarded)	pair (Hs4503231_hs, Hs7949031_hs) with averaged_similarity(28.022879) < the leftmost_ortholog_limit(34.911957)
+(studies)	pair (Hs4503231_hs, Hs10834998_hs) with sim_out_in(24.397940)
+(studies_1)	pair (Hs4503231_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs10834998_hs) with averaged_similarity(24.548454)
+(discarded)	pair (Hs4503231_hs, Hs10834998_hs) with averaged_similarity(24.548454) < the leftmost_ortholog_limit(34.911957)
+(discarded)	pair (Hs4505301_hs, Hs11024712_hs) with averaged_similarity(176.522873) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs10835119_hs) with sim_out_in(160.698975)
+(studies_1)	pair (Hs4505301_hs, Hs10835119_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs10835119_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs10835119_hs) with averaged_similarity(161.698975)
+(discarded)	pair (Hs4505301_hs, Hs10835119_hs) with averaged_similarity(161.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs7705901_hs) with sim_out_in(123.096909)
+(studies)	pair (Hs4503231_hs, Hs13449277_hs) with sim_out_in(28.698971)
+(studies_1)	pair (Hs4503231_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs4503231_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs4503231_hs, Hs13449277_hs) with averaged_similarity(24.926937)
+(discarded)	pair (Hs4503231_hs, Hs13449277_hs) with averaged_similarity(24.926937) < the leftmost_ortholog_limit(34.911957)
+(studies_1)	pair (Hs4505301_hs, Hs7705901_hs) 
+(studies)	pair (Hs7949031_hs, Hs13699809_hs) with sim_out_in(151.698975)
+(studies_1)	pair (Hs7949031_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs13699809_hs) with averaged_similarity(156.198975)
+(studies__2)	pair (Hs4505301_hs, Hs7705901_hs) 
+(inserts)	pair (Hs7949031_hs, Hs13699809_hs) with averaged_similarity(156.198975)
+(studies)	pair (Hs7949031_hs, Hs13699816_hs) with sim_out_in(138.000000)
+(studies_1)	pair (Hs7949031_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs13699816_hs) with averaged_similarity(140.110931)
+(inserts)	pair (Hs7949031_hs, Hs13699816_hs) with averaged_similarity(140.110931)
+(evaluates)	pair (Hs4505301_hs, Hs7705901_hs) with averaged_similarity(123.698975)
+(discarded)	pair (Hs4505301_hs, Hs7705901_hs) with averaged_similarity(123.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs4505301_hs, Hs4885503_hs) with sim_out_in(122.154900)
+(studies_1)	pair (Hs4505301_hs, Hs4885503_hs) 
+(studies__2)	pair (Hs4505301_hs, Hs4885503_hs) 
+(evaluates)	pair (Hs4505301_hs, Hs4885503_hs) with averaged_similarity(122.338890)
+(discarded)	pair (Hs4505301_hs, Hs4885503_hs) with averaged_similarity(122.338890) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs7949031_hs, Hs10834998_hs) with sim_out_in(126.698967)
+(studies_1)	pair (Hs7949031_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs10834998_hs) with averaged_similarity(130.460403)
+(inserts)	pair (Hs7949031_hs, Hs10834998_hs) with averaged_similarity(130.460403)
+(studies)	pair (Hs7949031_hs, Hs13449277_hs) with sim_out_in(132.154907)
+(studies_1)	pair (Hs7949031_hs, Hs13449277_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs13449277_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs13449277_hs) with averaged_similarity(130.926941)
+(inserts)	pair (Hs7949031_hs, Hs13449277_hs) with averaged_similarity(130.926941)
+(studies)	pair (Hs7949031_hs, Hs4503231_hs) with sim_out_in(25.045757)
+(studies_1)	pair (Hs7949031_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs4503231_hs) with averaged_similarity(28.022879)
+(discarded)	pair (Hs7949031_hs, Hs4503231_hs) with averaged_similarity(28.022879) < the rightmost_ortholog_limit(34.911957)
+(studies)	pair (Hs7949031_hs, Hs4507383_hs) with sim_out_in(14.698970)
+(studies_1)	pair (Hs7949031_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs4507383_hs) with averaged_similarity(15.960409)
+(discarded)	pair (Hs7949031_hs, Hs4507383_hs) with averaged_similarity(15.960409) < the leftmost_ortholog_limit(25.809895)
+(studies)	pair (Hs7949031_hs, Hs13699840_hs) with sim_out_in(10.221848)
+(studies_1)	pair (Hs7949031_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs7949031_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs7949031_hs, Hs13699840_hs) with averaged_similarity(11.372364)
+(discarded)	pair (Hs7949031_hs, Hs13699840_hs) with averaged_similarity(11.372364) < the leftmost_ortholog_limit(25.809895)
+(studies)	pair (Hs13449277_hs, Hs13699809_hs) with sim_out_in(130.000000)
+(studies_1)	pair (Hs13449277_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs13699809_hs) with averaged_similarity(135.500000)
+(inserts)	pair (Hs13449277_hs, Hs13699809_hs) with averaged_similarity(135.500000)
+(studies)	pair (Hs13449277_hs, Hs7949031_hs) with sim_out_in(129.698975)
+(studies_1)	pair (Hs13449277_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs7949031_hs) with averaged_similarity(130.926941)
+(inserts)	pair (Hs13449277_hs, Hs7949031_hs) with averaged_similarity(130.926941)
+(studies)	pair (Hs10835271_hs, Hs4827008_hs) with sim_out_in(176.522873)
+(studies_1)	pair (Hs10835271_hs, Hs4827008_hs) 
+(studies__2)	pair (Hs10835271_hs, Hs4827008_hs) 
+(evaluates)	pair (Hs10835271_hs, Hs4827008_hs) with averaged_similarity(176.522873)
+(inserts)	pair (Hs10835271_hs, Hs4827008_hs) with averaged_similarity(176.522873)
+(studies)	pair (Hs10835271_hs, Hs7706117_hs) with sim_out_in(19.698971)
+(studies_1)	pair (Hs10835271_hs, Hs7706117_hs) 
+(studies__2)	pair (Hs10835271_hs, Hs7706117_hs) 
+(evaluates)	pair (Hs10835271_hs, Hs7706117_hs) with averaged_similarity(15.198971)
+(studies)	pair (Hs13449277_hs, Hs13699816_hs) with sim_out_in(112.698967)
+(studies_1)	pair (Hs13449277_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs13699816_hs) with averaged_similarity(116.349487)
+(inserts)	pair (Hs13449277_hs, Hs13699816_hs) with averaged_similarity(116.349487)
+(studies)	pair (Hs13449277_hs, Hs10834998_hs) with sim_out_in(100.522881)
+(studies_1)	pair (Hs13449277_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs10834998_hs) with averaged_similarity(105.911957)
+(inserts)	pair (Hs13449277_hs, Hs10834998_hs) with averaged_similarity(105.911957)
+(discarded)	pair (Hs10835271_hs, Hs7706117_hs) with averaged_similarity(15.198971) < the leftmost_ortholog_limit(24.000000)
+(studies)	pair (Hs13449277_hs, Hs4503231_hs) with sim_out_in(21.154902)
+(studies_1)	pair (Hs13449277_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs4503231_hs) with averaged_similarity(24.926937)
+(discarded)	pair (Hs13449277_hs, Hs4503231_hs) with averaged_similarity(24.926937) < the rightmost_ortholog_limit(34.911957)
+(studies)	pair (Hs13449277_hs, Hs4507383_hs) with sim_out_in(12.522879)
+(studies_1)	pair (Hs13449277_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs4507383_hs) with averaged_similarity(12.522879)
+(discarded)	pair (Hs13449277_hs, Hs4507383_hs) with averaged_similarity(12.522879) < the leftmost_ortholog_limit(23.727966)
+(studies)	pair (Hs13449277_hs, Hs13699840_hs) with sim_out_in(6.698970)
+(studies_1)	pair (Hs13449277_hs, Hs13699840_hs) 
+(studies)	pair (Hs13449277_hs, Hs13699809_hs) with sim_out_in(130.000000)
+(studies_1)	pair (Hs13449277_hs, Hs13699809_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs13699809_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs13699809_hs) with averaged_similarity(135.500000)
+(inserts)	pair (Hs13449277_hs, Hs13699809_hs) with averaged_similarity(135.500000)
+(studies__2)	pair (Hs13449277_hs, Hs13699840_hs) 
+(studies)	pair (Hs13449277_hs, Hs7949031_hs) with sim_out_in(129.698975)
+(studies_1)	pair (Hs13449277_hs, Hs7949031_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs7949031_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs7949031_hs) with averaged_similarity(130.926941)
+(inserts)	pair (Hs13449277_hs, Hs7949031_hs) with averaged_similarity(130.926941)
+(evaluates)	pair (Hs13449277_hs, Hs13699840_hs) with averaged_similarity(7.198970)
+(discarded)	pair (Hs13449277_hs, Hs13699840_hs) with averaged_similarity(7.198970) < the leftmost_ortholog_limit(23.727966)
+(studies)	pair (Hs13449277_hs, Hs13699816_hs) with sim_out_in(112.698967)
+(studies_1)	pair (Hs13449277_hs, Hs13699816_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs13699816_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs13699816_hs) with averaged_similarity(116.349487)
+(inserts)	pair (Hs13449277_hs, Hs13699816_hs) with averaged_similarity(116.349487)
+(studies)	pair (Hs10835119_hs, Hs4505301_hs) with sim_out_in(162.698975)
+(studies_1)	pair (Hs10835119_hs, Hs4505301_hs) 
+(studies__2)	pair (Hs10835119_hs, Hs4505301_hs) 
+(evaluates)	pair (Hs10835119_hs, Hs4505301_hs) with averaged_similarity(161.698975)
+(discarded)	pair (Hs10835119_hs, Hs4505301_hs) with averaged_similarity(161.698975) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs10835119_hs, Hs11024712_hs) with sim_out_in(160.397934)
+(studies_1)	pair (Hs10835119_hs, Hs11024712_hs) 
+(studies__2)	pair (Hs10835119_hs, Hs11024712_hs) 
+(evaluates)	pair (Hs10835119_hs, Hs11024712_hs) with averaged_similarity(159.349487)
+(discarded)	pair (Hs10835119_hs, Hs11024712_hs) with averaged_similarity(159.349487) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs10835119_hs, Hs7705901_hs) with sim_out_in(147.154907)
+(studies_1)	pair (Hs10835119_hs, Hs7705901_hs) 
+(studies__2)	pair (Hs10835119_hs, Hs7705901_hs) 
+(evaluates)	pair (Hs10835119_hs, Hs7705901_hs) with averaged_similarity(147.426941)
+(discarded)	pair (Hs10835119_hs, Hs7705901_hs) with averaged_similarity(147.426941) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs10835119_hs, Hs4885503_hs) with sim_out_in(143.698975)
+(studies_1)	pair (Hs10835119_hs, Hs4885503_hs) 
+(studies__2)	pair (Hs10835119_hs, Hs4885503_hs) 
+(evaluates)	pair (Hs10835119_hs, Hs4885503_hs) with averaged_similarity(143.610931)
+(discarded)	pair (Hs10835119_hs, Hs4885503_hs) with averaged_similarity(143.610931) < the leftmost_ortholog_limit(176.522873)
+(studies)	pair (Hs13449277_hs, Hs10834998_hs) with sim_out_in(100.522881)
+(studies_1)	pair (Hs13449277_hs, Hs10834998_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs10834998_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs10834998_hs) with averaged_similarity(105.911957)
+(inserts)	pair (Hs13449277_hs, Hs10834998_hs) with averaged_similarity(105.911957)
+(studies)	pair (Hs13449277_hs, Hs4503231_hs) with sim_out_in(21.154902)
+(studies_1)	pair (Hs13449277_hs, Hs4503231_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs4503231_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs4503231_hs) with averaged_similarity(24.926937)
+(discarded)	pair (Hs13449277_hs, Hs4503231_hs) with averaged_similarity(24.926937) < the rightmost_ortholog_limit(34.911957)
+(studies)	pair (Hs13449277_hs, Hs4507383_hs) with sim_out_in(12.522879)
+(studies_1)	pair (Hs13449277_hs, Hs4507383_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs4507383_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs4507383_hs) with averaged_similarity(12.522879)
+(discarded)	pair (Hs13449277_hs, Hs4507383_hs) with averaged_similarity(12.522879) < the leftmost_ortholog_limit(23.727966)
+(studies)	pair (Hs13449277_hs, Hs13699840_hs) with sim_out_in(6.698970)
+(studies_1)	pair (Hs13449277_hs, Hs13699840_hs) 
+(studies__2)	pair (Hs13449277_hs, Hs13699840_hs) 
+(evaluates)	pair (Hs13449277_hs, Hs13699840_hs) with averaged_similarity(7.198970)
+(discarded)	pair (Hs13449277_hs, Hs13699840_hs) with averaged_similarity(7.198970) < the leftmost_ortholog_limit(23.727966)
+in taxon_pair.cxx uses file_name: 'report_orthaGogue/thread_allocation_list.log.2'
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g11600_at, Hs13449277_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g11600_at, Hs13699816_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g11600_at, Hs7949031_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g11600_at, Hs10834998_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs13699816_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs7949031_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs13449277_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs13699809_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs10834998_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01280_at, Hs4507383_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs13699840_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs4507383_hs)
+(co-orthologs-restricted-discarded-due-to-non-reciprocallity)	pair (At1g01190_at, Hs4503231_hs)
+in taxon_pair.cxx uses file_name: 'report_orthaGogue/thread_allocation_list.log.2'

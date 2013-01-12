@@ -1,0 +1,2 @@
+/usr/bin/ar cr libtaxon_pair.a  CMakeFiles/taxon_pair.dir/taxon_pair.cxx.o
+/usr/bin/ranlib libtaxon_pair.a

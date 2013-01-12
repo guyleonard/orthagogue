@@ -1,0 +1,2 @@
+/usr/bin/ar cr libparsing_transfer_temp.a  CMakeFiles/parsing_transfer_temp.dir/protein_relation.cxx.o CMakeFiles/parsing_transfer_temp.dir/prot_list.cxx.o
+/usr/bin/ranlib libparsing_transfer_temp.a

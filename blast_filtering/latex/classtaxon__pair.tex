@@ -1,0 +1,104 @@
+\hypertarget{classtaxon__pair}{
+\section{taxon\_\-pair Class Reference}
+\label{classtaxon__pair}\index{taxon\_\-pair@{taxon\_\-pair}}
+}
+
+
+Defines the next protein to work on.  
+
+
+
+
+{\ttfamily \#include $<$taxon\_\-pair.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtaxon__pair_a34d3144d235a6bef94e11e1b1b361a28}{
+void \hyperlink{classtaxon__pair_a34d3144d235a6bef94e11e1b1b361a28}{getVariables} (uint \&\_\-taxon, uint \&\_\-protein\_\-start, uint \&\_\-protein\_\-end)}
+\label{classtaxon__pair_a34d3144d235a6bef94e11e1b1b361a28}
+
+\begin{DoxyCompactList}\small\item\em Returns the variables: \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_ad402573e45c101790abc5a0dc3b5b246}{
+void \hyperlink{classtaxon__pair_ad402573e45c101790abc5a0dc3b5b246}{print} ()}
+\label{classtaxon__pair_ad402573e45c101790abc5a0dc3b5b246}
+
+\begin{DoxyCompactList}\small\item\em Prints the data. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_a22bdca67459d108f10cabc30982dae63}{
+bool \hyperlink{classtaxon__pair_a22bdca67459d108f10cabc30982dae63}{has\_\-data} ()}
+\label{classtaxon__pair_a22bdca67459d108f10cabc30982dae63}
+
+\begin{DoxyCompactList}\small\item\em Returns true if is has more data. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_a92d8c30fa7e3f97068ceb22dd3219f96}{
+\hyperlink{classtaxon__pair_a92d8c30fa7e3f97068ceb22dd3219f96}{taxon\_\-pair} (uint \_\-taxon, uint \_\-protein\_\-start, uint \_\-protein\_\-end, list\_\-file\_\-parse\_\-t $\ast$\&\_\-listParseData, list\_\-file\_\-struct\_\-t $\ast$\&\_\-listStructData, taxa\_\-t $\ast$\_\-listTaxa)}
+\label{classtaxon__pair_a92d8c30fa7e3f97068ceb22dd3219f96}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_a19f97e797d231c588255b23d380838ff}{
+\hyperlink{classtaxon__pair_a19f97e797d231c588255b23d380838ff}{taxon\_\-pair} ()}
+\label{classtaxon__pair_a19f97e797d231c588255b23d380838ff}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtaxon__pair_aa6dfda21f5ef6e4a531a6bf159904898}{
+static \hyperlink{classtaxon__pair}{taxon\_\-pair} $\ast$ \hyperlink{classtaxon__pair_aa6dfda21f5ef6e4a531a6bf159904898}{initList} (uint size)}
+\label{classtaxon__pair_aa6dfda21f5ef6e4a531a6bf159904898}
+
+\begin{DoxyCompactList}\small\item\em Returns an allocated region: A standard interface to ensure consistency. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_ac0dc294ced6676c12e5cf919e7cce7f3}{
+static void \hyperlink{classtaxon__pair_ac0dc294ced6676c12e5cf919e7cce7f3}{free\_\-taxonPairList} (\hyperlink{classtaxon__pair}{taxon\_\-pair} $\ast$list)}
+\label{classtaxon__pair_ac0dc294ced6676c12e5cf919e7cce7f3}
+
+\begin{DoxyCompactList}\small\item\em A standard interface to ensure consistency: \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_ae3224696063e2fdcad16663863ecfc99}{
+static \hyperlink{classtaxon__pair}{taxon\_\-pair} $\ast$ \hyperlink{classtaxon__pair_ae3224696063e2fdcad16663863ecfc99}{init\_\-taxon\_\-pair} (uint taxon\_\-start, uint taxon\_\-end, uint taxon\_\-length, const bool only\_\-inpa, const bool from\_\-parse, list\_\-file\_\-parse\_\-t $\ast$listParseData, list\_\-file\_\-struct\_\-t $\ast$\&listStructData, taxa\_\-t $\ast$listTaxa)}
+\label{classtaxon__pair_ae3224696063e2fdcad16663863ecfc99}
+
+\begin{DoxyCompactList}\small\item\em Builds the set of blocks to be used during the parsing. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_ad6b155c80830060b265e058c1f567770}{
+static void \hyperlink{classtaxon__pair_ad6b155c80830060b265e058c1f567770}{assert\_\-class} (const bool print\_\-info)}
+\label{classtaxon__pair_ad6b155c80830060b265e058c1f567770}
+
+\begin{DoxyCompactList}\small\item\em The main test function for this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classtaxon__pair_acbb48470453cdc7a35f1db57a289c5df}{
+uint \hyperlink{classtaxon__pair_acbb48470453cdc7a35f1db57a289c5df}{taxon}}
+\label{classtaxon__pair_acbb48470453cdc7a35f1db57a289c5df}
+
+\begin{DoxyCompactList}\small\item\em The taxon id of interest. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_ab0d911000e22ca615d0aa9ffa6b40f64}{
+uint \hyperlink{classtaxon__pair_ab0d911000e22ca615d0aa9ffa6b40f64}{protein\_\-start}}
+\label{classtaxon__pair_ab0d911000e22ca615d0aa9ffa6b40f64}
+
+\begin{DoxyCompactList}\small\item\em The first protein of this collection. \end{DoxyCompactList}\item 
+\hypertarget{classtaxon__pair_a1c7620b427f178801f1129286b27c1bc}{
+uint \hyperlink{classtaxon__pair_a1c7620b427f178801f1129286b27c1bc}{protein\_\-end}}
+\label{classtaxon__pair_a1c7620b427f178801f1129286b27c1bc}
+
+\begin{DoxyCompactList}\small\item\em The last protein of this collection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the next protein to work on. 
+
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18.03.2011 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of this class as a libary) 
+
+31.12.2011 (cleanup) 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{taxon__pair_8h}{taxon\_\-pair.h}\end{DoxyCompactItemize}

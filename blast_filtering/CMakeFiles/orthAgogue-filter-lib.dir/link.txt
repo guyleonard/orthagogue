@@ -1,0 +1,2 @@
+/usr/bin/ar cr liborthAgogue-filter-lib.a  CMakeFiles/orthAgogue-filter-lib.dir/blast_filtering.cxx.o
+/usr/bin/ranlib liborthAgogue-filter-lib.a

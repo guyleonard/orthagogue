@@ -1,0 +1,2 @@
+/usr/bin/ar cr libmcl_bunch.a  CMakeFiles/mcl_bunch.dir/mcl_bunch.cxx.o
+/usr/bin/ranlib libmcl_bunch.a

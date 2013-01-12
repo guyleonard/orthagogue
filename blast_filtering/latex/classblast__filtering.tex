@@ -1,0 +1,115 @@
+\hypertarget{classblast__filtering}{
+\section{blast\_\-filtering Class Reference}
+\label{classblast__filtering}\index{blast\_\-filtering@{blast\_\-filtering}}
+}
+
+
+Produces a filtered output of the input.  
+
+
+
+
+{\ttfamily \#include $<$blast\_\-filtering.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classblast__filtering_a3882035672d4a216c406f8dfe4d34ca7}{
+void \hyperlink{classblast__filtering_a3882035672d4a216c406f8dfe4d34ca7}{print\_\-class\_\-info} ()}
+\label{classblast__filtering_a3882035672d4a216c406f8dfe4d34ca7}
+
+\begin{DoxyCompactList}\small\item\em Prints information describing this class. \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_a9915dc661c251e3fb0c1e482635efa0e}{
+void \hyperlink{classblast__filtering_a9915dc661c251e3fb0c1e482635efa0e}{init\_\-values} (cmd\_\-list $\ast$cmd)}
+\label{classblast__filtering_a9915dc661c251e3fb0c1e482635efa0e}
+
+\begin{DoxyCompactList}\small\item\em Connects internal values to the object given as param, enabling the terminal updating internal vars. \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_af364a9a29e3adce91d5d5c844fceca60}{
+void \hyperlink{classblast__filtering_af364a9a29e3adce91d5d5c844fceca60}{set\_\-values} (bool \_\-DEBUG\_\-NORM, bool \_\-PRINT\_\-NORMALIXATION\_\-BASIS, bool \_\-USE\_\-EVERYREL\_\-AS\_\-ARRNORM\_\-BASIS, char $\ast$\_\-FILE\_\-BINARY\_\-LOCATION, char \_\-SEPERATOR, int \_\-CPU\_\-TOT)}
+\label{classblast__filtering_af364a9a29e3adce91d5d5c844fceca60}
+
+\begin{DoxyCompactList}\small\item\em Initializes values after those set in the blast parsing (dound in library blast\_\-parsing): \end{DoxyCompactList}\item 
+void \hyperlink{classblast__filtering_ae982e16ef24d27e3c00d29211bc375e9}{start\_\-filtering} (log\_\-builder\_\-t $\ast$log, bp\_\-container\_\-t bp)
+\begin{DoxyCompactList}\small\item\em Executes the main operation for the filtering: \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_a651c3c51c2659bcc2dcd3dbb0831bced}{
+void \hyperlink{classblast__filtering_a651c3c51c2659bcc2dcd3dbb0831bced}{free\_\-memory} ()}
+\label{classblast__filtering_a651c3c51c2659bcc2dcd3dbb0831bced}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates memory for this object. \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_aff42fb4acaf23b0ec50586db31c64fa0}{
+\hyperlink{classblast__filtering_aff42fb4acaf23b0ec50586db31c64fa0}{blast\_\-filtering} (cmd\_\-list $\ast$cmd)}
+\label{classblast__filtering_aff42fb4acaf23b0ec50586db31c64fa0}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classblast__filtering_a7ec47f047eed05042ba52626832fd746}{
+static cmd\_\-list $\ast$ \hyperlink{classblast__filtering_a7ec47f047eed05042ba52626832fd746}{init\_\-cmd\_\-list} (char $\ast$DEFAULT\_\-OPTION\_\-NAME, uint \&DEFAULT\_\-OPTION\_\-NAME\_\-COUNT, char $\ast$FILE\_\-INPUT\_\-NAME)}
+\label{classblast__filtering_a7ec47f047eed05042ba52626832fd746}
+
+\begin{DoxyCompactList}\small\item\em Initiates the list for parsing input arguments fromthe terminal: \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_adc282c8b2b9027557f7651d33e1c791a}{
+static void \hyperlink{classblast__filtering_adc282c8b2b9027557f7651d33e1c791a}{build\_\-cmd\_\-list} (cmd\_\-list $\ast$cmd, int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})}
+\label{classblast__filtering_adc282c8b2b9027557f7651d33e1c791a}
+
+\begin{DoxyCompactList}\small\item\em Maps the internal variables to the input given from the terminal. \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_ae3c8f444eb2e8abb59b99bcf2c119dab}{
+static void \hyperlink{classblast__filtering_ae3c8f444eb2e8abb59b99bcf2c119dab}{close} (\hyperlink{classblast__filtering}{blast\_\-filtering} $\ast$\&obj)}
+\label{classblast__filtering_ae3c8f444eb2e8abb59b99bcf2c119dab}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates memory for the object given as input. \end{DoxyCompactList}\item 
+\hypertarget{classblast__filtering_a3da7d529e50a57dee8a34d9ca0517bd0}{
+static void \hyperlink{classblast__filtering_a3da7d529e50a57dee8a34d9ca0517bd0}{assert\_\-class} (bool print\_\-info)}
+\label{classblast__filtering_a3da7d529e50a57dee8a34d9ca0517bd0}
+
+\begin{DoxyCompactList}\small\item\em The assert method: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Produces a filtered output of the input. 
+
+\begin{DoxyRemark}{Remarks}
+The purpose of this wrapper module is handling a the filtering process given an input of a taxa\_\-t-\/ and list\_\-file\_\-parse containers, producing a filtered output. 
+\end{DoxyRemark}
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.12.2010 by Ole Kristian Ekseth (init) 
+
+18.08.2011 by Ole Kristian Ekseth (Cleaning.) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+
+31.12.2011 by oekseth (clean-\/up) 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classblast__filtering_ae982e16ef24d27e3c00d29211bc375e9}{
+\index{blast\_\-filtering@{blast\_\-filtering}!start\_\-filtering@{start\_\-filtering}}
+\index{start\_\-filtering@{start\_\-filtering}!blast_filtering@{blast\_\-filtering}}
+\subsubsection[{start\_\-filtering}]{\setlength{\rightskip}{0pt plus 5cm}void blast\_\-filtering::start\_\-filtering (
+\begin{DoxyParamCaption}
+\item[{log\_\-builder\_\-t $\ast$}]{log, }
+\item[{bp\_\-container\_\-t}]{bp}
+\end{DoxyParamCaption}
+)}}
+\label{classblast__filtering_ae982e16ef24d27e3c00d29211bc375e9}
+
+
+Executes the main operation for the filtering: 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$log$>$} & The log object to store measurements in. \\
+\hline
+{\em $<$bp$>$} & The object containing the basis whom the filtering will work on. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{blast__filtering_8h}{blast\_\-filtering.h}\end{DoxyCompactItemize}

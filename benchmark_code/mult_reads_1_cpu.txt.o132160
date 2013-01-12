@@ -1,0 +1,15 @@
+-	Used 103.729625 seconds on blast-read (1/2). (I.e. iterating thorugh the blast file building the data set for the perfect hashs')
+-	Used 0.360080 seconds on the serial mid-processing of the hash-files
+-	Used 208.570465 seconds on blast-read (2/2). (I.e. filling in the actual data)
+-	Used 0.000018 seconds cleaning the memory after the comparison data, using a single thread
+# Used 312.660191 seconds processing the blast-file into data structures.
+--		Used 5.259508 seconds building ortholog relations for taxa in range [0, 1-1]>'
+--		Used 12.006867 seconds building ortholog relations for taxa in range [1, 2-1]>'
+--		Used 11.840891 seconds building ortholog relations for taxa in range [2, 3-1]>'
+-	Used 29.310361 seconds building ortholog relations
+--		Used 1.101999 seconds building inparalog relations for taxa in range [0, 1-1]>'
+--		Used 8.243439 seconds building inparalog relations for taxa in range [1, 2-1]>'
+--		Used 66.406831 seconds building inparalog relations for taxa in range [2, 3-1]>'
+-	Used 75.752319 seconds building inparalog relations'
+# Used 129.387684 seconds doing the filtering- and output of the data given by the preprocessed elements.
+>> Used 442.309937 seconds (or 7.372 minutes) doing the job for 1 CPU's for /work/mironov/outputs/blast/HsMmRn.blast.

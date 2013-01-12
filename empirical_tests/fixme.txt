@@ -1,0 +1,3 @@
+[olekrie@kongull empirical_tests]$ ./../orthaGogue -i goodProteins.blast -nn -O turbo/gp_file/ -pd -nss -nii 
+
+Ovenfor gir problemer, dvs med bruk av "-nii": have to find out why.

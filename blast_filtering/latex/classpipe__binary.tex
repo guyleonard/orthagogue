@@ -1,0 +1,79 @@
+\hypertarget{classpipe__binary}{
+\section{pipe\_\-binary Class Reference}
+\label{classpipe__binary}\index{pipe\_\-binary@{pipe\_\-binary}}
+}
+
+
+Filters orthologs-\/ and inparalogs in parallel.  
+
+
+
+
+{\ttfamily \#include $<$pipe\_\-binary.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__binary_a669a37b09f5fc917cf270fe669db7af8}{
+struct \hyperlink{classtaxon__pair}{taxon\_\-pair} $\ast$ \hyperlink{classpipe__binary_a669a37b09f5fc917cf270fe669db7af8}{init\_\-taxon\_\-pair} (uint taxon\_\-start, uint taxon\_\-length, uint \_\-\_\-taxon\_\-length, int n\_\-threads)}
+\label{classpipe__binary_a669a37b09f5fc917cf270fe669db7af8}
+
+\begin{DoxyCompactList}\small\item\em Builds the set of blocks to be used during the parsing: \end{DoxyCompactList}\item 
+\hypertarget{classpipe__binary_a8bc46e5e671e28528ec4bb9dae539825}{
+void \hyperlink{classpipe__binary_a8bc46e5e671e28528ec4bb9dae539825}{free\_\-data} ()}
+\label{classpipe__binary_a8bc46e5e671e28528ec4bb9dae539825}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates the data bounded by this class. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__binary_ab5f4cfcb2460e1d832673145416247e1}{
+void \hyperlink{classpipe__binary_ab5f4cfcb2460e1d832673145416247e1}{free\_\-additional\_\-blocks} ()}
+\label{classpipe__binary_ab5f4cfcb2460e1d832673145416247e1}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates both the internal temporary objects of type list\_\-file\_\-struct for all of the threads, in addition to de-\/allocating the memory reserved for this object. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__binary_adac41e0b3790ab30fa6d6d9ae445b9d9}{
+void $\ast$ \hyperlink{classpipe__binary_adac41e0b3790ab30fa6d6d9ae445b9d9}{operator()} (void $\ast$item)}
+\label{classpipe__binary_adac41e0b3790ab30fa6d6d9ae445b9d9}
+
+\begin{DoxyCompactList}\small\item\em The method of parallisation. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__binary_a033e68ff8b21f23203533140ffacd33c}{
+\hyperlink{classpipe__binary_a033e68ff8b21f23203533140ffacd33c}{pipe\_\-binary} (uint \_\-taxon\_\-length, const bool \_\-inparalog\_\-operation, const bool \_\-use\_\-everyrel\_\-as\_\-arrnorm\_\-basis, const uint \_\-n\_\-threads, log\_\-builder\_\-t $\ast$\_\-log, id\_\-simil\_\-list \&\_\-listOrtho, list\_\-file\_\-parse\_\-t $\ast$\_\-listParseData, short int \_\-AMINO\_\-LIMIT, float \_\-max\_\-input\_\-value, float \_\-MIN\_\-SIMILARITY\_\-LIMIT, bool \_\-use\_\-improved\_\-overlap\_\-algo, bool \_\-DEBUG\_\-PRINT\_\-DISCARDED\_\-PAIRS, bool \_\-PRINT\_\-OVERLAP\_\-VALUES\_\-ABOVE, bool \_\-PRINT\_\-NORMALIXATION\_\-BASIS, bool \_\-DEBUG\_\-NORM, taxa\_\-t $\ast$listTaxa, bool \_\-MODE\_\-PAIRWISE\_\-OUTPUT\_\-ABC, bool MODE\_\-PAIRWISE\_\-OUTPUT\_\-MCL, char $\ast$FILE\_\-BINARY\_\-LOCATION)}
+\label{classpipe__binary_a033e68ff8b21f23203533140ffacd33c}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__binary_aed0b59ca4fcd5f76f2e5ba98cf0b8fa2}{
+static void \hyperlink{classpipe__binary_aed0b59ca4fcd5f76f2e5ba98cf0b8fa2}{assert\_\-class} (const bool print\_\-info)}
+\label{classpipe__binary_aed0b59ca4fcd5f76f2e5ba98cf0b8fa2}
+
+\begin{DoxyCompactList}\small\item\em The main test function for this class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__binary_a98aae9d6173bdce587b78011d54fc432}{
+list\_\-file\_\-struct $\ast$$\ast$ \hyperlink{classpipe__binary_a98aae9d6173bdce587b78011d54fc432}{l\_\-fileStruct}}
+\label{classpipe__binary_a98aae9d6173bdce587b78011d54fc432}
+
+\begin{DoxyCompactList}\small\item\em The object containing list\_\-file\_\-struct during the building process for each thread id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Filters orthologs-\/ and inparalogs in parallel. 
+
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18.03.2011 by oekseth (initial) 
+
+15.09.2011 by oekseth (asserts) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+
+25.12.2011 by oekseth (cleanup). 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pipe__binary_8h}{pipe\_\-binary.h}\end{DoxyCompactItemize}

@@ -1,0 +1,67 @@
+\indexentry{\char `\"{}Filtering parsed Blast\char `\"{}@{""Filtering parsed Blast""}|hyperpage}{9}
+\indexentry{\char `\"{}Filtering parsed Blast\char `\"{}@{""Filtering parsed Blast""}!blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}t@{blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}t}|hyperpage}{10}
+\indexentry{blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}t@{blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}t}!"Filtering parsed Blast"@{\char `\"{}Filtering parsed Blast\char `\"{}}|hyperpage}{10}
+\indexentry{\char `\"{}Parallel filtering algorithms\char `\"{}@{""Parallel filtering algorithms""}|hyperpage}{10}
+\indexentry{\char `\"{}Storage of Filtered blast data\char `\"{}@{""Storage of Filtered blast data""}|hyperpage}{11}
+\indexentry{\char `\"{}Storage of Filtered blast data\char `\"{}@{""Storage of Filtered blast data""}!build\_\discretionary {-}{}{}string\_\discretionary {-}{}{}t@{build\_\discretionary {-}{}{}string\_\discretionary {-}{}{}t}|hyperpage}{12}
+\indexentry{build\_\discretionary {-}{}{}string\_\discretionary {-}{}{}t@{build\_\discretionary {-}{}{}string\_\discretionary {-}{}{}t}!"Storage of Filtered blast data"@{\char `\"{}Storage of Filtered blast data\char `\"{}}|hyperpage}{12}
+\indexentry{\char `\"{}Storage of Filtered blast data\char `\"{}@{""Storage of Filtered blast data""}!write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t@{write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}|hyperpage}{12}
+\indexentry{write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t@{write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}!"Storage of Filtered blast data"@{\char `\"{}Storage of Filtered blast data\char `\"{}}|hyperpage}{12}
+\indexentry{\char `\"{}Storage of Filtered blast data\char `\"{}@{""Storage of Filtered blast data""}!write\_\discretionary {-}{}{}list@{write\_\discretionary {-}{}{}list}|hyperpage}{13}
+\indexentry{write\_\discretionary {-}{}{}list@{write\_\discretionary {-}{}{}list}!"Storage of Filtered blast data"@{\char `\"{}Storage of Filtered blast data\char `\"{}}|hyperpage}{13}
+\indexentry{\char `\"{}Storage of Filtered blast data\char `\"{}@{""Storage of Filtered blast data""}!size\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t@{size\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}|hyperpage}{13}
+\indexentry{size\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t@{size\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}!"Storage of Filtered blast data"@{\char `\"{}Storage of Filtered blast data\char `\"{}}|hyperpage}{13}
+\indexentry{\char `\"{}Intermediary transport Containers\char `\"{}@{""Intermediary transport Containers""}|hyperpage}{13}
+\indexentry{\char `\"{}Intermediary transport Containers\char `\"{}@{""Intermediary transport Containers""}!bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary\_\discretionary {-}{}{}t@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary\_\discretionary {-}{}{}t}|hyperpage}{14}
+\indexentry{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary\_\discretionary {-}{}{}t@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary\_\discretionary {-}{}{}t}!"Intermediary transport Containers"@{\char `\"{}Intermediary transport Containers\char `\"{}}|hyperpage}{14}
+\indexentry{\char `\"{}Algorithms for serial Filtering\char `\"{}@{""Algorithms for serial Filtering""}|hyperpage}{14}
+\indexentry{\char `\"{}Algorithms for serial Filtering\char `\"{}@{""Algorithms for serial Filtering""}!taxon\_\discretionary {-}{}{}pair\_\discretionary {-}{}{}t@{taxon\_\discretionary {-}{}{}pair\_\discretionary {-}{}{}t}|hyperpage}{15}
+\indexentry{taxon\_\discretionary {-}{}{}pair\_\discretionary {-}{}{}t@{taxon\_\discretionary {-}{}{}pair\_\discretionary {-}{}{}t}!"Algorithms for serial Filtering"@{\char `\"{}Algorithms for serial Filtering\char `\"{}}|hyperpage}{15}
+\indexentry{blast\_\discretionary {-}{}{}filtering@{blast\_\discretionary {-}{}{}filtering}|hyperpage}{17}
+\indexentry{blast\_\discretionary {-}{}{}filtering@{blast\_\discretionary {-}{}{}filtering}!start\_\discretionary {-}{}{}filtering@{start\_\discretionary {-}{}{}filtering}|hyperpage}{18}
+\indexentry{start\_\discretionary {-}{}{}filtering@{start\_\discretionary {-}{}{}filtering}!blast_filtering@{blast\_\discretionary {-}{}{}filtering}|hyperpage}{18}
+\indexentry{bucket\_\discretionary {-}{}{}norm@{bucket\_\discretionary {-}{}{}norm}|hyperpage}{18}
+\indexentry{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary}|hyperpage}{19}
+\indexentry{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary}!isNotEmpty@{isNotEmpty}|hyperpage}{20}
+\indexentry{isNotEmpty@{isNotEmpty}!bucket_pipe_binary@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary}|hyperpage}{20}
+\indexentry{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary}!arrNorm@{arrNorm}|hyperpage}{20}
+\indexentry{arrNorm@{arrNorm}!bucket_pipe_binary@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary}|hyperpage}{20}
+\indexentry{build\_\discretionary {-}{}{}string@{build\_\discretionary {-}{}{}string}|hyperpage}{21}
+\indexentry{build\_\discretionary {-}{}{}string@{build\_\discretionary {-}{}{}string}!begin@{begin}|hyperpage}{22}
+\indexentry{begin@{begin}!build_string@{build\_\discretionary {-}{}{}string}|hyperpage}{22}
+\indexentry{build\_\discretionary {-}{}{}string@{build\_\discretionary {-}{}{}string}!copy@{copy}|hyperpage}{22}
+\indexentry{copy@{copy}!build_string@{build\_\discretionary {-}{}{}string}|hyperpage}{22}
+\indexentry{build\_\discretionary {-}{}{}string@{build\_\discretionary {-}{}{}string}!hasData@{hasData}|hyperpage}{22}
+\indexentry{hasData@{hasData}!build_string@{build\_\discretionary {-}{}{}string}|hyperpage}{22}
+\indexentry{build\_\discretionary {-}{}{}string@{build\_\discretionary {-}{}{}string}!resize\_\discretionary {-}{}{}if\_\discretionary {-}{}{}to\_\discretionary {-}{}{}large@{resize\_\discretionary {-}{}{}if\_\discretionary {-}{}{}to\_\discretionary {-}{}{}large}|hyperpage}{22}
+\indexentry{resize\_\discretionary {-}{}{}if\_\discretionary {-}{}{}to\_\discretionary {-}{}{}large@{resize\_\discretionary {-}{}{}if\_\discretionary {-}{}{}to\_\discretionary {-}{}{}large}!build_string@{build\_\discretionary {-}{}{}string}|hyperpage}{22}
+\indexentry{pipe\_\discretionary {-}{}{}binary@{pipe\_\discretionary {-}{}{}binary}|hyperpage}{23}
+\indexentry{pipe\_\discretionary {-}{}{}bucket@{pipe\_\discretionary {-}{}{}bucket}|hyperpage}{24}
+\indexentry{pipe\_\discretionary {-}{}{}merge@{pipe\_\discretionary {-}{}{}merge}|hyperpage}{26}
+\indexentry{pipe\_\discretionary {-}{}{}merge@{pipe\_\discretionary {-}{}{}merge}!get\_\discretionary {-}{}{}arrNorm@{get\_\discretionary {-}{}{}arrNorm}|hyperpage}{27}
+\indexentry{get\_\discretionary {-}{}{}arrNorm@{get\_\discretionary {-}{}{}arrNorm}!pipe_merge@{pipe\_\discretionary {-}{}{}merge}|hyperpage}{27}
+\indexentry{pipe\_\discretionary {-}{}{}merge@{pipe\_\discretionary {-}{}{}merge}!getFileStruct@{getFileStruct}|hyperpage}{27}
+\indexentry{getFileStruct@{getFileStruct}!pipe_merge@{pipe\_\discretionary {-}{}{}merge}|hyperpage}{27}
+\indexentry{pipe\_\discretionary {-}{}{}norm@{pipe\_\discretionary {-}{}{}norm}|hyperpage}{28}
+\indexentry{pipe\_\discretionary {-}{}{}struct@{pipe\_\discretionary {-}{}{}struct}|hyperpage}{29}
+\indexentry{pipe\_\discretionary {-}{}{}struct@{pipe\_\discretionary {-}{}{}struct}!pipe\_\discretionary {-}{}{}struct@{pipe\_\discretionary {-}{}{}struct}|hyperpage}{31}
+\indexentry{pipe\_\discretionary {-}{}{}struct@{pipe\_\discretionary {-}{}{}struct}!pipe_struct@{pipe\_\discretionary {-}{}{}struct}|hyperpage}{31}
+\indexentry{pipe\_\discretionary {-}{}{}write@{pipe\_\discretionary {-}{}{}write}|hyperpage}{32}
+\indexentry{pipe\_\discretionary {-}{}{}write@{pipe\_\discretionary {-}{}{}write}!free\_\discretionary {-}{}{}mem@{free\_\discretionary {-}{}{}mem}|hyperpage}{33}
+\indexentry{free\_\discretionary {-}{}{}mem@{free\_\discretionary {-}{}{}mem}!pipe_write@{pipe\_\discretionary {-}{}{}write}|hyperpage}{33}
+\indexentry{taxon\_\discretionary {-}{}{}pair@{taxon\_\discretionary {-}{}{}pair}|hyperpage}{33}
+\indexentry{blast\_\discretionary {-}{}{}filtering.h@{blast\_\discretionary {-}{}{}filtering.h}|hyperpage}{35}
+\indexentry{blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}main.h@{blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}main.h}|hyperpage}{36}
+\indexentry{bucket\_\discretionary {-}{}{}norm.h@{bucket\_\discretionary {-}{}{}norm.h}|hyperpage}{37}
+\indexentry{bucket\_\discretionary {-}{}{}norm.h@{bucket\_\discretionary {-}{}{}norm.h}!bucket\_\discretionary {-}{}{}norm\_\discretionary {-}{}{}t@{bucket\_\discretionary {-}{}{}norm\_\discretionary {-}{}{}t}|hyperpage}{38}
+\indexentry{bucket\_\discretionary {-}{}{}norm\_\discretionary {-}{}{}t@{bucket\_\discretionary {-}{}{}norm\_\discretionary {-}{}{}t}!bucket_norm.h@{bucket\_\discretionary {-}{}{}norm.h}|hyperpage}{38}
+\indexentry{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary.h@{bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary.h}|hyperpage}{39}
+\indexentry{build\_\discretionary {-}{}{}string.h@{build\_\discretionary {-}{}{}string.h}|hyperpage}{40}
+\indexentry{enum\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t.h@{enum\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t.h}|hyperpage}{42}
+\indexentry{pipe\_\discretionary {-}{}{}binary.h@{pipe\_\discretionary {-}{}{}binary.h}|hyperpage}{43}
+\indexentry{pipe\_\discretionary {-}{}{}bucket.h@{pipe\_\discretionary {-}{}{}bucket.h}|hyperpage}{44}
+\indexentry{pipe\_\discretionary {-}{}{}merge.h@{pipe\_\discretionary {-}{}{}merge.h}|hyperpage}{46}
+\indexentry{pipe\_\discretionary {-}{}{}norm.h@{pipe\_\discretionary {-}{}{}norm.h}|hyperpage}{47}
+\indexentry{pipe\_\discretionary {-}{}{}struct.h@{pipe\_\discretionary {-}{}{}struct.h}|hyperpage}{49}
+\indexentry{pipe\_\discretionary {-}{}{}write.h@{pipe\_\discretionary {-}{}{}write.h}|hyperpage}{50}
+\indexentry{taxon\_\discretionary {-}{}{}pair.h@{taxon\_\discretionary {-}{}{}pair.h}|hyperpage}{51}

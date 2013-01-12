@@ -1,0 +1,114 @@
+\hypertarget{classpipe__struct}{
+\section{pipe\_\-struct Class Reference}
+\label{classpipe__struct}\index{pipe\_\-struct@{pipe\_\-struct}}
+}
+
+
+Either builds co-\/orthologs or builds the strings for the result file.  
+
+
+
+
+{\ttfamily \#include $<$pipe\_\-struct.h$>$}
+
+
+
+Collaboration diagram for pipe\_\-struct:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=600pt]{classpipe__struct__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__struct_a2e4bd1642de55f4731dc37bafedd4d03}{
+void \hyperlink{classpipe__struct_a2e4bd1642de55f4731dc37bafedd4d03}{getFromBufferToStruct} (const uint taxon\_\-length, uint max\_\-buffer\_\-size, const bool only\_\-inparalogs)}
+\label{classpipe__struct_a2e4bd1642de55f4731dc37bafedd4d03}
+
+\begin{DoxyCompactList}\small\item\em Opens a buffer and dumps it to memory if the space for it is allocated. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__struct_a3671204dcf9fc367a8d3fa257168e8c0}{
+void \hyperlink{classpipe__struct_a3671204dcf9fc367a8d3fa257168e8c0}{finalize\_\-memory} (const uint taxon\_\-length)}
+\label{classpipe__struct_a3671204dcf9fc367a8d3fa257168e8c0}
+
+\begin{DoxyCompactList}\small\item\em Clears the memory allocated for this thread. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__struct_aed3e03bc6bc544e326efac9a07a24025}{
+void $\ast$ \hyperlink{classpipe__struct_aed3e03bc6bc544e326efac9a07a24025}{operator()} (void $\ast$item)}
+\label{classpipe__struct_aed3e03bc6bc544e326efac9a07a24025}
+
+\begin{DoxyCompactList}\small\item\em The method of parallisation. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__struct_ae9dc6e2a83cb63bcb5ef42be0ae3a2ca}{
+void \hyperlink{classpipe__struct_ae9dc6e2a83cb63bcb5ef42be0ae3a2ca}{free\_\-mem} ()}
+\label{classpipe__struct_ae9dc6e2a83cb63bcb5ef42be0ae3a2ca}
+
+\begin{DoxyCompactList}\small\item\em De-\/allocates the memory reserved for this object. \end{DoxyCompactList}\item 
+\hyperlink{classpipe__struct_aac0130667428da2ba6042e6ff4a34961}{pipe\_\-struct} (uint \_\-nthread, uint \_\-size\_\-prot, uint taxon\_\-length, pipe\_\-t type, bool \_\-USE\_\-EVERYREL\_\-AS\_\-ARRNORM\_\-BASIS, norm\_\-t $\ast$$\ast$normArr, log\_\-builder\_\-t $\ast$\_\-log, bool \_\-MODE\_\-PAIRWISE\_\-OUTPUT, bool \_\-MODE\_\-INTEGER\_\-OUTPUT, bool \_\-DIVIDE\_\-BY\_\-NORMALIZATION\_\-VALUE\_\-FOR\_\-ABC\_\-FORMAT, bool \_\-DIVIDE\_\-BY\_\-NORMALIZATION\_\-VALUE\_\-FOR\_\-MCL\_\-FORMAT, id\_\-simil\_\-list \&\_\-listOrtho, taxa\_\-t $\ast$\_\-listTaxa, stack\_\-rel $\ast$\&\_\-stackRel, list\_\-file\_\-struct\_\-t $\ast$\&\_\-listStructData, list\_\-file\_\-parse\_\-t $\ast$\&\_\-listParseData, float \_\-max\_\-input\_\-value, bool \_\-MODE\_\-PAIRWISE\_\-OUTPUT\_\-ABC, bool \_\-MODE\_\-PAIRWISE\_\-OUTPUT\_\-MCL, bool \_\-PRINT\_\-IN\_\-ABC\_\-FORMAT, bool \_\-PRINT\_\-IN\_\-MCL\_\-FORMAT, bool \_\-SORT\_\-ABC\_\-DATA, bool \_\-PRINT\_\-NORMALIXATION\_\-BASIS, bool \_\-DEBUG\_\-NORM)
+\begin{DoxyCompactList}\small\item\em Constructor for the class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Either builds co-\/orthologs or builds the strings for the result file. 
+
+\begin{DoxyReturn}{Returns}
+A 'bucket\_\-norm object. 
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.12.2010 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+
+25.12.2011 by oekseth (cleanup). 
+\end{DoxyDate}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classpipe__struct_aac0130667428da2ba6042e6ff4a34961}{
+\index{pipe\_\-struct@{pipe\_\-struct}!pipe\_\-struct@{pipe\_\-struct}}
+\index{pipe\_\-struct@{pipe\_\-struct}!pipe_struct@{pipe\_\-struct}}
+\subsubsection[{pipe\_\-struct}]{\setlength{\rightskip}{0pt plus 5cm}pipe\_\-struct::pipe\_\-struct (
+\begin{DoxyParamCaption}
+\item[{uint}]{\_\-nthread, }
+\item[{uint}]{\_\-size\_\-prot, }
+\item[{uint}]{taxon\_\-length, }
+\item[{pipe\_\-t}]{type, }
+\item[{bool}]{\_\-USE\_\-EVERYREL\_\-AS\_\-ARRNORM\_\-BASIS, }
+\item[{norm\_\-t $\ast$$\ast$}]{normArr, }
+\item[{log\_\-builder\_\-t $\ast$}]{\_\-log, }
+\item[{bool}]{\_\-MODE\_\-PAIRWISE\_\-OUTPUT, }
+\item[{bool}]{\_\-MODE\_\-INTEGER\_\-OUTPUT, }
+\item[{bool}]{\_\-DIVIDE\_\-BY\_\-NORMALIZATION\_\-VALUE\_\-FOR\_\-ABC\_\-FORMAT, }
+\item[{bool}]{\_\-DIVIDE\_\-BY\_\-NORMALIZATION\_\-VALUE\_\-FOR\_\-MCL\_\-FORMAT, }
+\item[{id\_\-simil\_\-list \&}]{\_\-listOrtho, }
+\item[{taxa\_\-t $\ast$}]{\_\-listTaxa, }
+\item[{stack\_\-rel $\ast$\&}]{\_\-stackRel, }
+\item[{list\_\-file\_\-struct\_\-t $\ast$\&}]{\_\-listStructData, }
+\item[{list\_\-file\_\-parse\_\-t $\ast$\&}]{\_\-listParseData, }
+\item[{float}]{\_\-max\_\-input\_\-value, }
+\item[{bool}]{\_\-MODE\_\-PAIRWISE\_\-OUTPUT\_\-ABC, }
+\item[{bool}]{\_\-MODE\_\-PAIRWISE\_\-OUTPUT\_\-MCL, }
+\item[{bool}]{\_\-PRINT\_\-IN\_\-ABC\_\-FORMAT, }
+\item[{bool}]{\_\-PRINT\_\-IN\_\-MCL\_\-FORMAT, }
+\item[{bool}]{\_\-SORT\_\-ABC\_\-DATA, }
+\item[{bool}]{\_\-PRINT\_\-NORMALIXATION\_\-BASIS, }
+\item[{bool}]{\_\-DEBUG\_\-NORM}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__struct_aac0130667428da2ba6042e6ff4a34961}
+
+
+Constructor for the class. 
+
+\begin{DoxyRemark}{Remarks}
+Operation decided when setting the 'PIPE\_\-TYPE' variabel (PIPE\_\-TYPE == DUMP): Writes the data to a matrix, for further processing by another program (PIPE\_\-TYPE == INPA\_\-ORTH) Creates inparalogs based upon orthologs. (PIPE\_\-TYPE == INPA\_\-INPA) Creates inparalogs based upon orthologs' inparalogs. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pipe__struct_8h}{pipe\_\-struct.h}\end{DoxyCompactItemize}

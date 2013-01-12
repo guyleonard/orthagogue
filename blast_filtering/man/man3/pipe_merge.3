@@ -1,0 +1,86 @@
+.TH "pipe_merge" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pipe_merge \- 
+.PP
+Merges containers building a filtered set of orthologs- and inparalogs.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pipe_merge.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBset_arrNorm\fP (norm_t **norm)"
+.br
+.RI "\fISets the **norm object with the param given. \fP"
+.ti -1c
+.RI "norm_t ** \fBget_arrNorm\fP ()"
+.br
+.ti -1c
+.RI "void \fBsetFileStruct\fP (list_file_struct *arg)"
+.br
+.RI "\fISets the *list_file_struct object with the param given. \fP"
+.ti -1c
+.RI "list_file_struct * \fBgetFileStruct\fP ()"
+.br
+.ti -1c
+.RI "void * \fBoperator()\fP (void *item)"
+.br
+.RI "\fIThe method of parallisation. \fP"
+.ti -1c
+.RI "\fBpipe_merge\fP (uint _taxon_length, const bool _use_everyrel_as_arrnorm_basis, const pipe_t type, log_builder_t *_log, list_file_struct_t *&_listStructData, taxa_t *_listTaxa)"
+.br
+.RI "\fIThe constructor. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Merges containers building a filtered set of orthologs- and inparalogs. 
+
+\fBRemarks:\fP
+.RS 4
+Inputs an object of type 'bucket_pipe_binary', containing blocks of information to be merged.
+.IP "\(bu" 2
+Merges containers of type list_file_struct and type **norm. 
+.PP
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+21.12.2010 by oekseth (initial) 
+.PP
+16.09.2011 by oekseth (asserts) 
+.PP
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+.PP
+25.12.2011 by oekseth (cleanup). 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "norm_t** pipe_merge::get_arrNorm ()\fC [inline]\fP"\fBReturns:\fP
+.RS 4
+the **norm object 
+.RE
+.PP
+
+.SS "list_file_struct* pipe_merge::getFileStruct ()\fC [inline]\fP"\fBReturns:\fP
+.RS 4
+the processed *list_file_struct object. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

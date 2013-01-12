@@ -1,0 +1,386 @@
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/_turboOrtho_0.9.7.4/cmd_line/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/_turboOrtho_0.9.7.4/cmd_line/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/_turboOrtho_0.9.7.4/cmd_line/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -W -Wall -ansi -g -std=c++0x -pedantic -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/_turboOrtho_0.9.7.4/cmd_line/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+cc1plus: error: unrecognized command line option "-std=c++0x"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/_turboOrtho_0.9.7.4/cmd_line/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -W -Wall -ansi -g -std=c++0x -pedantic -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+cc1plus: error: unrecognized command line option "-std=c++0x"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/turboOrtho_0.9.9.0/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -O2 -Wno-write-strings, -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-Wno-write-strings,"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   -Wno-write-strings -Wno-unused -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-value -Wno-unused-variable , -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+c++: ,: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   , -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+c++: ,: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   , -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+c++: ,: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   , -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+c++: ,: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test RESULT failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DRESULT   , -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+c++: ,: No such file or directory
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.3/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test HAS_CXX0X_FLAG failed with the following output:
+Change Dir: /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DHAS_CXX0X_FLAG   -std=c++0x -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-std=c++0x"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test HAS_CXX0X_FLAG failed with the following output:
+Change Dir: /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DHAS_CXX0X_FLAG   -std=c++0x -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-std=c++0x"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/norstore_trd/user/olekrie/orthaGogue_0.9.9.5/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_DEBUG failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_DEBUG   --enable-debug -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-debug"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_MEMCHECK failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_MEMCHECK   --enable-memchecker -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-memchecker"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test PATH_VALGRIND failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DPATH_VALGRIND   --with-valgrind=/usr/bin/valgrind -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fwith-valgrind=/usr/bin/valgrind"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_DEBUG failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_DEBUG   --enable-debug -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-debug"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_MEMCHECK failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_MEMCHECK   --enable-memchecker -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-memchecker"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test PATH_VALGRIND failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DPATH_VALGRIND   --with-valgrind=/usr/bin/valgrind -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fwith-valgrind=/usr/bin/valgrind"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_DEBUG failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_DEBUG   --enable-debug -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-debug"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test ENABLE_MEMCHECK failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DENABLE_MEMCHECK   --enable-memchecker -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fenable-memchecker"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}
+Performing C++ SOURCE FILE Test PATH_VALGRIND failed with the following output:
+Change Dir: /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+gmake[1]: Entering directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DPATH_VALGRIND   --with-valgrind=/usr/bin/valgrind -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-fwith-valgrind=/usr/bin/valgrind"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/gpfs/home/olekrie/orthaGogue_0.9.9.6/src/terminal_input/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}

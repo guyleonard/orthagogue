@@ -1,0 +1,2 @@
+/usr/bin/ar cr libparse_send_first.a  CMakeFiles/parse_send_first.dir/parse_send_first.cxx.o
+/usr/bin/ranlib libparse_send_first.a

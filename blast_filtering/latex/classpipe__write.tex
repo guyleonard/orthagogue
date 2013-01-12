@@ -1,0 +1,62 @@
+\hypertarget{classpipe__write}{
+\section{pipe\_\-write Class Reference}
+\label{classpipe__write}\index{pipe\_\-write@{pipe\_\-write}}
+}
+
+
+Builds (writes) the result files, consisting of the strings given.  
+
+
+
+
+{\ttfamily \#include $<$pipe\_\-write.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classpipe__write_a0e12bb304c1a503ecc7a28d7b14ad8c6}{free\_\-mem} (bool SORT\_\-ABC\_\-DATA, char $\ast$FILE\_\-BINARY\_\-LOCATION)
+\item 
+\hypertarget{classpipe__write_ab5eb33c39cb51647722d7be9c9beff8f}{
+void $\ast$ \hyperlink{classpipe__write_ab5eb33c39cb51647722d7be9c9beff8f}{operator()} (void $\ast$item)}
+\label{classpipe__write_ab5eb33c39cb51647722d7be9c9beff8f}
+
+\begin{DoxyCompactList}\small\item\em The method of parallisation. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write_abea492bfa0f62e8aa6dc935a4d9772b4}{
+\hyperlink{classpipe__write_abea492bfa0f62e8aa6dc935a4d9772b4}{pipe\_\-write} (log\_\-builder\_\-t $\ast$\_\-log, taxa\_\-t $\ast$listTaxa, int taxon\_\-length, char $\ast$FILE\_\-BINARY\_\-LOCATION, bool PRINT\_\-IN\_\-ABC\_\-FORMAT, bool PRINT\_\-IN\_\-MCL\_\-FORMAT, mcl\_\-t TYPE\_\-OF\_\-RESULTFILE\_\-TO\_\-STDOUT)}
+\label{classpipe__write_abea492bfa0f62e8aa6dc935a4d9772b4}
+
+\begin{DoxyCompactList}\small\item\em The constructor: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Builds (writes) the result files, consisting of the strings given. 
+
+\begin{DoxyRemark}{Remarks}
+Processes in serial the block of strings sent from class 'pipe\_\-struct'. 
+\end{DoxyRemark}
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+30.09.2009 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpipe__write_a0e12bb304c1a503ecc7a28d7b14ad8c6}{
+\index{pipe\_\-write@{pipe\_\-write}!free\_\-mem@{free\_\-mem}}
+\index{free\_\-mem@{free\_\-mem}!pipe_write@{pipe\_\-write}}
+\subsubsection[{free\_\-mem}]{\setlength{\rightskip}{0pt plus 5cm}void pipe\_\-write::free\_\-mem (
+\begin{DoxyParamCaption}
+\item[{bool}]{SORT\_\-ABC\_\-DATA, }
+\item[{char $\ast$}]{FILE\_\-BINARY\_\-LOCATION}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__write_a0e12bb304c1a503ecc7a28d7b14ad8c6}
+! Closes the files, adding the final trailings to the mcl files. De-\/allocates memory reserved. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pipe__write_8h}{pipe\_\-write.h}\end{DoxyCompactItemize}

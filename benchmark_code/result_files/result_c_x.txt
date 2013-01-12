@@ -1,0 +1,34 @@
+make; time ./orthaGogue -i  /work/mironov/outputs/blast/HsMmRn.blast -p 0 -t 1 -s '_' -c 2
+real	      5m48.059s
+user	      9m29.330s
+sys	      0m22.826s
+
+--------------------
+--------------------
+make; time ./orthaGogue -i  /work/mironov/outputs/blast/HsMmRn.blast -p 0 -t 1 -s '_' -c 3
+real	      4m23.742s
+user	      9m42.238s
+sys	      0m25.858s
+--- Av dette krevde blast-lesingen:---
+real	      2m13.626s
+user	      4m5.976s
+sys	      0m18.635s
+--- andre kjoering:
+real	  2m13.576s
+user	  4m9.800s
+sys	  0m21.595s
+-------------------------------------------
+----------------------------------------------
+-----Nedenfor er brukt 'gammeldags' metode'----- for tre stk cpu'-er:
+real	      4m13.041s
+user	      9m10.424s
+sys	      0m29.027s
+--- Av dette krevde blast-lesingen:---
+real   2m6.605s
+user   3m58.875s
+sys    0m24.861s
+--maaling 2:--
+real	  2m7.190s
+user	  4m0.281s
+sys	  0m26.502s
+

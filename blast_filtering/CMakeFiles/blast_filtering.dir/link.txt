@@ -1,0 +1,2 @@
+/usr/bin/ar cr libblast_filtering.a  CMakeFiles/blast_filtering.dir/blast_filtering.cxx.o
+/usr/bin/ranlib libblast_filtering.a

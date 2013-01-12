@@ -1,0 +1,5 @@
+The list have a total fill-factor of 0.700000, and a total memory consumption of 0.001831MB:
+[0]	ath	 with a fill-factor of 0.666667 (16 proteins used, 24 proteins reserved)
+[1]	hsa	 with a fill-factor of 0.708333 (17 proteins used, 24 proteins reserved)
+[2]	sce	 with a fill-factor of 1.000000 (12 proteins used, 12 proteins reserved)
+--	Used in total 0.00000000 seconds for this operation

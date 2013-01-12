@@ -1,0 +1,2 @@
+/usr/bin/ar cr libprot_list.a  CMakeFiles/prot_list.dir/prot_list.cxx.o
+/usr/bin/ranlib libprot_list.a

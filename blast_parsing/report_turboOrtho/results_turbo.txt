@@ -1,0 +1,2 @@
+#	read_first	collect_read	read_second	collect_final	orthologs	inparalogs	co_orthologs	write_result	complete	blast_parsing	blast_filtering	#
+1	      0.26	      0.17	      0.10	      0.03	      0.00	      0.00	      0.00	      0.00	      0.57	      0.56	      0.00	#

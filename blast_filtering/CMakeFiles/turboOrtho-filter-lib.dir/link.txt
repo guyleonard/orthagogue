@@ -1,0 +1,2 @@
+/usr/bin/ar cr liborthaGogue-filter-lib.a  CMakeFiles/orthaGogue-filter-lib.dir/blast_filtering.cxx.o
+/usr/bin/ranlib liborthaGogue-filter-lib.a

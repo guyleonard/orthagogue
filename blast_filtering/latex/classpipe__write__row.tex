@@ -1,0 +1,180 @@
+\hypertarget{classpipe__write__row}{
+\section{pipe\_\-write\_\-row Class Reference}
+\label{classpipe__write__row}\index{pipe\_\-write\_\-row@{pipe\_\-write\_\-row}}
+}
+
+
+Produces a row of chars for the protein given.  
+
+
+
+
+{\ttfamily \#include $<$build\_\-string.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__write__row_a5fee0bd54cbb30300a4756907c04e4f1}{
+void \hyperlink{classpipe__write__row_a5fee0bd54cbb30300a4756907c04e4f1}{write\_\-data\_\-to\_\-file} (FILE $\ast$out\_\-file, const bool PIPE)}
+\label{classpipe__write__row_a5fee0bd54cbb30300a4756907c04e4f1}
+
+\begin{DoxyCompactList}\small\item\em Writes the string to the file, and clears the memory. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_afb2d2a9f84969825815856aa802e1289}{
+void {\bfseries setHeader} (uint world\_\-index\_\-in)}
+\label{classpipe__write__row_afb2d2a9f84969825815856aa802e1289}
+
+\item 
+\hypertarget{classpipe__write__row_ad6f99e8e25d7e1b233990842c137521c}{
+void \hyperlink{classpipe__write__row_ad6f99e8e25d7e1b233990842c137521c}{avoidPrinting} ()}
+\label{classpipe__write__row_ad6f99e8e25d7e1b233990842c137521c}
+
+\begin{DoxyCompactList}\small\item\em Called when no data shall be printed to the stream. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_abe1880c2d49175ad46e61d5433628cc4}{
+void \hyperlink{classpipe__write__row_abe1880c2d49175ad46e61d5433628cc4}{writeRow} (bool \_\-has\_\-data)}
+\label{classpipe__write__row_abe1880c2d49175ad46e61d5433628cc4}
+
+\begin{DoxyCompactList}\small\item\em If set to true, the data in the poiners are written to a file. \end{DoxyCompactList}\item 
+bool \hyperlink{classpipe__write__row_ab4f03f6fbd3c95567d43f5c170716a31}{hasData} ()
+\item 
+char $\ast$ \hyperlink{classpipe__write__row_aefc4cc6d2b93b89d8977a278fffe1204}{begin} ()
+\item 
+\hypertarget{classpipe__write__row_a4c65d2d25a7ce96fded64c1d74be2ce5}{
+void \hyperlink{classpipe__write__row_a4c65d2d25a7ce96fded64c1d74be2ce5}{append} (char $\ast$first, char $\ast$last)}
+\label{classpipe__write__row_a4c65d2d25a7ce96fded64c1d74be2ce5}
+
+\begin{DoxyCompactList}\small\item\em Appends the chars to the buffer. \end{DoxyCompactList}\item 
+void \hyperlink{classpipe__write__row_aab2549715725f68ec74e1ba5070c3fa7}{copy} (char $\ast$start, char $\ast$end)
+\item 
+\hypertarget{classpipe__write__row_adb2169a7991280908ea3bb1a4accdc82}{
+void \hyperlink{classpipe__write__row_adb2169a7991280908ea3bb1a4accdc82}{copy\_\-struct} (\hyperlink{classpipe__write__row}{pipe\_\-write\_\-row} row)}
+\label{classpipe__write__row_adb2169a7991280908ea3bb1a4accdc82}
+
+\begin{DoxyCompactList}\small\item\em adds the content of the input to the string located in this object. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_af8627cdcd7884319a57a898a59404586}{
+void \hyperlink{classpipe__write__row_af8627cdcd7884319a57a898a59404586}{end\_\-blast\_\-line} ()}
+\label{classpipe__write__row_af8627cdcd7884319a57a898a59404586}
+
+\begin{DoxyCompactList}\small\item\em Appends the line-\/end characters specified for the 'blast' file format. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_a91f2a5b891309c7a6a902945f4990486}{
+long int \hyperlink{classpipe__write__row_a91f2a5b891309c7a6a902945f4990486}{getIndex} ()}
+\label{classpipe__write__row_a91f2a5b891309c7a6a902945f4990486}
+
+\begin{DoxyCompactList}\small\item\em Returns the size of the index. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_a42cda52276d0371150a9dcfbf6337c42}{
+void \hyperlink{classpipe__write__row_a42cda52276d0371150a9dcfbf6337c42}{finalize} ()}
+\label{classpipe__write__row_a42cda52276d0371150a9dcfbf6337c42}
+
+\begin{DoxyCompactList}\small\item\em Appends the line end ('$\backslash$0' character) \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_ad37dbbd137467cd9a92bf435ac908f43}{
+uint \hyperlink{classpipe__write__row_ad37dbbd137467cd9a92bf435ac908f43}{size} ()}
+\label{classpipe__write__row_ad37dbbd137467cd9a92bf435ac908f43}
+
+\begin{DoxyCompactList}\small\item\em Length of sequence. \end{DoxyCompactList}\item 
+mem\_\-loc \hyperlink{classpipe__write__row_ac35b5611b8e351782651b39469ecaa42}{resize\_\-if\_\-to\_\-large} (mem\_\-loc length\_\-argument)
+\begin{DoxyCompactList}\small\item\em Increases the size of the buffer if it does not fit. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_a38188c3d16b797d7ab14445a218a5184}{
+void \hyperlink{classpipe__write__row_a38188c3d16b797d7ab14445a218a5184}{free\_\-mem} ()}
+\label{classpipe__write__row_a38188c3d16b797d7ab14445a218a5184}
+
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for this object. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__write__row_a17c4ebdd3521ab15c74b7ae659ae28ec}{
+\hyperlink{classpipe__write__row_a17c4ebdd3521ab15c74b7ae659ae28ec}{pipe\_\-write\_\-row} (uint \_\-size\_\-blast\_\-all)}
+\label{classpipe__write__row_a17c4ebdd3521ab15c74b7ae659ae28ec}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__write__row_ad164691665e8f304c751f8550adb840f}{
+static \hyperlink{classpipe__write__row}{pipe\_\-write\_\-row} $\ast$ \hyperlink{classpipe__write__row_ad164691665e8f304c751f8550adb840f}{allocate\_\-class} (uint size)}
+\label{classpipe__write__row_ad164691665e8f304c751f8550adb840f}
+
+\begin{DoxyCompactList}\small\item\em Allocates a list of 'this' class, but do not initialize it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Produces a row of chars for the protein given. 
+
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.12.2010 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+
+31.12.2011 by oekseth (cleanup) 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpipe__write__row_aefc4cc6d2b93b89d8977a278fffe1204}{
+\index{pipe\_\-write\_\-row@{pipe\_\-write\_\-row}!begin@{begin}}
+\index{begin@{begin}!pipe_write_row@{pipe\_\-write\_\-row}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ pipe\_\-write\_\-row::begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__write__row_aefc4cc6d2b93b89d8977a278fffe1204}
+\begin{DoxyReturn}{Returns}
+pointer to beginning of the sequence the string represents. 
+\end{DoxyReturn}
+\hypertarget{classpipe__write__row_aab2549715725f68ec74e1ba5070c3fa7}{
+\index{pipe\_\-write\_\-row@{pipe\_\-write\_\-row}!copy@{copy}}
+\index{copy@{copy}!pipe_write_row@{pipe\_\-write\_\-row}}
+\subsubsection[{copy}]{\setlength{\rightskip}{0pt plus 5cm}void pipe\_\-write\_\-row::copy (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{start, }
+\item[{char $\ast$}]{end}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__write__row_aab2549715725f68ec74e1ba5070c3fa7}
+adds the content of the input to the string located in this object. 
+\begin{DoxyParams}{Parameters}
+{\em $<$start$>$} & Pointer to the first char in the sequence of chars. \\
+\hline
+{\em $<$end$>$} & Pointer to the last char in the sequence of chars. \\
+\hline
+\end{DoxyParams}
+\hypertarget{classpipe__write__row_ab4f03f6fbd3c95567d43f5c170716a31}{
+\index{pipe\_\-write\_\-row@{pipe\_\-write\_\-row}!hasData@{hasData}}
+\index{hasData@{hasData}!pipe_write_row@{pipe\_\-write\_\-row}}
+\subsubsection[{hasData}]{\setlength{\rightskip}{0pt plus 5cm}bool pipe\_\-write\_\-row::hasData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__write__row_ab4f03f6fbd3c95567d43f5c170716a31}
+\begin{DoxyReturn}{Returns}
+true if data shall be printed 
+\end{DoxyReturn}
+\hypertarget{classpipe__write__row_ac35b5611b8e351782651b39469ecaa42}{
+\index{pipe\_\-write\_\-row@{pipe\_\-write\_\-row}!resize\_\-if\_\-to\_\-large@{resize\_\-if\_\-to\_\-large}}
+\index{resize\_\-if\_\-to\_\-large@{resize\_\-if\_\-to\_\-large}!pipe_write_row@{pipe\_\-write\_\-row}}
+\subsubsection[{resize\_\-if\_\-to\_\-large}]{\setlength{\rightskip}{0pt plus 5cm}mem\_\-loc pipe\_\-write\_\-row::resize\_\-if\_\-to\_\-large (
+\begin{DoxyParamCaption}
+\item[{mem\_\-loc}]{length\_\-argument}
+\end{DoxyParamCaption}
+)}}
+\label{classpipe__write__row_ac35b5611b8e351782651b39469ecaa42}
+
+
+Increases the size of the buffer if it does not fit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$length\_\-argument$>$} & the length of the input. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of the argument to be copied. 
+\end{DoxyReturn}
+\begin{DoxyRemark}{Remarks}
+To be used at insertion of a new part of the char array 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{old_2build__string_8h}{old/build\_\-string.h}\end{DoxyCompactItemize}

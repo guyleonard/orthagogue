@@ -1,0 +1,10 @@
+-	Project configuration set.
+-	Compile defenitions set.
+/opt/torque/mom_priv/jobs/134049.kongull.hpc.ntnu.no.SC: line 18: printf: --: invalid option
+printf: usage: printf [-v var] format [arguments]
+/opt/torque/mom_priv/jobs/134049.kongull.hpc.ntnu.no.SC: line 21: printf: --: invalid option
+printf: usage: printf [-v var] format [arguments]
+/opt/torque/mom_priv/jobs/134049.kongull.hpc.ntnu.no.SC: line 24: printf: --: invalid option
+printf: usage: printf [-v var] format [arguments]
+/opt/torque/mom_priv/jobs/134049.kongull.hpc.ntnu.no.SC: line 27: printf: --: invalid option
+printf: usage: printf [-v var] format [arguments]

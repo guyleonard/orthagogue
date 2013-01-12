@@ -1,0 +1,101 @@
+\contentsline {chapter}{\numberline {1}Todo List}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Module Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Modules}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}Class Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Class List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}File Index}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}File List}{7}{section.4.1}
+\contentsline {chapter}{\numberline {5}Module Documentation}{9}{chapter.5}
+\contentsline {section}{\numberline {5.1}\char `\"{}Filtering parsed Blast\char `\"{}}{9}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Detailed Description}{10}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Typedef Documentation}{10}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}t}{10}{subsubsection.5.1.2.1}
+\contentsline {section}{\numberline {5.2}\char `\"{}Parallel filtering algorithms\char `\"{}}{10}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Detailed Description}{11}{subsection.5.2.1}
+\contentsline {section}{\numberline {5.3}\char `\"{}Storage of Filtered blast data\char `\"{}}{11}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Detailed Description}{12}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Typedef Documentation}{12}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}build\_\discretionary {-}{}{}string\_\discretionary {-}{}{}t}{12}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}{13}{subsubsection.5.3.2.2}
+\contentsline {subsection}{\numberline {5.3.3}Enumeration Type Documentation}{13}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}write\_\discretionary {-}{}{}list}{13}{subsubsection.5.3.3.1}
+\contentsline {subsection}{\numberline {5.3.4}Variable Documentation}{13}{subsection.5.3.4}
+\contentsline {subsubsection}{\numberline {5.3.4.1}size\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t}{13}{subsubsection.5.3.4.1}
+\contentsline {section}{\numberline {5.4}\char `\"{}Intermediary transport Containers\char `\"{}}{13}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Detailed Description}{14}{subsection.5.4.1}
+\contentsline {subsection}{\numberline {5.4.2}Typedef Documentation}{14}{subsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.2.1}bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary\_\discretionary {-}{}{}t}{14}{subsubsection.5.4.2.1}
+\contentsline {section}{\numberline {5.5}\char `\"{}Algorithms for serial Filtering\char `\"{}}{14}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Detailed Description}{15}{subsection.5.5.1}
+\contentsline {subsection}{\numberline {5.5.2}Typedef Documentation}{15}{subsection.5.5.2}
+\contentsline {subsubsection}{\numberline {5.5.2.1}taxon\_\discretionary {-}{}{}pair\_\discretionary {-}{}{}t}{15}{subsubsection.5.5.2.1}
+\contentsline {chapter}{\numberline {6}Class Documentation}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}blast\_\discretionary {-}{}{}filtering Class Reference}{17}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Detailed Description}{18}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Member Function Documentation}{18}{subsection.6.1.2}
+\contentsline {subsubsection}{\numberline {6.1.2.1}start\_\discretionary {-}{}{}filtering}{18}{subsubsection.6.1.2.1}
+\contentsline {section}{\numberline {6.2}bucket\_\discretionary {-}{}{}norm Struct Reference}{18}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Detailed Description}{19}{subsection.6.2.1}
+\contentsline {section}{\numberline {6.3}bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary Struct Reference}{19}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Detailed Description}{20}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Member Function Documentation}{20}{subsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2.1}isNotEmpty}{20}{subsubsection.6.3.2.1}
+\contentsline {subsection}{\numberline {6.3.3}Member Data Documentation}{20}{subsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3.1}arrNorm}{20}{subsubsection.6.3.3.1}
+\contentsline {section}{\numberline {6.4}build\_\discretionary {-}{}{}string Class Reference}{21}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Detailed Description}{22}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Member Function Documentation}{22}{subsection.6.4.2}
+\contentsline {subsubsection}{\numberline {6.4.2.1}begin}{22}{subsubsection.6.4.2.1}
+\contentsline {subsubsection}{\numberline {6.4.2.2}copy}{22}{subsubsection.6.4.2.2}
+\contentsline {subsubsection}{\numberline {6.4.2.3}hasData}{22}{subsubsection.6.4.2.3}
+\contentsline {subsubsection}{\numberline {6.4.2.4}resize\_\discretionary {-}{}{}if\_\discretionary {-}{}{}to\_\discretionary {-}{}{}large}{22}{subsubsection.6.4.2.4}
+\contentsline {section}{\numberline {6.5}pipe\_\discretionary {-}{}{}binary Class Reference}{23}{section.6.5}
+\contentsline {subsection}{\numberline {6.5.1}Detailed Description}{24}{subsection.6.5.1}
+\contentsline {section}{\numberline {6.6}pipe\_\discretionary {-}{}{}bucket Class Reference}{24}{section.6.6}
+\contentsline {subsection}{\numberline {6.6.1}Detailed Description}{26}{subsection.6.6.1}
+\contentsline {section}{\numberline {6.7}pipe\_\discretionary {-}{}{}merge Class Reference}{26}{section.6.7}
+\contentsline {subsection}{\numberline {6.7.1}Detailed Description}{27}{subsection.6.7.1}
+\contentsline {subsection}{\numberline {6.7.2}Member Function Documentation}{27}{subsection.6.7.2}
+\contentsline {subsubsection}{\numberline {6.7.2.1}get\_\discretionary {-}{}{}arrNorm}{27}{subsubsection.6.7.2.1}
+\contentsline {subsubsection}{\numberline {6.7.2.2}getFileStruct}{28}{subsubsection.6.7.2.2}
+\contentsline {section}{\numberline {6.8}pipe\_\discretionary {-}{}{}norm Class Reference}{28}{section.6.8}
+\contentsline {subsection}{\numberline {6.8.1}Detailed Description}{28}{subsection.6.8.1}
+\contentsline {section}{\numberline {6.9}pipe\_\discretionary {-}{}{}struct Class Reference}{29}{section.6.9}
+\contentsline {subsection}{\numberline {6.9.1}Detailed Description}{31}{subsection.6.9.1}
+\contentsline {subsection}{\numberline {6.9.2}Constructor \& Destructor Documentation}{31}{subsection.6.9.2}
+\contentsline {subsubsection}{\numberline {6.9.2.1}pipe\_\discretionary {-}{}{}struct}{32}{subsubsection.6.9.2.1}
+\contentsline {section}{\numberline {6.10}pipe\_\discretionary {-}{}{}write Class Reference}{32}{section.6.10}
+\contentsline {subsection}{\numberline {6.10.1}Detailed Description}{32}{subsection.6.10.1}
+\contentsline {subsection}{\numberline {6.10.2}Member Function Documentation}{33}{subsection.6.10.2}
+\contentsline {subsubsection}{\numberline {6.10.2.1}free\_\discretionary {-}{}{}mem}{33}{subsubsection.6.10.2.1}
+\contentsline {section}{\numberline {6.11}taxon\_\discretionary {-}{}{}pair Class Reference}{33}{section.6.11}
+\contentsline {subsection}{\numberline {6.11.1}Detailed Description}{34}{subsection.6.11.1}
+\contentsline {chapter}{\numberline {7}File Documentation}{35}{chapter.7}
+\contentsline {section}{\numberline {7.1}blast\_\discretionary {-}{}{}filtering.h File Reference}{35}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Detailed Description}{36}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.2}blast\_\discretionary {-}{}{}filtering\_\discretionary {-}{}{}main.h File Reference}{36}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Detailed Description}{37}{subsection.7.2.1}
+\contentsline {section}{\numberline {7.3}bucket\_\discretionary {-}{}{}norm.h File Reference}{37}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Detailed Description}{38}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Typedef Documentation}{38}{subsection.7.3.2}
+\contentsline {subsubsection}{\numberline {7.3.2.1}bucket\_\discretionary {-}{}{}norm\_\discretionary {-}{}{}t}{38}{subsubsection.7.3.2.1}
+\contentsline {section}{\numberline {7.4}bucket\_\discretionary {-}{}{}pipe\_\discretionary {-}{}{}binary.h File Reference}{39}{section.7.4}
+\contentsline {subsection}{\numberline {7.4.1}Detailed Description}{40}{subsection.7.4.1}
+\contentsline {section}{\numberline {7.5}build\_\discretionary {-}{}{}string.h File Reference}{40}{section.7.5}
+\contentsline {subsection}{\numberline {7.5.1}Detailed Description}{42}{subsection.7.5.1}
+\contentsline {section}{\numberline {7.6}enum\_\discretionary {-}{}{}write\_\discretionary {-}{}{}list\_\discretionary {-}{}{}t.h File Reference}{42}{section.7.6}
+\contentsline {subsection}{\numberline {7.6.1}Detailed Description}{43}{subsection.7.6.1}
+\contentsline {section}{\numberline {7.7}pipe\_\discretionary {-}{}{}binary.h File Reference}{43}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Detailed Description}{44}{subsection.7.7.1}
+\contentsline {section}{\numberline {7.8}pipe\_\discretionary {-}{}{}bucket.h File Reference}{44}{section.7.8}
+\contentsline {subsection}{\numberline {7.8.1}Detailed Description}{46}{subsection.7.8.1}
+\contentsline {section}{\numberline {7.9}pipe\_\discretionary {-}{}{}merge.h File Reference}{46}{section.7.9}
+\contentsline {subsection}{\numberline {7.9.1}Detailed Description}{47}{subsection.7.9.1}
+\contentsline {section}{\numberline {7.10}pipe\_\discretionary {-}{}{}norm.h File Reference}{47}{section.7.10}
+\contentsline {subsection}{\numberline {7.10.1}Detailed Description}{48}{subsection.7.10.1}
+\contentsline {section}{\numberline {7.11}pipe\_\discretionary {-}{}{}struct.h File Reference}{49}{section.7.11}
+\contentsline {subsection}{\numberline {7.11.1}Detailed Description}{50}{subsection.7.11.1}
+\contentsline {section}{\numberline {7.12}pipe\_\discretionary {-}{}{}write.h File Reference}{50}{section.7.12}
+\contentsline {subsection}{\numberline {7.12.1}Detailed Description}{51}{subsection.7.12.1}
+\contentsline {section}{\numberline {7.13}taxon\_\discretionary {-}{}{}pair.h File Reference}{51}{section.7.13}
+\contentsline {subsection}{\numberline {7.13.1}Detailed Description}{53}{subsection.7.13.1}

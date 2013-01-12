@@ -1,0 +1,2 @@
+/usr/bin/ar cr libfile_struct.a  CMakeFiles/file_struct.dir/file_struct.cxx.o
+/usr/bin/ranlib libfile_struct.a

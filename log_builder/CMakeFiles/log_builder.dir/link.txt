@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblog_builder.a  CMakeFiles/log_builder.dir/log_builder.cxx.o
+/usr/bin/ranlib liblog_builder.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libSTATIC.a  CMakeFiles/STATIC.dir/blast_parsing.cxx.o
+/usr/bin/ranlib libSTATIC.a

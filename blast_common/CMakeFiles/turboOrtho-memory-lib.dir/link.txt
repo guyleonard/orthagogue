@@ -1,0 +1,2 @@
+/usr/bin/ar cr liborthaGogue-memory-lib.a  CMakeFiles/orthaGogue-memory-lib.dir/blast_memory.cxx.o
+/usr/bin/ranlib liborthaGogue-memory-lib.a

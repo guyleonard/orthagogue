@@ -1,0 +1,2 @@
+/usr/bin/ar cr libblast_terminal.a  CMakeFiles/blast_terminal.dir/cmd_list.cxx.o CMakeFiles/blast_terminal.dir/cmd_argument.cxx.o
+/usr/bin/ranlib libblast_terminal.a

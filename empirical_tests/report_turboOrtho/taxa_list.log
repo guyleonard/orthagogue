@@ -1,0 +1,5 @@
+Prints the 3 taxa found for file report_turboOrtho, with the list of taxa object consuming a total size of 0.001196.2MB
+sce is in [0, 11], with a total of 11
+ath is in [11, 26], with a total of 15
+hsa is in [26, 42], with a total of 16
+--	Used in total 0.00000000 seconds for this operation

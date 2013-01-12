@@ -1,0 +1,2 @@
+/usr/bin/ar cr libmcl_format.a  CMakeFiles/mcl_format.dir/mcl_format.cxx.o
+/usr/bin/ranlib libmcl_format.a

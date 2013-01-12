@@ -1,0 +1,2 @@
+/usr/bin/ar cr librelations_list.a  CMakeFiles/relations_list.dir/relations_list.cxx.o
+/usr/bin/ranlib librelations_list.a

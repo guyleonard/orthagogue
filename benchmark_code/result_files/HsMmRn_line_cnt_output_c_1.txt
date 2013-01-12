@@ -1,0 +1,9 @@
+  6536320 all.abc
+   189820 co_orthologs.abc
+  5993209 inparalogs.abc
+   353291 orthologs.abc
+   134443 all.mci
+    34630 co_orthologs.mci
+    53353 inparalogs.mci
+    93186 orthologs.mci
+ 13388252 total

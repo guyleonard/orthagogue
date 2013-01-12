@@ -1,0 +1,2 @@
+/usr/bin/ar cr libcmd_argument.a  CMakeFiles/cmd_argument.dir/cmd_argument.cxx.o
+/usr/bin/ranlib libcmd_argument.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpipe_struct.a  CMakeFiles/pipe_struct.dir/pipe_struct.cxx.o
+/usr/bin/ranlib libpipe_struct.a

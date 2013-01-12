@@ -1,0 +1,2 @@
+/usr/bin/ar cr liblist_file_chunk.a  CMakeFiles/list_file_chunk.dir/list_file_chunk.cxx.o
+/usr/bin/ranlib liblist_file_chunk.a

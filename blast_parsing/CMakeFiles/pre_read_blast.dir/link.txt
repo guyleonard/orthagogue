@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpre_read_blast.a  CMakeFiles/pre_read_blast.dir/pre_read_blast.cxx.o
+/usr/bin/ranlib libpre_read_blast.a

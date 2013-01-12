@@ -1,0 +1,71 @@
+.TH "pipe_bucket" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pipe_bucket \- 
+.PP
+Produces buckets of numbered items to parse.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pipe_bucket.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBpipe_bucket\fP (const bool inpa_ops, uint taxon_start, uint taxon_end, uint taxon_length, log_builder_t *_log, list_file_parse_t *&_listParseData, list_file_struct_t *&_listStructData, taxa_t *_listTaxa)"
+.br
+.RI "\fIThe constructor. \fP"
+.ti -1c
+.RI "void * \fBoperator()\fP (void *item)"
+.br
+.RI "\fIThe method of parallisation. \fP"
+.ti -1c
+.RI "void \fBfree_data\fP ()"
+.br
+.RI "\fIDe-allocates the memory of this object. \fP"
+.ti -1c
+.RI "void \fBfree_mem\fP ()"
+.br
+.RI "\fIDe-allocates the memory of this object. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBassert_class\fP (const bool print_info)"
+.br
+.RI "\fIThe main test function for this class. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Produces buckets of numbered items to parse. 
+
+Goal is to make the threads in the rest of the pipe effective: 
+.PP
+\fBTodo\fP
+.RS 4
+Should be considered removed, replaced by preestimated blocks used by each of the consquative threads 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+21.12.2010 by oekseth (initial) 
+.PP
+16.09.2011 by oekseth (asserts) 
+.PP
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

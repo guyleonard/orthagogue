@@ -1,0 +1,2 @@
+/usr/bin/ar cr liborthaGogue-parse-lib.a  CMakeFiles/orthaGogue-parse-lib.dir/blast_parsing.cxx.o
+/usr/bin/ranlib liborthaGogue-parse-lib.a

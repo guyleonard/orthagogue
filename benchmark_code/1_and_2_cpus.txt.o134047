@@ -1,0 +1,30 @@
+-	Used 82.595725 seconds on blast-read (1/2). (I.e. iterating thorugh the blast file building the data set for the perfect hashs')
+-	Used 0.325803 seconds on the serial mid-processing of the hash-files
+-	Used 156.111270 seconds on blast-read (2/2). (I.e. filling in the actual data)
+-	Used 0.000019 seconds cleaning the memory after the comparison data, using a single thread
+# Used 239.032820 seconds processing the blast-file into data structures.
+--		Used 5.526180 seconds building ortholog relations for taxa in range [0, 1-1]>'
+--		Used 11.701781 seconds building ortholog relations for taxa in range [1, 2-1]>'
+--		Used 11.501315 seconds building ortholog relations for taxa in range [2, 3-1]>'
+-	Used 28.920793 seconds building ortholog relations
+--		Used 1.149842 seconds building inparalog relations for taxa in range [0, 1-1]>'
+--		Used 11.201179 seconds building inparalog relations for taxa in range [1, 2-1]>'
+--		Used 85.756627 seconds building inparalog relations for taxa in range [2, 3-1]>'
+-	Used 98.107717 seconds building inparalog relations'
+# Used 146.835790 seconds doing the filtering- and output of the data given by the preprocessed elements.
+>> Used 386.336334 seconds (or 6.439 minutes) doing the job for 1 CPU's for /work/mironov/outputs/blast/HsMmRn.blast.
+-	Used 60.819846 seconds on blast-read (1/2). (I.e. iterating thorugh the blast file building the data set for the perfect hashs')
+-	Used 0.336635 seconds on the serial mid-processing of the hash-files
+-	Used 86.898178 seconds on blast-read (2/2). (I.e. filling in the actual data)
+-	Used 0.000011 seconds cleaning the memory after the comparison data, using a single thread
+# Used 148.054673 seconds processing the blast-file into data structures.
+--		Used 3.840485 seconds building ortholog relations for taxa in range [0, 1-1]>'
+--		Used 7.681685 seconds building ortholog relations for taxa in range [1, 2-1]>'
+--		Used 7.414358 seconds building ortholog relations for taxa in range [2, 3-1]>'
+-	Used 19.168754 seconds building ortholog relations
+--		Used 0.794610 seconds building inparalog relations for taxa in range [0, 1-1]>'
+--		Used 5.631390 seconds building inparalog relations for taxa in range [1, 2-1]>'
+--		Used 44.403941 seconds building inparalog relations for taxa in range [2, 3-1]>'
+-	Used 50.829997 seconds building inparalog relations'
+# Used 83.449521 seconds doing the filtering- and output of the data given by the preprocessed elements.
+>> Used 231.764069 seconds (or 3.863 minutes) doing the job for 2 CPU's for /work/mironov/outputs/blast/HsMmRn.blast.

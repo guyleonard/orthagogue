@@ -1,0 +1,78 @@
+.TH "pipe_binary" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pipe_binary \- 
+.PP
+Filters orthologs- and inparalogs in parallel.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pipe_binary.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "struct \fBtaxon_pair\fP * \fBinit_taxon_pair\fP (uint taxon_start, uint taxon_length, uint __taxon_length, int n_threads)"
+.br
+.RI "\fIBuilds the set of blocks to be used during the parsing: \fP"
+.ti -1c
+.RI "void \fBfree_data\fP ()"
+.br
+.RI "\fIDe-allocates the data bounded by this class. \fP"
+.ti -1c
+.RI "void \fBfree_additional_blocks\fP ()"
+.br
+.RI "\fIDe-allocates both the internal temporary objects of type list_file_struct for all of the threads, in addition to de-allocating the memory reserved for this object. \fP"
+.ti -1c
+.RI "void * \fBoperator()\fP (void *item)"
+.br
+.RI "\fIThe method of parallisation. \fP"
+.ti -1c
+.RI "\fBpipe_binary\fP (uint _taxon_length, const bool _inparalog_operation, const bool _use_everyrel_as_arrnorm_basis, const uint _n_threads, log_builder_t *_log, id_simil_list &_listOrtho, list_file_parse_t *_listParseData, short int _AMINO_LIMIT, float _max_input_value, float _MIN_SIMILARITY_LIMIT, bool _use_improved_overlap_algo, bool _DEBUG_PRINT_DISCARDED_PAIRS, bool _PRINT_OVERLAP_VALUES_ABOVE, bool _PRINT_NORMALIXATION_BASIS, bool _DEBUG_NORM, taxa_t *listTaxa, bool _MODE_PAIRWISE_OUTPUT_ABC, bool MODE_PAIRWISE_OUTPUT_MCL, char *FILE_BINARY_LOCATION)"
+.br
+.RI "\fIThe constructor. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBassert_class\fP (const bool print_info)"
+.br
+.RI "\fIThe main test function for this class. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "list_file_struct ** \fBl_fileStruct\fP"
+.br
+.RI "\fIThe object containing list_file_struct during the building process for each thread id. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Filters orthologs- and inparalogs in parallel. 
+
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+18.03.2011 by oekseth (initial) 
+.PP
+15.09.2011 by oekseth (asserts) 
+.PP
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+.PP
+25.12.2011 by oekseth (cleanup). 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

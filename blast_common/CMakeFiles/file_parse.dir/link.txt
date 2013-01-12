@@ -1,0 +1,2 @@
+/usr/bin/ar cr libfile_parse.a  CMakeFiles/file_parse.dir/file_parse.cxx.o
+/usr/bin/ranlib libfile_parse.a

@@ -1,0 +1,95 @@
+\hypertarget{classpipe__merge}{
+\section{pipe\_\-merge Class Reference}
+\label{classpipe__merge}\index{pipe\_\-merge@{pipe\_\-merge}}
+}
+
+
+Merges containers building a filtered set of orthologs-\/ and inparalogs.  
+
+
+
+
+{\ttfamily \#include $<$pipe\_\-merge.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classpipe__merge_ac93add3e78024ca898bd5b97cf6da803}{
+void \hyperlink{classpipe__merge_ac93add3e78024ca898bd5b97cf6da803}{set\_\-arrNorm} (norm\_\-t $\ast$$\ast$norm)}
+\label{classpipe__merge_ac93add3e78024ca898bd5b97cf6da803}
+
+\begin{DoxyCompactList}\small\item\em Sets the $\ast$$\ast$norm object with the param given. \end{DoxyCompactList}\item 
+norm\_\-t $\ast$$\ast$ \hyperlink{classpipe__merge_a66e8a21f1a88493b83d64c5bb8b41195}{get\_\-arrNorm} ()
+\item 
+\hypertarget{classpipe__merge_a8978f6b7f998446900d37be3c2fdbe05}{
+void \hyperlink{classpipe__merge_a8978f6b7f998446900d37be3c2fdbe05}{setFileStruct} (list\_\-file\_\-struct $\ast$arg)}
+\label{classpipe__merge_a8978f6b7f998446900d37be3c2fdbe05}
+
+\begin{DoxyCompactList}\small\item\em Sets the $\ast$list\_\-file\_\-struct object with the param given. \end{DoxyCompactList}\item 
+list\_\-file\_\-struct $\ast$ \hyperlink{classpipe__merge_a6e79a016c137c40e1a35fe5630de83c1}{getFileStruct} ()
+\item 
+\hypertarget{classpipe__merge_aa950a63e7bf9e162881fd8ac5f796ec7}{
+void $\ast$ \hyperlink{classpipe__merge_aa950a63e7bf9e162881fd8ac5f796ec7}{operator()} (void $\ast$item)}
+\label{classpipe__merge_aa950a63e7bf9e162881fd8ac5f796ec7}
+
+\begin{DoxyCompactList}\small\item\em The method of parallisation. \end{DoxyCompactList}\item 
+\hypertarget{classpipe__merge_a83a45c65f321c5bcad54ba7e4f5c83f7}{
+\hyperlink{classpipe__merge_a83a45c65f321c5bcad54ba7e4f5c83f7}{pipe\_\-merge} (uint \_\-taxon\_\-length, const bool \_\-use\_\-everyrel\_\-as\_\-arrnorm\_\-basis, const pipe\_\-t type, log\_\-builder\_\-t $\ast$\_\-log, list\_\-file\_\-struct\_\-t $\ast$\&\_\-listStructData, taxa\_\-t $\ast$\_\-listTaxa)}
+\label{classpipe__merge_a83a45c65f321c5bcad54ba7e4f5c83f7}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Merges containers building a filtered set of orthologs-\/ and inparalogs. 
+
+\begin{DoxyRemark}{Remarks}
+Inputs an object of type 'bucket\_\-pipe\_\-binary', containing blocks of information to be merged.
+\begin{DoxyItemize}
+\item Merges containers of type list\_\-file\_\-struct and type $\ast$$\ast$norm. 
+\end{DoxyItemize}
+\end{DoxyRemark}
+\begin{DoxyAuthor}{Author}
+Ole Kristian Ekseth (oekseth) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+21.12.2010 by oekseth (initial) 
+
+16.09.2011 by oekseth (asserts) 
+
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+
+25.12.2011 by oekseth (cleanup). 
+\end{DoxyDate}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classpipe__merge_a66e8a21f1a88493b83d64c5bb8b41195}{
+\index{pipe\_\-merge@{pipe\_\-merge}!get\_\-arrNorm@{get\_\-arrNorm}}
+\index{get\_\-arrNorm@{get\_\-arrNorm}!pipe_merge@{pipe\_\-merge}}
+\subsubsection[{get\_\-arrNorm}]{\setlength{\rightskip}{0pt plus 5cm}norm\_\-t$\ast$$\ast$ pipe\_\-merge::get\_\-arrNorm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classpipe__merge_a66e8a21f1a88493b83d64c5bb8b41195}
+\begin{DoxyReturn}{Returns}
+the $\ast$$\ast$norm object 
+\end{DoxyReturn}
+\hypertarget{classpipe__merge_a6e79a016c137c40e1a35fe5630de83c1}{
+\index{pipe\_\-merge@{pipe\_\-merge}!getFileStruct@{getFileStruct}}
+\index{getFileStruct@{getFileStruct}!pipe_merge@{pipe\_\-merge}}
+\subsubsection[{getFileStruct}]{\setlength{\rightskip}{0pt plus 5cm}list\_\-file\_\-struct$\ast$ pipe\_\-merge::getFileStruct (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classpipe__merge_a6e79a016c137c40e1a35fe5630de83c1}
+\begin{DoxyReturn}{Returns}
+the processed $\ast$list\_\-file\_\-struct object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{pipe__merge_8h}{pipe\_\-merge.h}\end{DoxyCompactItemize}

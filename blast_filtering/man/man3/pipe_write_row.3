@@ -1,0 +1,150 @@
+.TH "pipe_write_row" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pipe_write_row \- 
+.PP
+Produces a row of chars for the protein given.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <build_string.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBwrite_data_to_file\fP (FILE *out_file, const bool PIPE)"
+.br
+.RI "\fIWrites the string to the file, and clears the memory. \fP"
+.ti -1c
+.RI "void \fBsetHeader\fP (uint world_index_in)"
+.br
+.ti -1c
+.RI "void \fBavoidPrinting\fP ()"
+.br
+.RI "\fICalled when no data shall be printed to the stream. \fP"
+.ti -1c
+.RI "void \fBwriteRow\fP (bool _has_data)"
+.br
+.RI "\fIIf set to true, the data in the poiners are written to a file. \fP"
+.ti -1c
+.RI "bool \fBhasData\fP ()"
+.br
+.ti -1c
+.RI "char * \fBbegin\fP ()"
+.br
+.ti -1c
+.RI "void \fBappend\fP (char *first, char *last)"
+.br
+.RI "\fIAppends the chars to the buffer. \fP"
+.ti -1c
+.RI "void \fBcopy\fP (char *start, char *end)"
+.br
+.ti -1c
+.RI "void \fBcopy_struct\fP (\fBpipe_write_row\fP row)"
+.br
+.RI "\fIadds the content of the input to the string located in this object. \fP"
+.ti -1c
+.RI "void \fBend_blast_line\fP ()"
+.br
+.RI "\fIAppends the line-end characters specified for the 'blast' file format. \fP"
+.ti -1c
+.RI "long int \fBgetIndex\fP ()"
+.br
+.RI "\fIReturns the size of the index. \fP"
+.ti -1c
+.RI "void \fBfinalize\fP ()"
+.br
+.RI "\fIAppends the line end ('\\0' character) \fP"
+.ti -1c
+.RI "uint \fBsize\fP ()"
+.br
+.RI "\fILength of sequence. \fP"
+.ti -1c
+.RI "mem_loc \fBresize_if_to_large\fP (mem_loc length_argument)"
+.br
+.RI "\fIIncreases the size of the buffer if it does not fit. \fP"
+.ti -1c
+.RI "void \fBfree_mem\fP ()"
+.br
+.RI "\fIFrees the memory allocated for this object. \fP"
+.ti -1c
+.RI "\fBpipe_write_row\fP (uint _size_blast_all)"
+.br
+.RI "\fIThe constructor. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBpipe_write_row\fP * \fBallocate_class\fP (uint size)"
+.br
+.RI "\fIAllocates a list of 'this' class, but do not initialize it. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Produces a row of chars for the protein given. 
+
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+21.12.2010 by oekseth (initial) 
+.PP
+16.09.2011 by oekseth (asserts) 
+.PP
+31.12.2011 by oekseth (cleanup) 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "char* pipe_write_row::begin ()"\fBReturns:\fP
+.RS 4
+pointer to beginning of the sequence the string represents. 
+.RE
+.PP
+
+.SS "void pipe_write_row::copy (char *start, char *end)"adds the content of the input to the string located in this object. 
+.PP
+\fBParameters:\fP
+.RS 4
+\fI<start>\fP Pointer to the first char in the sequence of chars. 
+.br
+\fI<end>\fP Pointer to the last char in the sequence of chars. 
+.RE
+.PP
+
+.SS "bool pipe_write_row::hasData ()"\fBReturns:\fP
+.RS 4
+true if data shall be printed 
+.RE
+.PP
+
+.SS "mem_loc pipe_write_row::resize_if_to_large (mem_loclength_argument)"
+.PP
+Increases the size of the buffer if it does not fit. \fBParameters:\fP
+.RS 4
+\fI<length_argument>\fP the length of the input. 
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+the size of the argument to be copied. 
+.RE
+.PP
+\fBRemarks:\fP
+.RS 4
+To be used at insertion of a new part of the char array 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

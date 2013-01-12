@@ -1,0 +1,98 @@
+.TH "taxon_pair" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+taxon_pair \- 
+.PP
+Defines the next protein to work on.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <taxon_pair.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgetVariables\fP (uint &_taxon, uint &_protein_start, uint &_protein_end)"
+.br
+.RI "\fIReturns the variables: \fP"
+.ti -1c
+.RI "void \fBprint\fP ()"
+.br
+.RI "\fIPrints the data. \fP"
+.ti -1c
+.RI "bool \fBhas_data\fP ()"
+.br
+.RI "\fIReturns true if is has more data. \fP"
+.ti -1c
+.RI "\fBtaxon_pair\fP (uint _taxon, uint _protein_start, uint _protein_end, list_file_parse_t *&_listParseData, list_file_struct_t *&_listStructData, taxa_t *_listTaxa)"
+.br
+.RI "\fIThe constructor. \fP"
+.ti -1c
+.RI "\fBtaxon_pair\fP ()"
+.br
+.RI "\fIThe constructor. \fP"
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBtaxon_pair\fP * \fBinitList\fP (uint size)"
+.br
+.RI "\fIReturns an allocated region: A standard interface to ensure consistency. \fP"
+.ti -1c
+.RI "static void \fBfree_taxonPairList\fP (\fBtaxon_pair\fP *list)"
+.br
+.RI "\fIA standard interface to ensure consistency: \fP"
+.ti -1c
+.RI "static \fBtaxon_pair\fP * \fBinit_taxon_pair\fP (uint taxon_start, uint taxon_end, uint taxon_length, const bool only_inpa, const bool from_parse, list_file_parse_t *listParseData, list_file_struct_t *&listStructData, taxa_t *listTaxa)"
+.br
+.RI "\fIBuilds the set of blocks to be used during the parsing. \fP"
+.ti -1c
+.RI "static void \fBassert_class\fP (const bool print_info)"
+.br
+.RI "\fIThe main test function for this class. \fP"
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "uint \fBtaxon\fP"
+.br
+.RI "\fIThe taxon id of interest. \fP"
+.ti -1c
+.RI "uint \fBprotein_start\fP"
+.br
+.RI "\fIThe first protein of this collection. \fP"
+.ti -1c
+.RI "uint \fBprotein_end\fP"
+.br
+.RI "\fIThe last protein of this collection. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Defines the next protein to work on. 
+
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+18.03.2011 by oekseth (initial) 
+.PP
+16.09.2011 by oekseth (asserts) 
+.PP
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of this class as a libary) 
+.PP
+31.12.2011 (cleanup) 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

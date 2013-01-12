@@ -1,0 +1,2 @@
+/usr/bin/ar cr libid_simil_list.a  CMakeFiles/id_simil_list.dir/id_simil_list.cxx.o
+/usr/bin/ranlib libid_simil_list.a

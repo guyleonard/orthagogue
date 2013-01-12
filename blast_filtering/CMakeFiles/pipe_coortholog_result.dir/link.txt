@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpipe_coortholog_result.a  CMakeFiles/pipe_coortholog_result.dir/pipe_coortholog_result.cxx.o
+/usr/bin/ranlib libpipe_coortholog_result.a

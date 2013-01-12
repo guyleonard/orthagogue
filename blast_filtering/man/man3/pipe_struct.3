@@ -1,0 +1,77 @@
+.TH "pipe_struct" 3 "Sat Dec 31 2011" "Version 0.9.7.6" "turboOrtho" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+pipe_struct \- 
+.PP
+Either builds co-orthologs or builds the strings for the result file.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <pipe_struct.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBgetFromBufferToStruct\fP (const uint taxon_length, uint max_buffer_size, const bool only_inparalogs)"
+.br
+.RI "\fIOpens a buffer and dumps it to memory if the space for it is allocated. \fP"
+.ti -1c
+.RI "void \fBfinalize_memory\fP (const uint taxon_length)"
+.br
+.RI "\fIClears the memory allocated for this thread. \fP"
+.ti -1c
+.RI "void * \fBoperator()\fP (void *item)"
+.br
+.RI "\fIThe method of parallisation. \fP"
+.ti -1c
+.RI "void \fBfree_mem\fP ()"
+.br
+.RI "\fIDe-allocates the memory reserved for this object. \fP"
+.ti -1c
+.RI "\fBpipe_struct\fP (uint _nthread, uint _size_prot, uint taxon_length, pipe_t type, bool _USE_EVERYREL_AS_ARRNORM_BASIS, norm_t **normArr, log_builder_t *_log, bool _MODE_PAIRWISE_OUTPUT, bool _MODE_INTEGER_OUTPUT, bool _DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, bool _DIVIDE_BY_NORMALIZATION_VALUE_FOR_MCL_FORMAT, id_simil_list &_listOrtho, taxa_t *_listTaxa, stack_rel *&_stackRel, list_file_struct_t *&_listStructData, list_file_parse_t *&_listParseData, float _max_input_value, bool _MODE_PAIRWISE_OUTPUT_ABC, bool _MODE_PAIRWISE_OUTPUT_MCL, bool _PRINT_IN_ABC_FORMAT, bool _PRINT_IN_MCL_FORMAT, bool _SORT_ABC_DATA, bool _PRINT_NORMALIXATION_BASIS, bool _DEBUG_NORM)"
+.br
+.RI "\fIConstructor for the class. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Either builds co-orthologs or builds the strings for the result file. 
+
+\fBReturns:\fP
+.RS 4
+A 'bucket_norm object. 
+.RE
+.PP
+\fBAuthor:\fP
+.RS 4
+Ole Kristian Ekseth (oekseth) 
+.RE
+.PP
+\fBDate:\fP
+.RS 4
+21.12.2010 by oekseth (initial) 
+.PP
+16.09.2011 by oekseth (asserts) 
+.PP
+24.12.2011 by oekseth (removed calls to 'extern' variables to ease the inclusion of thisclass as a libary) 
+.PP
+25.12.2011 by oekseth (cleanup). 
+.RE
+.PP
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "pipe_struct::pipe_struct (uint_nthread, uint_size_prot, uinttaxon_length, pipe_ttype, bool_USE_EVERYREL_AS_ARRNORM_BASIS, norm_t **normArr, log_builder_t *_log, bool_MODE_PAIRWISE_OUTPUT, bool_MODE_INTEGER_OUTPUT, bool_DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, bool_DIVIDE_BY_NORMALIZATION_VALUE_FOR_MCL_FORMAT, id_simil_list &_listOrtho, taxa_t *_listTaxa, stack_rel *&_stackRel, list_file_struct_t *&_listStructData, list_file_parse_t *&_listParseData, float_max_input_value, bool_MODE_PAIRWISE_OUTPUT_ABC, bool_MODE_PAIRWISE_OUTPUT_MCL, bool_PRINT_IN_ABC_FORMAT, bool_PRINT_IN_MCL_FORMAT, bool_SORT_ABC_DATA, bool_PRINT_NORMALIXATION_BASIS, bool_DEBUG_NORM)"
+.PP
+Constructor for the class. \fBRemarks:\fP
+.RS 4
+Operation decided when setting the 'PIPE_TYPE' variabel (PIPE_TYPE == DUMP): Writes the data to a matrix, for further processing by another program (PIPE_TYPE == INPA_ORTH) Creates inparalogs based upon orthologs. (PIPE_TYPE == INPA_INPA) Creates inparalogs based upon orthologs' inparalogs. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for turboOrtho from the source code.

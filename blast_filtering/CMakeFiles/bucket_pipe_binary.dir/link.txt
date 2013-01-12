@@ -1,0 +1,2 @@
+/usr/bin/ar cr libbucket_pipe_binary.a  CMakeFiles/bucket_pipe_binary.dir/bucket_pipe_binary.cxx.o
+/usr/bin/ranlib libbucket_pipe_binary.a

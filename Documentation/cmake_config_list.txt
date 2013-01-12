@@ -1,0 +1,10 @@
+  option(BLOCK_FILE_READ_SIZE "The number of bytes to read from the disk on each call to fread(..)" ${def_size_file_read})
+  option(DISK_BUFFER_SIZE  "The size in Bytes to send from one pipe to another. Value would affect time- and memory usage." ${def_size})
+  option(BUILD_LOG_FILES, "Builds the log files documenting the running time." ON)
+  option(BUILD_MAN_PAGE, "Builds the man page for the softwares usage." OFF)
+  option(assert_code, "Set if asserts of the functions is to be compiled in." ON)
+  option(NDEBUG, "Enables the extra asserts to be run during execution: practical if software behaves in an unexpected manner." ON)
+  option(INCLUDE_CMD_DEBUG_PARAMS "Includes extra parameters to the software for debugging purposes (named DEUBG_*)." ON)
+  option(MEMORY_CONSUMPTION_LEVEL
+ option(LOG_FOLDER_NAME "Specififies the location to store the generated logfiles." report_orthaGogue)
+#  option(MAN_PATH_USER     "If set stores the manpath describing the usage of this tool at this location. Else the root dir of the cmake installation is used. Default set to 0" 0)

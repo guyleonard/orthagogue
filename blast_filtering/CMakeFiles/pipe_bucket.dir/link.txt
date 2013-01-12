@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpipe_bucket.a  CMakeFiles/pipe_bucket.dir/pipe_bucket.cxx.o
+/usr/bin/ranlib libpipe_bucket.a

@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpipe_binary.a  CMakeFiles/pipe_binary.dir/pipe_binary.cxx.o
+/usr/bin/ranlib libpipe_binary.a

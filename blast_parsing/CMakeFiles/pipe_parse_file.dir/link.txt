@@ -1,0 +1,2 @@
+/usr/bin/ar cr libpipe_parse_file.a  CMakeFiles/pipe_parse_file.dir/pipe_parse_file.cxx.o
+/usr/bin/ranlib libpipe_parse_file.a
