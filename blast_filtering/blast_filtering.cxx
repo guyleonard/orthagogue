@@ -148,6 +148,7 @@ void blast_filtering::print_class_info() {
 void blast_filtering::init_values(cmd_list *cmd) {
   class cmd_argument cl2; 
   // FILTERING
+  //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
   cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
   cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
   // --
@@ -196,6 +197,20 @@ void blast_filtering::build_cmd_list(cmd_list *cmd, int argc, char *argv[]) {
   cmd->free_mem();
 }
 
+//! @return the transformed value.
+float transform_threshold_value_to_e_if_last_column_set(bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE, float MIN_SIMILARITY_LIMIT) {
+  if(USE_LAST_BLAST_CLOMUN_AS_DISTANCE) {
+    const float old_threshold = MIN_SIMILARITY_LIMIT;
+    const float new_threshold = pow(10, MIN_SIMILARITY_LIMIT);
+    printf("\t\t old_threshold=%f, new_threshold=%f, at blast_filtering.cxx:%d\n", old_threshold, new_threshold, __LINE__); // FIXME: remove this printf!
+#ifndef NDEBUG
+    const float back_subst = -1*log10(new_threshold);
+    assert(back_subst >= 0);
+    assert((uint)back_subst == (int)old_threshold);
+#endif
+    return new_threshold;
+  } else return MIN_SIMILARITY_LIMIT; // did not change
+}
 /**
    @brief Sets the user settings from the blast parsing process.
    @param <obj> The object of class tsettings_input containing the data to use.
@@ -208,15 +223,20 @@ void blast_filtering::set_values(tsettings_input obj) {
   FILE_BINARY_LOCATION = obj.FILE_BINARY_LOCATION; 
   //  SEPERATOR = _SEPERATOR; 
   CPU_TOT = obj.CPU_TOT;
+  
+  //! Updates the similarity limit:
+  MIN_SIMILARITY_LIMIT = transform_threshold_value_to_e_if_last_column_set(obj.USE_LAST_BLAST_CLOMUN_AS_DISTANCE, MIN_SIMILARITY_LIMIT);
 }
 //! Initializes values after those set in the blast parsing (dound in library blast_parsing):
-void blast_filtering::set_values(bool _DEBUG_NORM, bool _PRINT_NORMALIXATION_BASIS, bool _USE_EVERYREL_AS_ARRNORM_BASIS, char *_FILE_BINARY_LOCATION/*,  char _SEPERATOR*/, int _CPU_TOT) {
+void blast_filtering::set_values(bool _DEBUG_NORM, bool _PRINT_NORMALIXATION_BASIS, bool _USE_EVERYREL_AS_ARRNORM_BASIS, char *_FILE_BINARY_LOCATION/*,  char _SEPERATOR*/, int _CPU_TOT, bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE) {
   DEBUG_NORM = _DEBUG_NORM; 
   PRINT_NORMALIXATION_BASIS = _PRINT_NORMALIXATION_BASIS; 
   USE_EVERYREL_AS_ARRNORM_BASIS = _USE_EVERYREL_AS_ARRNORM_BASIS;
   FILE_BINARY_LOCATION = _FILE_BINARY_LOCATION; 
   //  SEPERATOR = _SEPERATOR; 
   CPU_TOT = _CPU_TOT;
+  //! Updates the similarity limit:
+  MIN_SIMILARITY_LIMIT = transform_threshold_value_to_e_if_last_column_set(USE_LAST_BLAST_CLOMUN_AS_DISTANCE, MIN_SIMILARITY_LIMIT);
 }
 
 /**

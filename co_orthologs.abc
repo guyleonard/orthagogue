@@ -1,20 +1,21 @@
-sce|YKR093w_sc	hsa|Hs4827008_hs	0.2649
-sce|YJL113w_sc	ath|At1g11265_at	0.4202
-sce|YKL129c_sc	hsa|Hs4885503_hs	1.15497
-ath|At1g11265_at	sce|YJL113w_sc	0.4202
-ath|At3g45690_at	hsa|Hs7706117_hs	0.1910
-ath|At1g01280_at	hsa|Hs4507383_hs	0.1721
-ath|At1g11600_at	hsa|Hs4503231_hs	0.3757
-ath|At1g11600_at	hsa|Hs13699840_hs	0.2912
-ath|At1g01190_at	hsa|Hs4503231_hs	0.3081
-ath|At1g01190_at	hsa|Hs13699840_hs	0.113
-ath|At1g01190_at	hsa|Hs4507383_hs	0.2079
-hsa|Hs7706117_hs	ath|At3g45690_at	0.1910
-hsa|Hs4507383_hs	ath|At1g01190_at	0.2079
-hsa|Hs4507383_hs	ath|At1g01280_at	0.1721
-hsa|Hs4827008_hs	sce|YKR093w_sc	0.2649
-hsa|Hs13699840_hs	ath|At1g11600_at	0.2912
-hsa|Hs13699840_hs	ath|At1g01190_at	0.113
-hsa|Hs4885503_hs	sce|YKL129c_sc	1.15497
-hsa|Hs4503231_hs	ath|At1g01190_at	0.3081
-hsa|Hs4503231_hs	ath|At1g11600_at	0.3757
+YKR093w_sc	Hs4827008_hs	
+YKL129c_sc	Hs4885503_hs	
+YHR023w_sc	Hs4505301_hs	
+YOR326w_sc	At5g20490_at	
+YAL029c_sc	At1g04160_at	
+YAL029c_sc	Hs10835119_hs	
+YJL113w_sc	At1g11265_at	
+At1g11265_at	YJL113w_sc	
+At1g01280_at	Hs4507383_hs	
+At1g04160_at	YAL029c_sc	
+At1g11600_at	Hs4503231_hs	
+At1g11600_at	Hs13699840_hs	
+At3g45690_at	Hs7706117_hs	
+At5g20490_at	YOR326w_sc	
+Hs4503231_hs	At1g01190_at	
+Hs4503231_hs	At1g11600_at	
+Hs4507383_hs	At1g01280_at	
+Hs7706117_hs	At3g45690_at	
+Hs4827008_hs	YKR093w_sc	
+Hs4885503_hs	YKL129c_sc	
+Hs4505301_hs	YHR023w_sc	

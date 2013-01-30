@@ -1,1 +1,1 @@
-./install_debug.bash: line 3: module: command not found
+./install.bash: line 3: module: command not found

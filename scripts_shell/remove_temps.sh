@@ -19,3 +19,4 @@ find . -iname "CMakeCache.txt" -exec rm -f {} \;
 # Removes the backups of each file:
 find . -iname "*~" -exec rm -f {} \;
 find . -iname "old*" -exec rm -rf {} \; # If a directory is found, an error is thrown.
+

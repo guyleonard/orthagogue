@@ -57,10 +57,10 @@ CMAKE_BINARY_DIR = /home/klatremus/Dokumenter/Work/code/orthAgogue/src
 
 # All Build rule for target.
 CMakeFiles/orthAgogue.dir/all: log_builder/CMakeFiles/log_builder.dir/all
+CMakeFiles/orthAgogue.dir/all: blast_common/CMakeFiles/blast_common.dir/all
 CMakeFiles/orthAgogue.dir/all: terminal_input/CMakeFiles/cmd_line.dir/all
 CMakeFiles/orthAgogue.dir/all: blast_parsing/CMakeFiles/blast_parsing_m.dir/all
 CMakeFiles/orthAgogue.dir/all: blast_filtering/CMakeFiles/blast_filtering_m.dir/all
-CMakeFiles/orthAgogue.dir/all: blast_common/CMakeFiles/blast_common.dir/all
 	$(MAKE) -f CMakeFiles/orthAgogue.dir/build.make CMakeFiles/orthAgogue.dir/depend
 	$(MAKE) -f CMakeFiles/orthAgogue.dir/build.make CMakeFiles/orthAgogue.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/klatremus/Dokumenter/Work/code/orthAgogue/src/CMakeFiles  71
@@ -96,10 +96,10 @@ clean: CMakeFiles/orthAgogue.dir/clean
 
 # All Build rule for target.
 CMakeFiles/orthAgogue-lib.dir/all: log_builder/CMakeFiles/log_builder.dir/all
+CMakeFiles/orthAgogue-lib.dir/all: blast_common/CMakeFiles/blast_common.dir/all
 CMakeFiles/orthAgogue-lib.dir/all: terminal_input/CMakeFiles/cmd_line.dir/all
 CMakeFiles/orthAgogue-lib.dir/all: blast_parsing/CMakeFiles/blast_parsing_m.dir/all
 CMakeFiles/orthAgogue-lib.dir/all: blast_filtering/CMakeFiles/blast_filtering_m.dir/all
-CMakeFiles/orthAgogue-lib.dir/all: blast_common/CMakeFiles/blast_common.dir/all
 	$(MAKE) -f CMakeFiles/orthAgogue-lib.dir/build.make CMakeFiles/orthAgogue-lib.dir/depend
 	$(MAKE) -f CMakeFiles/orthAgogue-lib.dir/build.make CMakeFiles/orthAgogue-lib.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/klatremus/Dokumenter/Work/code/orthAgogue/src/CMakeFiles  73

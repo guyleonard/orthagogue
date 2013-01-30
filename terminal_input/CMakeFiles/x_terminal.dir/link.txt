@@ -1,1 +1,1 @@
-/usr/bin/c++   -g    CMakeFiles/x_terminal.dir/main_cmd_line.cxx.o  -o x_terminal -rdynamic libcmd_line.a -ltbb 
+/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/x_terminal.dir/main_cmd_line.cxx.o  -o x_terminal -rdynamic libcmd_line.a -ltbb 

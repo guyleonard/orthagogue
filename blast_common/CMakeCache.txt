@@ -37,7 +37,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=DEBUG
+CMAKE_BUILD_TYPE:STRING=Release
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -190,18 +190,6 @@ CPACK_PACKAGE_VERSION_MINOR:UNINITIALIZED=
 //No help, variable specified on the command line.
 CPACK_PACKAGE_VERSION_PATCH:UNINITIALIZED=
 
-//Enable to build TBZ2 source packages
-CPACK_SOURCE_TBZ2:BOOL=ON
-
-//Enable to build TGZ source packages
-CPACK_SOURCE_TGZ:BOOL=ON
-
-//Enable to build TZ source packages
-CPACK_SOURCE_TZ:BOOL=ON
-
-//Enable to build ZIP source packages
-CPACK_SOURCE_ZIP:BOOL=OFF
-
 //The size in Bytes to send from one pipe to another. Value would
 // affect time- and memory usage.
 DISK_BUFFER_SIZE:STRING=20971520
@@ -217,7 +205,7 @@ INSTALL_DOC:BOOL=
 LOG_FOLDER_NAME:STRING=report_orthAgogue
 
 //Path to a library.
-LOG_LIBS:FILEPATH=/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a
+LOG_LIBS:FILEPATH=LOG_LIBS-NOTFOUND
 
 MAN_PATH_USER:STRING=0
 
@@ -255,13 +243,13 @@ assert_code,:BOOL=ON
 blast_common_BINARY_DIR:STATIC=/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common
 
 //Dependencies for the target
-blast_common_LIB_DEPENDS:STATIC=general;/usr/lib/libtbb.so;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;
+blast_common_LIB_DEPENDS:STATIC=general;/usr/lib/libtbb.so;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;
 
 //Value Computed by CMake
 blast_common_SOURCE_DIR:STATIC=/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common
 
 //Dependencies for the target
-blast_memory_LIB_DEPENDS:STATIC=general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a;
+blast_memory_LIB_DEPENDS:STATIC=general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;
 
 //Dependencies for target
 file_parse_LIB_DEPENDS:STATIC=
@@ -297,7 +285,7 @@ mpi_read_LIB_DEPENDS:STATIC=
 norm_t_LIB_DEPENDS:STATIC=
 
 //Dependencies for the target
-orthaGogue-memory-lib_LIB_DEPENDS:STATIC=general;blast_memory;general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a;
+orthaGogue-memory-lib_LIB_DEPENDS:STATIC=general;blast_memory;general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;
 
 //Dependencies for target
 p_rel_LIB_DEPENDS:STATIC=
@@ -449,20 +437,8 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_USE_RELATIVE_PATHS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CPACK_SOURCE_TBZ2
-CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CPACK_SOURCE_TGZ
-CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CPACK_SOURCE_TZ
-CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CPACK_SOURCE_ZIP
-CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
-//Test HAS_ANSI_FLAG
-HAS_ANSI_FLAG:INTERNAL=1
-//Test HAS_DEBUG_FLAG
-HAS_DEBUG_FLAG:INTERNAL=1
+//tarball basename
+CPACK_SOURCE_PACKAGE_FILE_NAME:INTERNAL=orthAgogue-1.0.0
 //Test HAS_NO_WRITE_STRINGS_FLAG
 HAS_NO_WRITE_STRINGS_FLAG:INTERNAL=1
-//Test HAS_WALL_FLAG
-HAS_WALL_FLAG:INTERNAL=1
 

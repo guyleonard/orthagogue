@@ -21,6 +21,7 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/config_files/project_properties.cmake"
   "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/config_files/settings_and_status.cmake"
   "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/config_files/tbb_paths.cmake"
+  "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/files_for_libs.cmake"
   "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/orthAgogue_description.cmake"
   "/usr/share/cmake-2.8/Modules/CMakeBuildSettings.cmake.in"
   "/usr/share/cmake-2.8/Modules/CMakeCCompiler.cmake.in"

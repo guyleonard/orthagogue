@@ -118,6 +118,7 @@ bool getProteinIndex(int taxon_id, char *protein, mem_loc &protein_ind) {
 
  public:
 #ifdef assert_code
+  //! Validates the private parts of this class.
   void assert_private_parts();
 #endif
   //! The main test function for this class  

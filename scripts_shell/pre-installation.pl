@@ -66,7 +66,7 @@ sub clean_files_make_cmake {
     my($file_err, @names) = @_;
     foreach my $install_path (@names) {
 	chdir($install_path) or die "Can't chdir to $install_path $!"; # In order to have configuration files stored at the same locations.
-	my $res2 = `rm -f $file_err CMakeCache.txt Makefile orthAgogue 1>/dev/null 2>/dev/null;`;
+	my $res2 = `rm -f $file_err *.a *.so CMakeCache.txt Makefile orthAgogue 1>/dev/null 2>/dev/null;`;
 	if($install_path ne ".") {chdir("../") or die "Can't chdir to ../ $!";}
     }
 }
@@ -84,6 +84,10 @@ sub pre_install {
 	system("make package"); # Generates the packages
     } else {
 # FIXME: Include below!
+	system("make package"); # Generates the packages
+	system("cpack -D DEB; mv *.deb ../orthAgogue_release;");
+	system("cpack -D RPM; mv *.rpm ../orthAgogue_release;");
+	
 	my $cpack1 = `cpack -C CPackConfig.cmake;`;
 	my $cpack_name_spec = $cpack_name . ".tar.Z";
 	move($cpack_name_spec, $dirname);
@@ -101,14 +105,15 @@ sub pre_install {
 #printf("at location %s\n", $Bin);
     system("./scripts_shell/remove_temps.sh"); # Remove temporary files.
     system("./scripts_shell/print_status.sh"); # Prints the status.
-    system("tar -cf $dirname/$root.dev.tar ./*");
-    system("./scripts_shell/doxy.bash;"); # Produces documentation.
-
-    clean_files_make_cmake("err_cleaning.txt", ".");
     system("rm -f report_orthAgogue/*");
     system("mv -f _CPack_Packages/ ../");
     system("mv -f orthAgogue*.tar* ../");
-    system("rf -f *.abc *.mci *.map")
+    system("rf -f *.abc *.mci *.map");
+    # Remove library files
+    system("find . -iname \"*.a\" -exec rm -f {} \;");
+    clean_files_make_cmake("err_cleaning.txt", ".");	
+    system("tar -cf $dirname/$root.dev.tar ./*");
+    system("./scripts_shell/doxy.bash;"); # Produces documentation.
 }
 
 

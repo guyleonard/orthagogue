@@ -118,7 +118,7 @@ class blast_filtering {
    **/
   void set_values(tsettings_input obj);
   //! Initializes values after those set in the blast parsing (dound in library blast_parsing):
-   void set_values(bool _DEBUG_NORM, bool _PRINT_NORMALIXATION_BASIS, bool _USE_EVERYREL_AS_ARRNORM_BASIS, char *_FILE_BINARY_LOCATION/*,  char _SEPERATOR*/, int _CPU_TOT);
+   void set_values(bool _DEBUG_NORM, bool _PRINT_NORMALIXATION_BASIS, bool _USE_EVERYREL_AS_ARRNORM_BASIS, char *_FILE_BINARY_LOCATION/*,  char _SEPERATOR*/, int _CPU_TOT, bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE);
 
   /**
      @brief Executes the main operation for the filtering:
