@@ -36,7 +36,7 @@ void blast_parsing::init_values(cmd_list *cmd) {
   cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
 
   // FIXME: Update the test-scrips with the replaced param, i.e. as seen below:
-  cl2 = cmd_argument("Use BLAST scores (column 12) instead of e-values (default, column 11)", "uc", "use_scores", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "OPERATIONAL");
+  cl2 = cmd_argument("Use BLAST scores (column 12) instead of e-values (default, column 11)", "us", "use_scores", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "OPERATIONAL");
   //  cl2 = cmd_argument("Use the score values in the column 12 of BLAST output instead of the e-values (default, column 11). Warning: the additivity of these values has not been confirmed, proceed on your own risk", "lc", "use_last_column", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "INPUT");
   cmd->add_cmd_argument(cl2); //  bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE
 

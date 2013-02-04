@@ -153,10 +153,13 @@ void blast_filtering::init_values(cmd_list *cmd) {
   //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
   cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
   // --
-  cl2 = cmd_argument("Threshold for protein pair overlap (integer [1-100], e.g. set to '50' to exclude protein pairs with the overlap below 50%%)", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
+  cl2 = cmd_argument("Threshold for protein pair overlap (integer [1-100], e.g. set to '50' to exclude protein pairs with the overlap below 50%)", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
   cmd->add_cmd_argument(cl2); // AMINO_LIMIT
   // --
-  cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to orthologs during MCL computation", "nii", "no_in_inparalogs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
+
+  cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to orthologs during MCL computation", "sco", "strict_co_orthologs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
+
+
   cmd->add_cmd_argument(cl2); // RESTRICTED_DEFENITION
   cl2 = cmd_argument("Send the output in the form of MCL native matrix (all.mcl) to STDOUT for piping", "P", "pipe", BOOLEAN, &OUTPUT_PIPE_MCI_ALL, "OUTPUT"); 
   /*   list.add_cmd_argument(cl2);  // OUTPUT_PIPE */

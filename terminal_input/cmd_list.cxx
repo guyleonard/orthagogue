@@ -169,7 +169,7 @@ void cmd_list::set_arguments(char **array, int array_size, bool create_man_page)
     if(array_size < 2)    print_arguments(stdout, file_man_page);
 
     fprintf(stdout, "\nEXAMPLES\n1. orthAgogue -i <blast_output> -nss -e 7 # excludes protein pairs with e-values above 1e-07 and saves results in the current directory as *.mcl and *.abc files.\n2. orthAgogue -i <blast_output> -e 7 -O <output_dir> # the same as above but now ALL HSPs are used to compute protein similarity with the output saved in <output_dir>.\n3. orthAgogue -i <blast_output> -e 7 -o 50 -O <output_dir> # the same as above but excluding protein pairs with with the overlap below 50%%.\n4. orthAgogue -i <blast_output>  -o 50 -us -O <output_dir> # the same as above but without filtering by e-values and using BLAST scores instead of e-values in order to resolve HSPs with the '0.0' e-value; the required e-value cutoff should be set while running BLAST.\n");
-    if(array_size < 2)   fprintf(stdout, "\nFor more details see https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to oekseth@gmail.com\n");
+    if(array_size < 2)   fprintf(stdout, "\nFor more details see https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to orthagogue-issue-tracker@googlegroups.com\n");
     if(create_man_page) create_man_page_tail(file_man_page);
     if(array_size < 2) exit(2); // Aborts the execution
       
