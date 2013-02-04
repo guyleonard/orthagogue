@@ -147,23 +147,60 @@ struct result_format {
     else if(t == names_index)       return "proteins.map";
     return NULL;
   }
-
+private:
   /**
      @return the path to write/retrieve output result file from:
      @param <identifier> E.g. "all.abc" or "orthologs.mci"
      @param <FILE_BINARY_LOCATION> The result path given by the user.
+     @param <SORT_ABC_DATA> If set, adds a the '.s' suffix to the file name
   **/
-  static char *get_storage_path_for_given_file_id(char *identifier, char *FILE_BINARY_LOCATION) {
+  static char *__get_storage_path_for_given_file_id(char *identifier, char *FILE_BINARY_LOCATION, bool SORT_ABC_DATA) {
     char *output_file = new char[1000];
     assert(output_file);
     memset(output_file, '\0', 1000);
     if(FILE_BINARY_LOCATION == NULL) FILE_BINARY_LOCATION = "./";
     if(FILE_BINARY_LOCATION != NULL && strlen(FILE_BINARY_LOCATION)>2) {
-      if(FILE_BINARY_LOCATION[strlen(FILE_BINARY_LOCATION)-1] != '/')
-	sprintf(output_file, "%s/%s", FILE_BINARY_LOCATION, identifier);
-      else sprintf(output_file, "%s%s", FILE_BINARY_LOCATION, identifier);
-    } else sprintf(output_file, "%s", identifier);
-    return output_file;
+      if(FILE_BINARY_LOCATION[strlen(FILE_BINARY_LOCATION)-1] != '/') {
+	if(SORT_ABC_DATA) {
+	  sprintf(output_file, "%s/%s.s", FILE_BINARY_LOCATION, identifier);
+	} else {sprintf(output_file, "%s/%s", FILE_BINARY_LOCATION, identifier);}
+      } else {
+	if(SORT_ABC_DATA) {
+	  sprintf(output_file, "%s%s.s", FILE_BINARY_LOCATION, identifier);
+	} else {
+	  sprintf(output_file, "%s%s", FILE_BINARY_LOCATION, identifier);
+	}
+      }
+    } else {
+      if(SORT_ABC_DATA) {
+	sprintf(output_file, "%s.s", identifier);
+      } else {
+	sprintf(output_file, "%s", identifier);
+      }
+    }
+    
+    return output_file;    
+  }
+public:
+  
+  /**
+     @return the path to write/retrieve output result file from:
+     @param <identifier> E.g. "all.abc" or "orthologs.mci"
+     @param <FILE_BINARY_LOCATION> The result path given by the user.
+     @param <SORT_ABC_DATA> If set, adds a the '.s' suffix to the file name
+  **/
+  static char *get_storage_path_for_given_file_id(char *identifier, char *FILE_BINARY_LOCATION, bool SORT_ABC_DATA=false) {
+    if(SORT_ABC_DATA == false) {
+      return __get_storage_path_for_given_file_id(identifier, FILE_BINARY_LOCATION, SORT_ABC_DATA);    
+    } else {
+      char *ret =  __get_storage_path_for_given_file_id(identifier, FILE_BINARY_LOCATION, SORT_ABC_DATA);
+    struct stat sb;
+    // Then try with the "*.s" sorted extension
+    if(stat(ret, &sb) == -1) {
+      delete [] ret;
+      return __get_storage_path_for_given_file_id(identifier, FILE_BINARY_LOCATION, false);
+    } else return ret;
+    } 
   }
 };
 #endif

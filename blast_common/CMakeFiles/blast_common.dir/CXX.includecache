@@ -26,14 +26,6 @@ project_config.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../project_config.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/algo_overlap.cxx
-algo_overlap.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/algo_overlap.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/algo_overlap.h
-types.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/types.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/basket_parse.h
 types.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/types.h
@@ -53,8 +45,6 @@ list_file_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/enum_mcl.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.cxx
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/file_parse.h
 parse.h
@@ -91,10 +81,6 @@ log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
 list_file_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/index.cxx
-index.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/index.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/index.h
 types.h
@@ -188,18 +174,6 @@ prot_list.h
 protein_relation.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_relation.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_norm.cxx
-list_norm.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_norm.h
-mpi_transfer_list_norm.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_list_norm.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_norm.h
-log_builder.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
-norm_t.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/norm_t.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_bunch.cxx
 mcl_bunch.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_bunch.h
@@ -242,16 +216,6 @@ id_simil_list.h
 mpi_transfer_rel.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_rel.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_read.cxx
-mpi_read.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_read.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_read.h
-types.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/types.h
-log_builder.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_list_file_parse.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
@@ -264,16 +228,6 @@ list_file_parse.h
 uint_3x_obj.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/uint_3x_obj.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_list_norm.h
-log_builder.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
-mpi_transfer_norm.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_norm.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_norm.h
-log_builder.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mpi_transfer_p_rel.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
@@ -282,17 +236,11 @@ log_builder.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/norm_t.cxx
-norm_t.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/norm_t.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/norm_t.h
 taxa.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/taxa.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/o_rel.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/p_rel.cxx
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/p_rel.h
 types.h
@@ -301,10 +249,6 @@ tbb_libs.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/tbb_libs.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../configure.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/parse.cxx
-parse.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/parse.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/parse.h
 libs.h
@@ -315,10 +259,6 @@ log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../configure.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/prot_list.cxx
-prot_list.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/prot_list.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/prot_list.h
 parse.h
@@ -332,29 +272,9 @@ taxa.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/log_builder.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_relation.cxx
-protein_relation.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_relation.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_relation.h
 types.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/types.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_vector.cxx
-protein_vector.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_vector.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_vector.h
-../configure.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../configure.h
-protein_relation.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/protein_relation.h
-prot_list.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/prot_list.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/rel.cxx
-rel.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/rel.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/rel.h
 types.h
@@ -383,10 +303,6 @@ taxa.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/taxa.h
 basket_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/basket_parse.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/taxa.cxx
-taxa.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/taxa.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/taxa.h
 ../configure.h

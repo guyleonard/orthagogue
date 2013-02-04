@@ -56,6 +56,7 @@ class pipe_write: public tbb::filter {
   int myrank;
   int number_of_nodes;
 #endif
+  bool SORT_ABC_DATA;
 #ifndef NDEBUG
   /**
      @brief Hold the number of chars included for each of the files written. 
@@ -75,7 +76,7 @@ class pipe_write: public tbb::filter {
   //! The constructor:  
   pipe_write(log_builder_t *_log, taxa_t *listTaxa, int taxon_length, char *FILE_BINARY_LOCATION, 
 	     bool MODE_PAIRWISE_OUTPUT_ABC, bool MODE_PAIRWISE_OUTPUT_MCL,
-	     bool PRINT_IN_ABC_FORMAT, bool PRINT_IN_MCL_FORMAT, mcl_t TYPE_OF_RESULTFILE_TO_STDOUT);
+	     bool PRINT_IN_ABC_FORMAT, bool PRINT_IN_MCL_FORMAT, mcl_t TYPE_OF_RESULTFILE_TO_STDOUT, bool _SORT_ABC_DATA);
   
 #ifdef assert_code
   //! The test function for the private parts of this class.

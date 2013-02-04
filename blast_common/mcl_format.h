@@ -204,14 +204,18 @@ class mcl_format {
   //! Class constructor:
   mcl_format(mcl_print_settings_t print_settings);
 
-#ifdef assert_code
+  //! @return true if the substring exists.
+  bool has_sub_string(mcl_t type, char *substr) {
+    return string[type]->has_sub_string(substr);
+  }
+  //#ifdef assert_code
   //! Prints the elements found in the 'orth_inpa list
   void print_ortho_inpa_line_list();
   //! Prints the content of the string given its type.
   void print(mcl_t type) {string[type]->print();}
   //! Compares the strings
   bool compare_string(char *inp, const bool print_diff, mcl_t type);
-#endif
+  //#endif
 
   //! The main test function for this class  
   static void assert_class(const bool show_positive_results);

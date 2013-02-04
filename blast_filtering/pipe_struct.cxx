@@ -1,4 +1,4 @@
-#include "pipe_struct.h" 
+#include "pipe_struct.h"  
  
 //! Clears the memory allocated for this thread
 void pipe_struct::finalize_memory(const uint taxon_length) {
@@ -91,14 +91,23 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
       const uint protein_out = listTaxa[taxon_out].getLocalIndex(world_out);
       char *protein_name_out = listTaxa[taxon_out].getCompleteProteinName(protein_out);
       const uint inserted_cnt = mclData[my_id]->insert_ortho_inpa(world_index_in, world_out, protein_name_in, protein_name_out, out_pair.distance, arrAvgNorm[taxon_in][taxon_out]);
+
 #ifndef NDEBUG
       debug_cnt_co_orthologs_inserted += inserted_cnt;
+      if(mclData[my_id]->has_sub_string(orth_inpa, protein_name_in) == false) {
+	printf("(failed)\t\t inserts %s->%s not inserted, at pipe_struct:%d\n", protein_name_in, protein_name_out, __LINE__); 
+	mclData[my_id]->print(orth_inpa); 
+	assert(false);
+      }
+      if(mclData[my_id]->has_sub_string(orth_inpa, protein_name_out) == false) {
+	printf("(failed)\t\t inserts %s->%s not inserted, at pipe_struct:%d\n", protein_name_in, protein_name_out, __LINE__); 
+	mclData[my_id]->print(orth_inpa); 
+	assert(false);
+      }
 #endif
       delete [] protein_name_out;
     }
   }
-
-
   //! The orthologs, named 'orthologs.*'
   const uint world_in = listTaxa[taxon_in].getWorldIndex(protein_in);
   uint size_o = 0; // size to be set by function call below:
@@ -134,6 +143,7 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
   //! Inserts the number of orthologs (later to be checked towards our expectations):
   lst_elements_evaluated[my_id].cnt_ortho += size_o;
 #endif
+
   delete [] protein_name_in;
   mclData[my_id]->set_line_end();
 }

@@ -184,14 +184,14 @@ sub compare_orthologs {
     my($control_output_folder, $orthologs_, $omcl_orthologs_, $gogue_orthologs_, $blastp_average_, $blastp_raw_) = @_;
     if(!(defined $blastp_raw_)) {	printf("the blastp_raw is not defined: an error in the file.\n");}
 # Tests TurboOrtho:
-    my($TP_gogue, $fp_gogue, $fn_gogue) = compare_controlOrthologs_to_other("gogue", $control_output_folder, $orthologs_, $gogue_orthologs_, $blastp_average_, $name_fp_gogue, $name_fn_gogue, $blastp_raw_);
+    my($TP_gogue, $fp_gogue, $fn_gogue) = compare_controlOrthologs_to_other("orthAgogue", $control_output_folder, $orthologs_, $gogue_orthologs_, $blastp_average_, $name_fp_gogue, $name_fn_gogue, $blastp_raw_);
 # Tests OrthoMcl:
     my($TP_omcl, $fp_omcl, $fn_omcl) = (0,0, 0);
     if((%$omcl_orthologs_)) {
 	($TP_omcl, $fp_omcl, $fn_omcl)    = compare_controlOrthologs_to_other("omcl", $control_output_folder, $orthologs_, $omcl_orthologs_, $blastp_average_, $name_fp_omcl, $name_fn_omcl, $blastp_raw_);
     } else {printf("...\t(Does not make a control of the omcl results for the orthologs.)\n");}
 #    my($TP_omcl, $fp_omcl, $fn_omcl)    = compare_controlOrthologs_to_other("omcl", $control_output_folder, $orthologs_, $omcl_orthologs_, $blastp_average_, $name_fp_omcl, $name_fn_omcl, $blastp_raw_);
-    printf("\n#\tOrthologs: In sum we see that \n-\torthaGogue has %d TP, %d FP and %d FN, while\n-\tOrthoMcl has %d TP, %d FP and %d FN.\n", $TP_gogue, $fp_gogue, $fn_gogue, $TP_omcl, $fp_omcl, $fn_omcl);
+    printf("\n#\tOrthologs: In sum we see that \n-\torthAgogue has %d TP, %d FP and %d FN, while\n-\tOrthoMcl has %d TP, %d FP and %d FN.\n", $TP_gogue, $fp_gogue, $fn_gogue, $TP_omcl, $fp_omcl, $fn_omcl);
 
 }
 

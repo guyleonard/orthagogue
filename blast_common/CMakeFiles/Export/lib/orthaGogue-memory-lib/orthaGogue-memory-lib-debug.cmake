@@ -14,7 +14,7 @@ GET_FILENAME_COMPONENT(_IMPORT_PREFIX "${_IMPORT_PREFIX}" PATH)
 SET_PROPERTY(TARGET blast_memory APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 SET_TARGET_PROPERTIES(blast_memory PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LINK_INTERFACE_LIBRARIES_DEBUG "/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a"
+  IMPORTED_LINK_INTERFACE_LIBRARIES_DEBUG "/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a"
   IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/lib/orthaGogue/libblast_memory.a"
   )
 
@@ -25,7 +25,7 @@ LIST(APPEND _IMPORT_CHECK_FILES_FOR_blast_memory "${_IMPORT_PREFIX}/lib/orthaGog
 SET_PROPERTY(TARGET orthaGogue-memory-lib APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 SET_TARGET_PROPERTIES(orthaGogue-memory-lib PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LINK_INTERFACE_LIBRARIES_DEBUG "blast_memory;/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/liblog_builder.a"
+  IMPORTED_LINK_INTERFACE_LIBRARIES_DEBUG "blast_memory;/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a"
   IMPORTED_LOCATION_DEBUG "${_IMPORT_PREFIX}/lib/orthaGogue/liborthaGogue-memory-lib.a"
   )
 

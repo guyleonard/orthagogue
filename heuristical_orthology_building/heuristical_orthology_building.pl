@@ -131,12 +131,13 @@ sub test_settings {
 		  simple_050 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 50",
 		  simple_090 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 90",
  		  simple_nii =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nii",
- 		  simple_nss =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nss",
- 		  simple_nn =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn",
- 		  simple_nn_c2 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 2",
- 		  simple_nn_c3 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 3",
- 		  simple_nn_c4 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 4",
- 		  simple_nn_c5 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 5"		 
+ 		  simple_nss =>  "./orthAgogue -i empirical_tests/goodProteins.blast -bho",
+ 		  # simple_nn =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn",
+ 		  # simple_nn_c2 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 2",
+ 		  # simple_nn_c3 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 3",
+ 		  # simple_nn_c4 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 4",
+ 		  # simple_nn_c5 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 5"
+	    
 		  );
     } else {
 	%tests = (
@@ -150,7 +151,7 @@ sub test_settings {
   		  simple_050 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 50 -dbs 10024",
   		  simple_090 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 90 -dbs 10024 ",
   		  simple_nii =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -nii -dbs 10024 ",
-  		  simple_nss =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -nss -dbs 10024 ",
+  		  simple_nss =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -bho -dbs 10024 ",
   		  simple_nn =>    "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -nn -dbs 10024 ",
    		  simple_nn_c2 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 2 -dbs 10024 ",
    		  simple_nn_c3 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -nn -c 3 -dbs 10024 ",
@@ -198,8 +199,8 @@ sub test_settings {
     }
 }
 # FIXME: validate the below line!!
-#./../orthAgogue -i goodProteins.blast -nn -O turbo/gp_file/ -pd -nss 1>results_detailed.txt 2>err.txt; 
-#my $correct_turbo_params = `./../orthAgogue -i goodProteins.blast -nn -O turbo/ -pd -nss 1>results_detailed.txt 2>err.txt`;
+#./../orthAgogue -i goodProteins.blast -nn -O turbo/gp_file/ -pd -bho 1>results_detailed.txt 2>err.txt; 
+#my $correct_turbo_params = `./../orthAgogue -i goodProteins.blast -nn -O turbo/ -pd -bho 1>results_detailed.txt 2>err.txt`;
 #$correct_turbo_params = `./../orthAgogue -i goodProteins.blast -nn -O turbo/gp_file/ -pd`;
 
 #my %blastp= get_hash($blastp_file, format_blastp_last);

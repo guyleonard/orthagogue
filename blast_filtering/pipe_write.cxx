@@ -1,16 +1,16 @@
 #include "pipe_write.h"
 pipe_write::pipe_write(log_builder_t *_log, taxa_t *listTaxa, int taxon_length, char *FILE_BINARY_LOCATION,
 		       bool MODE_PAIRWISE_OUTPUT_ABC, bool MODE_PAIRWISE_OUTPUT_MCL,
-		       bool PRINT_IN_ABC_FORMAT, bool PRINT_IN_MCL_FORMAT, mcl_t TYPE_OF_RESULTFILE_TO_STDOUT) :
-  tbb::filter(/*is_serial*/true), log(_log)
+		       bool PRINT_IN_ABC_FORMAT, bool PRINT_IN_MCL_FORMAT, mcl_t TYPE_OF_RESULTFILE_TO_STDOUT, bool _SORT_ABC_DATA) :
+  tbb::filter(/*is_serial*/true), log(_log), SORT_ABC_DATA(_SORT_ABC_DATA)
 #ifndef NDEBUG
   , file_chunk_received(NULL)
   , file_chunk_header(NULL)
 #endif
 {
 #ifndef NDEBUG
-  file_chunk_received = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT);
-  file_chunk_header   = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT);
+  file_chunk_received = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, SORT_ABC_DATA);
+  file_chunk_header   = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, SORT_ABC_DATA);
 #endif
 #ifdef USE_MPI
   MPI_Comm_rank(MPI_COMM_WORLD, &myrank);    // Gets specific data about the reading.

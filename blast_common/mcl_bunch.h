@@ -177,6 +177,31 @@ class mcl_bunch {
   void copy_line(mcl_bunch &bunch_inpa, mcl_bunch &bunch_pair_orth, mcl_bunch &bunch_orth);
   //! @return true if a string is set
   bool has_data() {return current_size_string != 0;}
+
+  //! @return true if the substring exists.
+  bool has_sub_string(char *substr) {
+    if(!string && substr) return false;
+    if(true) {
+      bool found = false;
+      for(uint i = 0; i < strlen(string) && !found; i++) {
+	if(string[i] == substr[0]) {
+	  bool internal_found = true;
+	  for(uint k = 1; k < strlen(substr) && internal_found; k++) {
+	    if(string[i+k] != substr[k]) {
+	      internal_found = false;
+	    }
+	  }
+	  if(internal_found) found = true;
+	}
+      }
+      return found;
+    } else {
+      char *start = strstr(string, substr);
+      if(start) return true;
+      else return false;
+    }
+  }
+
   //! Prints the data in the container
   void print();
   /**

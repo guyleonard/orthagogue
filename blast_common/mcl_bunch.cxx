@@ -167,7 +167,7 @@ uint mcl_bunch::get_size_of_inserted_pair(char *name_out, float sim_score) {
 void mcl_bunch::set_header(uint world_index) {
 #ifndef NDEBUG
   const uint pos_of_start = current_size_string;
-#endif
+  #endif
   position_of_line_start = current_size_string;
   set_line_start(world_index);
   string[current_size_string] = SEPERATOR_AFTER_ROW_START;
@@ -179,7 +179,7 @@ void mcl_bunch::set_header(uint world_index) {
   const uint chars_added = pos_of_end - pos_of_start;
   const uint expected_size = get_size_of_header(world_index);
   assert(chars_added == expected_size);
-#endif
+  #endif
 }
 
 /**! Sets the header*/
@@ -262,9 +262,9 @@ void mcl_bunch::insert(char *name_in, char *name_out, float sim_score, float div
   assert(div_factor > 0);
   //  if(div_factor>0      //&& sim_score > 0      ) 
   {
-#ifndef NDEBUG
+    //#ifndef NDEBUG
       const uint pos_of_start = current_size_string;
-#endif
+      //#endif
     const bool ret_val_in = set_line_start(name_in);
     assert(ret_val_in);
     {
@@ -274,17 +274,24 @@ void mcl_bunch::insert(char *name_in, char *name_out, float sim_score, float div
       {
 	current_size_string++; //  creates a space
 	insert_sim_score(sim_score, div_factor);
+
 	set_char('\n'); position_of_line_start = current_size_string;
-#ifndef NDEBUG
+	//#ifndef NDEBUG
 	//! Validates our expectations regarding the inserted string:
 	const uint pos_of_end = current_size_string;
 	const uint chars_added = pos_of_end - pos_of_start;
 	const uint expected_size = get_size_of_inserted_pair(name_in, name_out, sim_score);
 	assert(chars_added == expected_size);
-#endif
+	//#endif
       }
     }
   }
+#ifndef NDEBUG
+  if(has_sub_string(name_out) == false) {
+    printf("(failed)\t\t inserts %s->%s not inserted, at mcl_bunch:%d\n", name_in, name_out, __LINE__);
+    assert(false);
+  }
+#endif
 }
 
 
@@ -329,8 +336,10 @@ void mcl_bunch::insert(uint world_index_in, float sim_score, float div_factor) {
 
 // Uses input of type arrKey[index_out], str_len);
 void mcl_bunch::insert(char *name, float sim_score, float div_factor) {
+
   if(div_factor>0 && sim_score > 0) {
     if(set_line_start(name)) {
+      //      const uint pos_of_start = current_size_string;
       string[current_size_string++] = ':';
       insert_sim_score(sim_score, div_factor);
       string[current_size_string++] = SEPERATOR_IN_ROWS;
@@ -397,13 +406,12 @@ void mcl_bunch::insert_sim_score(float sim, float div_factor) {
       assert(sim_len < original_length); // Our assumption.
       const uint difference = original_length - sim_len;
       precision += difference;
-      //      sim_len += difference;
     }
-    
+    //    char *old_string = string;
     sprintf(string + current_size_string, "%-.*f", precision, similarity); // Add the distance
-#ifndef NDEBUG
     assert(string[current_size_string+sim_len + precision] != '\0');
     current_size_string += sim_len + 1 + precision; 
+#ifndef NDEBUG
     //! Validates our expectations regarding the inserted string:
     const uint pos_of_end = current_size_string;
     const uint chars_added = pos_of_end - pos_of_start;
@@ -458,6 +466,7 @@ void mcl_bunch::print() {
     printf("|\n");
   } else printf("(empty)\n");
 }
+
 
 /**
    @Name: copy_line(..) -- Copies the lines from the arguments, assuming that only the last argument

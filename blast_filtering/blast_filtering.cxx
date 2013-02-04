@@ -149,27 +149,28 @@ void blast_filtering::init_values(cmd_list *cmd) {
   class cmd_argument cl2; 
   // FILTERING
   //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
-  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
+  cl2 = cmd_argument("Threshold for protein pair similarity (positive floating number, e.g. set to '7' or '7.0' to exclude protein pairs with e-values above '1e-07')", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
+  //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
   cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
   // --
-  cl2 = cmd_argument("Threshold for the percentage of the overlap (integer [1-100]). The relation between two proteins is expunged from the matrix if the overlap for either of the proteins is below the specified cut-off value", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
+  cl2 = cmd_argument("Threshold for protein pair overlap (integer [1-100], e.g. set to '50' to exclude protein pairs with the overlap below 50%%)", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
   cmd->add_cmd_argument(cl2); // AMINO_LIMIT
   // --
-  cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to the orthologs in the matrix", "nii", "no_in_inparalogs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
+  cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to orthologs during MCL computation", "nii", "no_in_inparalogs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
   cmd->add_cmd_argument(cl2); // RESTRICTED_DEFENITION
-  cl2 = cmd_argument("Send the complete matrix to the STDOUT for piping", "P", "pipe", BOOLEAN, &OUTPUT_PIPE_MCI_ALL, "OUTPUT"); 
+  cl2 = cmd_argument("Send the output in the form of MCL native matrix (all.mcl) to STDOUT for piping", "P", "pipe", BOOLEAN, &OUTPUT_PIPE_MCI_ALL, "OUTPUT"); 
   /*   list.add_cmd_argument(cl2);  // OUTPUT_PIPE */
   cmd->add_cmd_argument(cl2); // OUTPUT_PIPE_MCI_ALL
   // --
-  cl2 = cmd_argument("Skip normalization on the similarity scores for the *.abc and *.mci files. Helpful if the output is not as expected", "nn", "no_normalization", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OUTPUT");
+  cl2 = cmd_argument("Skip normalization of similarity scores", "nn", "no_normalization", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OUTPUT");
   //  cl2 = cmd_argument("Skip normalization on the similarity scores for the *.abc files. Helpful if the output is not as expected", "nn", "no_normalization", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OUTPUT");
   cmd->add_cmd_argument(cl2);  // DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT
   // --
-  cl2= cmd_argument("Sort *.abc files by the score", "sABC", "sort_abc_file", BOOLEAN, &SORT_ABC_DATA, "OUTPUT");
+  cl2= cmd_argument("Sort *.abc files by the scores", "sABC", "sort_abc_file", BOOLEAN, &SORT_ABC_DATA, "OUTPUT");
   cmd->add_cmd_argument(cl2);  // SORT_ABC_DATA
 
 #ifdef INCLUDE_CMD_DEBUG_PARAMS   // Adds debug params to the list of options:
-  cl2 = cmd_argument("Print the discarded pairs during filtering", "pd", "print_discarded_pairs", BOOLEAN, &DEBUG_PRINT_DISCARDED_PAIRS, "DEBUG");
+  cl2 = cmd_argument("Print protein pairs discarded during filtering", "pd", "print_discarded_pairs", BOOLEAN, &DEBUG_PRINT_DISCARDED_PAIRS, "DEBUG");
   cmd->add_cmd_argument(cl2); // 
 #endif
 
@@ -200,16 +201,26 @@ void blast_filtering::build_cmd_list(cmd_list *cmd, int argc, char *argv[]) {
 //! @return the transformed value.
 float transform_threshold_value_to_e_if_last_column_set(bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE, float MIN_SIMILARITY_LIMIT) {
   if(USE_LAST_BLAST_CLOMUN_AS_DISTANCE) {
-    const float old_threshold = MIN_SIMILARITY_LIMIT;
-    const float new_threshold = pow(10, MIN_SIMILARITY_LIMIT);
-    printf("\t\t old_threshold=%f, new_threshold=%f, at blast_filtering.cxx:%d\n", old_threshold, new_threshold, __LINE__); // FIXME: remove this printf!
-#ifndef NDEBUG
-    const float back_subst = -1*log10(new_threshold);
-    assert(back_subst >= 0);
-    assert((uint)back_subst == (int)old_threshold);
-#endif
-    return new_threshold;
-  } else return MIN_SIMILARITY_LIMIT; // did not change
+    //    const float old_threshold = MIN_SIMILARITY_LIMIT;
+    if(MIN_SIMILARITY_LIMIT != 0) {
+      fprintf(stderr, "!!\t orthAgogue does not allow a threshold value when the last column is used. The threshold value therefore changes from %f into %f. If questions, please read the manual or alternatively contact the developer at [oekseth@gmail.com].\n", MIN_SIMILARITY_LIMIT, 0.0);
+      return 0;
+//     }
+//     if(true) {      
+//       const float new_threshold = pow(10, MIN_SIMILARITY_LIMIT);
+// #ifndef NDEBUG
+//       const float back_subst = -1*log10(new_threshold);
+//       assert(back_subst >= 0);
+//       assert((uint)back_subst == (int)old_threshold);
+// #endif
+//       return new_threshold;
+//     } else {
+//       if(MIN_SIMILARITY_LIMIT) {
+// 	const float new_threshold = -1*log10(MIN_SIMILARITY_LIMIT);
+//       } else return 0;
+    }
+  } 
+  return MIN_SIMILARITY_LIMIT; // did not change
 }
 /**
    @brief Sets the user settings from the blast parsing process.
@@ -351,6 +362,7 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	stack_rel *stackRel;// Holds the co orthologs for every protein in a stack; intialized in 'ortho_set' 
 	stackRel = new stack_rel[listTaxa[taxon_length-1].rel_end]; 		
 	exec_co_orth(n_thread, log, stackRel);
+
 #ifndef NDEBUG
 	loint rel_cnt = 0; for(int i =0; i< listTaxa[taxon_length-1].rel_end;i++) rel_cnt+=stackRel[i].unsafe_size();
 	if(f_log) fprintf(f_log, " co-orthologs(%lld)", rel_cnt);
@@ -399,7 +411,7 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	  float **arrAvgNorm = NULL;
 	  if(arrNorm) arrAvgNorm = arrNorm->build_basis();
 	  else       log_builder::throw_warning(pointer,  __LINE__, __FILE__, __FUNCTION__, "arrNorm not defined");
-	  pipe_write write(log, listTaxa, taxon_length, FILE_BINARY_LOCATION, MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, TYPE_OF_RESULTFILE_TO_STDOUT);
+	  pipe_write write(log, listTaxa, taxon_length, FILE_BINARY_LOCATION, MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, TYPE_OF_RESULTFILE_TO_STDOUT, SORT_ABC_DATA);
 	  write_result_file(n_thread, log, stackRel, write, arrAvgNorm);
 	  write.free_mem(SORT_ABC_DATA, FILE_BINARY_LOCATION, CPU_TOT); 
 	  log->end_measurement(write_resultfile);

@@ -362,7 +362,7 @@ log_builder::log_builder(cmd_list *cmd) :
   memset(file_name, '\0', 200); 
   init_containers();
   class cmd_argument cl2; 
-  cl2 = cmd_argument("Show the log when TurbOrtho has completed", "L", "show_log", BOOLEAN, &silent_run, "LOG");
+  cl2 = cmd_argument("Show the log  after program termination", "L", "show_log", BOOLEAN, &silent_run, "DEBUG");
   cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
 }
 

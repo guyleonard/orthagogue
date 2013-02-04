@@ -841,7 +841,7 @@ template<class T> class file_parse { // Relations in the file
       // TODO: Consider writing deeper tests.
       file_parse *test_2 = new file_parse(USE_BEST_BLAST_PAIR_SCORE);
       //      assert(test_2.is_empty(false));
-      taxa temp_taxa = taxa();
+      //      taxa temp_taxa = taxa();
       file_parse test_3 = file_parse(USE_BEST_BLAST_PAIR_SCORE);
       test_3.steal_data(test_2);
       assert(test_2->is_empty());

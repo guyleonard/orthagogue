@@ -298,7 +298,7 @@ uint mcl_format::insert_ortho_inpa(uint world_index_in, uint world_index_out, ch
   float div_factor_abc = _div_factor;
   if(!DIVIDE_BY_NORMALIZATION_VALUE_FOR_MCL_FORMAT) div_factor_mcl = 1;
   if(!DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT) div_factor_abc = 1;
-    
+  
   if(ret.second) { // set to true if a new element was inserted
     set_debug_pair_size(world_index_out, name_in, name_out, sim_score, orth_inpa, orth_inpa_number);
     if(PRINT_IN_ABC_FORMAT)  {
@@ -348,7 +348,7 @@ void mcl_format::set_line_end() {
     file_chunk->reset_size(all, string[all]->get_current_size_string());
     file_chunk->reset_size(all_number, string[all_number]->get_current_size_string());
   }
-
+#endif
   //! Note: As the "file_chunk" object is still in the developmental mode, it's not included in the "live run"
   
 //   Debug_update_size_list_with_line_end(all, string[all]->get_current_size_string());
@@ -363,19 +363,30 @@ void mcl_format::set_line_end() {
   const bool def = true;
   int positions_inserted = 0;
   positions_inserted = string[inpa]->set_line_end(false, def);
+#ifndef NDEBUG
   if(file_chunk) file_chunk->insert_size(inpa, positions_inserted);
+#endif
+
   positions_inserted = string[pair_orth]->set_line_end(false, def);
+#ifndef NDEBUG
   if(file_chunk) file_chunk->insert_size(pair_orth, positions_inserted);
+#endif
+
   positions_inserted = string[pair_orth_number]->set_line_end(true, def);
+#ifndef NDEBUG
   if(file_chunk) file_chunk->insert_size(pair_orth_number, positions_inserted);
+#endif
 
   positions_inserted = string[orth_inpa_number]->set_line_end(true, def);
+#ifndef NDEBUG
   if(file_chunk) file_chunk->insert_size(orth_inpa_number, positions_inserted);
+#endif
 
   positions_inserted = string[all_number]->set_line_end(true, false);
+#ifndef NDEBUG
   if(file_chunk) file_chunk->insert_size(all_number, positions_inserted);
-  set_orth_inpa.clear(); // clears the list
 #endif
+  set_orth_inpa.clear(); // clears the list
 }
 
 
@@ -588,9 +599,17 @@ void mcl_format::close_init_file_array(FILE **&file, mcl_t type, bool SORT_ABC_D
 	    else sprintf(output_file, "%s%s", FILE_BINARY_LOCATION, identifier);
 	  } else sprintf(output_file, "%s", identifier);
 	  char file_n[400]; for(uint i =0; i<400;i++) file_n[i]='\0';
+	  //sprintf(file_n, "/usr/bin/sort %s -n -k3 -o %s.s", output_file, output_file);
 	  sprintf(file_n, "sort %s -n -k3 -o %s.s", output_file, output_file);
-	  assert(-1 != system(file_n));
-	  remove(output_file); delete [] output_file;
+	  const bool ret_val_sys = system(file_n);
+	  assert(-1 != ret_val_sys);
+	  char assert_sys[400]; sprintf(assert_sys, "test -x %s.s", output_file);
+	  const int ret_val = system(assert_sys);
+	  if(ret_val == -1) {
+	    printf("\t Retval after sorting operation '%s' was %d, at [%s]:%s:%d\n", file_n, ret_val, __FUNCTION__, __FILE__, __LINE__);
+	  }
+	  remove(output_file); 
+	  delete [] output_file;
 	}
       }
     }
@@ -812,7 +831,7 @@ mcl_format::mcl_format(  int _taxon_length,
 {      
   init_string();
 #ifndef NDEBUG
-  file_chunk = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT);
+  file_chunk = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, SORT_ABC_DATA);
 #endif
 }
 mcl_format::mcl_format(mcl_print_settings_t print_settings) 
@@ -830,7 +849,7 @@ mcl_format::mcl_format(mcl_print_settings_t print_settings)
   PRINT_IN_MCL_FORMAT = print_settings.PRINT_IN_MCL_FORMAT;
   SORT_ABC_DATA = print_settings.SORT_ABC_DATA; // if true, sorts teh abc files before outprint
 #ifndef NDEBUG
-  file_chunk = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT);
+  file_chunk = new list_file_chunk(MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, SORT_ABC_DATA);
 #endif
 }
 

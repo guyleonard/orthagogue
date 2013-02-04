@@ -25,7 +25,7 @@ bool list_file_chunk::compare_with_list(loint *two) {
 //! @return the file size, given the index:
 uint list_file_chunk::get_file_size(uint index, char *FILE_BINARY_LOCATION) {
   assert(index < mcl_t_size);
-  char *file_name = result_format::get_storage_path_for_given_file_id(result_format::get_file_name_result(index), FILE_BINARY_LOCATION);
+  char *file_name = result_format::get_storage_path_for_given_file_id(result_format::get_file_name_result(index), FILE_BINARY_LOCATION, SORT_ABC_DATA);
   struct stat sb;
   if(stat(file_name, &sb) == -1) { 
 #ifdef USE_MPI
@@ -258,7 +258,8 @@ list_file_chunk::list_file_chunk(
 				 bool _MODE_PAIRWISE_OUTPUT_MCL,  // for the mcl file: if set, the data out pairwise in stead of as in a row
 				 // The following variables decides what output is to be printed
 				 bool _PRINT_IN_ABC_FORMAT, 
-				 bool _PRINT_IN_MCL_FORMAT
+				 bool _PRINT_IN_MCL_FORMAT,
+				 bool _SORT_ABC_DATA
 				 )
   :
   MODE_PAIRWISE_OUTPUT_ABC(_MODE_PAIRWISE_OUTPUT_ABC),  // for the abc file: if set), the data out pairwise in stead of as in a row
@@ -266,5 +267,6 @@ list_file_chunk::list_file_chunk(
   // The following variables decides what output is to be printed
   PRINT_IN_ABC_FORMAT(_PRINT_IN_ABC_FORMAT), 
   PRINT_IN_MCL_FORMAT(_PRINT_IN_MCL_FORMAT),
+  SORT_ABC_DATA(_SORT_ABC_DATA),
   list(NULL)
 {};

@@ -51,6 +51,7 @@ class list_file_chunk {
   // The following variables decides what output is to be printed
   bool PRINT_IN_ABC_FORMAT;
   bool PRINT_IN_MCL_FORMAT;
+  bool SORT_ABC_DATA;
   uint *list; // Hold the number of chars included for each of the files written.
  public:
   //! @return a pointer to the list:
@@ -128,7 +129,8 @@ class list_file_chunk {
 		  bool _MODE_PAIRWISE_OUTPUT_MCL,  // for the mcl file: if set, the data out pairwise in stead of as in a row
 		  // The following variables decides what output is to be printed
 		  bool _PRINT_IN_ABC_FORMAT, 
-		  bool _PRINT_IN_MCL_FORMAT
+		  bool _PRINT_IN_MCL_FORMAT,
+		  bool _SORT_ABC_DATA
 		  );
 
 };
