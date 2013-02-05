@@ -12,5 +12,5 @@
   parameter 'is_inpa'
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h:223: warning: The following parameters of list_file_parse::get_interval(uint &list_length, uint *&thread_list, uint &current_position, uint &taxon_start, uint &taxon_end, bool is_ortholog, bool is_inpa, bool is_co_orth) are not documented:
   parameter 'is_inpa'
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:252: warning: Member show_positive_results (variable) of class mcl_bunch is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:253: warning: Member test_cnt (variable) of class mcl_bunch is not documented.
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:277: warning: Member show_positive_results (variable) of class mcl_bunch is not documented.
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:278: warning: Member test_cnt (variable) of class mcl_bunch is not documented.

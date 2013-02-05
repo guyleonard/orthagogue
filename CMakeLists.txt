@@ -89,13 +89,15 @@ configure_file("${PROJECT_BINARY_DIR}/project_config.h.in" "${PROJECT_BINARY_DIR
 # Configures the installation process, with CPack in thought:
 
 # - Inspired by: http://www.vtk.org/Wiki/CMake/Tutorials/Packaging
-install(CODE "message(\"Installs the ${NAME} package:\")") # Written out during installation process.
-install(TARGETS ${EXECUTABLE_NAME} DESTINATION bin)
-install(FILES orthAgogue_main.h DESTINATION "include/${EXECUTABLE_NAME}")
-install(TARGETS ${TURBO_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_LIB_NAME}")
+install(CODE "message(\"Installs the ${NAME} into the lib/${EXECUTABLE_NAME} package:\")") # Written out during installation process.
+install(TARGETS ${EXECUTABLE_NAME} DESTINATION "bin/")
+#install(TARGETS ${EXECUTABLE_NAME} DESTINATION "bin/orthAgogue")
+#install(TARGETS ${EXECUTABLE_NAME} DESTINATION "bin/${EXECUTABLE_NAME}")
+#install(FILES orthAgogue_main.h DESTINATION "include/${EXECUTABLE_NAME}")
+#install(TARGETS ${TURBO_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_LIB_NAME}")
 #install(EXPORT "${TURBO_LIB_NAME}" DESTINATION "lib/${TURBO_LIB_NAME}")
-install(FILES orthAgogue-conf.cmake DESTINATION "lib/${EXECUTABLE_NAME}")
+#install(FILES orthAgogue-conf.cmake DESTINATION "lib/${EXECUTABLE_NAME}")
 include(config_files/settings_and_status.cmake)
 
  
-INCLUDE(CPack)
+#INCLUDE(CPack)

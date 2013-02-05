@@ -86,11 +86,11 @@ target_link_libraries(${TURBO_FILTER_LIB_NAME} blast_filtering ${TBB_LIBRARY}
   ${CMPH_LIBS}
   ${LOG_LIBS}
   ) 
-install(FILES blast_filtering.h DESTINATION "include/${EXECUTABLE_NAME}")
-install(TARGETS blast_filtering DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_FILTER_LIB_NAME}")
-install(TARGETS ${TURBO_FILTER_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_FILTER_LIB_NAME}")
-install(EXPORT "${TURBO_FILTER_LIB_NAME}" DESTINATION "lib/${TURBO_FILTER_LIB_NAME}")
+# install(FILES blast_filtering.h DESTINATION "include/${EXECUTABLE_NAME}")
+# install(TARGETS blast_filtering DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_FILTER_LIB_NAME}")
+# install(TARGETS ${TURBO_FILTER_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_FILTER_LIB_NAME}")
+# install(EXPORT "${TURBO_FILTER_LIB_NAME}" DESTINATION "lib/${TURBO_FILTER_LIB_NAME}")
 if(PRODUCE_RUNNABLE) 
-  install(FILES "../orthAgogue-conf.cmake" DESTINATION "lib/${EXECUTABLE_NAME}")
+  # install(FILES "../orthAgogue-conf.cmake" DESTINATION "lib/${EXECUTABLE_NAME}")
   include("../orthAgogue_description.cmake")
 endif()

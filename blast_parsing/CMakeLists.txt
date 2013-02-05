@@ -89,11 +89,11 @@ ${TBB_LIBRARY}
   ${CMPH_LIBS}
   ${LOG_LIBS}
   ) 
-install(FILES blast_parsing.h DESTINATION "include/${EXECUTABLE_NAME}")
-install(TARGETS blast_parsing DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_PARSE_LIB_NAME}")
-install(TARGETS ${TURBO_PARSE_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_PARSE_LIB_NAME}")
-install(EXPORT "${TURBO_PARSE_LIB_NAME}" DESTINATION "lib/${TURBO_PARSE_LIB_NAME}")
+# install(FILES blast_parsing.h DESTINATION "include/${EXECUTABLE_NAME}")
+# install(TARGETS blast_parsing DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_PARSE_LIB_NAME}")
+# install(TARGETS ${TURBO_PARSE_LIB_NAME} DESTINATION "lib/${EXECUTABLE_NAME}" EXPORT "${TURBO_PARSE_LIB_NAME}")
+# install(EXPORT "${TURBO_PARSE_LIB_NAME}" DESTINATION "lib/${TURBO_PARSE_LIB_NAME}")
 if(PRODUCE_RUNNABLE) 
-  install(FILES "${suffix}orthAgogue-conf.cmake" DESTINATION "lib/${EXECUTABLE_NAME}")
+  # install(FILES "${suffix}orthAgogue-conf.cmake" DESTINATION "lib/${EXECUTABLE_NAME}")
   include("${suffix}orthAgogue_description.cmake")
 endif()
