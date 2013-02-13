@@ -165,7 +165,7 @@ void cmd_list::set_arguments(char **array, int array_size, bool create_man_page)
     //    if(!cmd_found) {print_error_msg_cmd_not_found(short_id, long_id, "\0");}
   }
   if (create_man_page || (array_size <2) || FILE_INPUT_NAME == NULL)  { // file name not given or zero arguments given. PRints default message:   
-    if(array_size < 2) fprintf(stdout, "!!\tBlast file not specified.\n\nUSAGE:\northAgogue -i <file_path> [-t][-p][-s][-O][-P][-S][-A][-b][-c][-u|-e][-m][-o][-c][-L][-n][-N][-d][-w][-C]\n");
+    if(array_size < 2) fprintf(stdout, "!!\tBlast file not specified.\n\nUSAGE:\northAgogue -i <file_path> [-t][-p][-s][-O][-P][-S][-A][-w][-b][-c][-u|-e][-o][-C][m]\n");
     //    if(array_size < 2) fprintf(stdout, "!!\tBlast file not specified.\n\nUSAGE:\northAgogue -i <file_path> [-p-t-s-O-P-sABC-A-us-bho-mp-c-e-o-nii-L-nf-N-pd]\n");
     if(array_size < 2)    print_arguments(stdout, file_man_page);
 
@@ -173,8 +173,9 @@ void cmd_list::set_arguments(char **array, int array_size, bool create_man_page)
     fprintf(stdout, "2. orthagogue -i myblast.out -e 6 -o 50 -O myoutdir # the same as above but excluding protein pairs with the overlap below 50%%.\n");
     fprintf(stdout, "3. orthagogue -i myblast.out -u -o 50 -O myoutdir # the same as above but without filtering by e-values and using BLAST scores instead of e-values in order to resolve HSPs with the '0.0' e-value; the required e-value cutoff should be set while running BLAST.\n");
     fprintf(stdout, "4. orthagogue -i myblast.out -b -e 6 -O myoutdir # the same as 1 but using only the best HSP for any pair of proteins (OrthoMCL emulation).\n");
-    if(array_size < 2)   fprintf(stdout, "\nSee also https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to oekseth@gmail.com\n");
-    //orthagogue-issue-tracker@googlegroups.com\n");
+    if(array_size < 2)   fprintf(stdout, "\nSee also https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to orthagogue-issue-tracker@googlegroups.com\n");
+// oekseth@gmail.com\n");
+    //
     if(create_man_page) create_man_page_tail(file_man_page);
     if(array_size < 2) exit(2); // Aborts the execution
       
