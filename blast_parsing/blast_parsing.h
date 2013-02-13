@@ -83,7 +83,7 @@ class blast_parsing {
     @param <cmd> The input list to be made available from the terminal console.
     @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
  **/
-  void init_values(cmd_list *cmd, const bool first_pass=true);
+  void init_values(cmd_list *cmd, const uint first_pass=0);
   
   /**
      @brief Gives the user settings for the blast parsing process.

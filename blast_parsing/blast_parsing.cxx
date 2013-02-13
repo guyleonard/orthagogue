@@ -34,9 +34,10 @@ void blast_parsing::get_input_settings(tsettings_input_t &obj) {
     @param <cmd> The input list to be made available from the terminal console.
     @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
  **/
-void blast_parsing::init_values(cmd_list *cmd, const bool first_pass) {
+void blast_parsing::init_values(cmd_list *cmd, const uint first_pass) {
+  assert(first_pass < 2);
   class cmd_argument cl2; 
-  if(first_pass) {
+  if(first_pass==1) {
     cl2 = cmd_argument("Path to the BLAST output file (string, mandatory). The file must be in the tabular '-m 8' format (12 fields, one row per HSP (high scoring pair)", "i", "input", FOLDER_EXSISTING, &FILE_INPUT_NAME, "INPUT");
     cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
 
@@ -51,7 +52,7 @@ void blast_parsing::init_values(cmd_list *cmd, const bool first_pass) {
     cl2 = cmd_argument("Output directory path (string, default current directory)", "O", "output_dir", FOLDER_NEW, &FILE_BINARY_LOCATION, "OUTPUT");
     cmd->add_cmd_argument(cl2);  // FILE_BINARY_LOCATION
 
-  } else {
+  } else if(first_pass==0) {
     cl2 = cmd_argument("The numbers of threads to use (integer, default '2')", "c", "cpu", INTEGER, &CPU_TOT, "OPERATIONAL");
     cmd->add_cmd_argument(cl2);  // CPU_TOT
 
@@ -61,26 +62,23 @@ void blast_parsing::init_values(cmd_list *cmd, const bool first_pass) {
     cl2 = cmd_argument("Use all protein pairs retained after filtering to compute normalization basis (by default only protein pairs forming homology relations)", "A", "all_to_norm", BOOLEAN, &USE_EVERYREL_AS_ARRNORM_BASIS, "OPERATIONAL");
     cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
 
-    cl2 = cmd_argument("In case of multiple HSPs for a protein pair use only the best one (for emulating OrthoMCL only)", "b", "best_hsp", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "OPERATIONAL");
-    cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
-
-    cl2 = cmd_argument("Threshold for the number of proteins in a proteome. Useful for handling files containing many taxa with just a few proteins, e.g. the complete SwissProt", "m", "min_proteins", UINT_NOT_NULL, &LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA, "FILTERING");
-    cmd->add_cmd_argument(cl2); // AMINO_LIMIT
-
-#ifdef INCLUDE_CMD_DEBUG_PARAMS   // Adds debug params to the list of options:
-  
+#ifndef NDEBUG  
     cl2 = cmd_argument("Print values used as the basis for normalization", "n", "norm_factors", BOOLEAN, &DEBUG_NORM, "DEBUG");
     cmd->add_cmd_argument(cl2); // DEBUG_NORM
     cl2 = cmd_argument("Print values used for normalization basis computation", "N", "norm_basis", BOOLEAN, &PRINT_NORMALIXATION_BASIS, "DEBUG");
     cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
     // cl2 = cmd_argument("Print into the log files the values extracted from the blastp file", "pbd", "print_blast_data", BOOLEAN, &DEBUG_print_pairs_in_file_parse_log_file, "DEBUG");
     // cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
-#endif
-
-#ifndef NDEBUG
     cl2 = cmd_argument("Set the number of chars to read as a block from the file: If not set, the system decides the optimal value for the maximum parallisation possible", "dbs", "disk_buffer_size", UINT_NOT_NULL, &disk_buffer_size, "DEBUG");
     cmd->add_cmd_argument(cl2); // disk_buffer_size
 #endif
+  } else {
+    cl2 = cmd_argument("In case of multiple HSPs for a protein pair use only the best one (for emulating OrthoMCL only)", "b", "best_hsp", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2); 
+
+    cl2 = cmd_argument("Threshold for the number of proteins in a proteome. Useful for handling files containing many taxa with just a few proteins, e.g. the complete SwissProt", "m", "min_proteins", UINT_NOT_NULL, &LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA, "FILTERING");
+    cmd->add_cmd_argument(cl2); // AMINO_LIMIT
+
   }
 }
 

@@ -157,8 +157,10 @@ void blast_filtering::init_values(cmd_list *cmd, const bool first_pass) {
 
     cl2= cmd_argument("Sort *.abc files by the scores", "S", "sort", BOOLEAN, &SORT_ABC_DATA, "OUTPUT");
     cmd->add_cmd_argument(cl2);  // SORT_ABC_DATA
-
   } else {
+    cl2 = cmd_argument("Skip normalization of similarity scores", "w", "without_norm", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2);  // DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT
+
     cl2 = cmd_argument("The e-value cutoff (positive floating number, see examples below), mutually exclusive with -u", "e", "cutoff", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
     //    cl2 = cmd_argument("Threshold for protein pair similarity (positive floating number, e.g. set to '7' or '7.0' to exclude protein pairs with e-values above '1e-07')", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
     cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
@@ -170,17 +172,13 @@ void blast_filtering::init_values(cmd_list *cmd, const bool first_pass) {
     cmd->add_cmd_argument(cl2); // AMINO_LIMIT
 
 
-    cl2 = cmd_argument("Skip normalization of similarity scores", "w", "without_norm", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "DEBUG");
-    cmd->add_cmd_argument(cl2);  // DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT
-
-#ifdef INCLUDE_CMD_DEBUG_PARAMS   // Adds debug params to the list of options:
+#ifndef NDEBUG
     cl2 = cmd_argument("Print protein pairs discarded during filtering", "d", "discarded_pairs", BOOLEAN, &DEBUG_PRINT_DISCARDED_PAIRS, "DEBUG");
     cmd->add_cmd_argument(cl2); // 
-#endif
-
 
     // cl2 = cmd_argument("Print meta-information about the parsing- and filtering. Useful when analysing the result", "pbfd", "print_blast_filter_data", BOOLEAN, &blastInfo.build_meta_blast, "OUTPUT");
     // cmd->add_cmd_argument(cl2); // 
+#endif
   }
 }
 

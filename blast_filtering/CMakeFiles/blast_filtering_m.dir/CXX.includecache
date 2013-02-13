@@ -80,19 +80,11 @@ pipe_struct.h
 meta_blast.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/meta_blast.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_norm.cxx
-bucket_norm.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_norm.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_norm.h
 list_norm.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/list_norm.h
 enum_write_list_t.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/enum_write_list_t.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_pipe_binary.cxx
-bucket_pipe_binary.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_pipe_binary.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_pipe_binary.h
 types.h
@@ -101,10 +93,6 @@ list_file_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/list_file_parse.h
 list_norm.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/list_norm.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/build_string.cxx
-build_string.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/build_string.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/build_string.h
 ../configure.h
@@ -118,19 +106,11 @@ tbb_libs.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/meta_blast.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_bucket.cxx
-pipe_bucket.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_bucket.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_bucket.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/log_builder.h
 taxon_pair.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/taxon_pair.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_merge.cxx
-pipe_merge.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_merge.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_merge.h
 log_builder.h
@@ -143,10 +123,6 @@ bucket_pipe_binary.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_pipe_binary.h
 pipe_t.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_t.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_norm.cxx
-pipe_norm.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_norm.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_norm.h
 ../configure.h
@@ -163,10 +139,6 @@ pipe_t.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_t.h
 bucket_norm.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/bucket_norm.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_ortholog_inparalog.cxx
-pipe_ortholog_inparalog.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_ortholog_inparalog.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_ortholog_inparalog.h
 log_builder.h
@@ -187,10 +159,6 @@ basket_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/basket_parse.h
 algo_overlap.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/algo_overlap.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_struct.cxx
-pipe_struct.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_struct.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_struct.h
 types.h
@@ -224,10 +192,6 @@ pipe_struct_result.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_t.h
 
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_write.cxx
-pipe_write.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_write.h
-
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_write.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/log_builder.h
@@ -251,10 +215,6 @@ pipe_struct_result.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_struct_result.h
 list_file_chunk.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/list_file_chunk.h
-
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/taxon_pair.cxx
-taxon_pair.h
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/taxon_pair.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/taxon_pair.h
 stdlib.h
@@ -814,19 +774,11 @@ sys/resource.h
 
 /usr/local/include/cmph_types.h
 
-blast_common/../blast_filtering/../blast_common/enum_mcl.h
-
 blast_common/../blast_filtering/pipe_struct_result.h
 ../blast_common/types.h
 blast_common/../blast_filtering/../blast_common/types.h
 ../blast_common/enum_mcl.h
 blast_common/../blast_filtering/../blast_common/enum_mcl.h
-
-blast_common/../configure.h
-project_config.h
-blast_common/../project_config.h
-
-blast_common/../project_config.h
 
 blast_common/algo_overlap.h
 types.h
@@ -1131,68 +1083,6 @@ libs.h
 blast_common/libs.h
 o_rel.h
 blast_common/o_rel.h
-
-log_builder/../blast_common/libs.h
-../configure.h
-log_builder/../blast_common/../configure.h
-mpi.h
--
-cstring
--
-cstdlib
--
-cstdio
--
-cctype
--
-assert.h
--
-stddef.h
--
-stdlib.h
--
-limits.h
--
-math.h
--
-stdio.h
--
-string.h
--
-stdbool.h
--
-map
--
-queue
--
-syscall.h
--
-unistd.h
--
-sys/types.h
--
-cmph.h
--
-list
--
-
-log_builder/../blast_common/o_rel.h
-
-log_builder/../blast_common/types.h
-libs.h
-log_builder/../blast_common/libs.h
-o_rel.h
-log_builder/../blast_common/o_rel.h
-
-log_builder/../blast_parsing/tsettings_input.h
-../blast_common/types.h
-log_builder/../blast_parsing/../blast_common/types.h
-
-log_builder/../configure.h
-project_config.h
-log_builder/../project_config.h
-
-log_builder/../project_config.h
 
 log_builder/enum_logid.h
 

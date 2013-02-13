@@ -27,6 +27,7 @@ int main_operation_turbo(int array_cnt, char **array) {
   blast_filtering *filter = new blast_filtering(cmd);
   blast->init_values(cmd, false);
   filter->init_values(cmd, false);
+  blast->init_values(cmd, 2);
   log_builder *log = new log_builder(cmd);
 
   // Maps internal variables with the terminal input:
