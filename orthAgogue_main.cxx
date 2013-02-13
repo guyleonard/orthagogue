@@ -25,6 +25,8 @@ int main_operation_turbo(int array_cnt, char **array) {
   // Initializes the libraries we are interested in:
   blast_parsing *blast = new blast_parsing(cmd);
   blast_filtering *filter = new blast_filtering(cmd);
+  blast->init_values(cmd, false);
+  filter->init_values(cmd, false);
   log_builder *log = new log_builder(cmd);
 
   // Maps internal variables with the terminal input:

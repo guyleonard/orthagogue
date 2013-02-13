@@ -1,16 +1,13 @@
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_extractors.h:95: warning: member blast_extractors_t belongs to two different groups. The second one found here will be ignored.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/enum_argument_types.h:10: warning: Member ARGUMENT_TYPES (enumeration) of file terminal_input/enum_argument_types.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/enum_mcl.h:56: warning: Member mcl (enumeration) of file blast_common/enum_mcl.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/enum_write_list_t.h:10: warning: Member write_list (enumeration) of file blast_filtering/enum_write_list_t.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder/log_builder.h:58: warning: Member warnings (enumeration) of file log_builder/log_builder.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/pipe_struct_result.h:104: warning: Member pipe_struct_result_t (typedef) of file blast_filtering/pipe_struct_result.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/tsettings_input.h:79: warning: Member tsettings_input_t (typedef) of file blast_parsing/tsettings_input.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/tsettings_output.h:48: warning: Member tsettings_output_t (typedef) of file blast_filtering/tsettings_output.h is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:159: warning: argument 'comm' of command @param is not found in the argument list of blast_parsing::start_parsing(log_builder_t *log, bp_container_t &bp, int number_of_nodes)
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_parsing/blast_parsing.h:159: warning: argument 'comm' of command @param is not found in the argument list of blast_parsing::start_parsing(log_builder_t *log, bp_container_t &bp, int number_of_nodes)
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/list_file_parse.h:223: warning: The following parameters of list_file_parse::get_interval(uint &list_length, uint *&thread_list, uint &current_position, uint &taxon_start, uint &taxon_end, bool is_ortholog, bool is_inpa, bool is_co_orth) are not documented:
-  parameter 'is_inpa'
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/blast_filtering.h:109: warning: Found unknown command `\parm'
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/blast_filtering.h:109: warning: Unsupported xml/html tag <first_pass> found
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_filtering/blast_filtering.h:108: warning: The following parameters of blast_filtering::init_values(cmd_list *cmd, const bool first_pass=true) are not documented:
+  parameter 'first_pass'
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:82: warning: Found unknown command `\parm'
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:82: warning: Unsupported xml/html tag <first_pass> found
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:81: warning: The following parameters of blast_parsing::init_values(cmd_list *cmd, const bool first_pass=true) are not documented:
+  parameter 'first_pass'
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:163: warning: argument 'comm' of command @param is not found in the argument list of blast_parsing::start_parsing(log_builder_t *log, bp_container_t &bp, int number_of_nodes)
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h:223: warning: The following parameters of list_file_parse::get_interval(uint &list_length, uint *&thread_list, uint &current_position, uint &taxon_start, uint &taxon_end, bool is_ortholog, bool is_inpa, bool is_co_orth) are not documented:
   parameter 'is_inpa'
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:277: warning: Member show_positive_results (variable) of class mcl_bunch is not documented.
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/Linux_Linux-3.2.0-36-generic-Source/ZIP/orthAgogue-1.0.0/blast_common/mcl_bunch.h:278: warning: Member test_cnt (variable) of class mcl_bunch is not documented.
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_bunch.h:277: warning: Member show_positive_results (variable) of class mcl_bunch is not documented.
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/mcl_bunch.h:278: warning: Member test_cnt (variable) of class mcl_bunch is not documented.

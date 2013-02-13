@@ -105,8 +105,12 @@ class blast_filtering {
  public:
   //! Prints information describing this class.
   void print_class_info();
-  //! Connects internal values to the object given as param, enabling the terminal updating internal vars.
-  void init_values(cmd_list *cmd);
+/** 
+    @brief Updates the command line interface with values to be set by the user:
+    @param <cmd> The input list to be made available from the terminal console.
+    @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
+ **/
+  void init_values(cmd_list *cmd, const bool first_pass=true);
   //! Initiates the list for parsing input arguments fromthe terminal:
   static cmd_list* init_cmd_list(char *DEFAULT_OPTION_NAME, uint &DEFAULT_OPTION_NAME_COUNT, char *FILE_INPUT_NAME);
   //! Maps the internal variables to the input given from the terminal.

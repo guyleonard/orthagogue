@@ -29,58 +29,59 @@ void blast_parsing::get_input_settings(tsettings_input_t &obj) {
   obj.USE_EVERYREL_AS_ARRNORM_BASIS = USE_EVERYREL_AS_ARRNORM_BASIS; 
 }
 
-//! Updates the command line interface with values to be set by the user:
-void blast_parsing::init_values(cmd_list *cmd) {
+/** 
+    @brief Updates the command line interface with values to be set by the user:
+    @param <cmd> The input list to be made available from the terminal console.
+    @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
+ **/
+void blast_parsing::init_values(cmd_list *cmd, const bool first_pass) {
   class cmd_argument cl2; 
- cl2 = cmd_argument("Use all protein pairs retained after filtering to compute normalization basis (by default only protein pairs forming homology relations)", "A", "all_to_norm", BOOLEAN, &USE_EVERYREL_AS_ARRNORM_BASIS, "OPERATIONAL");
-  cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
+  if(first_pass) {
+    cl2 = cmd_argument("Path to the BLAST output file (string, mandatory). The file must be in the tabular '-m 8' format (12 fields, one row per HSP (high scoring pair)", "i", "input", FOLDER_EXSISTING, &FILE_INPUT_NAME, "INPUT");
+    cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
 
-  // FIXME: Update the test-scrips with the replaced param, i.e. as seen below:
-  cl2 = cmd_argument("Use BLAST scores (column 12) instead of e-values (default, column 11)", "us", "use_scores", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "OPERATIONAL");
-  //  cl2 = cmd_argument("Use the score values in the column 12 of BLAST output instead of the e-values (default, column 11). Warning: the additivity of these values has not been confirmed, proceed on your own risk", "lc", "use_last_column", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "INPUT");
-  cmd->add_cmd_argument(cl2); //  bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE
+    cl2 = cmd_argument("Index of the field containing taxon IDs in columns 1 and 2 (positive integer, default '0')", "t", "taxon_index", INTEGER, &INDEX_IN_FILE_FOR_TAXON_NAME, "INPUT");
+    cmd->add_cmd_argument(cl2);  // INDEX_IN_FILE_FOR_TAXON_NAME
+    cl2 = cmd_argument("Index of the field containing protein IDs in columns 1 and 2  (positive integer, default  '1')", "p", "protein_index", INTEGER, &INDEX_IN_FILE_FOR_PROTEIN_NAME, "INPUT");
+    cmd->add_cmd_argument(cl2);  // INDEX_IN_FILE_FOR_PROTEIN_NAME
 
-  //  char test[100];memset(test, '\0', 100);
-  //  sprintf(test, "The numbers of threads to use (default is '%d')", CPU_TOT);
-  //  cl2 = cmd_argument(test, "c", "cpu_tot", INTEGER, &CPU_TOT, "OPERATIONAL");
-  cl2 = cmd_argument("The numbers of threads to use (integer, default '2')", "c", "cpu_tot", INTEGER, &CPU_TOT, "OPERATIONAL");
-  cmd->add_cmd_argument(cl2);  // CPU_TOT
+    cl2 = cmd_argument("Field separator used in columns 1 and 2 (only non-integers and -non-decimals, default the pipe '|')", "s", "seperator", CHAR_SINGLE, &SEPERATOR, "INPUT");
+    cmd->add_cmd_argument(cl2); // SEPERATOR
 
-  cl2 = cmd_argument("Index of the field containing protein IDs in columns 1 and 2  (positive integer, default  '1')", "p", "protein_index", INTEGER, &INDEX_IN_FILE_FOR_PROTEIN_NAME, "INPUT");
-  cmd->add_cmd_argument(cl2);  // INDEX_IN_FILE_FOR_PROTEIN_NAME
+    cl2 = cmd_argument("Output directory path (string, default current directory)", "O", "output_dir", FOLDER_NEW, &FILE_BINARY_LOCATION, "OUTPUT");
+    cmd->add_cmd_argument(cl2);  // FILE_BINARY_LOCATION
 
-  cl2 = cmd_argument("Index of the field containing taxon IDs in columns 1 and 2 (positive integer, default '0')", "t", "taxon_index", INTEGER, &INDEX_IN_FILE_FOR_TAXON_NAME, "INPUT");
-  cmd->add_cmd_argument(cl2);  // INDEX_IN_FILE_FOR_TAXON_NAME
+  } else {
+    cl2 = cmd_argument("The numbers of threads to use (integer, default '2')", "c", "cpu", INTEGER, &CPU_TOT, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2);  // CPU_TOT
 
-  cl2 = cmd_argument("Field separator used in columns 1 and 2 (only non-integers and -non-decimals, default the pipe '|')", "s", "seperator", CHAR_SINGLE, &SEPERATOR, "INPUT");
-  cmd->add_cmd_argument(cl2); // SEPERATOR
+    cl2 = cmd_argument("Use BLAST scores (column 12) instead of e-values (default, column 11), mutually exclusive with -e", "u", "use_scores", BOOLEAN, &USE_LAST_BLAST_CLOMUN_AS_DISTANCE, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2); //  bool USE_LAST_BLAST_CLOMUN_AS_DISTANCE
 
-  cl2 = cmd_argument("Output directory path (string, default current directory)", "O", "output_dir", FOLDER_NEW, &FILE_BINARY_LOCATION, "OUTPUT");
-  cmd->add_cmd_argument(cl2);  // FILE_BINARY_LOCATION
+    cl2 = cmd_argument("Use all protein pairs retained after filtering to compute normalization basis (by default only protein pairs forming homology relations)", "A", "all_to_norm", BOOLEAN, &USE_EVERYREL_AS_ARRNORM_BASIS, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
 
-  cl2 = cmd_argument("Path to the BLAST output file (string, mandatory). The file must be in the tabular '-m 8' format (12 fields, one row for each high scoring pair (HSP))", "i", "input_file", FOLDER_EXSISTING, &FILE_INPUT_NAME, "INPUT");
-  cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
+    cl2 = cmd_argument("In case of multiple HSPs for a protein pair use only the best one (for emulating OrthoMCL only)", "b", "best_hsp", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "OPERATIONAL");
+    cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
 
-  // FIXME: Update the test-scrips with the replaced param, i.e. as seen below:
-  cl2 = cmd_argument("In case of multiple HSPs for a protein pair use only the best one (for emulating OrthoMCL only)", "bho", "best_hsp_only", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "OPERATIONAL");
-  //  cl2 = cmd_argument("Use the best score found for each pair. (I.e. if multiple alignments on a comparison, do not sum the scores of these)", "nss", "not_sum_scores", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "INPUT");
-  cmd->add_cmd_argument(cl2); // FILE_INPUT_NAME
-
-  cl2 = cmd_argument("Threshold for the number of proteins in a proteome. Useful for handling files containing many taxa with just a few proteins, e.g. the complete SwissProt", "mp", "minimum_proteins", UINT_NOT_NULL, &LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA, "FILTERING");
-  cmd->add_cmd_argument(cl2); // AMINO_LIMIT
+    cl2 = cmd_argument("Threshold for the number of proteins in a proteome. Useful for handling files containing many taxa with just a few proteins, e.g. the complete SwissProt", "m", "min_proteins", UINT_NOT_NULL, &LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA, "FILTERING");
+    cmd->add_cmd_argument(cl2); // AMINO_LIMIT
 
 #ifdef INCLUDE_CMD_DEBUG_PARAMS   // Adds debug params to the list of options:
   
-  cl2 = cmd_argument("Set the number of chars to read as a block from the file: If not set, the system decides the optimal value for the maximum parallisation possible", "dbs", "disk_buffer_size", UINT_NOT_NULL, &disk_buffer_size, "DEBUG");
-  cmd->add_cmd_argument(cl2); // disk_buffer_size
-
-  cl2 = cmd_argument("Print values used as the basis for normalization", "nf", "norm_factors", BOOLEAN, &DEBUG_NORM, "DEBUG");
-  cmd->add_cmd_argument(cl2); // DEBUG_NORM
-  cl2 = cmd_argument("Print values used for normalization basis computation", "N", "print_norm_basis", BOOLEAN, &PRINT_NORMALIXATION_BASIS, "DEBUG");
-  cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
-  cl2 = cmd_argument("Print into the log files the values extracted from the blastp file", "pbd", "print_blast_data", BOOLEAN, &DEBUG_print_pairs_in_file_parse_log_file, "DEBUG");
-  cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
+    cl2 = cmd_argument("Print values used as the basis for normalization", "n", "norm_factors", BOOLEAN, &DEBUG_NORM, "DEBUG");
+    cmd->add_cmd_argument(cl2); // DEBUG_NORM
+    cl2 = cmd_argument("Print values used for normalization basis computation", "N", "norm_basis", BOOLEAN, &PRINT_NORMALIXATION_BASIS, "DEBUG");
+    cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
+    // cl2 = cmd_argument("Print into the log files the values extracted from the blastp file", "pbd", "print_blast_data", BOOLEAN, &DEBUG_print_pairs_in_file_parse_log_file, "DEBUG");
+    // cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
 #endif
+
+#ifndef NDEBUG
+    cl2 = cmd_argument("Set the number of chars to read as a block from the file: If not set, the system decides the optimal value for the maximum parallisation possible", "dbs", "disk_buffer_size", UINT_NOT_NULL, &disk_buffer_size, "DEBUG");
+    cmd->add_cmd_argument(cl2); // disk_buffer_size
+#endif
+  }
 }
 
 //! Writes general info about the class:
@@ -370,7 +371,7 @@ blast_parsing::blast_parsing(cmd_list *cmd) :
   SEPERATOR('|'), FILE_BINARY_LOCATION(""), FILE_INPUT_NAME(""), 
   arrNorm(NULL), listTaxa(NULL), taxon_length(0), listParseData(NULL), max_input_value(0), LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA(0), disk_buffer_size(0), DEBUG_print_pairs_in_file_parse_log_file(false)
 {
-  init_values(cmd);
+  init_values(cmd, true);
 }
 
 void blast_parsing::assert_class(const bool print_info) {

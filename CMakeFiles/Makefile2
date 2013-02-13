@@ -1000,8 +1000,8 @@ clean: blast_common/CMakeFiles/taxa.dir/clean
 # Target rules for target blast_common/CMakeFiles/x_blast_common.dir
 
 # All Build rule for target.
-blast_common/CMakeFiles/x_blast_common.dir/all: blast_common/CMakeFiles/prot_list.dir/all
 blast_common/CMakeFiles/x_blast_common.dir/all: blast_common/CMakeFiles/blast_common.dir/all
+blast_common/CMakeFiles/x_blast_common.dir/all: blast_common/CMakeFiles/prot_list.dir/all
 	$(MAKE) -f blast_common/CMakeFiles/x_blast_common.dir/build.make blast_common/CMakeFiles/x_blast_common.dir/depend
 	$(MAKE) -f blast_common/CMakeFiles/x_blast_common.dir/build.make blast_common/CMakeFiles/x_blast_common.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report /home/klatremus/Dokumenter/Work/code/orthAgogue/src/CMakeFiles  84

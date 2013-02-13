@@ -77,9 +77,13 @@ class blast_parsing {
   uint LIMIT_MINIMUM_NUMBER_OF_PROTEINS_FOR_EACH_TAXA;
   uint disk_buffer_size;
   bool DEBUG_print_pairs_in_file_parse_log_file;
-  //! Updates the command line interface with values to be set by the user:
-  void init_values(cmd_list *cmd);
  public:
+/** 
+    @brief Updates the command line interface with values to be set by the user:
+    @param <cmd> The input list to be made available from the terminal console.
+    @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
+ **/
+  void init_values(cmd_list *cmd, const bool first_pass=true);
   
   /**
      @brief Gives the user settings for the blast parsing process.

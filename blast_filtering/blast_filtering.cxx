@@ -144,41 +144,44 @@ void blast_filtering::print_class_info() {
 }
 
 
-//! Connects internal values to the object given as param, enabling the terminal updating internal vars.
-void blast_filtering::init_values(cmd_list *cmd) {
+/** 
+    @brief Updates the command line interface with values to be set by the user:
+    @param <cmd> The input list to be made available from the terminal console.
+    @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
+**/
+void blast_filtering::init_values(cmd_list *cmd, const bool first_pass) {
   class cmd_argument cl2; 
-  // FILTERING
-  //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
-  cl2 = cmd_argument("Threshold for protein pair similarity (positive floating number, e.g. set to '7' or '7.0' to exclude protein pairs with e-values above '1e-07')", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
-  //  cl2 = cmd_argument("Threshold for BLAST similarity values (positive floating number), the positive exponent of e-values in the default mode (e.g. '7' for '1e-07') or BLAST score values in the alternative mode  with the -lc option  (e.g. '48.9').  The relation between two proteins is expunged from the matrix if the <<combined>> similarity score is below the specified cut-off value", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
-  cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
-  // --
-  cl2 = cmd_argument("Threshold for protein pair overlap (integer [1-100], e.g. set to '50' to exclude protein pairs with the overlap below 50%)", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
-  cmd->add_cmd_argument(cl2); // AMINO_LIMIT
-  // --
+  if(first_pass) {
+    cl2 = cmd_argument("Send the output in the form of MCL native matrix (all.mcl) to STDOUT for piping", "P", "pipe", BOOLEAN, &OUTPUT_PIPE_MCI_ALL, "OUTPUT"); 
+    cmd->add_cmd_argument(cl2); // OUTPUT_PIPE_MCI_ALL
 
-  cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to orthologs during MCL computation", "sco", "strict_co_orthologs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
+    cl2= cmd_argument("Sort *.abc files by the scores", "S", "sort", BOOLEAN, &SORT_ABC_DATA, "OUTPUT");
+    cmd->add_cmd_argument(cl2);  // SORT_ABC_DATA
+
+  } else {
+    cl2 = cmd_argument("The e-value cutoff (positive floating number, see examples below), mutually exclusive with -u", "e", "cutoff", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
+    //    cl2 = cmd_argument("Threshold for protein pair similarity (positive floating number, e.g. set to '7' or '7.0' to exclude protein pairs with e-values above '1e-07')", "e", "threshold", FLOAT, &MIN_SIMILARITY_LIMIT, "FILTERING");
+    cmd->add_cmd_argument(cl2); // MIN_SIMILARITY_LIMIT      
+
+    cl2 = cmd_argument("Threshold for protein pair overlap (integer [1-100], see examples below)", "o", "overlap", UINT_NOT_NULL, &AMINO_LIMIT, "FILTERING");
+    cmd->add_cmd_argument(cl2); // AMINO_LIMIT
+
+    cl2 = cmd_argument("Restricted definition of co-orthologs, relations between inparalogs of orthologs are excluded. Useful to give more weight to orthologs during MCL computation", "C", "strict_coorthologs", BOOLEAN, &RESTRICTED_DEFENITION, "FILTERING");
+    cmd->add_cmd_argument(cl2); // AMINO_LIMIT
 
 
-  cmd->add_cmd_argument(cl2); // RESTRICTED_DEFENITION
-  cl2 = cmd_argument("Send the output in the form of MCL native matrix (all.mcl) to STDOUT for piping", "P", "pipe", BOOLEAN, &OUTPUT_PIPE_MCI_ALL, "OUTPUT"); 
-  /*   list.add_cmd_argument(cl2);  // OUTPUT_PIPE */
-  cmd->add_cmd_argument(cl2); // OUTPUT_PIPE_MCI_ALL
-  // --
-  cl2 = cmd_argument("Skip normalization of similarity scores", "nn", "no_normalization", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OUTPUT");
-  //  cl2 = cmd_argument("Skip normalization on the similarity scores for the *.abc files. Helpful if the output is not as expected", "nn", "no_normalization", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "OUTPUT");
-  cmd->add_cmd_argument(cl2);  // DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT
-  // --
-  cl2= cmd_argument("Sort *.abc files by the scores", "sABC", "sort_abc_file", BOOLEAN, &SORT_ABC_DATA, "OUTPUT");
-  cmd->add_cmd_argument(cl2);  // SORT_ABC_DATA
+    cl2 = cmd_argument("Skip normalization of similarity scores", "w", "without_norm", BOOLEAN, &DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, "DEBUG");
+    cmd->add_cmd_argument(cl2);  // DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT
 
 #ifdef INCLUDE_CMD_DEBUG_PARAMS   // Adds debug params to the list of options:
-  cl2 = cmd_argument("Print protein pairs discarded during filtering", "pd", "print_discarded_pairs", BOOLEAN, &DEBUG_PRINT_DISCARDED_PAIRS, "DEBUG");
-  cmd->add_cmd_argument(cl2); // 
+    cl2 = cmd_argument("Print protein pairs discarded during filtering", "d", "discarded_pairs", BOOLEAN, &DEBUG_PRINT_DISCARDED_PAIRS, "DEBUG");
+    cmd->add_cmd_argument(cl2); // 
 #endif
 
-  cl2 = cmd_argument("Print meta-information about the parsing- and filtering. Useful when analysing the result", "pbfd", "print_blast_filter_data", BOOLEAN, &blastInfo.build_meta_blast, "OUTPUT");
-  cmd->add_cmd_argument(cl2); // 
+
+    // cl2 = cmd_argument("Print meta-information about the parsing- and filtering. Useful when analysing the result", "pbfd", "print_blast_filter_data", BOOLEAN, &blastInfo.build_meta_blast, "OUTPUT");
+    // cmd->add_cmd_argument(cl2); // 
+  }
 }
 
 //! Initiates the list for parsing input arguments fromthe terminal:
