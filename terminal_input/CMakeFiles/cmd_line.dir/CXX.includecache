@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../blast_common/../configure.h
+project_config.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../blast_common/../project_config.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../blast_common/../project_config.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../blast_common/constants.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../blast_common/libs.h
@@ -65,6 +71,22 @@ project_config.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../project_config.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/../project_config.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_argument.cxx
+cmd_argument.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_argument.h
+stdlib.h
+-
+stdio.h
+-
+fcntl.h
+-
+unistd.h
+-
+sys/types.h
+-
+sys/stat.h
+-
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/cmd_argument.h
 ../blast_common/types.h

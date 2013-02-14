@@ -193,9 +193,9 @@ Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB
-Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.0
-Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.0/usr
-Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.0/usr/bin
+Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.1
+Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.1/usr
+Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/_CPack_Packages/package/DEB/orthAgogue-1.0.1/usr/bin
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/benchmark_code
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/benchmark_code/CMakeFiles
 Searching for files in directory /home/klatremus/Dokumenter/Work/code/orthAgogue/src/benchmark_code/CMakeFiles/CMakeTmp
@@ -1232,6 +1232,6 @@ Generating file member index...
 Generating directory index...
 Generating example index...
 finalizing index lists...
-symbol cache used 3077/65536 hits=213037 misses=3077
-lookup cache used 3033/65536 hits=24919 misses=3074
+symbol cache used 3078/65536 hits=213103 misses=3078
+lookup cache used 3034/65536 hits=24920 misses=3075
 finished...

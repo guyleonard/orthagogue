@@ -23,7 +23,7 @@
 #endif
 
 //! The patch version number of the software:
-/* #undef CPACK_PACKAGE_VERSION_PATCH */
+#define CPACK_PACKAGE_VERSION_PATCH 1
 #ifndef CPACK_PACKAGE_VERSION_PATCH
 #define CPACK_PACKAGE_VERSION_PATCH 9
 #endif
