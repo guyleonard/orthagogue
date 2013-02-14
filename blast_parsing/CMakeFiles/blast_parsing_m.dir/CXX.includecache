@@ -6,11 +6,67 @@
 
 #IncludeRegexTransform: 
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/libs.h
+../configure.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/../configure.h
+mpi.h
+-
+cstring
+-
+cstdlib
+-
+cstdio
+-
+cctype
+-
+assert.h
+-
+stddef.h
+-
+stdlib.h
+-
+limits.h
+-
+math.h
+-
+stdio.h
+-
+string.h
+-
+stdbool.h
+-
+map
+-
+queue
+-
+syscall.h
+-
+unistd.h
+-
+sys/types.h
+-
+cmph.h
+-
+list
+-
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/o_rel.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/types.h
+libs.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/libs.h
+o_rel.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../blast_common/o_rel.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
 project_config.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../project_config.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../project_config.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_extractors.cxx
+blast_extractors.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_extractors.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_extractors.h
 parse.h
@@ -72,11 +128,19 @@ log_builder.h
 list_norm.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/list_norm.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string.cxx
+buffer_string.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string.h
 types.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/types.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string_list.cxx
+buffer_string_list.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string_list.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string_list.h
 buffer_string.h
@@ -90,6 +154,10 @@ string_section.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_read_blocks.cxx
+parse_read_blocks.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_read_blocks.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_read_blocks.h
 string_section.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/string_section.h
@@ -100,17 +168,29 @@ thread_reading.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send.cxx
+parse_send.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send.h
 list_file_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/list_file_parse.h
 protein_relation.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/protein_relation.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send_first.cxx
+parse_send_first.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send_first.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_send_first.h
 types.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/types.h
 taxon_list_t.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_list_t.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_file.cxx
+pipe_parse_file.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_file.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_file.h
 parse_read_blocks.h
@@ -127,6 +207,10 @@ buffer_string_list.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/buffer_string_list.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_merge.cxx
+pipe_parse_merge.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_merge.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_merge.h
 list_file_parse.h
@@ -147,6 +231,10 @@ list_file_parse.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/list_file_parse.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_parse.cxx
+pipe_parse_parse.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_parse.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pipe_parse_parse.h
 list_file_parse.h
@@ -176,6 +264,10 @@ log_builder.h
 list_norm.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/list_norm.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pre_read_blast.cxx
+pre_read_blast.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pre_read_blast.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/pre_read_blast.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
@@ -198,6 +290,10 @@ taxon_list_t.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/read_file.cxx
+read_file.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/read_file.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/read_file.h
 ../configure.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
@@ -207,6 +303,10 @@ mpi_read.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/mpi_read.h
 parse_read_blocks.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/parse_read_blocks.h
+string_section.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/string_section.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/string_section.cxx
 string_section.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/string_section.h
 
@@ -232,6 +332,26 @@ tbb_libs.h
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
 
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxa_list_of_lists_settings.h
+taxon_data.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_data.h
+../configure.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/../configure.h
+tbb_libs.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/tbb_libs.h
+log_builder.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
+taxon_list_t.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_list_t.h
+taxon_data.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_data.h
+taxa_buffer_list_settings.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxa_buffer_list_settings.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_data.cxx
+taxon_data.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_data.h
+
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_data.h
 types.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/types.h
@@ -241,6 +361,12 @@ algorithm
 -
 log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_list_t.cxx
+taxon_list_t.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_list_t.h
+taxa_list_of_lists_settings.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxa_list_of_lists_settings.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxon_list_t.h
 stdlib.h
@@ -285,6 +411,10 @@ log_builder.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/log_builder.h
 taxa_buffer_list_settings.h
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/taxa_buffer_list_settings.h
+
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/thread_reading.cxx
+thread_reading.h
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/thread_reading.h
 
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/thread_reading.h
 string_section.h
@@ -1166,6 +1296,8 @@ cmph.h
 list
 -
 
+log_builder/../blast_common/o_rel.h
+
 log_builder/../blast_common/types.h
 libs.h
 log_builder/../blast_common/libs.h
@@ -1175,6 +1307,12 @@ log_builder/../blast_common/o_rel.h
 log_builder/../blast_parsing/tsettings_input.h
 ../blast_common/types.h
 log_builder/../blast_parsing/../blast_common/types.h
+
+log_builder/../configure.h
+project_config.h
+log_builder/../project_config.h
+
+log_builder/../project_config.h
 
 log_builder/enum_logid.h
 

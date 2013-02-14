@@ -4,7 +4,7 @@
   parameter 'first_pass'
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:82: warning: Found unknown command `\parm'
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:82: warning: Unsupported xml/html tag <first_pass> found
-/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:81: warning: The following parameters of blast_parsing::init_values(cmd_list *cmd, const bool first_pass=true) are not documented:
+/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:81: warning: The following parameters of blast_parsing::init_values(cmd_list *cmd, const uint first_pass=0) are not documented:
   parameter 'first_pass'
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_parsing/blast_parsing.h:163: warning: argument 'comm' of command @param is not found in the argument list of blast_parsing::start_parsing(log_builder_t *log, bp_container_t &bp, int number_of_nodes)
 /home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/list_file_parse.h:223: warning: The following parameters of list_file_parse::get_interval(uint &list_length, uint *&thread_list, uint &current_position, uint &taxon_start, uint &taxon_end, bool is_ortholog, bool is_inpa, bool is_co_orth) are not documented:
