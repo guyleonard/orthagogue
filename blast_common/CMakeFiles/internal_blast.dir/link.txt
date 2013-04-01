@@ -1,2 +1,0 @@
-/usr/bin/ar cr libinternal_blast.a  CMakeFiles/internal_blast.dir/internal_blast.cxx.o
-/usr/bin/ranlib libinternal_blast.a

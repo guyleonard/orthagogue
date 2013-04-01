@@ -1,2 +1,0 @@
-/usr/bin/ar cr libtaxon_list.a  CMakeFiles/taxon_list.dir/taxon_list_t.cxx.o
-/usr/bin/ranlib libtaxon_list.a

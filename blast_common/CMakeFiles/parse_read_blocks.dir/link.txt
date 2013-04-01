@@ -1,2 +1,0 @@
-/usr/bin/ar cr libparse_read_blocks.a  CMakeFiles/parse_read_blocks.dir/parse_read_blocks.cxx.o
-/usr/bin/ranlib libparse_read_blocks.a

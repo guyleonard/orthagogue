@@ -1,2 +1,0 @@
-/usr/bin/ar cr libprotein_relation.a  CMakeFiles/protein_relation.dir/protein_relation.cxx.o
-/usr/bin/ranlib libprotein_relation.a

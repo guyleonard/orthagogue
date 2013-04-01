@@ -1,2 +1,0 @@
-/usr/bin/ar cr liborthAgogue-memory-lib.a  CMakeFiles/orthAgogue-memory-lib.dir/blast_memory.cxx.o
-/usr/bin/ranlib liborthAgogue-memory-lib.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr libtax_list.a  CMakeFiles/tax_list.dir/taxon_list_t.cxx.o
-/usr/bin/ranlib libtax_list.a

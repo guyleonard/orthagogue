@@ -2,12 +2,12 @@
 
 IF("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" GREATER 2.4)
   # Information for CMake 2.6 and above.
-  SET("blast_common_LIB_DEPENDS" "general;/usr/lib/libtbb.so;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;")
-  SET("blast_memory_LIB_DEPENDS" "general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
-  SET("orthaGogue-memory-lib_LIB_DEPENDS" "general;blast_memory;general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/local/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
+  SET("blast_common_LIB_DEPENDS" "general;/usr/lib/libtbb.so;general;/usr/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;")
+  SET("blast_memory_LIB_DEPENDS" "general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
+  SET("orthaGogue-memory-lib_LIB_DEPENDS" "general;blast_memory;general;/usr/lib/libtbb.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;general;/usr/lib/libcmph.so;general;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
 ELSE("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" GREATER 2.4)
   # Information for CMake 2.4 and lower.
-  SET("blast_common_LIB_DEPENDS" "/usr/lib/libtbb.so;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;")
-  SET("blast_memory_LIB_DEPENDS" "/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
-  SET("orthaGogue-memory-lib_LIB_DEPENDS" "blast_memory;/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/local/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
+  SET("blast_common_LIB_DEPENDS" "/usr/lib/libtbb.so;/usr/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;")
+  SET("blast_memory_LIB_DEPENDS" "/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
+  SET("orthaGogue-memory-lib_LIB_DEPENDS" "blast_memory;/usr/lib/libtbb.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/terminal_input/libcmd_line.a;/usr/lib/libcmph.so;/home/klatremus/Dokumenter/Work/code/orthAgogue/src/blast_common/../log_builder/liblog_builder.a;")
 ENDIF("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" GREATER 2.4)

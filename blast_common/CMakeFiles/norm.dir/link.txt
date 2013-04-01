@@ -1,2 +1,0 @@
-/usr/bin/ar cr libnorm.a  CMakeFiles/norm.dir/norm_t.cxx.o
-/usr/bin/ranlib libnorm.a

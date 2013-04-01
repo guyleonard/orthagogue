@@ -1,2 +1,0 @@
-/usr/bin/ar cr libblast_memory.a  CMakeFiles/blast_memory.dir/blast_memory.cxx.o
-/usr/bin/ranlib libblast_memory.a

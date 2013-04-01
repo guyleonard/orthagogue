@@ -1,2 +1,0 @@
-/usr/bin/ar cr liborthAgogue-parse-lib.a  CMakeFiles/orthAgogue-parse-lib.dir/blast_parsing.cxx.o
-/usr/bin/ranlib liborthAgogue-parse-lib.a

@@ -1,1 +1,0 @@
-/usr/bin/c++   -g    CMakeFiles/x_cmd_line.dir/main_cmd_line.cxx.o  -o x_cmd_line -rdynamic libcmd_line.a -ltbb 

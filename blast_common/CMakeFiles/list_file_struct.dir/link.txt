@@ -1,2 +1,0 @@
-/usr/bin/ar cr liblist_file_struct.a  CMakeFiles/list_file_struct.dir/list_file_struct.cxx.o
-/usr/bin/ranlib liblist_file_struct.a

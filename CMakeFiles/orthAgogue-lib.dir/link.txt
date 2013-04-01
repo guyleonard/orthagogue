@@ -1,2 +1,0 @@
-/usr/bin/ar cr liborthAgogue-lib.a  CMakeFiles/orthAgogue-lib.dir/orthAgogue_main.cxx.o
-/usr/bin/ranlib liborthAgogue-lib.a

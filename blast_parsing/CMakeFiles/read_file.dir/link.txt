@@ -1,2 +1,0 @@
-/usr/bin/ar cr libread_file.a  CMakeFiles/read_file.dir/read_file.cxx.o
-/usr/bin/ranlib libread_file.a

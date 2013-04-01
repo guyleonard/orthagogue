@@ -1,2 +1,0 @@
-/usr/bin/ar cr libpipe_norm.a  CMakeFiles/pipe_norm.dir/pipe_norm.cxx.o
-/usr/bin/ranlib libpipe_norm.a

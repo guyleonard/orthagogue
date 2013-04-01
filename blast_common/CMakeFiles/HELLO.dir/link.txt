@@ -1,2 +1,0 @@
-/usr/bin/ar cr libHELLO.a  CMakeFiles/HELLO.dir/taxon_list_t.cxx.o
-/usr/bin/ranlib libHELLO.a

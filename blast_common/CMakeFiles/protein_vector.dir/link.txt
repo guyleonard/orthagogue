@@ -1,2 +1,0 @@
-/usr/bin/ar cr libprotein_vector.a  CMakeFiles/protein_vector.dir/protein_vector.cxx.o
-/usr/bin/ranlib libprotein_vector.a

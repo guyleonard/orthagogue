@@ -1,2 +1,0 @@
-/usr/bin/ar cr libmodule_blast_parsing.a  CMakeFiles/module_blast_parsing.dir/module_blast_parsing.cxx.o
-/usr/bin/ranlib libmodule_blast_parsing.a

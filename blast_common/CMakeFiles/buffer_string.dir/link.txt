@@ -1,2 +1,0 @@
-/usr/bin/ar cr libbuffer_string.a  CMakeFiles/buffer_string.dir/buffer_string.cxx.o
-/usr/bin/ranlib libbuffer_string.a

@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/x_blast_common.dir/blast_common_main.cxx.o  -o x_blast_common -rdynamic libblast_common.a -ltbb libprot_list.a /usr/local/lib/libcmph.so ../log_builder/liblog_builder.a ../terminal_input/libcmd_argument.a ../terminal_input/libcmd_list.a -Wl,-rpath,/usr/local/lib 

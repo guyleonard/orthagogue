@@ -1,2 +1,0 @@
-/usr/bin/ar cr libindex.a  CMakeFiles/index.dir/index.cxx.o
-/usr/bin/ranlib libindex.a

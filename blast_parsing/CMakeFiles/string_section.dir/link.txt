@@ -1,2 +1,0 @@
-/usr/bin/ar cr libstring_section.a  CMakeFiles/string_section.dir/string_section.cxx.o
-/usr/bin/ranlib libstring_section.a

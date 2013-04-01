@@ -1,2 +1,0 @@
-/usr/bin/ar cr libpipe_write.a  CMakeFiles/pipe_write.dir/pipe_write.cxx.o
-/usr/bin/ranlib libpipe_write.a

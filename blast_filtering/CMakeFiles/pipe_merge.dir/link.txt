@@ -1,2 +1,0 @@
-/usr/bin/ar cr libpipe_merge.a  CMakeFiles/pipe_merge.dir/pipe_merge.cxx.o
-/usr/bin/ranlib libpipe_merge.a

@@ -1,2 +1,0 @@
-/usr/bin/ar cr libbucket_norm.a  CMakeFiles/bucket_norm.dir/bucket_norm.cxx.o
-/usr/bin/ranlib libbucket_norm.a

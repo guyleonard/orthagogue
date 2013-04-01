@@ -1,2 +1,0 @@
-/usr/bin/ar cr libtaxa.a  CMakeFiles/taxa.dir/taxa.cxx.o
-/usr/bin/ranlib libtaxa.a

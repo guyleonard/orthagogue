@@ -1,2 +1,0 @@
-/usr/bin/ar cr libblast_extractors.a  CMakeFiles/blast_extractors.dir/blast_extractors.cxx.o
-/usr/bin/ranlib libblast_extractors.a

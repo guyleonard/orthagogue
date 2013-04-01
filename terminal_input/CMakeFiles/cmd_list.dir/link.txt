@@ -1,2 +1,0 @@
-/usr/bin/ar cr libcmd_list.a  CMakeFiles/cmd_list.dir/cmd_list.cxx.o
-/usr/bin/ranlib libcmd_list.a

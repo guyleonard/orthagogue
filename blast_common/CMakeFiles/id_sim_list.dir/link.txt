@@ -1,2 +1,0 @@
-/usr/bin/ar cr libid_sim_list.a  CMakeFiles/id_sim_list.dir/id_simil_list.cxx.o
-/usr/bin/ranlib libid_sim_list.a

@@ -1,1 +1,0 @@
-/usr/bin/c++       CMakeFiles/x_internal_blast.dir/main.cxx.o  -o x_internal_blast -rdynamic libinternal.a -ltbb libprot_list.a /usr/local/lib/libcmph.so /home/klatremus/Dokumenter/Work/_orthaGogue_0.9.7.6/log_builder/liblog_builder.a /home/klatremus/Dokumenter/Work/_orthaGogue_0.9.7.6/cmd_line/libcmd_line.a -Wl,-rpath,/usr/local/lib 

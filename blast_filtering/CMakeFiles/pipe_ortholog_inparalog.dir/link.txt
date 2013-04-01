@@ -1,2 +1,0 @@
-/usr/bin/ar cr libpipe_ortholog_inparalog.a  CMakeFiles/pipe_ortholog_inparalog.dir/pipe_ortholog_inparalog.cxx.o
-/usr/bin/ranlib libpipe_ortholog_inparalog.a

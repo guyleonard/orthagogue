@@ -1,2 +1,0 @@
-/usr/bin/ar cr liborthaGogue-lib.a  CMakeFiles/orthaGogue-lib.dir/orthaGogue_main.cxx.o
-/usr/bin/ranlib liborthaGogue-lib.a
