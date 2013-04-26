@@ -35,7 +35,7 @@ void blast_parsing::get_input_settings(tsettings_input_t &obj) {
     @parm <first_pass> In order to get the correct order of the fields, i.e. "OUTPUT" before "OPERATIONAL".
  **/
 void blast_parsing::init_values(cmd_list *cmd, const uint first_pass) {
-  assert(first_pass < 2);
+  //  assert(first_pass < 2);
   class cmd_argument cl2; 
   if(first_pass==1) {
     cl2 = cmd_argument("Path to the BLAST output file (string, mandatory). The file must be in the tabular '-m 8' format (12 fields, one row per HSP (high scoring pair)", "i", "input", FOLDER_EXSISTING, &FILE_INPUT_NAME, "INPUT");

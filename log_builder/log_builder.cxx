@@ -87,7 +87,6 @@ void log_builder::end_measurement(logid_t type_id, uint pipe_id) {
   struct tms tmsend;
   clock_t end; long clktck = 0;
   if(list_pipes[type_id][pipe_id] != 0) { // Then increments:
-
   } else {
     if((end = times(&tmsend)) == -1) err_sys("times error"); // starting values
     if((clktck =  sysconf(_SC_CLK_TCK)) < 0) 	err_sys("sysconf error");
@@ -364,6 +363,8 @@ log_builder::log_builder(cmd_list *cmd) :
 #ifndef NDEBUG
   class cmd_argument cl2; 
   cl2 = cmd_argument("Show the log  after program termination", "L", "show_log", BOOLEAN, &silent_run, "DEBUG");
+  cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
+  cl2 = cmd_argument("Show the log during runtime", "Lr", "show_log_runtime", BOOLEAN, &verbose_as_it_goes, "DEBUG");
   cmd->add_cmd_argument(cl2);  // USE_EVERYREL_AS_ARRNORM_BASIS
 #endif
 }

@@ -80,8 +80,8 @@ LOG_FOLDER_NAME report_orthaGogue
 //! Set if asserts of the functions is to be compiled in.
 /* #undef assert_code */
 //! If set disables the extra asserts to be run during execution: practical if software behaves in an unexpected manner.
-//#define NDEBUG
-//#define NDEBUG 
+/* #undef NDEBUG */
+/* #undef NDEBUG */
 //! Includes extra parameters to the software for debugging purposes (named DEUBG_*).
 #define INCLUDE_CMD_DEBUG_PARAMS 
 
