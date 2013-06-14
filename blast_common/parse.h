@@ -68,7 +68,7 @@ class Parse{ // Used during parsing
   //! The taxa type of the outer
   char *taxon_out;
   /**@brief Sets the name given the input       **/
-  void setName(char *start_pos, char *&name, uint index, uint *array, uint array_size);
+  bool setName(char *start_pos, char *&name, uint index, uint *array, uint array_size);
   //! @return an indexed string based on a line from the blast file.
   uint *buildArray(char *start_pos, char *&pos_column_end, char seperator, uint &size_array, char *logical_end);
  public:

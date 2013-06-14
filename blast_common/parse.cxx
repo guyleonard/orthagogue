@@ -49,87 +49,91 @@ char *Parse::get_name_in() {
   } else return NULL;
 }
 /**@brief Sets the name given the input       **/
-void Parse::setName(char *start_pos, char *&name, uint index, uint *array, uint array_size) {
-  char *name_start_pos = start_pos;
-#ifndef NDEBUG
+bool Parse::setName(char *start_pos, char *&name, uint index, uint *array, uint array_size) {
+  char *name_start_pos = start_pos;  
   // Adds extra debugging information if the software breaks at this point:
   if(!((index == 0) || (array_size >= 2))) {
+  //#ifndef NDEBUG
     char string[100]; memset(string, '\0', 100);
     sprintf(string, "!!\tDid not find enough blocks in the labels (an identifier seperated the seperator given by the user) to process the given blasp-row; we got index(%u) and array_size(%u)", index, array_size);
-    log_builder::throw_warning(software_dependencies, __LINE__, __FILE__, __FUNCTION__,string);
-    assert((index == 0) || (array_size >= 2)); 
-  }
-#endif
 
-  if(index!=0) name_start_pos += array[index-1]+1;
-  uint name_length = array[index]; // to avoid the trailing chars
-  bool legal_format = true;
-  if(index!=0) {
-    if(name_length == 0) {
-      legal_format = false;
-    } else {
-      name_length -= array[index-1]-1;
-      if(index!=array_size-1) name_length -= 2;
+   log_builder::throw_warning(software_dependencies, __LINE__, __FILE__, __FUNCTION__,string);
+
+   if(name) {delete [] name;}
+   name = new char[1]; name[0] = '\0';
+   return false;
+  } else {
+    if(index!=0) name_start_pos += array[index-1]+1;
+    uint name_length = array[index]; // to avoid the trailing chars
+    bool legal_format = true;
+    if(index!=0) {
+      if(name_length == 0) {
+	legal_format = false;
+      } else {
+	name_length -= array[index-1]-1;
+	if(index!=array_size-1) name_length -= 2;
+      }
     }
-  }
-  if(index == 0) {
-    //! Could have a newline ('\n') residing in it: evaluates- and if neccessary removes:
-    uint new_length = name_length;
-    char *new_name_start_pos_start = name_start_pos;
-    uint cnt_changed = 0;
-    for(uint i = 0; i < (uint)name_length; i++) {
-      if(name_start_pos[i] == '\n') {new_name_start_pos_start++, cnt_changed++; new_length--;}
+    if(index == 0) {
+      //! Could have a newline ('\n') residing in it: evaluates- and if neccessary removes:
+      uint new_length = name_length;
+      char *new_name_start_pos_start = name_start_pos;
+      uint cnt_changed = 0;
+      for(uint i = 0; i < (uint)name_length; i++) {
+	if(name_start_pos[i] == '\n') {new_name_start_pos_start++, cnt_changed++; new_length--;}
+      }
+      assert(cnt_changed <= 1);
+      if(cnt_changed == 1) {
+	//! Updates, ie, 'removes' the newline found:
+	name_start_pos = new_name_start_pos_start;
+	name_length = new_length;
+      }
     }
-    assert(cnt_changed <= 1);
-    if(cnt_changed == 1) {
-      //! Updates, ie, 'removes' the newline found:
-      name_start_pos = new_name_start_pos_start;
-      name_length = new_length;
-    }
-  }
 #ifndef NDEBUG
-  //! Asserts that no '\n' is included in the string sent:
-  uint correct_pos = 0;
-  uint found_newline_at_index = UINT_MAX;
-  for(uint i = 0; i < (uint)name_length && (i == correct_pos); i++) {
-    if(name_start_pos[i] != '\n') correct_pos++;
-    else found_newline_at_index = i;
-  }
-  if(!(correct_pos == (uint)name_length)) {
-    fprintf(stderr, "!!\t found_newline_at_index(%u), given a total_length_of_string(%u), for '%s', at %s:%d\n",
-	    found_newline_at_index, name_length, name_start_pos, __FILE__, __LINE__);
+    //! Asserts that no '\n' is included in the string sent:
+    uint correct_pos = 0;
+    uint found_newline_at_index = UINT_MAX;
+    for(uint i = 0; i < (uint)name_length && (i == correct_pos); i++) {
+      if(name_start_pos[i] != '\n') correct_pos++;
+      else found_newline_at_index = i;
+    }
+    if(!(correct_pos == (uint)name_length)) {
+      fprintf(stderr, "!!\t found_newline_at_index(%u), given a total_length_of_string(%u), for '%s', at %s:%d\n",
+	      found_newline_at_index, name_length, name_start_pos, __FILE__, __LINE__);
 	    
-    assert(correct_pos == (uint)name_length);
-  } else assert(found_newline_at_index == UINT_MAX);
+      assert(correct_pos == (uint)name_length);
+    } else assert(found_newline_at_index == UINT_MAX);
 #endif
 
-  if(legal_format) {
-    // Rellocates if it's not long enough:
-    if(name && !(name_length < strlen(name))) {delete [] name; name = new char[name_length+1];}
-    else if(!name) {name = new char[name_length+1];}
-    assert(name);
-    name[name_length] = '\0'; // Sets the end of the string.
-    strncpy(name, name_start_pos, name_length);
-  } else {name = NULL;}
+    if(legal_format) {
+      // Rellocates if it's not long enough:
+      if(name && !(name_length < strlen(name))) {delete [] name; name = new char[name_length+1];}
+      else if(!name) {name = new char[name_length+1];}
+      assert(name);
+      name[name_length] = '\0'; // Sets the end of the string.
+      strncpy(name, name_start_pos, name_length);
+    } else {name = NULL;}
 
 #ifndef NDEBUG
-  if(name == NULL) {
-    fprintf(stdout, "!!\tName not set for index(%u) ", index);
-    if(legal_format && !(name_length < 20)) {
-      fprintf(stdout, "Error is caused by name beeing too long (%u chars), but the limit is < %d. As chars they are:", name_length, (int)SIZE_PROTEIN);
-      for(uint i = 0; i < name_length; i++) printf("[%u]=%c,\t", i, name_start_pos[i]); printf("\n");
+    if(name == NULL) {
+      fprintf(stdout, "!!\tName not set for index(%u) ", index);
+      if(legal_format && !(name_length < 20)) {
+	fprintf(stdout, "Error is caused by name beeing too long (%u chars), but the limit is < %d. As chars they are:", name_length, (int)SIZE_PROTEIN);
+	for(uint i = 0; i < name_length; i++) printf("[%u]=%c,\t", i, name_start_pos[i]); printf("\n");
+      }
+      fprintf(stdout, "!!\t at line %d in %s: ",  __LINE__, __FILE__);
+      for(uint i = 0; i < array_size; i++) printf("[%u]=%u\t", i, array[i]); printf("\n");
     }
-    fprintf(stdout, "!!\t at line %d in %s: ",  __LINE__, __FILE__);
-    for(uint i = 0; i < array_size; i++) printf("[%u]=%u\t", i, array[i]); printf("\n");
-  }
 #endif
+  }
+  return true;
 }
 
 //! Returns an indexed string based on a line from the blast file.
 uint *Parse::buildArray(char *start_pos, char *&pos_column_end, char seperator, uint &size_array, char *logical_end) {
   assert(start_pos);
   assert(logical_end);
-  size_array = 10; uint *array = new uint[size_array];
+  size_array = 13; uint *array = new uint[size_array];
   char *array_pos = start_pos;
   for(uint i = 0; i< size_array; i++) array[i] = 0;
   uint array_index = 0;
@@ -149,9 +153,14 @@ uint *Parse::buildArray(char *start_pos, char *&pos_column_end, char seperator, 
     }
     array_pos++;
   }
-  array[array_index++] = array_pos-start_pos-2; // sets the final length: '-1' to avoid the delimiter
-  size_array = array_index;
-  pos_column_end = array_pos;
+  if(array_index > 0) {
+    array[array_index++] =  array_pos-start_pos-2; // sets the final length: '-1' to avoid the delimiter
+    size_array = array_index;
+    pos_column_end = array_pos;
+  } else {
+    if(array) {delete [] array; array = NULL;}
+    size_array = 0;
+  }
   return array;
 }
 
@@ -170,32 +179,47 @@ char *Parse::set_names(const bool first_column, char *start_pos, uint index_name
   char *column_end = NULL;
   // The array below used holding an index of the protein label:
   uint *array = buildArray(start_pos, column_end, seperator, array_size, logical_end);
-  // array[index] corresponds to the length from the start of the given string
-  char *name = NULL, *taxon = NULL; // For a more standarised approach to validating the source.
-  if(first_column) {setName(start_pos, name_in, index_name, array, array_size); name = name_in;}
-  else             {setName(start_pos, name_out,index_name, array, array_size); name = name_out;}
-  if(name != NULL) {// data set for the protein name
-    if(first_column) {setName(start_pos, taxon_in,  index_taxon, array, array_size); taxon = taxon_in;}
-    else             {setName(start_pos, taxon_out, index_taxon, array, array_size); taxon = taxon_out;}
-    if(taxon != NULL) { // data set for the taxon
-      const uint size_last = array[array_size-1];
-      delete [] array; array = NULL;
-      return (start_pos + size_last) +3;
-    } 
+
+  if(array_size == 0) {
+    return NULL; // did not find any values
+  } else {
+    // array[index] corresponds to the length from the start of the given string
+    char *name = NULL, *taxon = NULL; // For a more standarised approach to validating the source.
+    if(first_column) {
+      const bool ok = setName(start_pos, name_in, index_name, array, array_size); 
+      if(ok && name_in) {name = name_in;}
+    } else {
+      const bool ok =  setName(start_pos, name_out,index_name, array, array_size); 
+      if(ok && name_out) {name = name_out;}
+    }
+    if(name != NULL) {// data set for the protein name
+      if(first_column) {
+	const bool ok =  setName(start_pos, taxon_in,  index_taxon, array, array_size); 
+	if(ok) {taxon = taxon_in;}
+      } else {
+	const bool ok =  setName(start_pos, taxon_out, index_taxon, array, array_size); 
+	if(ok) {taxon = taxon_out;}
+      }
+      if(taxon != NULL) { // data set for the taxon
+	const uint size_last = array[array_size-1];
+	delete [] array; array = NULL;
+	return (start_pos + size_last) +3;
+      } 
+#ifndef NDEBUG
+      else  {
+	printf("!!\ttaxon not found in column %d for protein_label(%s) with seperator(%c), index_name(%u), index_taxon(%u), taxon_in(%s), taxon_out(%s), name_in(%s), name_out(%s) at line %d in %s\n", first_column, name, seperator, index_name, index_taxon, taxon_in, taxon_out, name_in, name_out, __LINE__, __FILE__);
+      }
+#endif
+    }
 #ifndef NDEBUG
     else  {
-      printf("!!\ttaxon not found in column %d for protein_label(%s) with seperator(%c), index_name(%u), index_taxon(%u), taxon_in(%s), taxon_out(%s), name_in(%s), name_out(%s) at line %d in %s\n", first_column, name, seperator, index_name, index_taxon, taxon_in, taxon_out, name_in, name_out, __LINE__, __FILE__);
+      printf("!!\tprotein_label not found in column %d for protein_label(%s) with seperator(%c), index_name(%u), index_taxon(%u), taxon_in(%s), taxon_out(%s), name_in(%s), name_out(%s) at line %d in %s\n", first_column, name, seperator, index_name, index_taxon, taxon_in, taxon_out, name_in, name_out, __LINE__, __FILE__);
     }
-#endif
-  }
-#ifndef NDEBUG
-  else  {
-    printf("!!\tprotein_label not found in column %d for protein_label(%s) with seperator(%c), index_name(%u), index_taxon(%u), taxon_in(%s), taxon_out(%s), name_in(%s), name_out(%s) at line %d in %s\n", first_column, name, seperator, index_name, index_taxon, taxon_in, taxon_out, name_in, name_out, __LINE__, __FILE__);
-  }
   
 #endif
-  delete [] array; array = NULL;
-  return NULL;
+    delete [] array; array = NULL;
+    return NULL;
+  }
 }
 
 bool Parse::is_equal(char *str, c_id id) {

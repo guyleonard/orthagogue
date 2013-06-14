@@ -146,16 +146,16 @@ void read_file::verify_correctness_of_block(int myrank, char *start, char *buffe
       } 
       if(verbouse)       printf("\n|\n");
       if(sep_cnt!=2) {
-	fprintf(stderr, "!![myrank=%d]\tPlease verify the setting used launching this software. (Merging of blocks in blast_p failed: Found #(sperators)=%u, at %s:%d, originally called from %s:%d\n", myrank, (uint)sep_cnt, __FILE__, __LINE__, file_caller, line_caller);
+	fprintf(stderr, "!!\t Identified a difficult row in the blastp file; suggest you remove it, or fix the problems with the fields of it. To help identify details, we will now include details which should be forwarded to [oekseth@gmail.com]:\n[myrank=%d]\tPlease verify the setting used launching this software. (Merging of blocks in blast_p failed: Found #(sperators)=%u, at %s:%d, originally called from %s:%d\n", myrank, (uint)sep_cnt, __FILE__, __LINE__, file_caller, line_caller);
 	log_builder::throw_warning(software_error, __LINE__, __FILE__, __FUNCTION__, "handling of blastp-row failed");
-	if(true) { // TODO: Consider removing this block!
-	  char *line_end = strchr(line_start, '\n');
-	  assert(line_end);
-	  printf("[%d]\tThe line (length=%d) causing the trouble (sep_cnt = %d and seperator=%c) is:\n|\n", myrank, (int)(line_end-line_start), sep_cnt, seperator);
-	  while(line_start != line_end) {putchar(*line_start); line_start++;}
-	  printf("\n|\n");
-	}
-	assert(false);
+	//! Print the last line: important during debugging, ie..e understanding of the problem. Last tie it helped solving a problem was April 26, 2013.
+	char *line_end = strchr(line_start, '\n');
+	assert(line_end);
+	printf("[%d]\tThe line (length=%d) causing the trouble (sep_cnt = %d and seperator=%c) is:\n|\n", myrank, (int)(line_end-line_start), sep_cnt, seperator);
+	while(line_start != line_end) {putchar(*line_start); line_start++;}
+	printf("\n|\n");
+	fprintf(stderr, "\nSummary:\n-\t The error is either due to (a) bugs in the BLASTp-file you provided or (b) that the software did not handle it (ie, your input-file). The BLAST program has a tendency generating format-errors in its result. It's easy to chech if the error is due to your blast-input-file: if the above printed line is found in your BLAST-input, the BLAST-input is wrong. Else the problem is with this software. Please contact the developer at [oekseth@gmail.com] if you did not understand this error-message. The error-message was generated at [%s]:%s:%d.\n", __FUNCTION__, __FILE__, __LINE__);
+	//	assert(false); 
       }
       start = end +1;
     } else start = buffer_end;

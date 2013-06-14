@@ -265,16 +265,18 @@ loint pipe_parse_parse::assert_parsing(list_file_parse_t *data) {
 		   FILE_INPUT_NAME, __LINE__, __FUNCTION__, __FILE__);
     
     if(cnt_newlines_real != lines_in_file_found_last_read) { // Prints an informative error if they are not equal:
-      fprintf(stderr, "!!\tThe file contained %lld newlines, while our software only found %lld lines (difference = %lld) for file_input='%s'at line %d in method %s located in file %s. Please contact the developer at oekseth@gmail.com\n",
+      fprintf(stderr, "!!\tThe file contained %lld newlines, while our identified only found %lld lines (difference = %lld) for file_input='%s'at line %d in method %s located in file %s. Please contact the developer at oekseth@gmail.com\n",
 	      cnt_newlines_real, lines_in_file_found_last_read, (cnt_newlines_real - lines_in_file_found_last_read), FILE_INPUT_NAME, __LINE__, __FUNCTION__, __FILE__);
-      assert(cnt_newlines_real == lines_in_file_found_last_read);
+      //! Note: Is not a critical error, as MPI-blast often generates errnous files.
+      //      assert(cnt_newlines_real == lines_in_file_found_last_read);
     } 
 
     // Verifyies that the same number of liens are read in both the first- and the last read::
-    if(lines_in_file_found_first_read != lines_in_file_found_last_read) {
+    if(lines_in_file_found_first_read != lines_in_file_found_last_read) {      
       fprintf(stderr, "!!\t Read %llu lines in the first read, while %llu lines in the last read, implying a difference of %d lines: in total there should have been %llu newlines in the file.. (This error was found at line %d in method %s location in file %s.)\n",
 	      lines_in_file_found_first_read, lines_in_file_found_last_read, (int)(lines_in_file_found_first_read - lines_in_file_found_last_read), cnt_newlines, __LINE__, __FUNCTION__, __FILE__);
-      assert(lines_in_file_found_first_read == lines_in_file_found_last_read);
+      //! Note: Is not a critical error, as MPI-blast often generates errnous files.
+      // assert(lines_in_file_found_first_read == lines_in_file_found_last_read);
     }
 
     //
@@ -574,7 +576,20 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       assert(temp < logical_end);
       buffer_one = strchr(temp, '\n');       // update
     } else {
+      //! Builds the string to be written, i.e. to improve outpirnt when running mulitple threads.
+      char *start = buffer_one;      
       buffer_one = strchr(buffer_one, '\n'); // update
+      char *end = logical_end;      
+      if(buffer_one) {
+	end = buffer_one;
+      }
+      const int line_length = end - start;
+      assert(line_length > 0);
+      char *line_block = new char[line_length+1];
+      line_block[line_length] = '\0';
+      strncpy(line_block, start, line_length);
+      //! Print error message and continous
+      fprintf(stderr, "!!\t Identified a difficult row in the blastp file:\n%s\n!!\t Suggest you remove it, or fix the problems with the fields of it. To help identify details, we will now include details which should be forwarded to [oekseth@gmail.com]:\n(1)\tId of computer-thread is %d (set number of threads to '1' in order to improve detection of blast errors).\n(2)\tTo estimate the position in the blast-file, we look upon the number of rows found (before this errnous row was dtected) which is %d.\n(3)\tIf this message was not understood, please forward it to the developer at [oekseth@gamil.com], stating your version-number of this software and the code-location of its message, which is [%s]:%s:%d\n", line_block, my_id, (uint)lines_in_file_found, __FUNCTION__, __FILE__, __LINE__);
     }
     if(buffer_one && buffer_one < logical_end) buffer_one += 1;  // , jumping over the line end.
     else buffer_one = logical_end;
@@ -585,7 +600,7 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
     else remaining_chars = remaining_chars_current;
     p.free_memory();
   }
-  
+
   if(last_block_line != NULL) {
     const long int diff = (last_block_line - buffer_start);
     if(diff > 0) return diff-1;
@@ -624,7 +639,9 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
   if(FIRST_READ) {
     listProteins[my_id] = taxon_list::init();
     uint chars_processed_in_this_run = 0;
-    if(section->buffer_main_start && section->buffer_main_logical_end && (section->buffer_main_logical_end - section->buffer_main_start)) {chars_processed_in_this_run = (section->buffer_main_logical_end - section->buffer_main_start);}
+    if(section->buffer_main_start && section->buffer_main_logical_end && (section->buffer_main_logical_end - section->buffer_main_start)) {
+      chars_processed_in_this_run = (section->buffer_main_logical_end - section->buffer_main_start);
+    }
     long long int block_length = parse_blast_blocks_ids(my_id, section[0].buffer_main_start,  section->buffer_main_logical_end, lines_in_file_found_for_this_thread);
 #ifndef NDEBUG // If in debug mode, uses an alternative approach
     lines_in_file_found_for_this_thread = debug_get_cnt_newlines(section[0].buffer_main_start,  section->buffer_main_logical_end);    
@@ -683,9 +700,11 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       const loint temp_cnt_newlines_this_block = debug_get_cnt_newlines(section[0].buffer_main_start,  section->buffer_main_logical_end);
       // At some blocks, the newline is missing at the end, therefore a difference of '+1' is correct:
       if((lines_in_file_found_for_this_thread != temp_cnt_newlines_this_block) && (lines_in_file_found_for_this_thread != (temp_cnt_newlines_this_block+1)) ) {
-	printf("!!\t Prints the block, as lines_in_file_found_for_this_thread(%llu) != temp_cnt_newlines_this_block(%llu) in pipe_parse_parse.cxx at line %d\n", lines_in_file_found_for_this_thread, temp_cnt_newlines_this_block, __LINE__);
+	const int cnt_missing =  temp_cnt_newlines_this_block - lines_in_file_found_for_this_thread;
+	printf("!!\t Not all the lines (%d lines is not interpreted) of the blast-file was read, due to errors of the format; please investigage earlier error-messages. If this error is not understood, please contact the developer at [oekseth@gamil.com]. Error at [%s]:%s:%d\n", cnt_missing, __FUNCTION__, __FILE__, __LINE__);
+	//	printf("!!\t Prints the block, as lines_in_file_found_for_this_thread(%llu) != temp_cnt_newlines_this_block(%llu) in pipe_parse_parse.cxx at line %d\n", lines_in_file_found_for_this_thread, temp_cnt_newlines_this_block, __LINE__);
 	//      section->print_data_block();
-	assert(!((lines_in_file_found_for_this_thread != temp_cnt_newlines_this_block) && (lines_in_file_found_for_this_thread != (temp_cnt_newlines_this_block+1)) ));
+	//	assert(!((lines_in_file_found_for_this_thread != temp_cnt_newlines_this_block) && (lines_in_file_found_for_this_thread != (temp_cnt_newlines_this_block+1)) ));
       }
 #endif
       send_second = (parse_send_t*)malloc(sizeof(parse_send_t));
