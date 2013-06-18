@@ -39,12 +39,15 @@ include(files_for_libs.cmake)
 #
 # Attaches all the files to libraries iot make them accessable:
 #foreach(name ${CXXFILES_BLAST_FILTERING})
+add_library(blast_filtering_m STATIC ${CXXFILES_BLAST_FILTERING})
+
 foreach(name ${CXXFILES_BLAST_FILTERING_AS_LIBRARY})
   get_filename_component(comp "${name}" NAME_WE)
   add_library(${comp} STATIC ${name})
+  add_dependencies(blast_filtering_m ${comp})
 endforeach()
 
-add_library(blast_filtering_m STATIC ${CXXFILES_BLAST_FILTERING})
+
 # Builds the library paths:
 target_link_libraries(blast_filtering_m 
   ${TBB_LIBRARY} 

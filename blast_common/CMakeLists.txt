@@ -34,25 +34,48 @@ include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findloglibs.cmake)
 # Sets the specific files to be used for this build:
 include(files_for_libs.cmake)
 
+add_library(blast_common STATIC ${CXXFILES_BLAST_COMMON} ${CXXFILES_BLAST_COMMON_LOCAL} )
+
 #
 # Attaches all the files to libraries iot make them accessable:
+set(LIBS_COMMON  "")
+set(LIBS_COMMON_DEP  "")
 foreach(name ${CXXFILES_BLAST_COMMON})
   get_filename_component(comp "${name}" NAME_WE)
   add_library("${comp}" STATIC "${name}")
+  target_link_libraries(${comp} ${TBB_LIBRARY} ${CMPH_LIBS} ${LOG_LIBS})   
+  #! Update the set of libs which we make blast_common dependent upon:
+  set(LIBS_COMMON  ${LIBS_COMMON}   "lib${comp}.a")
+  #  message("${comp}  ${CMAKE_CURRENT_BINARY_DIR} \n")
+    add_dependencies(blast_common ${comp})
+  #                     PRE_BUILD | PRE_LINK | POST_BUILD
+#   add_custom_command(TARGET blast_common 
+#     POST_BUILD 
+#     COMMAND ${comp}
+#     ${CMAKE_CURRENT_BINARY_DIR} 
+# #    ${PROJECT_BINARY_DIR}
+#     )
 endforeach(name)
 
-add_library(blast_common STATIC ${CXXFILES_BLAST_COMMON} ${CXXFILES_BLAST_COMMON_LOCAL})
+
+
+#add_library(blast_common STATIC ${CXXFILES_BLAST_COMMON} ${CXXFILES_BLAST_COMMON_LOCAL} )
+
 
 target_link_libraries(blast_common ${TBB_LIBRARY}
   ${CMPH_LIBS}
   ${LOG_LIBS}
   ${CMD_LIBS}
+  ${LIBS_COMMON}
   ) 
 target_link_libraries(blast_memory ${TBB_LIBRARY}
   ${CMD_LIBS}
   ${CMPH_LIBS}
   ${LOG_LIBS}
+    ${LIBS_COMMON}
   ) 
+
+#message("\t Updates the set of lib files in the Ccmake file: ${LIBS_COMMON}\n")
 
 #
 # Builds the exectuable:

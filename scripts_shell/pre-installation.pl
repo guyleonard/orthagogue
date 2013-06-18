@@ -116,6 +116,11 @@ sub pre_install {
     system("./scripts_shell/doxy.bash;"); # Produces documentation.
 }
 
+sub remove_install_configuration {
+    my $FILE_ERR="err_orthAgogue.txt";
+    my @names= ("terminal_input", "blast_common", "log_builder", "blast_parsing", "blast_filtering", ".");
+    clean_files_make_cmake($FILE_ERR, @names);
+}
 
 
 sub install_at_path {
@@ -127,6 +132,7 @@ sub install_at_path {
     if($install_path ne ".") {chdir("../") or die "Can't chdir to ../ $!";}
     return $return_val;
 }
+
 #! Iterate the folders had coded in this function, building the script.
 sub install_software {
 # Sets some properties for the run (easier to use as template then):
@@ -162,12 +168,13 @@ sub install_software {
 	. "-D CPACK_PACKAGE_VERSION_PATCH=$v_paTch"
 	.  $cmd_add . " .";
     printf("Sends the following line to cmake:\n%s\n\n", $cmd);
-    my @names= ("terminal_input", "blast_common", "log_builder", "blast_parsing", "blast_filtering", ".");
+    my @names= ( ".");
+#    my @names= ("terminal_input", "blast_common", "log_builder", "blast_parsing", "blast_filtering", ".");
     clean_files_make_cmake($FILE_ERR, @names);
     
     # The order of the dependencies the "cmake" file has problems to handle:
-    install_at_path("terminal_input", $cmd);
-    install_at_path("blast_common", $cmd);
+#    install_at_path("terminal_input", $cmd);
+#    install_at_path("blast_common", $cmd);
     my $res_main = install_at_path(".", $cmd); 
     if(-s $FILE_ERR > 35) {
 	printf("--\tDid not complete the run as satsifactory as preferable. (Error-file contains data.) Writes the error for the root (locally found in the file named '%s'):\n", $FILE_ERR);
@@ -188,6 +195,8 @@ if($numArgs == 0) {
 
     if($ARGV[0] eq "pre_install") {
 	pre_install();
+    } elsif($ARGV[0] eq "remove_configs") {
+	remove_install_configuration();
     } else {
 	my $disk_buffer_size = 0;
 	my %args_list = ();

@@ -23,12 +23,12 @@ endif()
 
 #
 # Defines the other directories to include source from:
-set(FOLDERLOC_COMMON "${suffix}blast_common")
 set(FOLDERLOC_LOGGBUILDER "${suffix}log_builder")
 set(FOLDERLOC_TERMINAL "${suffix}terminal_input")
 include_directories("${PROJECT_BINARY_DIR}")
 include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_TERMINAL}) 
 include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_LOGGBUILDER})  
+set(FOLDERLOC_COMMON "${suffix}blast_common")
 include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_COMMON}) 
 include(${PROJECT_BINARY_DIR}/${suffix}config_files/cmph_paths.cmake)
 include(${PROJECT_BINARY_DIR}/${suffix}config_files/tbb_paths.cmake)
@@ -43,20 +43,25 @@ include(files_for_libs.cmake)
 #
 #! Attaches all the files to libraries iot make them accessable:
 #foreach(name ${CXXFILES_BLAST_PARSING})
+add_library(blast_parsing_m STATIC ${CXXFILES_BLAST_PARSING} )
 foreach(name ${CXXFILES_BLAST_PARSING_AS_LIBRARY})
   get_filename_component(comp "${name}" NAME_WE)
   add_library(${comp} STATIC ${name})
   target_link_libraries(${comp} ${TBB_LIBRARY}
   ${CMPH_LIBS}
     ${LIBS_COMMON} ${LOG_LIBS} ${CMPH_LIBS}) 
+  add_dependencies(blast_parsing_m ${comp})
 endforeach()
 
+message("---- in the blast_parsing cmkae file -- before add-libs\n")
 
-add_library(blast_parsing_m STATIC ${CXXFILES_BLAST_PARSING} )
+
 target_link_libraries(blast_parsing_m  
   ${TBB_LIBRARY}
   ${LIBS_COMMON}
   ) 
+
+message("---- in the blast_parsing cmkae file -- after add-libs\n")
 
 #
 # Builds the exectuable:

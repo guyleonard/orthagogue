@@ -45,11 +45,15 @@ else()
    endif()
 endif()
 
+link_directories("${PROJECT_SOURCE_DIR}/blast_common")
+
 #
 # Add the source:
 include_directories("${PROJECT_BINARY_DIR}")
 include_directories ("${PROJECT_SOURCE_DIR}/blast_common")
 add_subdirectory(blast_common) 
+set(FOLDERLOC_COMMON "blast_common")
+include(${PROJECT_BINARY_DIR}/cmake_scripts/get_blast_common_libs.cmake)
 include_directories ("${PROJECT_SOURCE_DIR}/log_builder")
 add_subdirectory(log_builder) 
 include_directories ("${PROJECT_SOURCE_DIR}/terminal_input")
@@ -60,21 +64,38 @@ include_directories ("${PROJECT_SOURCE_DIR}/blast_filtering")
 add_subdirectory(blast_filtering) 
 # Builds the executable- and linking library:
 add_executable(${EXECUTABLE_NAME} orthAgogue_main.cxx) # add the executable
+
+
+add_dependencies(${EXECUTABLE_NAME} taxa)
+add_dependencies(${EXECUTABLE_NAME} blast_common)
+add_dependencies(${EXECUTABLE_NAME} log_builder)
+add_dependencies(${EXECUTABLE_NAME} terminal_input)
+add_dependencies(${EXECUTABLE_NAME} blast_parsing)
+add_dependencies(${EXECUTABLE_NAME} blast_filtering)
+
 # find_library(TBB_LIBRARY tbb)
 # if(NOT EXISTS "${TBB_LIBRARY}") 
 #       message(FATAL_ERROR "The Intel's TBB library (path) not found in your systems library. Please first assure that the Intel's TBB library has been installed, and then give the developer Ole Kristian Ekseth an update if you found it, but the software didn't, as it would imply you are running an architecture- or update not tested. In sum, a gentle nod to oekseth@gmail.com would be velcomly received.")
 # endif()
 
+
 set(TURBO_LIB_NAME "${EXECUTABLE_NAME}-lib")
 add_library(${TURBO_LIB_NAME} STATIC orthAgogue_main.cxx orthAgogue_main.h)
+
+#message("... ${PROJECT_SOURCE_DIR}/blast_filtering")
+add_dependencies(${TURBO_LIB_NAME} log_builder)
+add_dependencies(${TURBO_LIB_NAME} blast_parsing)
+add_dependencies(${TURBO_LIB_NAME} blast_filtering)
+add_dependencies(${TURBO_LIB_NAME} blast_common)
+add_dependencies(${TURBO_LIB_NAME} taxa)
 
 #
 # Links the executable to the added (built) libraries:
 target_link_libraries(${EXECUTABLE_NAME} log_builder cmd_line blast_parsing_m blast_filtering_m blast_common 
-  ${CMPH_LIBS}  ${TBB_LIBRARY} 
+  ${CMPH_LIBS}  ${TBB_LIBRARY}     ${LIBS_COMMON}
   ) 
 target_link_libraries(${TURBO_LIB_NAME} log_builder cmd_line blast_parsing_m blast_filtering_m blast_common
- ${CMPH_LIBS}  ${TBB_LIBRARY} 
+ ${CMPH_LIBS}  ${TBB_LIBRARY}     ${LIBS_COMMON}
  ) 
 
 #
