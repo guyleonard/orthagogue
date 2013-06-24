@@ -64,7 +64,7 @@ sub control_files {
 
     # Gets the raw data in order to visually verify the process:
     my %blastp_raw = blast_parsing::get_raw_blastp_file($blastp_file, format_blastp_evalue);
-    my %blastp_average = blast_parsing::make_avarage(\%blastp, \%blastp_raw);
+    my %blastp_average = blast_parsing::make_avarage(\%blastp, \%blastp_raw, "turbo");
     if(!(defined \%blastp_raw)) { # Included to avoid garbage collection, wich sometimes happends.
 	printf("An error in the code: blast_raw hash not defined!\n");
     }
@@ -73,17 +73,25 @@ sub control_files {
 #
 # The ortholog procedure:
     my %inparalog_limit = ();
-    my %orthologs = get_orthologs::build_orthologs(\%blastp_average, \%inparalog_limit);
+    my %orthologs = get_orthologs::build_orthologs(\%blastp_average, \%inparalog_limit, \%blastp_raw);
     my $omcl_file_orthologs = $omcl_path . "orthologs.abc.sort";
     my $turbo_file_orthologs = $turbo_path . "orthologs.abc";
     my %omcl = ();
-    if($omcl_file_orthologs ne "") {%omcl = blast_parsing::get_hash($omcl_file_orthologs, format_abc);}
+    if($omcl_file_orthologs ne "") {
+	%omcl = blast_parsing::get_hash($omcl_file_orthologs, format_abc);
+	%omcl = blast_parsing::set_empty_values_with_recip_value(\%omcl);
+#    warn("Exits, due to test-mode --- remove this line.\n");   exit; # FIXME: remove this line!
+    }
     my %turbo= ();
     if($turbo_file_orthologs ne "") {%turbo = blast_parsing::get_hash($turbo_file_orthologs, format_abc);}
     get_orthologs::write_ortholog_control_file($control_output_folder, \%orthologs);
     get_orthologs::compare_orthologs($control_output_folder, \%orthologs, \%omcl, \%turbo, \%blastp_average, \%blastp_raw);
 
 #    
+
+#    warn("Exits, due to test-mode --- remove this line.\n");   exit; # FIXME: remove this line!
+    
+    
 # The inparalog procedure:
     if(!(defined \%inparalog_limit)) { # Included to avoid garbage collection, wich sometimes happends.
 	printf("An error in the code: inparalog_limit hash not defined!\n");
@@ -92,7 +100,10 @@ sub control_files {
     my $omcl_file_inparalogs = $omcl_path . "inparalogs.abc.sort";
     my $turbo_file_inparalogs = $turbo_path . "inparalogs.abc";
     my %omcl_inpa = ();
-    if($omcl_file_inparalogs ne "") {%omcl_inpa = blast_parsing::get_hash($omcl_file_inparalogs, format_abc);}
+    if($omcl_file_inparalogs ne "") {
+	%omcl_inpa = blast_parsing::get_hash($omcl_file_inparalogs, format_abc);
+	%omcl_inpa = blast_parsing::set_empty_values_with_recip_value(\%omcl_inpa);
+    }
     my %turbo_inpa= ();
     if($turbo_file_inparalogs ne "") {%turbo_inpa = blast_parsing::get_hash($turbo_file_inparalogs, format_abc);}
     get_inparalogs::write_inparalog_control_file($control_output_folder, \%inparalogs);
@@ -106,7 +117,10 @@ sub control_files {
     my $omcl_file_co_orthologs = $omcl_path . "coorthologs.abc.sort";
     my $turbo_file_co_orthologs = $turbo_path . "co_orthologs.abc";
     my %omcl_co_orthologs = ();
-    if($omcl_file_co_orthologs ne "") {%omcl_co_orthologs = blast_parsing::get_hash($omcl_file_co_orthologs, format_abc);}
+    if($omcl_file_co_orthologs ne "") {
+	%omcl_co_orthologs = blast_parsing::get_hash($omcl_file_co_orthologs, format_abc);
+	%omcl_co_orthologs = blast_parsing::set_empty_values_with_recip_value(\%omcl_co_orthologs);
+    }
     my %turbo_co_orthologs= ();
     if($turbo_file_co_orthologs ne "") {%turbo_co_orthologs = blast_parsing::get_hash($turbo_file_co_orthologs, format_abc);}
     get_co_orthologs::write_co_ortholog_control_file($control_output_folder, \%co_orthologs);
@@ -120,50 +134,48 @@ sub test_settings {
     my %tests; 
     if($USE_MPI == false) {
 	%tests = (
-		  simple =>  "./orthAgogue -i empirical_tests/goodProteins.blast"
- ,
- 		  simple_dbs_1024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 1024",
- 		  simple_dbs_10024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
- 		  simple_dbs_40024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 40024",
- 		  norm_all =>  "./orthAgogue -i empirical_tests/goodProteins.blast -A",
- 		  simple_e0 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -e 0",
- 		  simple_e40 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -e 40",
-		  simple_050 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 50",
-		  simple_090 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 90",
- 		  simple_nii =>  "./orthAgogue -i empirical_tests/goodProteins.blast -C",
- 		  simple_nss =>  "./orthAgogue -i empirical_tests/goodProteins.blast -b",
- 		  # simple_nn =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w",
- 		  # simple_nn_c2 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 2",
- 		  # simple_nn_c3 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 3",
- 		  # simple_nn_c4 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 4",
- 		  # simple_nn_c5 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 5"
-	    
-		  );
+	    simple =>  "./orthAgogue -i empirical_tests/goodProteins.blast",
+	    simple_dbs_1024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 1024",
+	    simple_dbs_10024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
+	    simple_dbs_40024 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -dbs 40024",
+	    norm_all =>  "./orthAgogue -i empirical_tests/goodProteins.blast -A",
+	    simple_e0 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -e 0",
+	    simple_e40 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -e 40",
+	    simple_050 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 50",
+	    simple_090 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -o 90",
+	    simple_nii =>  "./orthAgogue -i empirical_tests/goodProteins.blast -C",
+	    simple_nss =>  "./orthAgogue -i empirical_tests/goodProteins.blast -b",
+	    simple_nn =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w",
+	    simple_nn_c2 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 2",
+	    simple_nn_c3 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 3",
+	    simple_nn_c4 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 4",
+	    simple_nn_c5 =>  "./orthAgogue -i empirical_tests/goodProteins.blast -w -c 5"	    
+	    );
     } else {
 	%tests = (
- 		  simple =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 8000",
-  		  simple_dbs_1024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 1024",
-  		  simple_dbs_10024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
-  		  simple_dbs_40024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
-  		  norm_all =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -A -dbs 10024",
-  		  simple_e0 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -e 0 -dbs 10024",
-  		  simple_e40 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -e 40 -dbs 10024",
-  		  simple_050 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 50 -dbs 10024",
-  		  simple_090 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 90 -dbs 10024 ",
-  		  simple_nii =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -C -dbs 10024 ",
-  		  simple_nss =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -b -dbs 10024 ",
-  		  simple_nn =>    "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -dbs 10024 ",
-   		  simple_nn_c2 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 2 -dbs 10024 ",
-   		  simple_nn_c3 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 3 -dbs 10024 ",
-   		  simple_nn_c4 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 4 -dbs 10024 ",
-  		  simple_nn_c5 => "mpirun -np 4 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 5 -dbs 1024 ",		 
-
-  		  small_11M_nn_c1_b =>  "mpirun -np 1 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
-  		  small_11M_nn_c1_n1 => "mpirun -np 1 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
-  		  small_11M_nn_c1_n5 => "mpirun -np 5 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
- 		  small_11M_nn_c1 => "mpirun -np 3 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 5 -dbs 50024 -t 1 -p 0 -s '_'" 
-
-		  );
+	    simple =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 8000",
+	    simple_dbs_1024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 1024",
+	    simple_dbs_10024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
+	    simple_dbs_40024 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -dbs 10024",
+	    norm_all =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -A -dbs 10024",
+	    simple_e0 =>  "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -e 0 -dbs 10024",
+	    simple_e40 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -e 40 -dbs 10024",
+	    simple_050 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 50 -dbs 10024",
+	    simple_090 =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -o 90 -dbs 10024 ",
+	    simple_nii =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -C -dbs 10024 ",
+	    simple_nss =>   "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -b -dbs 10024 ",
+	    simple_nn =>    "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -dbs 10024 ",
+	    simple_nn_c2 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 2 -dbs 10024 ",
+	    simple_nn_c3 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 3 -dbs 10024 ",
+	    simple_nn_c4 => "mpirun -np 2 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 4 -dbs 10024 ",
+	    simple_nn_c5 => "mpirun -np 4 ./orthAgogue -i empirical_tests/goodProteins.blast -w -c 5 -dbs 1024 ",		 
+	    
+	    small_11M_nn_c1_b =>  "mpirun -np 1 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
+	    small_11M_nn_c1_n1 => "mpirun -np 1 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
+	    small_11M_nn_c1_n5 => "mpirun -np 5 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 1 -dbs 50024 -t 1 -p 0 -s '_'", 
+	    small_11M_nn_c1 => "mpirun -np 3 ./orthAgogue -i empirical_tests/file_11m.blast -w -c 5 -dbs 50024 -t 1 -p 0 -s '_'" 
+	    
+	    );
     }
     my $test_1_cmd = "./orthAgogue -i empirical_tests/goodProteins.blast";
     my $test_1_name = "test_1";
@@ -235,6 +247,7 @@ if($numArgs !=3 && $numArgs != 2 && $numArgs != 4) {
 		printf("Uses MPI\n");
 	    } 
 	}
+	#             blastp  ,  omcl       blast
 	control_files($ARGV[0], $ARGV[2], $ARGV[1]);
     } #$omcl_file, $turbo_file);   
     test_settings();

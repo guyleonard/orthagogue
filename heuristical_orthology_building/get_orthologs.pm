@@ -51,8 +51,8 @@ my $print_number_of_possible_orthologs = 0;
 
 #! Builds the orthologs
 sub build_orthologs {
-    my ($blastp_, $inparalog_limit_) = @_;
-    my %blastp = %$blastp_; my %inparalog_limit = %$inparalog_limit_;
+    my ($blastp_, $inparalog_limit_, $raw_list) = @_;
+    my %blastp = %$blastp_; my %inparalog_limit = %$inparalog_limit_; my %blastp_raw = %$raw_list;
     my %orthologs;
     my $cnt_poss_orth = 0;
     # Starts building a non-reciprocal ortholog set:    
@@ -89,10 +89,36 @@ sub build_orthologs {
 	    # For each taxon first find the best score:
 	    my $best_score = 0; 
 	    while (my ($out, $value) = each %{ $orthologs{$in}{$taxon_out} } ) {
+		
 		if(!(my $found = $orthologs{$out}{$taxon_in}{$in})) {
 		    delete($orthologs{$in}{$taxon_out}{$out});# Deletes the ortholog.
-		    } else {
+		    } else {			
 			$cnt_orthologs++;
+			#! For correctness, test that the ortholog is found in the blast-file
+			if(!defined($blastp_raw{$out}{$taxon_in}{$in})) {
+			    printf("\t \"$out\"-->\"$in\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", __PACKAGE__, __LINE__);
+			    exit; # TODO: remove this line!
+			}
+			# # FIXME: consider if below if-block is correct!
+			# if(!defined($blastp_raw{$out}{$taxon_out}{$in})) {
+			#     printf("...\t \"$out\"-->\"$in\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n",__PACKAGE__, __LINE__);
+			#     print("\t to test the values in the opposite direction, i.e. \"$taxon_in\" instead of \"$taxon_in\", we print these values:\n");
+			#     # printf("....%s...\n", $blastp_raw{$in}{$taxon_out}{$out});
+			#     # printf("....%s...\n", $blastp_raw{$out}{$taxon_in}{$in});
+			#     while (my ($out_b, $value_b) = each %{ $blastp_raw{$in}{$taxon_out}{$out} } ) {
+			# 	my @keys = split /\s+/, $value_b;
+			# 	printf("%10s\t%10s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%-10s\n",
+			# 	       $keys[0], $keys[1], $keys[2], $keys[3], $keys[4], $keys[5], $keys[6], $keys[7], $keys[8], $keys[9],
+			# 	       $keys[10], $keys[11]);
+			#     }
+			#     while (my ($out_b, $value_b) = each %{ $blastp_raw{$out}{$taxon_in}{$in} } ) {
+			# 	my @keys = split /\s+/, $value_b;
+			# 	printf("%10s\t%10s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\t%-10s\n",
+			# 	       $keys[0], $keys[1], $keys[2], $keys[3], $keys[4], $keys[5], $keys[6], $keys[7], $keys[8], $keys[9],
+			# 	       $keys[10], $keys[11]);
+			#     }
+			#     exit; # TODO: remove this line!
+			# }
 		    }
 	    }
 	}
@@ -118,8 +144,14 @@ sub print_preferences {
 	printf("'blastp_average_ not defined (1)
 \n");
     }
+    my %blastp_raw = %$blastp_raw_;
+
 #    my %blastp_average = %$blastp_average_;
 #    %blastp_raw = %$blastp_raw_;
+    #! Internal counters:
+    my $cnt_singleAlignment = 0;
+    my $cnt_mult_Alignment = 0;
+    my $cnt_noRecip = 0;
     # Remaps:
     my %outsNotFoundInList = %$outsNotFoundInList_; my %list = %$list_; my %blastp_average = %$blastp_average_;
     foreach my $in (keys %outsNotFoundInList) {
@@ -143,11 +175,32 @@ sub print_preferences {
 		while (my ($out, $value) = each %{ $outsNotFoundInList{$in}{$taxon_out} } ) {
 #		    printf("#\t %s:%f\n", $out, $value);#  printf(" (we found it having an value of %f) ", $blastp_average{$in}{$taxon_out}{$out});
 		    blast_parsing::print_raw_data_recip($blastp_raw_, $in, $out, $taxon_in, $taxon_out, $blastp_average_);
+		    #! Support evalaution of why the error occured:
+		    my $size_in = scalar(keys  %{ $blastp_raw{$in}{$taxon_out}{$out}});
+		    my $size_out = scalar(keys  %{ $blastp_raw{$out}{$taxon_in}{$in}});
+		    #! Teast the effect of non-defined values:
+		    if(($size_in == 0) && ($size_out != 0)) {
+			printf("noRecip_%s \t \"$out\"-->\"$in\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_noRecip++;
+		    } elsif(($size_in != 0) && ($size_out == 0)) {
+			printf("noRecip_%s \t \"$in\"-->\"$out\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_noRecip++;
+		    }		    
+		    if($size_out == 1) { # then only a single alignment, implicating that the practise of choosing an HSP should have nothing to say.
+			printf("singleAlignment_%s \t \"$in\"-->\"$out\" had a single match in both directions in the blastp-file, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_singleAlignment++;
+		    } else {
+			printf("mult_Alignment_%s \t \"$in\"-->\"$out\" had no hits in the blastp-file; had a single match in both directions, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_mult_Alignment++;
+		    }
+		    # if(!defined($blastp_raw{$out}{$taxon_in}{$in})) {
+		    # }
 		}
 		printf("-----------------------------------------\n");
 	    }
 	} 
     }
+    printf("DIFFERENCE_DESCRIPTION_%s\t The differences occured for situations for: $cnt_noRecip where reciprocal-values in blastp-file was not defined; $cnt_singleAlignment where only a single aligmentment was givne for the scores, i.e. merging of hits did not occure; $cnt_mult_Alignment for situations where the scores were summed <-- a more complex case than the first. This message was produced at %s:%d\n", $id_2_param,  __PACKAGE__, __LINE__);
 }
 #! Compares OrthoMcl and TurboOrtho to the control set:
 sub compare_controlOrthologs_to_other {
@@ -167,15 +220,18 @@ sub compare_controlOrthologs_to_other {
 
     if($FN_other > 0) {
 	printf("- The preferences are for the %d FN in %s are:\n", $FN_other, $other_id);	
-	print_preferences($other_id, \%orthologs_fn_other, $other_orthologs_, $blastp_average_, $blastp_raw_);
+	my $control = "FN__" . $other_id;
+	print_preferences($control, \%orthologs_fn_other, $other_orthologs_, $blastp_average_, $blastp_raw_);
     }
 #printf("- The preferences are for the %d false hits (FP) in %s are:\n", $FP_other, $other_id);	
     if($FP_other > 0) {
 	printf("- The preferences are for the %d false hits (FP) in %s are:\n", $FP_other, $other_id);	
-	print_preferences("control", \%orthologs_fp_other, $orthologs_, $blastp_average_, $blastp_raw_); 
+#	print_preferences("control", \%orthologs_fp_other, $other_orthologs_, $blastp_average_, $blastp_raw_); 
+	my $control = "FP__" . $other_id;
+	print_preferences($control, \%orthologs_fp_other, $orthologs_, $blastp_average_, $blastp_raw_); 
     }
     if($TP_other_1 != $TP_other_2) {
-	printf("- For %s, we observe that wile searsing for the FP we find %d TP or %d TP if searching for FP.\n", $other_id, $TP_other_1, $TP_other_2);
+	printf("- For %s, we observe that wile searcing for the FP we find %d TP or %d TP if searching for FP.\n", $other_id, $TP_other_1, $TP_other_2);
     }
     return ($TP_other_1, $FP_other, $FN_other);
 }

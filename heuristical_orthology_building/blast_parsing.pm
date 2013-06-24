@@ -178,7 +178,7 @@ sub print_blastp_data {
 #	printf("%s ", $keys[$i+1]);
     }
 }
-#! Prints the raw data found in the lbastp data for the given proteins.
+#! Prints the raw data found in the blastp data for the given proteins.
 sub print_raw_data_recip {
     my ($raw_list, $in, $out, $taxon_in, $taxon_out, $blastp_average_, $limit_in, $limit_out) = @_;
     my %blastp_raw = %$raw_list;
@@ -190,6 +190,7 @@ sub print_raw_data_recip {
     my $size_out = scalar(keys  %{ $blastp_raw{$out}{$taxon_in}{$in}});
     if($size_in > 0 || $size_out > 0) { 
 	# Note: In order to show the algortihms procedure, the 'transformed'- and averaged values are included on the each line, enclosed in paranthesis at the lines end.
+	my $cnt_in_out = 0;
 	while (my ($out_b, $value_b) = each %{ $blastp_raw{$in}{$taxon_out}{$out} } ) {
 	    my @keys = split /\s+/, $value_b;
 	    chomp($value_b); # Removes the newline char.
@@ -204,8 +205,10 @@ sub print_raw_data_recip {
 	    if(defined $limit_in && defined $limit_out) {printf(" limit_min(%f, %f)", $limit_out, $limit_in);}
 
 	    printf(")\n");
+	    $cnt_in_out++;
 	}
 #	printf("                                                                                                                                     ...................\n");
+	my $cnt_out_in = 0;
 	while (my ($out_b, $value_b) = each %{ $blastp_raw{$out}{$taxon_in}{$in} } ) {
 	    my @keys = split /\s+/, $value_b;
 	    chomp($value_b);
@@ -218,6 +221,12 @@ sub print_raw_data_recip {
 		   );
 	    if(defined $limit_in && defined $limit_out) {printf(" limit_min(%f, %f)", $limit_out, $limit_in);}
 	    printf(")\n");
+	    $cnt_out_in++;
+	}
+	if(($cnt_out_in == 0) && ($cnt_in_out != 0)) {
+	    printf("\t \"$out\"-->\"$in\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", __PACKAGE__, __LINE__);
+	} elsif(($cnt_out_in != 0) && ($cnt_in_out == 0)) {
+	    printf("\t \"$in\"-->\"$out\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", __PACKAGE__, __LINE__);
 	}
     }
 }
@@ -233,7 +242,7 @@ sub make_avarage {
 		if (!(my $found = $list{$out}{$taxon_in}{$in})) {
 	#	    delete($list{$in}{$taxon_out}{$out}); # Removes it.
 		    # The above line changed the result of the co-orthologs: If not fully understood, comment out the above, and comment in the below line:
-		    $average{$out}{$taxon_in}{$in} = $average{$in}{$taxon_out}{$out} = $value/2;
+	#	    $average{$out}{$taxon_in}{$in} = $average{$in}{$taxon_out}{$out} = $value/2;
 #$average{$out}{$taxon_in}{$in} = $value/2;
 		} else { # Sets the average:
 		    my $average_value = ($list{$out}{$taxon_in}{$in} + $list{$in}{$taxon_out}{$out})/2;;
@@ -243,6 +252,26 @@ sub make_avarage {
 	}
     }    
     return %average;
+}
+
+#! Set empty values in the set with the reciprocal value.
+sub set_empty_values_with_recip_value {
+    my ($list_) = @_;
+    my %list = %$list_; 
+    foreach my $in (keys %list) {
+	foreach my $taxon_out (keys %{ $list{$in} }) {
+	    while (my ($out, $value) = each %{ $list{$in}{$taxon_out} } ) {
+		my $taxon_in = blast_parsing::get_taxon_type($in);
+		if (!(my $found = $list{$out}{$taxon_in}{$in})) {
+#		    printf("\t $in-->$out, ($taxon_in, $taxon_out), at %s:%d\n", __PACKAGE__, __LINE__); # FIXME: remove!
+	#	    delete($list{$in}{$taxon_out}{$out}); # Removes it.
+		    # The above line changed the result of the co-orthologs: If not fully understood, comment out the above, and comment in the below line:
+		    $list{$out}{$taxon_in}{$in} = $list{$in}{$taxon_out}{$out};
+		}
+	    }
+	}
+    }    
+    return %list;
 }
 
 
@@ -285,7 +314,9 @@ sub get_hash {
 #	printf("---------------------\n");
 	}
 	close($file1) or die $!;
-    return %file1keys;
+	return %file1keys;
+    } else {
+	printf("\t Did not find file \"$file\" at %s:%d\n", __PACKAGE__, __LINE__);
     }
 #    printf("From the file %s found in total %d unique pairs\n", $file, $cnt_new_keys_inserted);
     return ();

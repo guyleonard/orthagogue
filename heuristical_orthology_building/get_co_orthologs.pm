@@ -149,8 +149,13 @@ sub print_preferences {
     if(!(defined $blastp_average_)) {
 	printf("Not defined the blastp_average_; an error\n");
     }
+    my %blastp_raw = %$blastp_raw_;
 #    my %blastp_average = %$blastp_average_;
 #    %blastp_raw = %$blastp_raw_;
+    #! Internal counters:
+    my $cnt_singleAlignment = 0;
+    my $cnt_mult_Alignment = 0;
+    my $cnt_noRecip = 0;
     # Remaps:
     my %outsNotFoundInList = %$outsNotFoundInList_; my %list = %$list_; my %blastp_average = %$blastp_average_;
     foreach my $in (keys %outsNotFoundInList) {
@@ -171,11 +176,30 @@ sub print_preferences {
 		printf("\t(NULL) The co_orthologs were not defined in %s, but should have been:\n", $id_2_param); 
 		while (my ($out, $value) = each %{ $outsNotFoundInList{$in}{$taxon_out} } ) {
 		    blast_parsing::print_raw_data_recip($blastp_raw_, $in, $out, $taxon_in, $taxon_out, $blastp_average_);
-		  }
+		    #! Support evalaution of why the error occured:
+		    my $size_in = scalar(keys  %{ $blastp_raw{$in}{$taxon_out}{$out}});
+		    my $size_out = scalar(keys  %{ $blastp_raw{$out}{$taxon_in}{$in}});
+		    #! Teast the effect of non-defined values:
+		    if(($size_in == 0) && ($size_out != 0)) {
+			printf("noRecip_%s \t \"$out\"-->\"$in\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_noRecip++;
+		    } elsif(($size_in != 0) && ($size_out == 0)) {
+			printf("noRecip_%s \t \"$in\"-->\"$out\" had no hits in the blastp-file for its reciprocal value, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_noRecip++;
+		    }		    
+		    if($size_out == 1) { # then only a single alignment, implicating that the practise of choosing an HSP should have nothing to say.
+			printf("singleAlignment_%s \t \"$in\"-->\"$out\" had a single match in both directions in the blastp-file, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_singleAlignment++;
+		    } else {
+			printf("mult_Alignment_%s \t \"$in\"-->\"$out\" had no hits in the blastp-file; had a single match in both directions, given taxon \"$taxon_in\", at %s:%d\n", $id_2_param, __PACKAGE__, __LINE__);
+			$cnt_mult_Alignment++;
+		    }
+		}
 		printf("-----------------------------------------\n");
 	    }
 	} 
     }
+    printf("DIFFERENCE_DESCRIPTION_%s\t The differences occured for situations for: $cnt_noRecip where reciprocal-values in blastp-file was not defined; $cnt_singleAlignment where only a single aligmentment was givne for the scores, i.e. merging of hits did not occure; $cnt_mult_Alignment for situations where the scores were summed <-- a more complex case than the first. This message was produced at %s:%d\n", $id_2_param,  __PACKAGE__, __LINE__);
 }
 
 #! Compares OrthoMcl and TurboOrtho to the control set:

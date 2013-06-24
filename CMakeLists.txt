@@ -1,4 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)    
+
 #
 # Define sources and executable
 if(NOT VERSION)
@@ -24,11 +25,24 @@ endif()
 set(SETTINGS_ADDED CACHE BOOL INTERNAL FORCE)
 
 #
+# Define the operating system:
+IF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+   # Mac OS X specific code
+   message("\n-----------------\n\t ${NAME} was designed for Linux. As you are now running on a Mac OS X operating system, which we have not tested, we suggest you either switch back to Lnux or give it a try, sending updates of what worked/did not work to the develper oekseth@gmail.com, updates which we will do our uthmost to include in our software.")
+##   SET(OperatingSystem "Mac OS X")
+ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+# IF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+#     # Linux specific code
+#     SET(OperatingSystem "Linux")
+# ENDIF(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+
+#
 # Define properties:
 include(config_files/project_properties.cmake)
 include(config_files/cmph_paths.cmake) 
 include(config_files/tbb_paths.cmake) 
 include(config_files/compilespec.cmake)
+
 
 #
 # Sets some default values:

@@ -88,7 +88,9 @@ if(DEFINED PACKAGE)
 # -------------------
     set(CPACK_GENERATOR "DEB")
     set(CPACK_DEBIAN_PACKAGE_MAINTAINER "Ole Kristian Ekseth <oekseth@gmail.com>, The Systems Biology Group, NTNU, Norway")
-    set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.1.1), libcmph0 (>=0.9), libtbb2 (>=4.0)")
+#    set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.1.1), libcmph0 (>=0.9), libtbb2 (>=3.0)")
+    #! Note: below is what we have on buntun
+#    set(CPACK_DEBIAN_PACKAGE_DEPENDS "libc6 (>= 2.4), libgcc1 (>= 1:4.1.1), libstdc++6 (>= 4.1.1), libcmph0 (>=0.9), libtbb2 (>=4.0)")
 #    set(CPACK_DEBIAN_PACKAGE_SECTION "liblo7")
 #SET(CPACK_DEBIAN_PACKAGE_DEPENDS "kdebase-runtime (>= 4:4.2.1), kdelibs5 (>= 4:4.2.1), libc6 (>= 2.1.3), libgcc1 (>= 1:4.1.1), libplasma3, libqt4-dbus (>= 4.5.0), libqtcore4 (>= 4.5.0), libqtgui4 (>= 4.5.0), libstdc++6 (>= 4.2.1)")
     set(CPACK_DEBIAN_PACKAGE_VERSION "${VERSION}-ubuntu")
