@@ -7,7 +7,7 @@
 **/
 
 //! The name of the directory this projet is build from.
-#define PROJECT_BINARY_DIR /home/klatremus/Dokumenter/Work/code/orthAgogue/src
+#define PROJECT_BINARY_DIR /norstore/user/olekrie/ortha_working/orthagogue
 #define FUNC_PROJECT_BINARY_DIR FUNCTION_NAME(PROJECT_BINARY_DIR) // The variable to be called.
 
 //! The major version number of the software:
@@ -80,8 +80,8 @@ LOG_FOLDER_NAME report_orthaGogue
 //! Set if asserts of the functions is to be compiled in.
 /* #undef assert_code */
 //! If set disables the extra asserts to be run during execution: practical if software behaves in an unexpected manner.
-//#define NDEBUG
-//#define NDEBUG 
+/* #undef NDEBUG */
+/* #undef NDEBUG */
 //! Includes extra parameters to the software for debugging purposes (named DEUBG_*).
 #define INCLUDE_CMD_DEBUG_PARAMS 
 

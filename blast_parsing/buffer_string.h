@@ -28,6 +28,7 @@
 #define buffer_string_h
 #include "types.h"
 #include "../configure.h"
+#include "log_builder.h"
 /**
    @class buffer_string
    @brief Holds a block of data read from a text file.

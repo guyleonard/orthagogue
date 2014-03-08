@@ -111,7 +111,16 @@ class rel {
   static rel *reserve_list(uint buffer_size) {
     assert(buffer_size != UINT_MAX);
     if(buffer_size) {
-      rel *ret = new rel[buffer_size]();
+      rel *ret = NULL;
+      try {ret = new rel[buffer_size]();} 
+      catch (std::exception& ba) {
+	fprintf(stderr, "!!\t Tried reserving a \"rel\" class set of length=%u, [%s]:%s:%d\n",  buffer_size,  __FUNCTION__, __FILE__, __LINE__);
+	if(!log_builder::catch_memory_exeception(buffer_size, __FUNCTION__, __FILE__, __LINE__, true)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
       log_builder::test_memory_condition_and_if_not_abort(ret !=NULL, __LINE__, __FILE__, __FUNCTION__);
       return ret;
     }
@@ -126,7 +135,17 @@ class rel {
   **/
   static rel *init_list(uint buffer_size, loint &buffer_in_mem_pos) {
     if(buffer_size > 0) {
-      rel *buffer = new rel[buffer_size]();
+      rel *buffer = NULL;
+      try {buffer = new rel[buffer_size]();} 
+      catch (std::exception& ba) {
+	fprintf(stderr, "!!\t Tried reserving a \"rel\" class set of length=%u, [%s]:%s:%d\n",  buffer_size,  __FUNCTION__, __FILE__, __LINE__);
+	if(!log_builder::catch_memory_exeception(buffer_size, __FUNCTION__, __FILE__, __LINE__, true)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
+      //      rel *buffer = new rel[buffer_size]();
       log_builder::test_memory_condition_and_if_not_abort(buffer!=NULL, __LINE__, __FILE__, __FUNCTION__);
       memset(buffer, 0, sizeof(rel)*buffer_size); // Prevents valgrind from complaining, as valgrind chekcs if its set (ie, initalized)
       for(loint i = 0; i<buffer_size; i++) buffer[i] = rel();

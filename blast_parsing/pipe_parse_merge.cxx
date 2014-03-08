@@ -181,7 +181,8 @@ void pipe_parse_merge::merge_overlap(overlap_t **overl) {
 #ifndef NDEBUG
 	const uint tot_elements = parse_data_this->getTotalLengthOfData() + parse_block_c->getTotalLengthOfData();;
 #endif
-	parse_data_this->merge_data(parse_block_c, protrel);
+	//	uint cnt_elements_in_all_relation_lists = 0; // FIXME: make  this a globally access bile object.
+	parse_data_this->merge_data(parse_block_c, protrel, cnt_elements_in_all_relation_lists);
 #ifndef NDEBUG
 	assert(!parse_block_c); // ARgument should be deleted at this point.
 	assert(tot_elements == (parse_data_this->getTotalLengthOfData())); // Asserts that we-we got the correct result.
@@ -203,7 +204,7 @@ pipe_parse_merge::pipe_parse_merge(uint disk_buffer_size, int _taxon_length, log
   tbb::filter(  /*seriel=*/ true), USE_BEST_BLAST_PAIR_SCORE(false), listTaxa(_listTaxa), FILE_BINARY_LOCATION(_binary_loc), 
   MAX_PARSE_BUFFER_SIZE(_MAX_PARSE_BUFFER_SIZE), log(_log)
   , taxon_length(_taxon_length), parse_data_this(NULL), listTaxon(NULL), next_block(0),
-  FIRST_READ(true), CPU_TOT(_CPU_TOT), max_sim_score(0.0), debug_sum_inserted_overlap_values(0), parseBlocks(NULL),
+  FIRST_READ(true), CPU_TOT(_CPU_TOT), cnt_elements_in_all_relation_lists(0), max_sim_score(0.0), debug_sum_inserted_overlap_values(0), parseBlocks(NULL),
   arrOverlap(NULL)  {
   parseBlocks = new parse_read_blocks(disk_buffer_size);
 }

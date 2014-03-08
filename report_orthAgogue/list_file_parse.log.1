@@ -1,9 +1,14 @@
-For the 2 taxa, the following data is set:
-taxon_length = 2
--	taxon[0][0]	-	taxon[spo][spo]	listIndex{used=5072}	listRelations{used=17434, in_file=0}	
--	taxon[0][1]	-	taxon[spo][sce]	listIndex{used=5071}	listRelations{used=20329, in_file=0}	
--	taxon[1][0]	-	taxon[sce][spo]	listIndex{used=6567}	listRelations{used=20359, in_file=0}	
--	taxon[1][1]	-	taxon[sce][sce]	listIndex{used=6568}	listRelations{used=30817, in_file=0}	
-- Has 2798016 B of memory =~ 0.00261 GB => fill_factor(0.7025) 
-- Detailes of memory consumption: (a) The file_parse<T>-object used as basis requuires each 32 B, (c) while a pointer to it requires 4 B, and (d) having in total 2 taxa, for 4 objects, (e) each of size 136 B, (f) a total estimated size = 544 B =~ 0.0000 GB
+For the 3 taxa, the following data is set:
+taxon_length = 3
+-	taxon[0][0]	-	taxon[sc][sc]	listIndex{used=10}	listRelations{used=28, in_file=0}	
+-	taxon[0][1]	-	taxon[sc][at]	listIndex{used=10}	listRelations{used=23, in_file=0}	
+-	taxon[0][2]	-	taxon[sc][hs]	listIndex{used=9}	listRelations{used=28, in_file=0}	
+-	taxon[1][0]	-	taxon[at][sc]	listIndex{used=14}	listRelations{used=23, in_file=0}	
+-	taxon[1][1]	-	taxon[at][at]	listIndex{used=14}	listRelations{used=26, in_file=0}	
+-	taxon[1][2]	-	taxon[at][hs]	listIndex{used=14}	listRelations{used=49, in_file=0}	
+-	taxon[2][0]	-	taxon[hs][sc]	listIndex{used=14}	listRelations{used=28, in_file=0}	
+-	taxon[2][1]	-	taxon[hs][at]	listIndex{used=15}	listRelations{used=48, in_file=0}	
+-	taxon[2][2]	-	taxon[hs][hs]	listIndex{used=15}	listRelations{used=82, in_file=0}	
+- Has 9452 B of memory =~ 0.00001 GB => fill_factor(0.9450) 
+- Detailes of memory consumption: (a) The file_parse<T>-object used as basis requuires each 32 B, (c) while a pointer to it requires 4 B, and (d) having in total 3 taxa, for 9 objects, (e) each of size 136 B, (f) a total estimated size = 1224 B =~ 0.0000 GB
 --	Used in total 0.00000000 seconds for this operation

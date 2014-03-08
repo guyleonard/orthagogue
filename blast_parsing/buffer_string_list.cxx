@@ -211,10 +211,27 @@ loint buffer_string_list::get_max_size_in_buff(char *f_name) {
   // TODO: Consider using different tipes of memory-usages-chemase (LOW, MEDIM, GREADY
     
   loint temp_size = (loint)(file_size * 1.05); // Estimates that approx 1/20 of the file size will be used reserving things in memory later on. 
-  char *temp = new char[temp_size];
+  char *temp = NULL;
+  try {temp = new char[temp_size];} 
+  catch (std::exception& ba) {
+    if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__)) {
+      fprintf(stderr, "!!\t An interesting error was discovered: %s."
+	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+	      "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+    }
+  }
+  //  char *temp = new char[temp_size];
   if(!temp) while(temp == NULL && (temp_size > 0)) {
       temp_size = (loint)(temp_size * 0.5);
-      temp = new char[temp_size];
+      //      temp = new char[temp_size];
+      try {temp = new char[temp_size];} 
+      catch (std::exception& ba) {
+	if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
     } 
   if(temp != NULL) delete [] temp;  
   return temp_size;

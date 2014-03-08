@@ -130,6 +130,12 @@ class index {
   //! Init a list of index
   static index *init_list(uint index_size) {
     index *list = (class index*)malloc(sizeof(index)*index_size);
+    if(!list) {
+      fprintf(stderr, "!!\t Was not able to allucate %u=%.3E elements of class \"index\", each with a size of %u B.\n"
+	      "-\t If this error is seen, please contact the developer at [oekseth@gmail.com].\n"
+	      "Error at [%s]:%s:%d\n", index_size, (float)index_size, (uint)sizeof(index), __FUNCTION__, __FILE__, __LINE__);
+      assert(list);
+    }
     for(uint i = 0; i<index_size; i++) list[i] = index();
     return list;
   }
@@ -159,6 +165,12 @@ class index {
   */
   static void enlarge(index *&buffer, uint new_size, uint start_pos, uint copy_length) {
     index *buff_temp = (index*)malloc(sizeof(index)*new_size);
+    if(!buff_temp) {
+      fprintf(stderr, "!!\t Was not able to allucate %u=%.3E elements of class \"index\", each with a size of %u B.\n"
+	      "-\t If this error is seen, please contact the developer at [oekseth@gmail.com].\n"
+	      "Error at [%s]:%s:%d\n", new_size, (float)new_size, (uint)sizeof(index), __FUNCTION__, __FILE__, __LINE__);
+      assert(buff_temp);
+    }
     uint pos = start_pos;     if(copy_length > 1) pos+=copy_length-1;
     for(uint i = pos; i < new_size; i++) buff_temp[i] = index();     // Initiates the buffer:
     // Inserts the buffer in the front of the file (i.e. in

@@ -267,8 +267,10 @@ void index_list::assert_merging_of_index_list(index_t *listArgument, const loint
 /**
    @brief Merges the input with this, without affecting the input.
    @author Ole Kristian Ekseth (oekseth)
+   @return true if the inserted buffer was a duplicate.
 **/
-void index_list::merge_buffers(index_list *listArgument, const loint listArgument_size, loint offset_to_add_data_to, taxa &taxa_obj) {
+bool index_list::merge_buffers(index_list *listArgument, const loint listArgument_size, loint offset_to_add_data_to, taxa &taxa_obj, taxa *taxa_obj_out) { 
+  bool is_duplicate_of_previous = false;
   assert(listArgument != NULL);
   if(!(listArgument_size <= (loint)index_reserved)) { // ensures that the size of the internal index is correct.
     enlarge(listArgument_size);  
@@ -281,19 +283,57 @@ void index_list::merge_buffers(index_list *listArgument, const loint listArgumen
   assert_merging_of_index_list(listArgument->get_list(), listArgument_size, offset_to_add_data_to, root_list_copy);
   //
   // iterates over the listArgumentuments proteins:
+  uint cnt_rows_with_error = 0;
   for(int i = 0; i< listArgument->get_index_reserved();i++) { 
+    static bool printed_warning = false;
+    static uint cnt_skipped = 0;
     if (listArgument->has_data(i)) {
       if(!has_data(i)) {
 	const loint pos_in_mem_for_rel = offset_to_add_data_to + listArgument->get_index_start(i);
 	set_start_pos(i, pos_in_mem_for_rel);
 	set_length(i, listArgument->get_length(i));
-      } else { // data already registred: enllistArgumentes the list:
-	//	const uint length_out_i = listArgument->get_length(i);
-	//	increment_length(i, length_out_i);
-	// TODO: when error is fixed, move printint to "log_builder"!
-	printf("!!\t Block wrongly added: Already have data for %s (ie, stated that: (a) \"this\" has data for the given protein, (b) \"argument\" also have data for the given protein and (c) \"does not like this observation\"): This option has been disregarded from the current release. Please contact the developer, as this error is caused by a too small setting of the disk-buffer-size (optionally to be set from the terminal if correct macro variable is included). This error is found at line %d in file %s. Please contact oekseth@gmail.com for questions.\n",
-	       taxa_obj.getArrKey(i), __LINE__, __FILE__);
-	assert(false);
+      } else {
+	bool is_an_error = true;
+// 	if(listArgument->get_length(i) == list[i].get_length()) {
+// 	  //! Then there might be an error in the parsing, which we intend fixing.
+// 	  // TODO: validate correctness of this operation.
+// 	  //s_duplicate_of_previous = true;
+// 	  is_an_error = false;
+// 	}
+	cnt_rows_with_error++;
+
+	if(is_an_error) {
+	  if(!printed_warning) { // data already registred: enllistArgumentes the list:
+	    
+	    //	const uint length_out_i = listArgument->get_length(i);
+	    //	increment_length(i, length_out_i);
+	    // TODO: when error is fixed, move printint to "log_builder"!
+	    printed_warning = true;
+	    fprintf(stderr, 
+		  "!!\t Seems like you used too many CPU's. Our first impression is that there is no gain in using the number of CPU's you are currently using. (There are other explanations, but this is the most commonplace.) This first impression (i.e. our latter thoughts) might be wrong. If you are puzzled about this message, it might be that me (i.e. orthAgogue) has made an error in my calculation. With the dabger of making you even more puzzled, here is my initial thoughts:\n"
+		    "(1)\t Try to reduce the number of CPUs used. For an extreme case, try setting either \"-c 1\" or \"--cpu 1\" (which are synonyms) on you command line orthAgogue execution.\n"
+		    "#\t If this does not make the day (i.e. the problem is persisting), then there might be an error in the merging of mapping-data for a protein (programmatically speaking when merging blocks of type \"index_t\").\n"
+		  "#\t An alternative explanation regards the merging procedure applied by your Blast file: if the BlastP did a correct concatenation, then protein\"%s\" should have received all relations for a given taxa(\"%s\"-->\"%s\"), before receiving the next combination of pairs. We hope the implications of this error is low, as we have kept the best high-scoring pair in question.\n"
+		    "-\t In brief, we expect the received protein block to cover all comparisons for \"%s\".\n"
+		    "-\t If this error is seen (and point (1) above did not bring the nuts), please contact the developer, either through our web-page, directly at [oekseth@gmail.com], or try:\n"
+		    "\t(2)\t(a)\t install the tool using the \"install_debug.bash\" script.\n"
+		    "\t(2)\t(b)\t Experiment with different values for parameter \"--disk_buffer_size\".\n"
+		    "\t(2)\t(c) If this does not solve the case, please report the error (to the 'issue' page of orthAgogue's homepage, or contact the developer directly at [oekseth@gmail.com]).\n"
+		    "This error was produced at [%s]:%s:%d\n",
+		    taxa_obj.getArrKey(i), taxa_obj.get_name(), taxa_obj_out->get_name(),
+		    taxa_obj.getArrKey(i), __FUNCTION__, __FILE__, __LINE__);
+	    //assert(false);
+	  } 
+	  cnt_skipped += (uint)listArgument->get_length(i);
+#ifndef NDEBUG
+	  assert(taxa_obj_out);      
+	  if(cnt_rows_with_error ==1) {fprintf(stderr,  "[cnt-skipped=%u]\t Received %u pairs for protein[%u]=\"%s\", given taxa(\"%s\"-->\"%s\"), though it already had %u elements. We therefore skip the %u proteins. Message at [%s]:%s:%d\n", 
+		cnt_skipped, (uint)listArgument->get_length(i), (uint)i, taxa_obj.getArrKey(i), 
+		  taxa_obj.get_name(), taxa_obj_out->get_name(), 
+		  (uint)list[i].get_length(), (uint)listArgument->get_length(i), 
+					       __FUNCTION__, __FILE__, __LINE__);}
+#endif
+	}
       }
       if(get_start_pos(i) > last_inserted) { 	// Sets the index whos last visited
 	last_inserted = get_start_pos(i);
@@ -301,10 +341,17 @@ void index_list::merge_buffers(index_list *listArgument, const loint listArgumen
       }
     } // end adding position data for protein 'i'
   }
-  // Verifies the merging:
-  assert_merging_of_index_list(listArgument->get_list(), listArgument_size, offset_to_add_data_to, root_list_copy);
-  // Updates the index:
-  if(index_used < listArgument->get_index_used()) index_used = listArgument->get_index_used();  
+  if(cnt_rows_with_error > 0) {
+    fprintf(stderr, "!!\t %u out ouf %u proteins had errors, at index_list:%d\n", cnt_rows_with_error, (uint)listArgument->get_index_reserved(), __LINE__); 
+  }
+
+  if(is_duplicate_of_previous == false) {
+    // Verifies the merging:
+    assert_merging_of_index_list(listArgument->get_list(), listArgument_size, offset_to_add_data_to, root_list_copy);
+    // Updates the index:
+    if(index_used < listArgument->get_index_used()) index_used = listArgument->get_index_used();  
+  }
+  return is_duplicate_of_previous;
 }
 
 
@@ -456,6 +503,7 @@ void index_list::close(index_list *&obj) {
 
 //! The constructor.
 index_list::index_list() :
+  //   printed_warning(false), 
   list(NULL), index_reserved(0),index_used(0), index_in_prev(-1),
   index_out_prev(-1)
 {
@@ -464,6 +512,7 @@ index_list::index_list() :
 
 //! The constructor.
 index_list::index_list(uint _index_reserved, uint _index_used) :
+//   printed_warning(false), 
   index_reserved(_index_reserved), index_used(_index_used),
   index_in_prev(-1), index_out_prev(-1)
 {

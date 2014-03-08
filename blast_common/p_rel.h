@@ -27,6 +27,7 @@
 #include "types.h"
 #include "tbb_libs.h"
 #include "../configure.h"
+#include "log_builder.h"
 /**
    @file
    @class p_rel
@@ -191,7 +192,16 @@ class p_rel {
   static p_rel *reserve_list(uint buffer_size) {
     assert(buffer_size != UINT_MAX);
     if(buffer_size) {
-      p_rel *ret = new p_rel[buffer_size]();
+      p_rel *ret = NULL; //new p_rel[buffer_size]();
+      try {ret = new p_rel[buffer_size]();} 
+      catch (std::exception& ba) {
+	fprintf(stderr, "!!\t Tried reserving a \"p_rel\" class set of length=%u, [%s]:%s:%d\n",  buffer_size,  __FUNCTION__, __FILE__, __LINE__);
+	if(!log_builder::catch_memory_exeception(buffer_size, __FUNCTION__, __FILE__, __LINE__, true)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
       return ret;
     }
     else return NULL;
@@ -205,7 +215,16 @@ class p_rel {
   **/
   static p_rel *init_list( loint buffer_size, loint &buffer_in_mem_pos) {
     if(buffer_size > 0) {
-      p_rel *buffer = new p_rel[buffer_size]();
+      p_rel *buffer = NULL; //new p_rel[buffer_size]();
+      try {buffer = new p_rel[buffer_size]();} 
+      catch (std::exception& ba) {
+	fprintf(stderr, "!!\t Tried reserving a \"p_rel\" class set of length=%llu, [%s]:%s:%d\n",  buffer_size,  __FUNCTION__, __FILE__, __LINE__);
+	if(!log_builder::catch_memory_exeception(buffer_size, __FUNCTION__, __FILE__, __LINE__, true)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
       memset(buffer, 0, sizeof(p_rel)*buffer_size); // Prevents valgrind from complaining, as valgrind chekcs if its set (ie, initalized)
       for(loint i = 0; i<buffer_size; i++) buffer[i] = p_rel(); // This line states if the default- or OrthoMcl procedure is to be followed.
       buffer_in_mem_pos = 0; // A strict way of ensuring that the psotion starts at the start of it

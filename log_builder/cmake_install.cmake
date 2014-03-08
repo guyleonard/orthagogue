@@ -1,4 +1,4 @@
-# Install script for directory: /home/klatremus/Dokumenter/Work/code/orthAgogue/src/log_builder
+# Install script for directory: /norstore/user/olekrie/ortha_working/orthagogue/log_builder
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ IF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     STRING(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   ELSE(BUILD_TYPE)
-    SET(CMAKE_INSTALL_CONFIG_NAME "Release")
+    SET(CMAKE_INSTALL_CONFIG_NAME "DEBUG")
   ENDIF(BUILD_TYPE)
   MESSAGE(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 ENDIF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
@@ -29,6 +29,6 @@ ENDIF(NOT CMAKE_INSTALL_COMPONENT)
 
 # Install shared libraries without execute permission?
 IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  SET(CMAKE_INSTALL_SO_NO_EXE "1")
+  SET(CMAKE_INSTALL_SO_NO_EXE "0")
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 

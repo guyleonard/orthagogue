@@ -216,7 +216,9 @@ static uint getTaxonIndex(taxa *listTaxa, uint world_key,uint taxon_length) {
 char *taxa::getArrKey(uint protein_id) {
   assert(arrKey);
   assert((int)protein_id < total_cnt);
-  return arrKey[protein_id];
+  if((int)protein_id < total_cnt) {
+    return arrKey[protein_id];
+  } else {return NULL;}
 }
 
 /**

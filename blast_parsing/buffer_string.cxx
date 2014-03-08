@@ -53,7 +53,17 @@ void buffer_string::get_string(loint &length, char *&str) {
   else if(second_buffer == NULL) {length =size_first_buffer; str = first_buffer; size_first_buffer = 0;}
   else { // Merge:
     length = size_first_buffer + size_second_buffer+1;
-    str = new char[length+1]; str[length] = '\0';
+    //    str = new char[length+1]; 
+    try {str = new char[length+1];} 
+    catch (std::exception& ba) {
+      fprintf(stderr, "!!\t Tried reserving a string of length=%llu = %llu + %llu = (\"size-first-buffer\" + \"size-second-buffer\" + 1), at [%s]:%s:%d\n",  length, size_first_buffer, size_second_buffer,  __FUNCTION__, __FILE__, __LINE__);
+      if(!log_builder::catch_memory_exeception(length+1, __FUNCTION__, __FILE__, __LINE__, true)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }   
+    //    str = new char[length+1]; str[length] = '\0';
     memcpy(str, first_buffer, size_first_buffer);
     str[size_first_buffer] = '\n'; 
     memcpy(str+size_first_buffer+1, second_buffer, size_second_buffer);

@@ -45,9 +45,13 @@
 #include <unistd.h>
 #include <signal.h>
 #include <sys/times.h>
+#include <typeinfo>       // operator typeid
+#include <exception>      // std::exception
+
 #include "enum_logid.h"
 #include "cmd_list.h"
 #include "../blast_parsing/tsettings_input.h"
+
 
 /**
    @brief Identifies the different warning types
@@ -119,7 +123,12 @@ class log_builder {
      # Include here for easy update of mulitple tests:
      @todo Consider moving this function to an own class handling such things.
   **/
-  static void compare_floats(float value1, float value2, loint size_of_original_components, const int line, const char *file, const char *description);
+  static void compare_floats(float value1, float value2, loint size_of_original_components, const int line, const char *file, const char *description); 
+  /**
+     @brief Catch errors in memory location.
+     @return true if the error was of type std::bad_alloc.
+  **/
+  static bool catch_memory_exeception(const long int allocated_memory_size, const char *function, const char *file, const int line, const bool print_warning = false); 
 
 
   //! Test if condidtion is passed.

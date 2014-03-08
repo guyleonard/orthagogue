@@ -328,7 +328,8 @@ list_file_parse_t *pipe_parse_parse::free_memory(list_file_parse_t *data) {
     if(data) {
       for(uint i = 0; i < (uint)CPU_TOT; i++) {
 	protein_relation empty = protein_relation();
-	data->merge_data(parseData[i], empty); // Note that the function called only has one parameter set
+	uint cnt_elements_in_all_relation_lists = 0;
+	data->merge_data(parseData[i], empty, cnt_elements_in_all_relation_lists); // Note that the function called only has one parameter set
 	list_file_parse<p_rel>::close(parseData[i], false); // Ensures safeness, but may be commented
       }
     } else { // input not set:
@@ -337,7 +338,8 @@ list_file_parse_t *pipe_parse_parse::free_memory(list_file_parse_t *data) {
 	  data = parseData[i];	  
 	} else { // When the first element is found, the rest follows the same standard procedure
 	  protein_relation empty = protein_relation();
-	  data->merge_data(parseData[i], empty); // Note that the function called only has one parameter set
+	  uint cnt_elements_in_all_relation_lists = 0;
+	  data->merge_data(parseData[i], empty, cnt_elements_in_all_relation_lists); // Note that the function called only has one parameter set
 	  list_file_parse<p_rel>::close(parseData[i], false); // Ensures safeness, but may be commented
 	}
       }

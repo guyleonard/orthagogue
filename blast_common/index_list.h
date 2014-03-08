@@ -46,6 +46,7 @@
 **/ 
 class index_list { 
  private:
+  //  bool printed_warning;
   index_t *list;
   int index_reserved;
   int index_used;
@@ -164,9 +165,10 @@ class index_list {
      @param <listArgument_size> The new size of of the object.
      @param <offset_to_add_data_to> The incremental offset to use when the starting position the index object refers are are updated.
      @param <taxa_obj> Used for improved error-message-generation.
+   @return true if the inserted buffer was a duplicate.
      @author Ole Kristian Ekseth (oekseth)
   **/
-  void merge_buffers(index_list *listArgument, const loint listArgument_size, loint offset_to_add_data_to, taxa &taxa_obj);
+  bool merge_buffers(index_list *listArgument, const loint listArgument_size, loint offset_to_add_data_to, taxa &taxa_obj, taxa *taxa_obj_out); 
   //! @return The total number of elements the lists represents in the file fo the span given.
   uint get_number_of_elements(uint start, uint end);
   /**     @return true is data is set for the params.  **/

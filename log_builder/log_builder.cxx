@@ -52,6 +52,31 @@ void log_builder::compare_floats(float value1, float value2, loint size_of_origi
 
 }
 
+
+  /**
+     @brief Catch errors in memory location.
+     @return true if the error was of type std::bad_alloc.
+  **/
+bool log_builder::catch_memory_exeception(const long int allocated_memory_size, const char *function, const char *file, const int line, const bool print_warning) {
+  try
+    {
+      throw;
+    }
+  catch (std::bad_alloc& ba) {
+    //   catch (const CMyException1 &e)
+    {
+      if(print_warning) {
+	fprintf(stderr, "!!\tWas not able to allocating data of '%ld' elements due to memory constraints. If this error was not as expected, please contact the developer at [oekseth@gmail.com], including the following information: Error generated at [%s]:%s:%d\n", allocated_memory_size, function, file, line);
+      //      cerr << "caught a CMyException: " << e << endl;
+      }
+      //      std::cerr << "bad_alloc caught: " << ba.what() << '\n';
+      return true;
+    }
+    return false;
+  }
+  }
+
+
 //! Initiates the above data containers to emptyness (or for the time the current).
 void log_builder::init_containers() {
   for(uint i = 0; i < logid_size; i++) {

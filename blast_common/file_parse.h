@@ -515,7 +515,8 @@ template<class T> class file_parse { // Relations in the file
      -# Merges the containers having the pairs. @attention The argument-data is placed at the end of 'this' container.
      @author Ole Kristian Ekseth (oekseth).
   **/
-  void merge_buffers(file_parse *parse_b_, taxa &taxa_obj) {
+  void merge_buffers(file_parse *parse_b_, taxa &taxa_obj, uint &cnt_elements_in_all_relation_lists, taxa *taxa_obj_out) {
+    assert(parse_b_);
     file_parse parse_b = *parse_b_;
     assert(listIndex);
     assert(listRelations);
@@ -528,17 +529,19 @@ template<class T> class file_parse { // Relations in the file
       // The starting position in the buffer to where the index shall start from:
       const loint offset_to_add_data_to =listRelations->get_imaginary_next_position_in_file();
       // 1. Merges the argument buffer with 'this' index (found in the input class)
-      listIndex->merge_buffers(parse_b.listIndex, parse_b.getLengthProteins(), offset_to_add_data_to, taxa_obj);
-      // 2. Merges the buffers containing the 'pairs' them self.
-      listRelations->merge_buffers(parse_b.listRelations);
-      const loint buffer_in_mem_pos = listRelations->get_buffer_in_mem_pos();
-      if(buffer_in_mem_pos>0) { // If the buffer contains data:
-	const loint rel_out = listRelations->get_ind_out(buffer_in_mem_pos-1);
-	listIndex->set_index_out_prev(rel_out);
-      }
+      const bool is_duplicate_of_previous = listIndex->merge_buffers(parse_b.listIndex, parse_b.getLengthProteins(), offset_to_add_data_to, taxa_obj, taxa_obj_out);
+      if(is_duplicate_of_previous == false) {
+	// 2. Merges the buffers containing the 'pairs' them self.
+	listRelations->merge_buffers(parse_b.listRelations, cnt_elements_in_all_relation_lists);
+	const loint buffer_in_mem_pos = listRelations->get_buffer_in_mem_pos();
+	if(buffer_in_mem_pos>0) { // If the buffer contains data:
+	  const loint rel_out = listRelations->get_ind_out(buffer_in_mem_pos-1);
+	  listIndex->set_index_out_prev(rel_out);
+	}
 #ifndef NDEBUG
-      assert(tot_elements == getTotalLengthOfData()); // The 'root' should now consist of the sum of elements.
+	assert(tot_elements == getTotalLengthOfData()); // The 'root' should now consist of the sum of elements.
 #endif
+      }
     }
   }
   //! Extending, and intializing, the buffer:

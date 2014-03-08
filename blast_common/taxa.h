@@ -86,7 +86,8 @@ class taxa{ //! Holds data used for each protein
   //! Holds the list of the overlap values for the proteins.
   uint *arrOverlap;
  public:
-  
+  //! @return the name
+  const char *get_name() const {return name;}
   //!  @return the list of overlap values for the given taxon:
   uint *getArrOverlap(){return arrOverlap;}
   

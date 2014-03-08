@@ -169,7 +169,16 @@ void read_file::verify_correctness_of_block(int myrank, char *start, char *buffe
 struct string_section *read_file::read_file_blocks(char seperator, uint &block_cnt, const bool perform_tests) {
   const long int buffer_in_mem_size = disk_buffer_size; 
   // Holding the grabbed strign
-  char *buffer_main = new char[buffer_in_mem_size+1];//new char[buffer_in_mem_size + 1];
+  char *buffer_main = NULL; 
+  try {buffer_main = new char[buffer_in_mem_size+1];}  
+  catch (std::exception& ba) {
+    if(!log_builder::catch_memory_exeception(buffer_in_mem_size+1, __FUNCTION__, __FILE__, __LINE__)) {
+      fprintf(stderr, "!!\t An interesting error was discovered: %s."
+	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+	      "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+    } 
+  }
+  //  char *buffer_main = new char[buffer_in_mem_size+1];//new char[buffer_in_mem_size + 1];
   log_builder::test_memory_condition_and_if_not_abort(buffer_main!=NULL, __LINE__, __FILE__, __FUNCTION__);
   char *buffer_main_start = buffer_main; // holds the start position
   char *buffer_main_end = buffer_main + buffer_in_mem_size; // holds the start position

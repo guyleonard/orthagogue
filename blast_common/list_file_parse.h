@@ -665,7 +665,8 @@ template<class T> class list_file_parse {
   **/
   void merge(list_file_parse *&data) {
     protein_relation prot = protein_relation();
-    merge_data(data, prot);
+    uint cnt_elements_in_all_relation_lists = 0;
+    merge_data(data, prot, cnt_elements_in_all_relation_lists);
   }
   
   /**
@@ -674,7 +675,7 @@ template<class T> class list_file_parse {
      @param <rel> Identifies poteintial merging zone.
      @remarks Deallocates the data given
   **/
-  void merge_data(list_file_parse *&data, struct protein_relation rel) {
+  void merge_data(list_file_parse *&data, struct protein_relation rel, uint &cnt_elements_in_all_relation_lists) {
     assert(data);
     if(list != NULL) {
 #ifndef NDEBUG
@@ -693,7 +694,7 @@ template<class T> class list_file_parse {
 		    //		  list[in][out].merge_buffers(data->getListElement(in, out)); 
 		  } //else
 		  file_parse<T> *element = data->getListElementRef(in, out);
-		  list[in][out]->merge_buffers(element, listTaxa[in]);
+		  list[in][out]->merge_buffers(element, listTaxa[in], cnt_elements_in_all_relation_lists, &listTaxa[out]);
 		} else {
 		  list[in][out]->finalize(false); // Remove any memory allocations first.
 		  data->steal_data_inverse(in, out, list[in][out]);
@@ -720,7 +721,7 @@ template<class T> class list_file_parse {
      @param <taxon_out> The id of the outmost taxon.
      @remarks Deallocates the data given
   **/
-  void merge_data(file_parse<T> *&data, uint taxon_in, uint taxon_out) {
+  void merge_data(file_parse<T> *&data, uint taxon_in, uint taxon_out, uint &cnt_elements_in_all_relation_lists) {
     if(data == NULL) return; // No data set for the argument.
     if(list && data) {
 #ifndef NDEBUG
@@ -746,7 +747,7 @@ template<class T> class list_file_parse {
       } else {
 	if(list[taxon_in][taxon_out]) {
 	  if(list[taxon_in][taxon_out]->has_data()) { 		  
-	    list[taxon_in][taxon_out]->merge_buffers(data, listTaxa[taxon_in]);
+	    list[taxon_in][taxon_out]->merge_buffers(data, listTaxa[taxon_in],cnt_elements_in_all_relation_lists, &listTaxa[taxon_out]);
 	  } else {
 	    list[taxon_in][taxon_out]->finalize(false); // Remove any memory allocations first.
 	    list[taxon_in][taxon_out] = data;

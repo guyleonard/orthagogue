@@ -396,8 +396,13 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
      @remarks Included in the code inline tests deactivated when the macro NDEBUG is set.
      @author Ole Kristian Ekseth (oekseth).
   **/
-  void merge_buffers(relations_list *&fs) {  
+  void merge_buffers(relations_list *&fs, uint &cnt_elements_in_all_relation_lists) {  
     assert(file_name);
+
+    const bool write_all_relations_to_file = false; // FIXME: set the intial 'value' to false, and then make 'this' accessible from the command line.
+
+    uint debug_cnt_elements_written_to_file = 0;
+
 #ifndef NDEBUG
       const uint this_length_old = getTotalLengthOfData();
       uint data_length = 0; if(fs) {data_length = fs->getTotalLengthOfData();}
@@ -414,7 +419,16 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
     if(fs && fs->get_buffer_in_mem_pos()) { // Merging requires some data to merge into:
       if(!(fs->get_file_cnt_structs())) {
 	const loint new_size = buffer_in_mem_pos + fs->get_buffer_in_mem_pos();
-	if(new_size > MAX_BUFFER_IN_MEM_SIZE) { // Then put both into the binary file:
+	cnt_elements_in_all_relation_lists += new_size;
+	if(
+	   write_all_relations_to_file || (
+					   //	   (new_size > MAX_BUFFER_IN_MEM_SIZE) && 
+					   (cnt_elements_in_all_relation_lists > MAX_BUFFER_IN_MEM_SIZE) && 
+					   //! We avoid writing 'too small' data-sets into files, as we regard the overhead as too high.
+					   (new_size > 1024)  // todo: validate the optimality of the '1024' threshold:
+					   )
+	   ) { // Then put both into the binary file:
+	  debug_cnt_elements_written_to_file = fs->get_buffer_in_mem_pos();
 	  T *buffer_one = NULL;
 	  if(list) buffer_one = list; //->get_buffer();
 	  T::write_buffers(file_name, buffer_one, buffer_in_mem_pos, fs->get_buffer(), fs->get_buffer_in_mem_pos(), file_cnt_structs);
@@ -424,10 +438,12 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
 	} else {
 #ifndef NDEBUG
 	  T *root_list_copy = T::reserve_list(buffer_in_mem_pos);
-	   loint root_list_copy_size = buffer_in_mem_pos;
+	  assert(root_list_copy);
+	  loint root_list_copy_size = buffer_in_mem_pos;
 	  for(uint i = 0; i < (uint)buffer_in_mem_pos; i++) root_list_copy[i].set_data(list[i]);
 #endif
 	  T::enlarge(list, buffer_in_mem_size, new_size, buffer_in_mem_pos);
+	  assert(list);
 	  if(buffer_in_mem_pos) {
 	    memcpy(list+buffer_in_mem_pos, fs->get_buffer(), sizeof(T)*fs->get_buffer_in_mem_pos());
 	  } else { // Enough taking all the data from the argument, as 'this' is not set.
@@ -508,7 +524,7 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
 	  buffer_in_mem_pos += fs->get_buffer_in_mem_pos();
 	}
       } else {
-	fprintf(stderr, "!!\tTried merging a structure of type relations_list into 'this' having data written to a file. As the files written are not unique with regard to id's, thiw will not work. If this functionality is of need, contact the developer at oekseth@gmail.com. This error is generated at line %d in file %s found in method %s\n", __LINE__, __FILE__, __FUNCTION__);
+	fprintf(stderr, "!!\tTried merging a structure of type relations_list into 'this' having data written to a file. As the files written are not unique with regard to id's, this will not work. If this functionality is of need, contact the developer at oekseth@gmail.com. This error is generated at line %d in file %s found in method %s\n", __LINE__, __FILE__, __FUNCTION__);
 	assert(false);
       }
     }
@@ -526,7 +542,14 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
       //! Verfies that the argument buffers is correctly understood:
       float sum_arg = 0;
       if(fs) {T *fs_list=fs->get_buffer(); for(loint i = 0; i < fs->get_buffer_in_mem_pos(); i++) {sum_arg += fs_list[i].get_distance();}}
-      assert(sum_arg_before == sum_arg); // To know that the list we got has not changed
+      if(!(sum_arg_before == sum_arg) && (debug_cnt_elements_written_to_file == 0)) {
+	fprintf(stderr, 
+		"!!\t In the merging, expected the sum of distances before (%f = %.3E) to match the sum of distances after (%f = %.3E)."
+		"-\t In this operation we wrote %u=%.3E  elements to memory.\n"
+		"-\t If this message was not understood, please contact the develoepr at [oekseth@gmail.com]\n"
+		"This warning was printed at [%s]:%s:%d\n",
+		sum_arg_before, sum_arg_before, sum_arg, sum_arg, debug_cnt_elements_written_to_file, (float)debug_cnt_elements_written_to_file, __FUNCTION__, __FILE__, __LINE__);
+	assert(sum_arg_before == sum_arg); // To know that the list we got has not changed
       assert(sum_arg == data_sum_of_distances);
       
       //! Verfies that the sum of inserts corresponds to our expectations:
@@ -537,6 +560,7 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
       const float inserted_sum = sum_before_merging + data_sum_of_distances;
       log_builder::compare_floats(actual_sum_inserted, inserted_sum, buffer_in_mem_pos, __LINE__, __FILE__, __FUNCTION__);
       log_builder::compare_floats(expected_sum_of_distances_after_merge, inserted_sum, buffer_in_mem_pos, __LINE__, __FILE__, __FUNCTION__);
+      }
 #endif
     }
   //! Inserts the protein inside the buffer and, if the buffersize is above the limit, writes the data to the file
@@ -701,7 +725,16 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
 
   //! @return the object of type T wihtout setting the file name, implying that it by def may not write object data to a binary file
   static relations_list<T> *init(bool USE_BEST_BLAST_PAIR_SCORE) {
-    relations_list<T> *obj = new relations_list<T>(USE_BEST_BLAST_PAIR_SCORE);
+    relations_list<T> *obj = NULL; // new relations_list<T>(USE_BEST_BLAST_PAIR_SCORE);
+    try {obj = new relations_list<T>(USE_BEST_BLAST_PAIR_SCORE);} 
+    catch (std::exception& ba) {
+      fprintf(stderr, "!!\t Tried reserving a \"relations_list<%s>\" class set of length=%u, [%s]:%s:%d\n",  T::get_class_name(),1, __FUNCTION__, __FILE__, __LINE__);
+      if(!log_builder::catch_memory_exeception(1, __FUNCTION__, __FILE__, __LINE__, true)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
     if(obj) return obj;
     else {
       fprintf(stderr, "!!\tUnable to reserve memory for the relations_list<T> object (ie. Probably implies that your memory chip is too small). If questions, please contact the developer at oekseth@gmail.com, giving the following information: This message was genereated at line %d in file %s, found in method %s\n", __LINE__, __FILE__, __FUNCTION__);

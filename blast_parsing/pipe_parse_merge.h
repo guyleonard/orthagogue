@@ -58,6 +58,7 @@ class pipe_parse_merge: public tbb::filter {
   int next_block;
   bool FIRST_READ;
   uint CPU_TOT; // Useful for logging.
+  uint cnt_elements_in_all_relation_lists;
  public:
   //! Update shte number of cpu's (for the logs).
   void set_cpu_number(uint c) {CPU_TOT = c;}
