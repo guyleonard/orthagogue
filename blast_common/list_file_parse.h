@@ -1598,7 +1598,15 @@ template<class T> class list_file_parse {
   static list_file_parse<T> ** init(uint size, prot_list *hashProtein, int _taxon_length, taxa_t* _listTaxa, char *_FILE_BINARY_LOCATION, bool USE_BEST_BLAST_PAIR_SCORE) {
     assert(_taxon_length >= 0);
     assert(size > 0);
-    list_file_parse **parseData = new list_file_parse<T>*[size]; //*)malloc(sizeof(list_file_parse*)*size); // Holds the refernces to the binary files created under the parsing
+    list_file_parse **parseData = NULL; // new list_file_parse<T>*[size]; //*)malloc(sizeof(list_file_parse*)*size); // Holds the refernces to the binary files created under the parsing
+    try {parseData = new list_file_parse<T>*[size];;} 
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(size, __FUNCTION__, __FILE__, __LINE__)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
     for(uint my_id = 0;my_id<size;my_id++)
       parseData[my_id] = new list_file_parse(my_id, hashProtein, _taxon_length, _listTaxa, _FILE_BINARY_LOCATION, USE_BEST_BLAST_PAIR_SCORE);
     return parseData;
