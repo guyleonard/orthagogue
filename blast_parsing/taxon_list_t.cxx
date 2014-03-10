@@ -671,6 +671,7 @@ void taxon_list::close(taxon_list *&obj) {
 //@argument: 'size' the size of the name-pointer to be (1) allocated, (2) Intialized to '\0'
 char* taxon_list::init_name(uint size) {
   char *name = new char[size]; //(char*)malloc(sizeof(char)*size);
+  assert(name);
   memset(name, '\0', size);
   return name;
 }

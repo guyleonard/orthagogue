@@ -47,7 +47,7 @@
 #include <sys/times.h>
 #include <typeinfo>       // operator typeid
 #include <exception>      // std::exception
-
+#include <tbb.h>
 #include "enum_logid.h"
 #include "cmd_list.h"
 #include "../blast_parsing/tsettings_input.h"
@@ -128,7 +128,7 @@ class log_builder {
      @brief Catch errors in memory location.
      @return true if the error was of type std::bad_alloc.
   **/
-  static bool catch_memory_exeception(const long int allocated_memory_size, const char *function, const char *file, const int line, const bool print_warning = false); 
+  static bool catch_memory_exeception(const long int allocated_memory_size, const char *function, const char *file, const int line, const bool print_warning = true); 
 
 
   //! Test if condidtion is passed.

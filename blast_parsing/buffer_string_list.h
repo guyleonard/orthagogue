@@ -39,6 +39,9 @@ class buffer_string_list {
   loint current_index;
   loint size_index;
   buffer_string *list;
+  loint cnt_not_inserted_first;
+  loint cnt_not_inserted_second;
+  loint cnt_non_covered_blocks;
   //! Merges two strings:
   void merge(char *&str, loint &length, char *&temp, loint temp_length);
  public:
@@ -50,6 +53,8 @@ class buffer_string_list {
     else if(list[current_index].has_main_block()) return true;
     else return false;
   }
+  //! @return the number of uncovered blocks
+  const loint get_cnt_non_covered_blocks() const {return cnt_non_covered_blocks;}
     /**
      @brief Generate (writes) a log file describing the details of the memory signature for strings stored in memory during parsing
      @remarks Useful for analyzing- and optimizing the memory allocation procedures.
@@ -81,12 +86,14 @@ class buffer_string_list {
   bool update(string_section_t *&section, loint block_length);
 
   //! Returns the length of the item inserted:
-  loint get_length_of_inserted_data(string_section_t *section) {
+  loint get_length_of_inserted_data(string_section_t *section) const {
     if(!section || !list) return 0;
     else {
       loint sum = 0;
       if((loint)(section->block_cnt+1) < size_index) sum = list[section->block_cnt+1].get_size_first_buffer();
       if((loint)(section->block_cnt) < size_index) sum += list[section->block_cnt].get_size_second_buffer();
+      sum += cnt_not_inserted_first + cnt_not_inserted_second;
+      //      printf("\t cnt-first-buffer=%llu, cnt-main-buffer=%llu, cnt-first-buffer-rest=%llu, cnt-main-buffer-rest=%llu, total=%llu, at buffer_string_list:%d\n", list[section->block_cnt+1].get_size_first_buffer(), list[section->block_cnt].get_size_second_buffer(), cnt_not_inserted_first, cnt_not_inserted_second, sum, __LINE__); // FIXME: remove this printf!
       return sum;
     }
     
@@ -98,6 +105,7 @@ class buffer_string_list {
       for(loint i = 0; i < size_index; i++) {
 	sum += list[i].get_size();
       }
+      sum += cnt_not_inserted_first + cnt_not_inserted_second;
       return sum;
     } else return 0;
   }

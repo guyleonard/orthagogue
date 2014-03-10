@@ -53,7 +53,16 @@ void pipe_parse_merge::initSecondRead(taxa_t *&_listTaxa, int _taxon_length, pro
     memset(arrOverlap[i], 0, sizeof(overlap_t)*hashProtein[i].getLength());
   }
   if(!MAX_PARSE_BUFFER_SIZE) MAX_PARSE_BUFFER_SIZE = 0;
-  parse_data_this = new list_file_parse<p_rel>(hashProtein, MAX_PARSE_BUFFER_SIZE, taxon_length, listTaxa, FILE_BINARY_LOCATION, USE_BEST_BLAST_PAIR_SCORE);
+  parse_data_this = NULL;
+    try {parse_data_this = new list_file_parse<p_rel>(hashProtein, MAX_PARSE_BUFFER_SIZE, taxon_length, listTaxa, FILE_BINARY_LOCATION, USE_BEST_BLAST_PAIR_SCORE);} 
+    catch (std::exception& ba) {
+    if(!log_builder::catch_memory_exeception(1, __FUNCTION__, __FILE__, __LINE__, false)) {
+      fprintf(stderr, "!!\t An interesting error was discovered: %s."
+	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+	      "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+    }
+  }
+  //  parse_data_this = new list_file_parse<p_rel>(hashProtein, MAX_PARSE_BUFFER_SIZE, taxon_length, listTaxa, FILE_BINARY_LOCATION, USE_BEST_BLAST_PAIR_SCORE);
   // TODO: include below when the new testfunction in list_file_parse is written.
   //  parse_data_this->set_max_buffer_size_based_on_file_properties(listTaxa, taxon_length);
   log_builder::test_memory_condition_and_if_not_abort((parse_data_this!= NULL), __LINE__, __FILE__, __FUNCTION__);
@@ -134,7 +143,6 @@ void pipe_parse_merge::merge_overlap(overlap_t **overl) {
 	next_block++;
 	parseBlocks->insert(parse->last_block_pos);
 	if(listTaxon!= NULL) {
-
 	  listTaxon->merge(parse->getTaxonList());
 	  parse->free_taxon_list_mem();
 	  //	  free(parse->getTaxonList());	
@@ -156,7 +164,7 @@ void pipe_parse_merge::merge_overlap(overlap_t **overl) {
 	      if(listTaxon!= NULL) {
 		listTaxon[0].merge(it->getTaxonList());      
 		free(parse->getTaxonList());	 
-	      } else listTaxon = parse->getTaxonList();
+	      } else {listTaxon = parse->getTaxonList();}
 	      del_ele.push(*it); // The data is extracted, deletes the data
 	      next_block++;
 	      changed = true;
@@ -181,7 +189,6 @@ void pipe_parse_merge::merge_overlap(overlap_t **overl) {
 #ifndef NDEBUG
 	const uint tot_elements = parse_data_this->getTotalLengthOfData() + parse_block_c->getTotalLengthOfData();;
 #endif
-	//	uint cnt_elements_in_all_relation_lists = 0; // FIXME: make  this a globally access bile object.
 	parse_data_this->merge_data(parse_block_c, protrel, cnt_elements_in_all_relation_lists);
 #ifndef NDEBUG
 	assert(!parse_block_c); // ARgument should be deleted at this point.

@@ -48,9 +48,9 @@ class buffer_string {
   //! @return the combined size of both blocks:
   loint get_size(){return (size_first_buffer + size_second_buffer);}
   //! @return the size of the first block
-  loint get_size_first_buffer(){return size_first_buffer;}
+  loint get_size_first_buffer() const {return size_first_buffer;}
   //! @return the size of the second block
-  loint get_size_second_buffer(){return size_second_buffer;}
+  loint get_size_second_buffer() const {return size_second_buffer;}
   //! Prints info about the object.
   void print_info();
   //! @return true if second char buffer is set.

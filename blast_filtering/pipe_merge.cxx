@@ -11,7 +11,10 @@ list_file_struct_t *pipe_merge::getFileStruct(int n_threads, bool MODE_PAIRWISE_
   }
 #else
   if(!fileStruct) {
-    fprintf(stderr, "!!\tThe object holding all the not-filtered-away pairs is empty, implying that no data remains after the filtering process. It this is not what you expected, contact the developer at oekseth@gmail.com, inkluding the following information: Message was generated at line %d in file %s, located in method %s.\n", __LINE__, __FILE__, __FUNCTION__);
+    fprintf(stderr, "!!\tThe object holding all the not-filtered-away pairs is empty, implying that no data remains after the filtering process.\n"
+	    "-\t If this message seems strange, please install the software in debug-mode: detailed summaries are found in the \"report_orthAgogue\" folder.\n"
+	    "-\t If you expected true results from running orthAgogue, please contact the developer at [oekseth@gmail.com].\n"
+	    "This message was generated at line %d in file %s, located in method %s.\n", __LINE__, __FILE__, __FUNCTION__);
     assert(fileStruct);
   }
 #endif

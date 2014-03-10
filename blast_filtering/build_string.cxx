@@ -85,7 +85,15 @@ mem_loc build_string::resize_if_to_large(mem_loc length_argument) {
   const mem_loc length_new = length_argument + length_curr; 
   if(length_new >= size_blast_all) {
     const mem_loc length_new_temp = length_new + 400;
-    char *temp = (char*)tbb::tbb_allocator<char>().allocate(sizeof(char)*length_new_temp);
+    char *temp = NULL; //(char*)tbb::tbb_allocator<char>().allocate(sizeof(char)*length_new_temp);
+    try {temp = (char*)tbb::tbb_allocator<char>().allocate(sizeof(char)*length_new_temp);} 
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(length_new_temp, __FUNCTION__, __FILE__, __LINE__)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
     std::memset(temp, ' ', length_new_temp);// the string with empty spaces
     memcpy(temp, logical_start, size_blast_all);
     tbb::tbb_allocator<char>().deallocate(logical_start, size_blast_all);

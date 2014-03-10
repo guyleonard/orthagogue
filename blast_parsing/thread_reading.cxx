@@ -33,8 +33,31 @@ loint thread_reading::get_file_pos(loint *arr, uint index) {
 }
 
 //! Allocates and initializes the read-buffer to be sent downward the pipe:
-void thread_reading::allocate(char *&buffer_main, char *&buffer_end, const loint buffer_in_mem_size) {
-  buffer_main = new char[buffer_in_mem_size+1];//new char[buffer_in_mem_size + 1];
+void thread_reading::allocate(char *&buffer_main, char *&buffer_end, const loint buffer_in_mem_size, char *caller_file, int caller_line) {
+  try {buffer_main = new char[buffer_in_mem_size+1];} 
+  catch (std::exception& ba) {
+    if(!log_builder::catch_memory_exeception(buffer_in_mem_size+1, __FUNCTION__, __FILE__, __LINE__)) {
+      fprintf(stderr, 
+	      "!!\t An interesting error was discovered: %s.\n"
+	      "-\t This function was called by %s:%d\n"
+	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+	      "Error generated at [%s]:%s:%d\n",  ba.what(), 
+	      caller_file, caller_line,
+	      __FUNCTION__, __FILE__, __LINE__);
+    } else {
+      fprintf(stderr, 
+	      "!!\t An interesting error was discovered: %s.\n"
+	      "-\t To fix this error, either (if possible) increase the accessible chunk of memory (available for orthAgogue), or decrese the disk buffer size (\"-dbs\" parameter.)\n"
+	      "-\t This function was called by %s:%d\n"
+	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+	      "Error generated at [%s]:%s:%d\n",  ba.what(), 
+	      caller_file, caller_line,
+	      __FUNCTION__, __FILE__, __LINE__);
+    }
+
+  }
+  assert(buffer_main);
+  //  buffer_main = new char[buffer_in_mem_size+1];//new char[buffer_in_mem_size + 1];
   buffer_end = buffer_main + buffer_in_mem_size;
   memset(buffer_main, '\0', buffer_in_mem_size+1);// Filling in the buffer:
 }
@@ -100,7 +123,7 @@ string_section *thread_reading::get_string_section(loint *file_position_array) {
   if(buffer_in_mem_size > 1) {
     if((file_input == NULL) || !feof(file_input)) {
       char *buffer_main = NULL, *buffer_end = NULL; // Holding the grabbed string.
-      allocate(buffer_main, buffer_end, buffer_in_mem_size+100); // Uses offset of '100' to ensure the holw line comes in.
+      allocate(buffer_main, buffer_end, buffer_in_mem_size+100, __FILE__, __LINE__); // Uses offset of '100' to ensure the holw line comes in.
       memset(buffer_main, '\0', buffer_in_mem_size+100); // TODO: consider removing this- and the 100-term above, and see if things workds as they should!
       bool at_end_of_file = read_file(file_position_array, buffer_main, buffer_in_mem_size);
       string_section_t *section = new string_section_t(buffer_main, buffer_main + buffer_in_mem_size, 

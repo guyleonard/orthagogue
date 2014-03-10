@@ -6,7 +6,16 @@ void buffer_string_list::merge(char *&str, loint &length, char *&temp, loint tem
   if(str== NULL) {str = temp, length = temp_length;}
   else { 
     const loint res_size = temp_length + length;
-    char *res = new char[res_size+1]; res[res_size] = '\0';
+    char *res = NULL; //new char[res_size+1]; 
+    try {res = new char[res_size+1];} 
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(res_size, __FUNCTION__, __FILE__, __LINE__)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
+    res[res_size] = '\0';
     assert(res);
     memcpy(res, str, length); memcpy(res + length, temp, temp_length);
     delete [] temp;
@@ -128,7 +137,15 @@ void buffer_string_list::get_string(loint &length, char *&str, loint &found_at_i
 bool buffer_string_list::get_section(string_section *&section, loint &found_at_index_pos) {
   char *str = NULL; loint length = 0; this->get_string(length, str, found_at_index_pos);
   if(str) {
-    section = new string_section(str, str + length, 0, 0, false);
+    try {section = new string_section(str, str + length, 0, 0, false);} 
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(1, __FUNCTION__, __FILE__, __LINE__)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
+    //    section = new string_section(str, str + length, 0, 0, false);
     return true;
   } else {
     return false;
@@ -170,21 +187,26 @@ void buffer_string_list::set_second_buffer(uint block_cnt, char *buff, loint siz
 **/
 bool buffer_string_list::update(string_section_t *&section, loint block_length) {
   assert(section);
-  if((loint)(section->block_cnt) < size_index) {      
+  const loint rest_length = section->get_data_length() - block_length;
+  if((loint)(section->block_cnt+1) < size_index) {      
+  //  if((loint)(section->block_cnt) < size_index) {      
     // 1. Updates the stringBuffer
-    if((loint)(section->block_cnt+1) < size_index) {      
-      loint rest_length = section->get_data_length() - block_length;
-      copy_into_first_buffer(section->block_cnt+1, section->buffer_main_start+block_length, rest_length);
-    } else {
-      fprintf(stderr, "!!\t\tan error occured in %s at line %d: index[%d] above the reserved limit(%d). If in debug mode, aborts. Else the last block of the file is not included in the filtering process. Therefore recomens you contact oekseth@gmail com providing this error message and infromation about the file size used.\n", __FILE__, __LINE__, (int)section->block_cnt+1,  (int)size_index); 
-      assert(false);
-    }
+    //
+    copy_into_first_buffer(section->block_cnt+1, section->buffer_main_start+block_length, rest_length);
+    // } else {
+    //   fprintf(stderr, "!!\t\t an error occured in %s at line %d: index[%d] above the reserved limit(%d). If in debug mode, aborts. Else the last block of the file is not included in the filtering process. Therefore recomens you contact oekseth@gmail com providing this error message and infromation about the file size used.\n", __FILE__, __LINE__, (int)section->block_cnt+1,  (int)size_index); 
+    //   assert(false);
+    // }
     set_second_buffer(section->block_cnt, section->buffer_main_start, block_length);
     // 2. Removes the pointer in the section avoiding memory to be cleared
     section->buffer_main_start = NULL;
     section->buffer_main_logical_end = NULL;
     return true;
   } else {
+    // TODO: validate that the [below] operation is thread-safe:
+    cnt_not_inserted_first  += rest_length; 
+    cnt_not_inserted_second += block_length;
+    cnt_non_covered_blocks++;
     return false;
   }
 }
@@ -214,7 +236,7 @@ loint buffer_string_list::get_max_size_in_buff(char *f_name) {
   char *temp = NULL;
   try {temp = new char[temp_size];} 
   catch (std::exception& ba) {
-    if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__)) {
+    if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__, false)) {
       fprintf(stderr, "!!\t An interesting error was discovered: %s."
 	      "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
 	      "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
@@ -226,7 +248,7 @@ loint buffer_string_list::get_max_size_in_buff(char *f_name) {
       //      temp = new char[temp_size];
       try {temp = new char[temp_size];} 
       catch (std::exception& ba) {
-	if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__)) {
+	if(!log_builder::catch_memory_exeception(temp_size, __FUNCTION__, __FILE__, __LINE__, false)) {
 	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
 		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
 		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
@@ -269,8 +291,10 @@ loint buffer_string_list::get_estimate_of_memory_blocks_cnt(uint disk_buffer_siz
   return 0;
 }
 
-buffer_string_list::buffer_string_list(loint size) : current_index(0), size_index(size) {
-  list = buffer_string::init(size);
+buffer_string_list::buffer_string_list(loint size) : current_index(0), size_index(size), list(NULL),
+						     cnt_not_inserted_first(0), cnt_not_inserted_second(0), cnt_non_covered_blocks(0)
+ {
+  list = buffer_string::init(size); 
   assert(list);
   //  fprintf(stderr, "in buffer_string_list at line %d initialised the 'list' with %d elements\n", __LINE__, (int)size);
 }

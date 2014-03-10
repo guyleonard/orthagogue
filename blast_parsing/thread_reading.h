@@ -63,7 +63,7 @@ class thread_reading {
   //! @return the starting position in the file for the given index:
   loint get_file_pos(loint *arr, uint index);
   //! Allocates and initializes the read-buffer to be sent downward the pipe:
-  void allocate(char *&buffer_main, char *&buffer_end, const loint buffer_in_mem_size);
+  void allocate(char *&buffer_main, char *&buffer_end, const loint buffer_in_mem_size, char *caller_file, int caller_line);
   /**! @return the length of the block, incrementing the poiner for the next read
      @Return: '0' if no more blocks to read
   */

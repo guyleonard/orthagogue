@@ -420,7 +420,17 @@ class p_rel {
   static p_rel* get_file_block(char *file_name, uint start_pos, uint length) {
     FILE *file = fopen(file_name, "rb");
     if (file != NULL) {
-      p_rel *buffer_ret =  tbb::tbb_allocator<p_rel>().allocate(length);
+      //      p_rel *buffer_ret =  tbb::tbb_allocator<p_rel>().allocate(length);
+      p_rel *buffer_ret =  NULL; //       tbb::tbb_allocator<rel>().allocate(length);
+      try {buffer_ret = tbb::tbb_allocator<p_rel>().allocate(length);} 
+      catch (std::exception& ba) {
+	if(!log_builder::catch_memory_exeception(length, __FUNCTION__, __FILE__, __LINE__)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
+
       if(buffer_ret != NULL) {
 	fseek(file, sizeof(p_rel)*start_pos, SEEK_SET);
 	memset(buffer_ret, 0, sizeof(p_rel)*length);

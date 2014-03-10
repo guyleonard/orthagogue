@@ -184,7 +184,15 @@ void insert_new_list(T *arr_new, const uint arr_new_size) {
   T* get_file_block(char *file_name, uint start_pos, uint length) {
     FILE *file = fopen(file_name, "rb");
     if (file != NULL) {
-      T *buffer_ret =  tbb::tbb_allocator<T>().allocate(length);
+      T *buffer_ret =  NULL; //tbb::tbb_allocator<T>().allocate(length);
+      try {buffer_ret = tbb::tbb_allocator<T>().allocate(length);} 
+      catch (std::exception& ba) {
+	if(!log_builder::catch_memory_exeception(length, __FUNCTION__, __FILE__, __LINE__)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
       if(buffer_ret != NULL) {
 	fseek(file, sizeof(T)*start_pos, SEEK_SET);
 	fread(buffer_ret, sizeof(T), length, file); // to avoid the intial char

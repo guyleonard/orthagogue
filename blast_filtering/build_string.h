@@ -22,6 +22,7 @@
 #include "../configure.h"
 #include "types.h"
 #include "tbb_libs.h"
+#include "log_builder.h"
 /**
    @file
    @class build_string

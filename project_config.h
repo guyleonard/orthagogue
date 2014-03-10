@@ -7,7 +7,7 @@
 **/
 
 //! The name of the directory this projet is build from.
-#define PROJECT_BINARY_DIR /norstore/user/olekrie/ortha_working/orthagogue
+#define PROJECT_BINARY_DIR /home/klatremus/Dokumenter/Work/code/orthAgogue/src
 #define FUNC_PROJECT_BINARY_DIR FUNCTION_NAME(PROJECT_BINARY_DIR) // The variable to be called.
 
 //! The major version number of the software:

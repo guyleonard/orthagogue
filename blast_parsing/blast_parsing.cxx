@@ -94,6 +94,7 @@ void blast_parsing::print_class_info() {
 //! Initiates the list for parsing input arguments fromthe terminal:
 cmd_list* blast_parsing::init_cmd_list(char *DEFAULT_OPTION_NAME, uint &DEFAULT_OPTION_NAME_COUNT, char *FILE_INPUT_NAME) {
   cmd_list *list = new cmd_list(DEFAULT_OPTION_NAME, DEFAULT_OPTION_NAME_COUNT, FILE_INPUT_NAME);
+  assert(list);
   return list;
 }
 
@@ -272,11 +273,12 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
     collect.parseBlocks->log_generate_memory_allocation_overview(CPU_TOT);
     parse.log_generate_memory_allocation_overview(CPU_TOT);
     //  const bool wait_reading_until_end = true; // TODO: ta en avgjorelse
+    //    printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
     collect.set_cpu_number(CPU_TOT);
     listTaxa =  parse.initSecondRead(listProteins, taxon_length, CPU_TOT); // sets the taxon length
     if(use_modified_blast_reading) parse.set_parse_blocks_second_read(collect.parseBlocks);
     else  {
-      create.rewind_file(collect.parseBlocks); // resets the file to the start position
+      create.rewind_file(collect.parseBlocks); // resets the file to the start position      
       pipe.add_filter(create);
     } 
     collect.initSecondRead(listTaxa, taxon_length, parse.hashProtein);
@@ -331,6 +333,7 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
       if(USE_EVERYREL_AS_ARRNORM_BASIS) {
 	if(!arrNorm) {
 	  arrNorm = new list_norm(taxon_length, max_input_value, PRINT_NORMALIXATION_BASIS, DEBUG_NORM);
+	  assert(arrNorm);
 	  arrNorm->set_DEBUG_NORM(DEBUG_NORM);
 	}
 	arrNorm->mpi_make_data_consistent_accross_nodes(comm, myrank, number_of_nodes);

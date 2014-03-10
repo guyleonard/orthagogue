@@ -29,6 +29,7 @@ include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_COMMON})
 include_directories (${PROJECT_BINARY_DIR}/${PATH_SUFFIX}) 
 include(${PROJECT_BINARY_DIR}/${suffix}config_files/cmph_paths.cmake)
 include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findcmdlinelibs.cmake)
+include(${PROJECT_BINARY_DIR}/${suffix}config_files/tbb_paths.cmake)
 
 #
 # Sets the specific files to be used for this build:
@@ -39,12 +40,13 @@ include(files_for_libs.cmake)
 foreach(name ${CXXFILES_LOGGBUILDER})
   get_filename_component(comp "${name}" NAME_WE)
   add_library(${comp} ${name})
+  target_link_libraries(${comp} ${TBB_LIBRARY})
 endforeach()
 
 #
 # Builds the exectuable:
 add_executable(x_log_builder log_builder_main.cxx)
-target_link_libraries(x_log_builder log_builder  ${CMD_LIBS})
+target_link_libraries(x_log_builder log_builder  ${TBB_LIBRARY} ${CMD_LIBS})
 
 #
 # If set prints the status of (important variable) configuration used:

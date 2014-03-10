@@ -266,4 +266,4 @@ The list have a total fill-factor of 0.998904, and a total memory consumption of
 [264]	Efm0265	 with a fill-factor of 0.999330 (2983 proteins used, 2985 proteins reserved)
 [265]	Efm0266	 with a fill-factor of 0.999315 (2917 proteins used, 2919 proteins reserved)
 [266]	Efm0267	 with a fill-factor of 0.999357 (3107 proteins used, 3109 proteins reserved)
---	Used in total 0.01000000 seconds for this operation
+--	Used in total 0.06000000 seconds for this operation

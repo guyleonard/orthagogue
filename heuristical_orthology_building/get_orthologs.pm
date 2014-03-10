@@ -208,7 +208,7 @@ sub compare_controlOrthologs_to_other {
     if(!(defined $blastp_raw_)) {
 	printf("ikke definert(1)---en feil\n");
     }
-    # The returned list holds those orthologs not found in orthaGogue's dataset:
+    # The returned list holds those orthologs not found in orthAgogue's dataset:
     my($TP_other_1, $FN_other, %orthologs_fn_other) = blast_filtering::get_difference($orthologs_, $other_orthologs_);
     # Writes the lacking orthologs to an own file:
     blast_filtering::write_control_file($control_output_folder, $name_fn_other, \%orthologs_fn_other);

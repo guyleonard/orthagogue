@@ -208,7 +208,7 @@ sub compare_control_co_orthologs_to_other {
     if(!(defined $blastp_raw_)) {
 	printf("Not defined the blastp_raw (1); an error\n");
     }
-    # The returned list holds those co_orthologs not found in orthaGogue's dataset:
+    # The returned list holds those co_orthologs not found in orthAgogue's dataset:
     my($TP_other_1, $FN_other, %co_orthologs_fn_other) = blast_filtering::get_difference($co_orthologs_, $other_co_orthologs_);
     # Writes the lacking co_orthologs to an own file:
     blast_filtering::write_control_file($control_output_folder, $name_fn_other, \%co_orthologs_fn_other);
@@ -244,7 +244,7 @@ sub compare_co_orthologs {
 # FIXME: Below!
  	($TP_omcl, $fp_omcl, $fn_omcl)    = compare_control_co_orthologs_to_other("omcl", $control_output_folder, $co_orthologs_, $omcl_co_orthologs_, $blastp_average_, $name_fp_omcl, $name_fn_omcl, $blastp_raw_);
      } else {printf("...\t(Does not make a control of the omcl results for the co_orthologs.)\n");}
-     printf("\n#\tCo_Orthologs: In sum we see that \n-\torthaGogue has %d TP, %d FP and %d FN, while\n-\tOrthoMcl has %d TP, %d FP and %d FN.\n", $TP_gogue, $fp_gogue, $fn_gogue, $TP_omcl, $fp_omcl, $fn_omcl);
+     printf("\n#\tCo_Orthologs: In sum we see that \n-\torthAgogue has %d TP, %d FP and %d FN, while\n-\tOrthoMcl has %d TP, %d FP and %d FN.\n", $TP_gogue, $fp_gogue, $fn_gogue, $TP_omcl, $fp_omcl, $fn_omcl);
 }
 
 

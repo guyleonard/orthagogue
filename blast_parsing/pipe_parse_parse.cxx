@@ -100,7 +100,7 @@ void pipe_parse_parse::initHashProtein(taxon_list_t *listProteins) {
     }
     free(sorted_ind_list); sorted_ind_list=NULL;
   } else {
-    fprintf(stderr, "!!\tOrthaGogue was not able to find any taxa listed in your input file. The authors guess it's incorrect column-numbering of the taxon- and protein location. In our software the first column is numbered '0'. For some users this is unusual, for others it's not.\n");
+    fprintf(stderr, "!!\torthAgogue was not able to find any taxa listed in your input file. The authors guess it's incorrect column-numbering of the taxon- and protein location. In our software the first column is numbered '0'. For some users this is unusual, for others it's not.\n");
     fprintf(stderr, "!!\t- A Tips is to verify the input specifications: During the parsing, the program assumed that the taxon column is '%d' and the protein column is '%d', with a '%c' as a seperator between the taxon and protein label. These settings were given for the file '%s'.\n", INDEX_IN_FILE_FOR_TAXON_NAME, INDEX_IN_FILE_FOR_PROTEIN_NAME, SEPERATOR, FILE_INPUT_NAME);
     fprintf(stderr, "!!\t- As this error is fatal, the program exits: We would be thankful if you contact the authors if this problem is seen, sending an email to %s.\n", "oekseth@gmail.com"); exit(2);
   }
@@ -109,8 +109,8 @@ void pipe_parse_parse::initHashProtein(taxon_list_t *listProteins) {
   if(stringBuffer) {
     const loint difference = (total_number_of_chars_processed_in_first_read - stringBuffer->getTotalLengthOfData());
     if(difference) {
-      fprintf(stderr, "..--\tOur first_parse found %lld chars, while %lld lines was stored in the stringBuffer (difference = %lld) for file_input='%s'at line %d in method %s located in file %s\n",
-	      total_number_of_chars_processed_in_first_read, stringBuffer->getTotalLengthOfData(), difference, FILE_INPUT_NAME, __LINE__, __FUNCTION__, __FILE__); 
+      fprintf(stderr, "..--\tOur first_parse found %lld chars (where %llu blocks were stored in-file), while %lld chars were stored in the stringBuffer (difference = %lld) for file_input='%s'at line %d in method %s located in file %s\n",
+	      total_number_of_chars_processed_in_first_read, stringBuffer->get_cnt_non_covered_blocks(), stringBuffer->getTotalLengthOfData(), difference, FILE_INPUT_NAME, __LINE__, __FUNCTION__, __FILE__); 
       assert(difference == 0);
     }
   }
@@ -587,7 +587,16 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       }
       const int line_length = end - start;
       assert(line_length > 0);
-      char *line_block = new char[line_length+1];
+
+      char *line_block = NULL;
+      try {line_block = new char[line_length+1];}
+      catch (std::exception& ba) {
+	if(!log_builder::catch_memory_exeception(line_length, __FUNCTION__, __FILE__, __LINE__, false)) {
+	  fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		  "The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		  "Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+      }
       line_block[line_length] = '\0';
       strncpy(line_block, start, line_length);
       //! Print error message and continous
@@ -662,7 +671,15 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       block_length = section->getStringLength();
     }
     
-    send_first = new parse_send_first(listProteins[my_id], /*the pos reading to=*/last_line_pos, section->block_cnt);
+    send_first = NULL;
+    try {send_first = new parse_send_first(listProteins[my_id], /*the pos reading to=*/last_line_pos, section->block_cnt);}
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(1, __FUNCTION__, __FILE__, __LINE__, false)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+	}
+    }
     //section->print_data_block(); printf("\n");// Uncomment if data is needed to visually verify.
     send_first->data_resides_in_mem = stringBuffer->update(section,(loint)block_length);   
 
@@ -672,10 +689,13 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       const loint size_in_buff = stringBuffer->get_length_of_inserted_data(section);
       if(size_in_buff == (chars_processed_in_this_run+1)) {chars_processed_in_this_run++;} 
       total_number_of_chars_processed_in_first_read += chars_processed_in_this_run;// Updates the overview of pairs processed.      
-      if(size_in_buff != chars_processed_in_this_run) {
-	printf("!!\tsize_in_buff(%llu) != chars_processed_in_this_run(%u) in pipe_parse_parse.cxx at line %d\n",
-	       size_in_buff, chars_processed_in_this_run, __LINE__);
-	assert(size_in_buff != chars_processed_in_this_run); 
+      if(send_first->data_resides_in_mem) 
+	{
+	  if(size_in_buff != chars_processed_in_this_run) {
+	  printf("!!\tsize_in_buff(%llu) != chars_processed_in_this_run(%u) in pipe_parse_parse.cxx at line %d\n",
+		 size_in_buff, chars_processed_in_this_run, __LINE__);
+	  assert(size_in_buff == chars_processed_in_this_run); 
+	}
       }
     }
 #endif
@@ -683,7 +703,6 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
     if(!section && parseBlocks) { // Then the data has not been read into the strcture.
       section = parseBlocks->get_string_section(my_id); 
     } 
-
     if(section != NULL) {
       // Initializes the specific data:
       // the list containing the  indexes for the protein strings:
@@ -694,10 +713,11 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
       assert(section->is_set());
       const uint tot_elements_start = parseData[my_id]->getTotalLengthOfData();
       uint chars_processed_in_this_run = 0;
-      if(section->buffer_main_start && section->buffer_main_logical_end && (section->buffer_main_logical_end - section->buffer_main_start)) {chars_processed_in_this_run = (section->buffer_main_logical_end - section->buffer_main_start);}
+      if(section->buffer_main_start && section->buffer_main_logical_end && (section->buffer_main_logical_end - section->buffer_main_start)) {
+	chars_processed_in_this_run = (section->buffer_main_logical_end - section->buffer_main_start);
+      }
       loint this_total_number_of_pairs_overlapping = 0;
       const uint cnt_inserted_pairs = parse_blast_blocks_data(my_id, section->buffer_main_start,  section->buffer_main_logical_end, lines_in_file_found_for_this_thread, this_total_number_of_pairs_overlapping);
-
 #ifndef NDEBUG // If in debug mode, uses an alternative approach
       const loint temp_cnt_newlines_this_block = debug_get_cnt_newlines(section[0].buffer_main_start,  section->buffer_main_logical_end);
       // At some blocks, the newline is missing at the end, therefore a difference of '+1' is correct:
@@ -716,7 +736,6 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
 				first_protein[my_id],
 				proteinVector[my_id].arrOverlap, max_sim_value[my_id], taxon_length, found_at_index_pos);
       assert((tot_elements - tot_elements_start) == cnt_inserted_pairs);
-
       if(parse_struct_send) { // The sum must be the same:
 	assert(tot_elements == (parseData[my_id]->getTotalLengthOfData() + parse_struct_send->getTotalLengthOfData()));
       } else {assert(tot_elements == parseData[my_id]->getTotalLengthOfData());}
@@ -820,7 +839,16 @@ pipe_parse_parse::pipe_parse_parse(loint _reading_file_start_position, loint _re
   parseData = NULL;
   if(FILE_INPUT_NAME) {
     const loint max_block_cnt = buffer_string_list::get_estimate_of_memory_blocks_cnt(_disk_buffer_size, FILE_INPUT_NAME);
-    stringBuffer = new buffer_string_list(max_block_cnt);
+    stringBuffer = NULL;
+    try {stringBuffer = new buffer_string_list(max_block_cnt);} 
+    catch (std::exception& ba) {
+      if(!log_builder::catch_memory_exeception(1, __FUNCTION__, __FILE__, __LINE__, false)) {
+	fprintf(stderr, "!!\t An interesting error was discovered: %s."
+		"The tool will therefore crash, though if you update the developer at [oekseth@gmail.com]."
+		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
+      }
+    }
+    //    stringBuffer = new buffer_string_list(max_block_cnt);
   }  
   blast_settings = tsettings_input(INDEX_IN_FILE_FOR_PROTEIN_NAME, INDEX_IN_FILE_FOR_TAXON_NAME, USE_LAST_BLAST_CLOMUN_AS_DISTANCE, SEPERATOR, FILE_INPUT_NAME,DEFAULT_NUMBER_OF_COLUMNS_IN_NAME);
 }   
