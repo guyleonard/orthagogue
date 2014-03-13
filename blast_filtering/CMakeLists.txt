@@ -29,7 +29,7 @@ include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_LOGGBUILDER})
 include(${PROJECT_BINARY_DIR}/${suffix}config_files/cmph_paths.cmake)
 include(${PROJECT_BINARY_DIR}/${suffix}config_files/tbb_paths.cmake)
 include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findcmdlinelibs.cmake)
-include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findloglibs.cmake)
+include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findloglibs.cmake)  
 include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/get_blast_common_libs.cmake)
 
 #

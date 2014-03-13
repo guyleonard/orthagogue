@@ -40,7 +40,7 @@ include(files_for_libs.cmake)
 foreach(name ${CXXFILES_LOGGBUILDER})
   get_filename_component(comp "${name}" NAME_WE)
   add_library(${comp} ${name})
-  target_link_libraries(${comp} ${TBB_LIBRARY})
+  target_link_libraries(${comp} ${CMD_LIBS} ${TBB_LIBRARY})
 endforeach()
 
 #

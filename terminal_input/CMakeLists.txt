@@ -23,7 +23,7 @@ endif()
 #
 # Defines the other directories to include source from:
 set(FOLDERLOC_COMMON "${suffix}blast_common")
-set(FOLDERLOC_LOGGBUILDER "${suffix}log_builder")
+set(FOLDERLOC_LOGGBUILDER "${suffix}log_builder") 
 include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_LOGGBUILDER})  
 include_directories (${PROJECT_BINARY_DIR}/${FOLDERLOC_COMMON}) 
 include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/get_blast_common_libs.cmake)

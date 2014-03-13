@@ -68,10 +68,10 @@ void blast_parsing::init_values(cmd_list *cmd, const uint first_pass) {
     cl2 = cmd_argument("Print values used for normalization basis computation", "N", "norm_basis", BOOLEAN, &PRINT_NORMALIXATION_BASIS, "DEBUG");
     cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
     // cl2 = cmd_argument("Print into the log files the values extracted from the blastp file", "pbd", "print_blast_data", BOOLEAN, &DEBUG_print_pairs_in_file_parse_log_file, "DEBUG");
-    // cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
-    cl2 = cmd_argument("Set the number of chars to read as a block from the file: If not set, the system decides the optimal value for the maximum parallisation possible", "dbs", "disk_buffer_size", UINT_NOT_NULL, &disk_buffer_size, "DEBUG");
-    cmd->add_cmd_argument(cl2); // disk_buffer_size
 #endif
+    // cmd->add_cmd_argument(cl2); // PRINT_NORMALIXATION_BASIS
+    cl2 = cmd_argument("Set the number of chars to read as a block from the file: If not set, the system decides the optimal value for the maximum parallisation possible", "dbs", "disk_buffer_size", UINT_NOT_NULL, &disk_buffer_size, "INPUT");
+    cmd->add_cmd_argument(cl2); // disk_buffer_size
   } else {
     cl2 = cmd_argument("In case of multiple HSPs for a protein pair use only the best one (for emulating OrthoMCL only)", "b", "best_hsp", BOOLEAN, &USE_BEST_BLAST_PAIR_SCORE, "OPERATIONAL");
     cmd->add_cmd_argument(cl2); 
@@ -239,6 +239,8 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
 #else
   pipe_parse_file create(SEPERATOR, disk_buffer_size, FILE_INPUT_NAME, log);
 #endif
+
+  //  printf("disk_buffer_size=%u, at blast_parsing:%d\n", (uint)disk_buffer_size, __LINE__); // FIXME: remove this printf!
 
   {
     pipe_parse_parse parse(reading_file_start_position, reading_file_length, disk_buffer_size, 0, USE_EVERYREL_AS_ARRNORM_BASIS, log, SEPERATOR, FILE_INPUT_NAME, CPU_TOT, USE_LAST_BLAST_CLOMUN_AS_DISTANCE,

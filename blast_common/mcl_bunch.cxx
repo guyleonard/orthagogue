@@ -557,10 +557,24 @@ int mcl_bunch::write_string_to_file(FILE *file, char *string, uint current_size_
   assert(file);
   if(false && current_size_string) ; // In order to hide the variable, making the itnerface generic:
   if(string) {
-    //  fprintf(file, string);
+    static bool error_is_printed = false;
+    //  fprintf(file, string);                                                                                                                                                    
     if(true) {
       const uint cnt_wrote = fwrite(string, 1, strlen(string), file);
-      assert(cnt_wrote == strlen(string));
+      if(cnt_wrote != strlen(string)) {
+	if(!error_is_printed) {
+          fprintf(stderr,
+                  "!!\t We might have exceeded the disk-size of the file system:\n"
+		    "-\t either increase the available space of your disk, or use a more restricte filter when initiating orthAgogue.\n"
+                  "-\t we infer this from your effort of writing \"%u\" chars, while only \"%u\" chars were written.\n"
+		  "-\t To avoid cluttering of the output, we only print this message once for each core.\n"
+                  "-\t To verify that errors is not \"fiction\", please compare \"%s\" with the output-files.\n"
+                  "-\t If this error is not understood, please contact the developer at [oekseth@gmail.com].\n"
+                  "Error generated at [%s]:%s:%d\n",  (uint)strlen(string), cnt_wrote,  string, __FUNCTION__, __FILE__, __LINE__);
+          error_is_printed = true;
+	}
+        assert(cnt_wrote == strlen(string));
+      }
       return (int)cnt_wrote;
     } else {
       return fputs(string, file);
