@@ -563,14 +563,15 @@ int mcl_bunch::write_string_to_file(FILE *file, char *string, uint current_size_
       const uint cnt_wrote = fwrite(string, 1, strlen(string), file);
       if(cnt_wrote != strlen(string)) {
 	if(!error_is_printed) {
+	  char *last_line = strrchr(string, '\n');
           fprintf(stderr,
                   "!!\t We might have exceeded the disk-size of the file system:\n"
 		    "-\t either increase the available space of your disk, or use a more restricte filter when initiating orthAgogue.\n"
                   "-\t we infer this from your effort of writing \"%u\" chars, while only \"%u\" chars were written.\n"
 		  "-\t To avoid cluttering of the output, we only print this message once for each core.\n"
-                  "-\t To verify that errors is not \"fiction\", please compare \"%s\" with the output-files.\n"
+		  "-\t To verify that errors is not \"fiction\", please compare \"%s\" (which is a subset starting at the last new-line) with the output-files.\n"
                   "-\t If this error is not understood, please contact the developer at [oekseth@gmail.com].\n"
-                  "Error generated at [%s]:%s:%d\n",  (uint)strlen(string), cnt_wrote,  string, __FUNCTION__, __FILE__, __LINE__);
+                  "Error generated at [%s]:%s:%d\n",  (uint)strlen(string), cnt_wrote,  last_line, __FUNCTION__, __FILE__, __LINE__);
           error_is_printed = true;
 	}
         assert(cnt_wrote == strlen(string));

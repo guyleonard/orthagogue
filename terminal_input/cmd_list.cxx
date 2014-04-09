@@ -173,7 +173,7 @@ void cmd_list::set_arguments(char **array, int array_size, bool create_man_page)
     fprintf(stdout, "2. orthAgogue -i myblast.out -e 6 -o 50 -O myoutdir # the same as above but excluding protein pairs with the overlap below 50%%.\n");
     fprintf(stdout, "3. orthAgogue -i myblast.out -u -o 50 -O myoutdir # the same as above but without filtering by e-values and using BLAST scores instead of e-values in order to resolve HSPs with the '0.0' e-value; the required e-value cutoff should be set while running BLAST.\n");
     fprintf(stdout, "4. orthAgogue -i myblast.out -b -e 6 -O myoutdir # the same as 1 but using only the best HSP for any pair of proteins (OrthoMCL emulation).\n");
-    if(array_size < 2)   fprintf(stdout, "\nSee also https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to orthagogue-issue-tracker@googlegroups.com\n");
+    if(array_size < 2)   fprintf(stdout, "\nSee also https://code.google.com/p/orthagogue/\n\nThe software was developed by O.K. Ekseth under supervison of M. Kuiper. Questions to be forwarded to orthagogue-issue-tracker@googlegroups.com\n");
 // oekseth@gmail.com\n");
     //
     if(create_man_page) create_man_page_tail(file_man_page);

@@ -116,18 +116,7 @@ sub get_appended_distance {
     return $correct_distance;
 } 
 
-##return $new_distance;}
-# sub shall_append_distance {
-#     my ($format, $current, $new_distance) = @_;
-#     if($format ne format_abc) { # FIXME!
-# 	if(defined $current) {
-# 	    if(!$NOT_append_data) { #NOT(NOT) gives "append data".
-# 		return true;
-# 	    } else {return false;}
-# 	}
-#     } 
-#     return false;
-# }
+
 #! Sets the maximum value and produces the list of taxa:
 sub get_blastp_info {
     my ($file, $format) = @_;

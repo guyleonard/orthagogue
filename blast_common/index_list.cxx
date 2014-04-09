@@ -244,9 +244,9 @@ void index_list::assert_merging_of_index_list(index_t *listArgument, const loint
 	  // only tests for those data set that they have'nt changed:
 	  if(list[i].get_length() < listArgument[i].get_length()) { // TODO: validate this alternative!
 	       //	  if(!list[i].is_greater_or_equal(listArgument[i], offset_to_add_data_to)) {
-	    fprintf(stderr,"[%u]\tlistArgument{(start(%u)+offset(%llu)),length(%u)} != =< list{start(%u),length(%u)}\n",
+	    fprintf(stderr,"[%u]\tlistArgument{(start(%u)+offset(%llu)),length(%u)} != =< list{start(%u),length(%u)}, at [%s]:%s:%d\n",
 		    i, listArgument[i].get_start_pos(), offset_to_add_data_to, listArgument[i].get_length(),
-		    list[i].get_start_pos(), list[i].get_length());
+		    list[i].get_start_pos(), list[i].get_length(), __FUNCTION__, __FILE__, __LINE__);
 	    all_are_equal = false;
 	  }
 	}
@@ -310,18 +310,23 @@ bool index_list::merge_buffers(index_list *listArgument, const loint listArgumen
 	    // TODO: when error is fixed, move printint to "log_builder"!
 	    printed_warning = true;
 	    fprintf(stderr, 
-		  "!!\t Seems like you used too many CPU's. Our first impression is that there is no gain in using the number of CPU's you are currently using. (There are other explanations, but this is the most commonplace.) This first impression (i.e. our latter thoughts) might be wrong. If you are puzzled about this message, it might be that me (i.e. orthAgogue) has made an error in my calculation. With the dabger of making you even more puzzled, here is my initial thoughts:\n"
-		    "(1)\t Try to reduce the number of CPUs used. For an extreme case, try setting either \"-c 1\" or \"--cpu 1\" (which are synonyms) on you command line orthAgogue execution.\n"
-		    "#\t If this does not make the day (i.e. the problem is persisting), then there might be an error in the merging of mapping-data for a protein (programmatically speaking when merging blocks of type \"index_t\").\n"
-		  "#\t An alternative explanation regards the merging procedure applied by your Blast file: if the BlastP did a correct concatenation, then protein\"%s\" should have received all relations for a given taxa(\"%s\"-->\"%s\"), before receiving the next combination of pairs. We hope the implications of this error is low, as we have kept the best high-scoring pair in question.\n"
-		    "-\t In brief, we expect the received protein block to cover all comparisons for \"%s\".\n"
-		    "-\t If this error is seen (and point (1) above did not bring the nuts), please contact the developer, either through our web-page, directly at [oekseth@gmail.com], or try:\n"
-		    "\t(2)\t(a)\t install the tool using the \"install_debug.bash\" script.\n"
-		    "\t(2)\t(b)\t Experiment with different values for parameter \"--disk_buffer_size\".\n"
-		    "\t(2)\t(c) If this does not solve the case, please report the error (to the 'issue' page of orthAgogue's homepage, or contact the developer directly at [oekseth@gmail.com]).\n"
+		  "!!\t The number of protein-pairs per taxa-taxa-protein block exceeded the disk-buffer-size.\n"
+		    "-\t The disk-buffer-size is calcuclated using the formula: max(\"#(proteins related to a given taxa-taxa-protein)\"*\"#(chars for each of these blastp rows)\") (where \"#\" is a short-hand for \"number-of\")\n"
+		    "-\t To set the disk-buffer-size, either use the \"-dbs\" or \"--disk_buffer_size\" parameter, where the default size is 10,000,000 chars (which approx. corresponds to a maximum of 50,000 related proteisn for a taxa-taxa-protein).\n" 
+		    "-\t To identify the correct disk-buffer-size, run the \"aux/estimate_disk_buffer_parameter.pl  <blastp_file> <seperator> <taxon-index> script.\n"
+		  //   "Seems like you used too many CPU's. Our first impression is that there is no gain in using the number of CPU's you are currently using. (There are other explanations, but this is the most commonplace.) This first impression (i.e. our latter thoughts) might be wrong. If you are puzzled about this message, it might be that me (i.e. orthAgogue) has made an error in my calculation. With the dabger of making you even more puzzled, here is my initial thoughts:\n"
+		  //   "(1)\t Try to reduce the number of CPUs used. For an extreme case, try setting either \"-c 1\" or \"--cpu 1\" (which are synonyms) on you command line orthAgogue execution.\n"
+		  //   "#\t If this does not make the day (i.e. the problem is persisting), then there might be an error in the merging of mapping-data for a protein (programmatically speaking when merging blocks of type \"index_t\").\n"
+		    "-\t If this does not solve the case, an alternative explanation regards the merging procedure applied by your Blast file: if the BlastP did a correct concatenation, then protein\"%s\" should have received all relations for a given taxa(\"%s\"-->\"%s\"), before receiving the next combination of pairs. We hope the both the likelyhood, and implications, of this possible error is low, as we have kept the best high-scoring pair in question.\n"
+		  //   "-\t In brief, we expect the received protein block to cover all comparisons for \"%s\".\n"
+		  //   "-\t If this error is seen (and point (1) above did not bring the nuts), please contact the developer, either through our web-page, directly at [oekseth@gmail.com], or try:\n"
+		  //   "\t(2)\t(a)\t install the tool using the \"install_debug.bash\" script.\n"
+		  //   "\t(2)\t(b)\t Experiment with different values for parameter \"--disk_buffer_size\".\n"
+		    "\t If this message was not understood, or our (suggested) approach did not solve the encountered problem, please report the error (to the 'issue' page of orthAgogue's homepage, or contact the developer directly at [oekseth@gmail.com]).\n"
 		    "This error was produced at [%s]:%s:%d\n",
 		    taxa_obj.getArrKey(i), taxa_obj.get_name(), taxa_obj_out->get_name(),
-		    taxa_obj.getArrKey(i), __FUNCTION__, __FILE__, __LINE__);
+		    // taxa_obj.getArrKey(i),
+		    __FUNCTION__, __FILE__, __LINE__);
 	    //assert(false);
 	  } 
 	  cnt_skipped += (uint)listArgument->get_length(i);

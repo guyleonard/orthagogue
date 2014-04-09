@@ -42,7 +42,7 @@ use constant true  => 1;
 # Defines the booleans in the code, making it easier to shift this code to c++ (as always is or path of walk).
 use constant false => 0;
 use constant true  => 1;
-# # Defines the file format to parse:
+# Defines the file format to parse:
 use constant format_blastp_evalue   => 'blastp_c_11';
 use constant format_blastp_last     => 'blastp_c_12';
 use constant format_abc             => 'abc';
@@ -232,7 +232,7 @@ my $numArgs = $#ARGV + 1;
 if($numArgs !=3 && $numArgs != 2 && $numArgs != 4) {
     printf("----------------------------------------------------------------------\n");
     printf("Building a control set containing filtered relations, storing detailed data in folder: %s\n", $control_output_folder);
-    printf("-\tValidates implementations found in softwares, eg, OrthoMcl and OrthaGogue\n");
+    printf("-\tValidates implementations found in softwares, eg, OrthoMcl and orthAgogue\n");
     printf("-\tUsage: %s <blastp_file> <OrthaGogue> <optionally argument; other software implementations, ie, OrthoMcl>\n", $0);
     printf("-->\tThis message was seen because %d arguments were used. In order to run the software, provide either 2 or 3 arguments, as described in the line above.\n", $numArgs);
     printf("\nThe software was developed by O.K. Ekseth under supervison of Dr. V.N. Mironov. Questions to be forwarded to oekseth\@gmail.com\n");
