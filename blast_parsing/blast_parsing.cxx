@@ -46,7 +46,8 @@ void blast_parsing::init_values(cmd_list *cmd, const uint first_pass) {
     cl2 = cmd_argument("Index of the field containing protein IDs in columns 1 and 2  (positive integer, default  '1')", "p", "protein_index", INTEGER, &INDEX_IN_FILE_FOR_PROTEIN_NAME, "INPUT");
     cmd->add_cmd_argument(cl2);  // INDEX_IN_FILE_FOR_PROTEIN_NAME
 
-    cl2 = cmd_argument("Field separator used in columns 1 and 2 (only non-integers and -non-decimals, default the pipe '|')", "s", "seperator", CHAR_SINGLE, &SEPERATOR, "INPUT");
+    cl2 = cmd_argument("Field separator used in columns 1 and 2 (only non-integers and -non-decimals, default the underscore '_')", "s", "seperator", CHAR_SINGLE, &SEPERATOR, "INPUT");
+    //    cl2 = cmd_argument("Field separator used in columns 1 and 2 (only non-integers and -non-decimals, default the pipe '|')", "s", "seperator", CHAR_SINGLE, &SEPERATOR, "INPUT");
     cmd->add_cmd_argument(cl2); // SEPERATOR
 
     cl2 = cmd_argument("Output directory path (string, default current directory)", "O", "output_dir", FOLDER_NEW, &FILE_BINARY_LOCATION, "OUTPUT");
