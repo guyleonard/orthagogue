@@ -1,3 +1,4 @@
+
 CMAKE_MINIMUM_REQUIRED(VERSION 2.6) 
 
 #
@@ -35,6 +36,7 @@ include(${PROJECT_BINARY_DIR}/${suffix}cmake_scripts/findloglibs.cmake)
 include(files_for_libs.cmake)
 
 add_library(blast_common STATIC ${CXXFILES_BLAST_COMMON} ${CXXFILES_BLAST_COMMON_LOCAL} )
+
 
 #
 # Attaches all the files to libraries iot make them accessable:

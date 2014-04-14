@@ -1,12 +1,16 @@
 # Finds the correct include path:
 
+
+
 get_directory_property(not_the_dad_dir PARENT_DIRECTORY)
 set(CMAKE_INCLUDE_PATH     "$ENV{HOME}/bin/")
 
-if(USE_MPI)
-  if("${USE_MPI}" STREQUAL ON)
+if(${USE_MPI} STREQUAL "1")
     SET(CMAKE_CXX_COMPILER mpic++)
-  endif()
+endif()
+
+if("${USE_MPI}" STREQUAL ON)
+  SET(CMAKE_CXX_COMPILER mpic++)
 endif()
 
  

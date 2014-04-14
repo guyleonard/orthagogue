@@ -1,4 +1,4 @@
-#include "blast_filtering.h" 
+#include "blast_filtering.h"  
 
 void blast_filtering::exec_filtering(int n_thread, log_builder_t *log, const bool is_inpa) {
 #ifdef USE_MPI

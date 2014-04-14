@@ -22,8 +22,10 @@ pipe_write::pipe_write(log_builder_t *_log, taxa_t *listTaxa, int taxon_length, 
   //! The 'root' node is given responsibility writing the header file
   if((number_of_nodes > 1 && myrank == 0) || (number_of_nodes==1)) {
     const uint actual_chars_inserted = mcl_format::write_file_headers(mpi_file_list, listTaxa, taxon_length, PRINT_IN_MCL_FORMAT); // Creates the headers, and writes them to the files
+#ifndef NDEBUG
     const uint expected_chars_inserted = file_chunk_header->append_header_sizes(listTaxa, taxon_length);
     assert(actual_chars_inserted == expected_chars_inserted);
+#endif
   }
 #else
   out_file = mcl_format::init_file_array(TYPE_OF_RESULTFILE_TO_STDOUT, FILE_BINARY_LOCATION, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT); 

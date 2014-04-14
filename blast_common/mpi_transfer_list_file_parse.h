@@ -724,6 +724,7 @@ template<class T> class mpi_transfer_list_file_parse {
     float debug_sum_total = 0;
     const float sum_before_merging = this_caller->get_sum_of_pair_distances_in_memory();
 #endif
+    uint cnt_elements_in_all_relation_lists = 0;
     //! Merges each of the taxon pairs given:
     for(uint id = 0; id<cnt_taxa_pairs; id++) {
       //! Inititiate values
@@ -755,7 +756,7 @@ template<class T> class mpi_transfer_list_file_parse {
       debug_sum_total += sum;
 #endif
       assert(temp->buffer_has_data_set()); // Ensures that data is both set, and consistent (both list and size is set).
-      this_caller->merge_data(temp, taxon_in, taxon_out);
+      this_caller->merge_data(temp, taxon_in, taxon_out, cnt_elements_in_all_relation_lists);
       assert(!temp); // Ensures it is freed.
       assert(this_caller->buffer_is_not_null(taxon_in, taxon_out)); // Ensures that data is both set, and consistent (both list and size is set).
 #ifndef NDEBUG

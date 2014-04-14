@@ -23,13 +23,13 @@
 #endif
 
 //! The patch version number of the software:
-#define CPACK_PACKAGE_VERSION_PATCH 1
+#define CPACK_PACKAGE_VERSION_PATCH 2
 #ifndef CPACK_PACKAGE_VERSION_PATCH
 #define CPACK_PACKAGE_VERSION_PATCH 9
 #endif
 
 //! Defines if mpi is to be used
-/* #undef USE_MPI */
+#define USE_MPI
 
 //! The seperator to be used in the output in general
 static const char MCL_HEAD_SEPERATOR = ' ';

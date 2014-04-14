@@ -5,7 +5,7 @@ include(InstallRequiredSystemLibraries)
 
 set(VERSION_MAJOR "1")
 set(VERSION_MINOR "0")
-set(VERSION_PATCH "1")
+set(VERSION_PATCH "2")
 if(NOT CPACK_PACKAGE_VERSION_MAJOR)
   SET(CPACK_PACKAGE_VERSION_MAJOR "${MAJOR_VERSION}")
 endif()

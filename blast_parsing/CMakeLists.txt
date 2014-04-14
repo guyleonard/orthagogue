@@ -53,8 +53,6 @@ foreach(name ${CXXFILES_BLAST_PARSING_AS_LIBRARY})
   add_dependencies(blast_parsing_m ${comp})
 endforeach()
 
-message("---- in the blast_parsing cmkae file -- before add-libs\n")
-
 
 target_link_libraries(blast_parsing_m  
   ${TBB_LIBRARY}

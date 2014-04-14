@@ -9,7 +9,7 @@
 #include "buffer_string_list.h"
 #include "string_section.h"
 #include "pre_read_blast.h"
-
+ 
 /**
    @brief Gives the user settings for the blast parsing process.
    @param <obj> The object of class tsettings_input to update the settings found in this object with.
