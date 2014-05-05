@@ -30,6 +30,11 @@ use POSIX;
 # use lib "$FindBin::Bin";
 # use File::Copy;
 
+# Change [below] in order to increase the memory consumption.
+my %settings;
+$settings{"update_taxa_count"} = 0;
+
+
 # Defines the booleans in the code, making it easier to shift this code to c++ (as always is or path of walk).
 use constant false => 0;
 use constant true  => 1;
@@ -50,6 +55,8 @@ my $biggest_identified_disk_buffer_size_taxon_taxon_taxaPair = "";
 my $biggest_identified_disk_buffer_size_taxon_taxon_protein = 0;
 my $biggest_identified_disk_buffer_size_taxon_taxon_protein_id = "";
 my $biggest_identified_disk_buffer_size_taxon_taxon_protein_taxaPair = "";
+
+
 
 #! Returns the taxon type of the given argument.
 sub get_taxon_type {
@@ -149,8 +156,10 @@ sub get_blastp_info {
 		    $biggest_identified_disk_buffer_size_taxon_taxon = $list_taxa_charUsage->{$taxon1}{$taxon2};
 		    $biggest_identified_disk_buffer_size_taxon_taxon_taxaPair = $taxon1 . "<-->" . $taxon2;
 		}
-		#! Get the number of pairs, and number of chars, for [taxa][taxa][protein].
-		update_inner_protein_count($keys[0], $list_taxa_protein_cnt, $list_taxa_protein_charUsage, $char_count, $taxon1, $taxon2);
+		if((defined($settings{"update_protein_count"}) && $settings{"update_protein_count"} == 1)) {
+		    #! Get the number of pairs, and number of chars, for [taxa][taxa][protein].
+		    update_inner_protein_count($keys[0], $list_taxa_protein_cnt, $list_taxa_protein_charUsage, $char_count, $taxon1, $taxon2);
+		}
 	    }
 
 	}
@@ -195,30 +204,34 @@ sub print_taxa {
 
 #! Outprint the cluster size of the [taxon][taxon] pairs.
 sub print_inner_protein_facts {
-   my ($list_taxa_protein_cnt, $list_taxa_protein_charUsage) = @_;
-   if(scalar(@_) != 2) {warn("Wrong number of arguments provided to function.\n");}
-
-   my $file_name = "protein_facts.txt";
-   open(FILE, ">", $file_name) or die("Unable to open the file $file_name\n");
-
-    printf("\n The [taxon][taxon] cluster size (with notation of \"<outer taxon>:<number of protein pairs>\"):\n");
-    printf(FILE "\n The [taxon][taxon] cluster size (with notation of \"<outer taxon>:<number of protein pairs>\"):\n");
-
-    foreach my $in (keys %{$list_taxa_protein_cnt}) {
-	while (my ($out, $value) = each %{ $list_taxa_protein_cnt->{$in} } ) {
-	    printf("- Looks at protein-clusters for taxon-pair '[$in][$out]':\n");
-	    printf(FILE "- Looks at protein-clusters for taxon-pair '[$in][$out]':\n");
-	    while (my ($protein1, $cnt_outer_proteins) = each %{ $list_taxa_protein_cnt->{$in}{$out} } ) {
-		my $disk_buffer_size = $list_taxa_protein_charUsage->{$in}{$out}{$protein1};
-		my $disk_buffer_size_MB = $disk_buffer_size / (1024*1024);
-		my $disk_buffer_size_string = $disk_buffer_size . "B";
+    if((defined($settings{"update_protein_count"}) && $settings{"update_protein_count"} == 1)) {
+	my ($list_taxa_protein_cnt, $list_taxa_protein_charUsage) = @_;
+	if(scalar(@_) != 2) {warn("Wrong number of arguments provided to function.\n");}
+	
+	my $file_name = "protein_facts.txt";
+	open(FILE, ">", $file_name) or die("Unable to open the file $file_name\n");
+	
+	printf("\n The [taxon][taxon] cluster size (with notation of \"<outer taxon>:<number of protein pairs>\"):\n");
+	printf(FILE "\n The [taxon][taxon] cluster size (with notation of \"<outer taxon>:<number of protein pairs>\"):\n");
+	
+	foreach my $in (keys %{$list_taxa_protein_cnt}) {
+	    while (my ($out, $value) = each %{ $list_taxa_protein_cnt->{$in} } ) {
+		printf("- Looks at protein-clusters for taxon-pair '[$in][$out]':\n");
+		printf(FILE "- Looks at protein-clusters for taxon-pair '[$in][$out]':\n");
+		while (my ($protein1, $cnt_outer_proteins) = each %{ $list_taxa_protein_cnt->{$in}{$out} } ) {
+		    my $disk_buffer_size = $list_taxa_protein_charUsage->{$in}{$out}{$protein1};
+		    my $disk_buffer_size_MB = $disk_buffer_size / (1024*1024);
+		    my $disk_buffer_size_string = $disk_buffer_size . "B";
 		my $disk_buffer_size_string_MB = $disk_buffer_size_MB . "MB";
-		printf("\t protein \"$protein1\" has \"$cnt_outer_proteins\" outer proteins, and requires a disk_buffer_size=\"$disk_buffer_size_string\"=\"$disk_buffer_size_string_MB\".\n");
-		printf(FILE "\t protein \"$protein1\" has \"$cnt_outer_proteins\" outer proteins, and requires a disk_buffer_size=\"$disk_buffer_size_string\"=\"$disk_buffer_size_string_MB\".\n");
+		    printf("\t protein \"$protein1\" has \"$cnt_outer_proteins\" outer proteins, and requires a disk_buffer_size=\"$disk_buffer_size_string\"=\"$disk_buffer_size_string_MB\".\n");
+		    printf(FILE "\t protein \"$protein1\" has \"$cnt_outer_proteins\" outer proteins, and requires a disk_buffer_size=\"$disk_buffer_size_string\"=\"$disk_buffer_size_string_MB\".\n");
+		}
 	    }
+	    printf("\n");
+	    printf(FILE "\n");
 	}
-	printf("\n");
-	printf(FILE "\n");
+    } else {
+	printf("\t The protein-count-option was de-activated in order to reduce memory consumption\n");
     }
 
    printf(FILE "-\t in brief, w.r.t. the disk_buffer_size parameter, we observed for the biggest taxon-taxon-protein-pair, consists of %u=%.3E chars (for protein \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_id\" and taxon-pair \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_taxaPair\")\n", $biggest_identified_disk_buffer_size_taxon_taxon_protein, $biggest_identified_disk_buffer_size_taxon_taxon_protein);
@@ -252,16 +265,22 @@ sub control_files {
 
 
 my $numArgs = $#ARGV + 1;
-if($numArgs == 3) {
+if(($numArgs == 3) || ($numArgs == 4)) {
     #! Update the sepcification:
-    $taxon_protein_split = $ARGV[1];     $taxon_index = $ARGV[2];
+    my $get_protein_facts = 0;
+    $taxon_protein_split = $ARGV[1];     $taxon_index = $ARGV[2]; $get_protein_facts = $ARGV[3];
+    if(defined($get_protein_facts) && ($get_protein_facts == 1) ) {
+	$settings{"update_protein_count"} = 1;
+    } else {
+	$settings{"update_protein_count"} = 0;
+    }
     #! Then make 'the call':
     control_files($ARGV[0]);
 } else {
     printf("----------------------------------------------------------------------\n");
     printf("Extract BlastP facts, which (among others) is of interest when configuring orthAgogue for large blastP files.\n");
-    printf("-\tUsage: %s <blastp_file> <seperator> <taxon-index>\n", $0);
+    printf("-\tUsage: %s <blastp_file> <seperator> <taxon-index> <bool: get-expressive-knowledge-of-proteins> \n", $0);
     printf("-->\tThis message was seen because %d arguments were used. In order to run the software, provide either 1 argument (i.e. the blastp-file-name).\n", $numArgs);
-    printf("\nThe software was developed by O.K. Ekseth under supervison of Dr. M. Kuiper. Questions to be forwarded to [oekseth\@gmail.com].\n");
+    printf("\nThe software was developed by O.K. Ekseth. Questions to be forwarded to [oekseth\@gmail.com].\n");
     printf("----------------------------------------------------------------------\n");
 }
