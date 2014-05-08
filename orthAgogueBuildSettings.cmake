@@ -8,6 +8,6 @@
 # file if it was produced by a newer version of CMake.  CMake 2.8 and
 # above simply do not load this file.  Therefore we simply error out.
 message(FATAL_ERROR
-  "This orthAgogue was built by CMake 2.8.7, but this is CMake "
+  "This orthAgogue was built by CMake 2.8.12.2, but this is CMake "
   "${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}.${CMAKE_PATCH_VERSION}.  "
   "Please upgrade CMake to a more recent version.")

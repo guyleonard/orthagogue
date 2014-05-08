@@ -29,7 +29,7 @@
 #endif
 
 //! Defines if mpi is to be used
-#define USE_MPI
+/* #undef USE_MPI */
 
 //! The seperator to be used in the output in general
 static const char MCL_HEAD_SEPERATOR = ' ';

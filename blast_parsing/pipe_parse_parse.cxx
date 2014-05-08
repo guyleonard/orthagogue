@@ -756,7 +756,7 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
 	if(chars_processed_in_this_run) chars_processed_in_this_run--; // Removes the last line of the string block.
 	total_number_of_chars_processed_in_second_read += chars_processed_in_this_run;// Updates the overview of pairs processed.	
 	// Updates the overview of pairs processed:
-	if(parse_struct_send) {pairs_in_file_sent_to_merge += parse_struct_send->getTotalLengthOfData();}
+ 	if(parse_struct_send) {pairs_in_file_sent_to_merge += parse_struct_send->getTotalLengthOfData();}
 	pairs_in_file_found += cnt_inserted_pairs;
       }      
 #endif

@@ -220,8 +220,6 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
   //! Ensures that only one "global overlap" is inserte:
   overlaps_inserted_by_curret_call = 0;
 
-  
-
   //! Our summary of the parsing:
   enum {id_taxon_in, id_taxon_out, id_name_in, id_name_out} field_id;
   if(false && field_id) ; // To hide the indirect usage of the above enum.
@@ -239,11 +237,6 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
 	assert(name_out[i] != '\n');
       }
 #endif
-      //   printf("\t data.protein_out=%u, this_index_out_prev=%u, at protein_vector:%d\n", (uint)data.protein_out, (uint)this_index_out_prev, __LINE__); // FIXME: remove this printf!
- // if(data.protein_out != INT_MAX) {
- //    printf("(%s =?= %s)\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, p.get_taxon_out()=%s, at protein_vector:%d\n", listTaxa[data.taxon_out].getArrKey(data.protein_out), p.get_name_out(), (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove this printf!
- //  }
-
   //! Note: If not initiated, finds the index for both the inner- and the outer protein.
   //! Proteins: Tests if the names has changed:
   if(!is_initiated || !(compare_strings(p.get_name_in(), string_name_in_prev)))    field_has_changed[id_name_in]   = true;
@@ -252,8 +245,7 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
   if(!is_initiated ||  !(compare_strings(p.get_taxon_in(), string_taxon_in_prev)))   field_has_changed[id_taxon_in]  = true; // Taxon inner changed: 
   if(!is_initiated ||  !(compare_strings(p.get_taxon_out(), string_taxon_out_prev))) {
     field_has_changed[id_taxon_out] = true; // right has changed
-    // printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-  } else {  }
+  } 
   if(false) {
     // TODO: Below code is included if further analyse of the code is required.
     char *str[2] = {"no", "yes"};
@@ -269,14 +261,6 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
 	   __LINE__
 	   ); // TODO: remove this printf!
   }
-  if(data.protein_out != INT_MAX) {
-    //    printf("(%s =?= %s)\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, p.get_taxon_out()=%s, at protein_vector:%d\n", listTaxa[data.taxon_out].getArrKey(data.protein_out), p.get_name_out(), (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove this printf!
-  }
-  if(this_taxon_out_prev != INT_MAX) {
-    // printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-    // assert(hashProtein[this_taxon_out_prev].is_equal(p.get_taxon_out()));
-  }
-
   //! If the inner names has changed, 
   if(field_has_changed[id_name_in]) { // Not equal; Assumes that the names are unique
     // The inner protein has changed: tests if the taxon has changed:
@@ -288,38 +272,20 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
     } else {
       if(this_taxon_out_prev == INT_MAX) {data.set_as_no_exsists();} 
       else {
-	//	printf("\t (%s, %s), this_taxon_in_prev=%u, this_taxon_out_prev=%u, at protein_vector:%d\n", p.get_taxon_in(), p.get_taxon_out(), (uint)this_taxon_in_prev, (uint)this_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-	//	assert(0 == strcmp(p.get_name_in(), p.get_taxon_out()));
-	//	if(field_has_changed[id_taxon_out] == true) {
-	//	printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
 	if(0 == strcmp(p.get_name_in(), p.get_taxon_out())) {
-	  // printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
 	  this_taxon_out_prev = this_taxon_in_prev; // Protein in changed from string_name_out_prev --> p.get_name_out());
 	  field_has_changed[id_taxon_out] = true;
 	} else {
 	  //! Then it is a special case where the protein does not have a self-comparison as its first case.
 	  //! This could be due to parallell exeuction when constructing the input Blast file.
 	  getTaxonIndex(p.get_taxon_out(), this_taxon_out_prev);
-	  //printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
 	  field_has_changed[id_taxon_out] = true;
 	}
-	// } else {
-	//   this_taxon_out_prev = this_taxon_in_prev; // Protein in changed from string_name_out_prev --> p.get_name_out());
-	//   printf("\t (%s, %s), at protein_vector:%d\n", p.get_taxon_out(), string_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-	// }
 	int temp_index = 0;  getTaxonIndex(p.get_taxon_out(), temp_index);
 	assert(temp_index == this_taxon_out_prev);
       }
     }
   } else if(this_index_in_prev == INT_MAX) data.set_as_no_exsists();  
-
-  if(data.protein_out != INT_MAX) {
-    //    printf("(%s =?= %s)\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, p.get_taxon_out()=%s, at protein_vector:%d\n", listTaxa[data.taxon_out].getArrKey(data.protein_out), p.get_name_out(), (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove this printf!
-  }
-  if(this_taxon_out_prev != INT_MAX) {
-    //assert(hashProtein[this_taxon_out_prev].is_equal(p.get_taxon_out()));
-  }
-
   // Updates the setting for the outer (right) protein:
   // NOTE: At frist look at the blastp-file it seems like it follows the label-id-format (AA->AA, AA->BB, AA->CC, DD->BB), but sometimes (AA->BB, AA->AA, AA->CC, DD->BB), therefore the last label must be checked independently of the first label.    
   if(input_is_valid[id_taxon_in] && field_has_changed[id_name_out]) { // Assumes that the names are unique
@@ -331,11 +297,6 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
       }
     } else if(this_taxon_out_prev == INT_MAX) data.set_as_no_exsists();
   } else {if(this_index_out_prev == INT_MAX) data.set_as_no_exsists();}
-
-  if(data.protein_out != INT_MAX) {
-    //    printf("(%s =?= %s)\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, at protein_vector:%d\n", listTaxa[data.taxon_out].getArrKey(data.protein_out), p.get_name_out(), (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-  }
-    //  printf("\t data.protein_out=%u, this_index_out_prev=%u, at protein_vector:%d\n", (uint)data.protein_out, (uint)this_index_out_prev, __LINE__); // FIXME: remove this printf!
 
   //! Updates the data for the inner relation:
   //! Note: A bunch of taxa may not be valid, as the user may choose to ignroe txa having less than a threshold-size of proteins.
@@ -361,20 +322,11 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
     }
     is_initiated = true; // Update the variable for the next run:
 
-    //    printf("\t data.protein_out=%u, this_index_out_prev=%u, at protein_vector:%d\n", (uint)data.protein_out, (uint)this_index_out_prev, __LINE__); // FIXME: remove this printf!
-    if(data.protein_out != INT_MAX) {
-      //printf("\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, at protein_vector:%d\n", (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-    }
-
     if(this_taxon_out_prev == INT_MAX) data.set_as_no_exsists();
     data.protein_in = this_index_in_prev;
     data.taxon_in = this_taxon_in_prev;
     data.protein_out = this_index_out_prev;
     data.taxon_out = this_taxon_out_prev;
-    if(data.protein_out != INT_MAX) {
-      // printf("(%s =?= %s)\t data.protein_out=%u, this_index_out_prev=%u, while data.taxon_out=%u, this_taxon_out_prev=%u, at protein_vector:%d\n", listTaxa[data.taxon_out].getArrKey(data.protein_out), p.get_name_out(), (uint)data.protein_out, (uint)this_index_out_prev, (uint)data.taxon_out, (uint)this_taxon_out_prev, __LINE__); // FIXME: remove this printf!
-    }
-
 #ifndef NDEBUG
     if(this_taxon_out_prev != INT_MAX) {
       assert(hashProtein[this_taxon_out_prev].is_equal(p.get_taxon_out()));
@@ -401,14 +353,14 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
       if(out_is_equal == false) {
 	char *str[2] = {"no", "yes"};
 	fprintf(stderr, 
-		"!!\t An error in identification of keys, where we expected the vertex \"%s\"==\"%s\":\n"
+		"!!\t An error in identification of the rightmost keys, where we expected the vertex \"%s\"==\"%s\":\n"
 		"-\t Evaluate a blast-row covering pair (%s, %s)\n"
 		"-\t The error may be due to the format of the Blast data, wrong estimation of the protein-hash-key in question,\n"
 		" \t or errors in our usage of the CMPH hash map library.\n" 
 		"\t To help this investigation, we inspect the type of changed keys:\n"
-		 "\t- \t taxon_in_changed(%s),         taxon_out_changed(%s)[%s->%s],\n"
-		"\t- \t label_in_changed(%s)[%s->%s]," 
-		" label_out_changed(%s)[%s->%s].\n" 
+		"\t- \t taxon_in_changed(%s),         taxon_out_changed(%s)[%s->%s],\n"
+		"\t- \t label_in_changed(%s)[%s->%s]," " label_out_changed(%s)[%s->%s],\n" 
+		"\t- \t w.r.t. the asserted validness of input ot the taxa, taxa-left=%s while taxa-right=%s\n"
 		//"is_initiated(%s)\n",
 		 "-\t We would be utmost thankful if you would forward this message to the developer,\n"
 		 " \t either through orthAgogue's issue-page (at our home-page), or directly to the developer at [oekseth@gmail.som].\n"
@@ -418,7 +370,7 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
 		str[field_has_changed[id_taxon_in]], str[field_has_changed[id_taxon_out]], string_taxon_out_prev, p.get_taxon_out(),
 		str[field_has_changed[id_name_in]],   string_name_in_prev, p.get_name_in(), 
 		str[field_has_changed[id_name_out]] ,  string_name_out_prev, p.get_name_out(),
-		// str[is_initiated],
+		str[input_is_valid[id_taxon_in]], str[input_is_valid[id_taxon_out]], 
 		__FUNCTION__, __FILE__, __LINE__); 
 	assert(0 == strcmp(p.get_name_out(), listTaxa[data.taxon_out].getArrKey(data.protein_out)));       
       }

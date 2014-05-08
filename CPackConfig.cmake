@@ -1,30 +1,13 @@
 # This file will be configured to contain variables for CPack. These variables
 # should be set in the CMake list file of the project before CPack module is
-# included. Example variables are:
-#   CPACK_GENERATOR                     - Generator used to create package
-#   CPACK_INSTALL_CMAKE_PROJECTS        - For each project (path, name, component)
-#   CPACK_CMAKE_GENERATOR               - CMake Generator used for the projects
-#   CPACK_INSTALL_COMMANDS              - Extra commands to install components
-#   CPACK_INSTALLED_DIRECTORIES           - Extra directories to install
-#   CPACK_PACKAGE_DESCRIPTION_FILE      - Description file for the package
-#   CPACK_PACKAGE_DESCRIPTION_SUMMARY   - Summary of the package
-#   CPACK_PACKAGE_EXECUTABLES           - List of pairs of executables and labels
-#   CPACK_PACKAGE_FILE_NAME             - Name of the package generated
-#   CPACK_PACKAGE_ICON                  - Icon used for the package
-#   CPACK_PACKAGE_INSTALL_DIRECTORY     - Name of directory for the installer
-#   CPACK_PACKAGE_NAME                  - Package project name
-#   CPACK_PACKAGE_VENDOR                - Package project vendor
-#   CPACK_PACKAGE_VERSION               - Package project version
-#   CPACK_PACKAGE_VERSION_MAJOR         - Package project version (major)
-#   CPACK_PACKAGE_VERSION_MINOR         - Package project version (minor)
-#   CPACK_PACKAGE_VERSION_PATCH         - Package project version (patch)
-
-# There are certain generator specific ones
-
-# NSIS Generator:
-#   CPACK_PACKAGE_INSTALL_REGISTRY_KEY  - Name of the registry key for the installer
-#   CPACK_NSIS_EXTRA_UNINSTALL_COMMANDS - Extra commands used during uninstall
-#   CPACK_NSIS_EXTRA_INSTALL_COMMANDS   - Extra commands used during install
+# included. The list of available CPACK_xxx variables and their associated
+# documentation may be obtained using
+#  cpack --help-variable-list
+#
+# Some variables are common to all generators (e.g. CPACK_PACKAGE_NAME)
+# and some are specific to a generator
+# (e.g. CPACK_NSIS_EXTRA_INSTALL_COMMANDS). The generator specific variables
+# usually begin with CPACK_<GENNAME>_xxxx.
 
 
 SET(CPACK_BINARY_BUNDLE "")
@@ -39,6 +22,7 @@ SET(CPACK_BINARY_STGZ "")
 SET(CPACK_BINARY_TBZ2 "")
 SET(CPACK_BINARY_TGZ "")
 SET(CPACK_BINARY_TZ "")
+SET(CPACK_BINARY_WIX "")
 SET(CPACK_BINARY_ZIP "")
 SET(CPACK_CMAKE_GENERATOR "Unix Makefiles")
 SET(CPACK_COMPONENTS_ALL "")
@@ -74,8 +58,8 @@ SET(CPACK_PACKAGE_VERSION_MAJOR "1")
 SET(CPACK_PACKAGE_VERSION_MINOR "0")
 SET(CPACK_PACKAGE_VERSION_PATCH "2")
 SET(CPACK_RESOURCE_FILE_LICENSE "/home/klatremus/Dokumenter/Work/code/orthAgogue/src/Copyright.txt")
-SET(CPACK_RESOURCE_FILE_README "/usr/share/cmake-2.8/Templates/CPack.GenericDescription.txt")
-SET(CPACK_RESOURCE_FILE_WELCOME "/usr/share/cmake-2.8/Templates/CPack.GenericWelcome.txt")
+SET(CPACK_RESOURCE_FILE_README "/usr/local/share/cmake-2.8/Templates/CPack.GenericDescription.txt")
+SET(CPACK_RESOURCE_FILE_WELCOME "/usr/local/share/cmake-2.8/Templates/CPack.GenericWelcome.txt")
 SET(CPACK_SET_DESTDIR "OFF")
 SET(CPACK_SOURCE_CYGWIN "")
 SET(CPACK_SOURCE_GENERATOR "ZIP")
@@ -89,3 +73,4 @@ SET(CPACK_SOURCE_ZIP "")
 SET(CPACK_STRIP_FILES "TRUE")
 SET(CPACK_SYSTEM_NAME "Linux_Linux-3.2.0-60-generic")
 SET(CPACK_TOPLEVEL_TAG "package")
+SET(CPACK_WIX_SIZEOF_VOID_P "8")
