@@ -39,13 +39,27 @@ void pipe_struct::finalize_memory(const uint taxon_length) {
     }
 
     //! Tests for the internal sums:
-    assert(result_this.cnt_names == elements_expectation.cnt_names);
+    if((result_this.cnt_inpa > 0) || (result_this.cnt_ortho > 0) || (result_this.cnt_co_orth > 0) ) {
+      if(result_this.cnt_names != elements_expectation.cnt_names) {
+	fprintf(stderr, "!!\t There might be an error in the orthAgogue-filtering:\n"
+		"-\t The operation resulted in %u names, though there were %u names;\n"	      
+		"-\t With in total %u inparalogs, %u orthologs, and %u co-orthologs;\n"
+		"-\t The message was generated at at [%s]:%s:%d\n"
+		"If this message is not understood, please forward it to the developer at oekseth@gmail.com",
+		result_this.cnt_names, elements_expectation.cnt_names, 
+		result_this.cnt_inpa, result_this.cnt_ortho, result_this.cnt_co_orth,
+		__FUNCTION__, __FILE__, __LINE__);
+      }
+      assert(result_this.cnt_names == elements_expectation.cnt_names);
+    } // else no names are wirtten, as no result were created.
     assert(result_this.cnt_inpa  == elements_expectation.cnt_inpa);
     assert(result_this.cnt_ortho == elements_expectation.cnt_ortho);
     assert(result_this.cnt_co_orth <= elements_expectation.cnt_co_orth);
 
     //! Tests for the total sums:
-    assert(result_complete.cnt_names == (uint)listTaxa[taxon_length-1].rel_end);
+    if((result_this.cnt_inpa > 0) || (result_this.cnt_ortho > 0) || (result_this.cnt_co_orth > 0) ) {
+      assert(result_complete.cnt_names == (uint)listTaxa[taxon_length-1].rel_end);
+    }
     assert(result_complete.cnt_ortho == listOrtho.get_total_number_of_pairs());
 
     //! De-allocates the container:

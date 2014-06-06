@@ -1,0 +1,12 @@
+Tizio1|prot1_t1 Tizio1|prot1_t1 100.00 402 0 0 1 402 1 402 0.0 758
+Tizio1|prot2_t1 Tizio2|prot2_t2 51.56 384 186 0 17 400 3 386 8e-114 340
+Tizio1|prot3_t1 Tizio2|prot3_t3 51.56 384 186 0 17 400 3 386 8e-114 340
+Tizio1|prot3_t1 Tizio3|prot3_t3 52.13 376 178 1 17 392 3 376 7e-113 337
+Tizio1|prot4_t1 Tizio1|prot4_t1 49.58 357 176 2 17 371 3 357 6e-94 288
+Tizio2|prot1_t2 Tizio3|prot1_t3 41.54 390 209 7 17 394 3 385 1e-75 242
+Tizio2|prot2_t2 Tizio3|prot2_t3 30.21 384 251 6 19 393 16 391 2e-38 142
+Tizio2|prot3_t2 Tizio1|prot2_t1 33.68 291 184 4 3 292 9 291 8e-32 123
+Tizio3|prot1_t3 Tizio3|prot1_t3 27.76 263 163 9 29 275 26 277 9e-08 51.2
+Tizio3|prot1_t3 Tizio1|prot1_t1 27.76 263 163 9 29 275 26 277 9e-08 51.2
+Tizio3|prot2_t3 Tizio2|prot2_t2 24.68 154 116 0 40 193 40 193 1e-07 50.8
+Tizio3|prot3_t3 Tizio3|prot3_t3 27.54 207 142 3 34 232 22 228 1e-06 47.4

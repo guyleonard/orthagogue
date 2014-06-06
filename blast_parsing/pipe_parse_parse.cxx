@@ -382,33 +382,95 @@ list_file_parse_t *pipe_parse_parse::free_memory(list_file_parse_t *data) {
 
 //-----------
 
+char *get_startOf_next_column(char *string, const int line_caller = INT_MAX) {
+  assert(string);
+  const uint string_length = (uint)strlen(string);
+  assert(string[string_length] == '\0'); // which is what we expect from the 'strlen(..)' function.
+  uint pos_first_occurence = UINT_MAX;
+  for(uint i = 0; i < string_length; i++) {
+    if(pos_first_occurence == UINT_MAX) {
+      if( (string[i] == '\t') || (string[i] == ' ') ) {
+	//! Then we've found the character:
+	pos_first_occurence = i;
+      }
+    }
+  }
+  //! Remove consequative spaces (as we assume that consquative spaces does not indicate empty columns).
+  if(pos_first_occurence != UINT_MAX) {
+    assert(pos_first_occurence < string_length);
+    bool is_a_space = true;
+    for(uint i = pos_first_occurence; i < string_length; i++) {
+      if(is_a_space) {
+	if( (string[i] == '\t') || (string[i] == ' ') ) {
+	  pos_first_occurence++;
+	} else {is_a_space = false;} // in order to avoid disjoint scopes of white spots.
+      } 
+    }
+    assert(pos_first_occurence < string_length);
+    return string + pos_first_occurence;
+  } else {
+    if(line_caller != INT_MAX) {
+      fprintf(stderr, 
+	      "!!\t Did not find the expected BlastP-column in your input-file:\n"
+	      "-\t We have now tested for ' ' (ie, space), and '\\t' (ie, tab), without finding the column of interest.\n"
+	      "-\t The column was requested from %s:%d\n"
+	      "If this error is seen, please contact the developer at oekseth@gmail.com",
+	      __FILE__, line_caller);
+    }
+    return NULL;
+  }
+}
 
 //! Gets the overlap data, inserts it into the strcture, and returns an updated position in the string
 char *pipe_parse_parse::getOverlapAndUpdate(Parse &p, char *&pos_column_start) {
   pos_column_start++; // jumps beyound the tab
-  char *pos_column_end = strchr(pos_column_start, '\t'); // After the 3. column
+  assert(pos_column_start);
+  //  char *pos_column_end = strchr(pos_column_start, '\t'); // After the 3. column
+  char *pos_column_end = get_startOf_next_column(pos_column_start, __LINE__); // After the 3. column
   pos_column_end++; // jumps over the 'tab'
   if(use_improved_overlap_algo) {
     // jumps over column 4, 5, 6:
-    assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 5. column
+    pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 5. column
     pos_column_end++; // jumps over the 'tab'
-    assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 6. column
+    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 6. column
     pos_column_end++; // jumps over the 'tab'
-    assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 7. column
+    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 7. column
     pos_column_end++; // jumps over the 'tab'
     const int val_in_first = atoi(pos_column_end);
-    assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 8. column
+    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 8. column
     pos_column_end++; // jumps over the 'tab'
     const int val_in_second = atoi(pos_column_end);
     p.overlap_in = val_in_second - val_in_first; // Sets the overlap for the inner
-    assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 9. column
+    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 9. column
     pos_column_end++; // jumps over the 'tab'
     const int val_out_first = atoi(pos_column_end);
-    pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 10. column
+    pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 10. column
     assert(pos_column_end);
     pos_column_end++; // jumps over the 'tab'
     const int val_out_second = atoi(pos_column_end);
     p.overlap_out = val_out_second - val_out_first; // Sets the overlap for the outer
+    // printf("\t pos_column_end=%p, at pipe_parse_parse:%d\n", pos_column_end, __LINE__); // FIXME: remove this printf!
+    // assert(pos_column_end);  
+    // pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 5. column
+    // printf("\t pos_column_end=%p, at pipe_parse_parse:%d\n", pos_column_end, __LINE__); // FIXME: remove this printf!
+    // pos_column_end++; // jumps over the 'tab'
+    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 6. column
+    // pos_column_end++; // jumps over the 'tab'
+    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 7. column
+    // pos_column_end++; // jumps over the 'tab'
+    // const int val_in_first = atoi(pos_column_end);
+    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 8. column
+    // pos_column_end++; // jumps over the 'tab'
+    // const int val_in_second = atoi(pos_column_end);
+    // p.overlap_in = val_in_second - val_in_first; // Sets the overlap for the inner
+    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 9. column
+    // pos_column_end++; // jumps over the 'tab'
+    // const int val_out_first = atoi(pos_column_end);
+    // pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 10. column
+    // assert(pos_column_end);
+    // pos_column_end++; // jumps over the 'tab'
+    // const int val_out_second = atoi(pos_column_end);
+    // p.overlap_out = val_out_second - val_out_first; // Sets the overlap for the outer
     //    printf("(%d - %d) && (%d - %d)  ", val_in_second, val_in_first, val_out_second, val_out_first);
   } else p.overlap_in = atoi(pos_column_end);
 
@@ -421,16 +483,23 @@ char *pipe_parse_parse::getDistanceUpdate(Parse &p, char *&pos_column_start, flo
   // Jumps past 6 Columns:
   char *start = pos_column_start;
   if(!use_improved_overlap_algo) {
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 1
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 2
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 3
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 4
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 5
-    assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 6
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 1
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 2
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 3
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 4
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 5
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 6
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 1
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 2
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 3
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 4
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 5
+    // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 6
     assert(pos_column_start);
   }
   char *before_problem = pos_column_start;
-  pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 7
+  pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 7
+  //pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 7
   if(pos_column_start > logical_end) {
     log_builder::throw_warning(blastp_syntax, __LINE__, __FILE__, __FUNCTION__, "Column in blast file not found while calculating the distance in the blast file");
     blast_extractors_t::print_segment(start, before_problem);
@@ -441,7 +510,8 @@ char *pipe_parse_parse::getDistanceUpdate(Parse &p, char *&pos_column_start, flo
   } else {
     if(pos_column_start != NULL) {
       if(USE_LAST_BLAST_CLOMUN_AS_DISTANCE) { // uses the last blast column as input
-	pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 8
+	pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 8
+	//pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 8
 	assert(pos_column_start);
 	p.distance = atof(pos_column_start);
 	if(p.distance > max_sim_val) {
@@ -506,6 +576,7 @@ uint pipe_parse_parse::parse_blast_blocks_data(int my_id, char *buffer_one, char
       if((logical_end-start_row)>50) {
 	lines_in_file_found++;
       }
+      assert(buffer_one);      
       buffer_one = getOverlapAndUpdate(p, buffer_one);
       assert(buffer_one);
       buffer_one = getDistanceUpdate(
