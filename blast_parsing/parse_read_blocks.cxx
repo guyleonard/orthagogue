@@ -162,6 +162,7 @@ long int parse_read_blocks::getNextReadLength() {
       length = arr[read_postion_to_retrieve] - file_pos; // new_pos - old_pos
       read_postion_to_retrieve++;
     } while((read_postion_to_retrieve < position_in_arr) && (length < disk_buffer_size)); 
+    //printf("\t get string-block %u/%u, with size=%u, at parse_read_blocks:%d\n", (uint)read_postion_to_retrieve, (uint)size, (uint)length, __LINE__); // FIXME: remove.
     return length;
   }
   return 0;

@@ -234,6 +234,7 @@ sub print_inner_protein_facts {
 	printf("\t The protein-count-option was de-activated in order to reduce memory consumption\n");
     }
 
+    printf("-\t in brief, w.r.t. the disk_buffer_size parameter, we observed for the biggest taxon-taxon-protein-pair, consists of %u=%.3E chars (for protein \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_id\" and taxon-pair \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_taxaPair\")\n", $biggest_identified_disk_buffer_size_taxon_taxon_protein, $biggest_identified_disk_buffer_size_taxon_taxon_protein);
    printf(FILE "-\t in brief, w.r.t. the disk_buffer_size parameter, we observed for the biggest taxon-taxon-protein-pair, consists of %u=%.3E chars (for protein \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_id\" and taxon-pair \"$biggest_identified_disk_buffer_size_taxon_taxon_protein_taxaPair\")\n", $biggest_identified_disk_buffer_size_taxon_taxon_protein, $biggest_identified_disk_buffer_size_taxon_taxon_protein);
 
     printf("------------------------------------------------------\n");
@@ -280,6 +281,7 @@ if(($numArgs == 3) || ($numArgs == 4)) {
     printf("----------------------------------------------------------------------\n");
     printf("Extract BlastP facts, which (among others) is of interest when configuring orthAgogue for large blastP files.\n");
     printf("-\tUsage: %s <blastp_file> <seperator> <taxon-index> <bool: get-expressive-knowledge-of-proteins> \n", $0);
+    printf("-\tExample of expressive result: perl aux/estimate_disk_buffer_parameter.pl ./blast_parsing/all.blast \"_\" \"0\" 1\n");
     printf("-->\tThis message was seen because %d arguments were used. In order to run the software, provide either 1 argument (i.e. the blastp-file-name).\n", $numArgs);
     printf("\nThe software was developed by O.K. Ekseth. Questions to be forwarded to [oekseth\@gmail.com].\n");
     printf("----------------------------------------------------------------------\n");

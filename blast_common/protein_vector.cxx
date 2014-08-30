@@ -71,12 +71,14 @@ bool protein_vector::getTaxonIndex(char *taxon, int &taxon_ind/*, const bool deb
     int temp = -1;
     if(hashTaxa->getIndex(taxon, temp)) {
       taxon_ind = hashTaxa->get_backtracking_index(temp);
+      // printf("\t return taxon_id=%d, given temp_index=%d, and taxon=\"%s\"==\"%s\", at protein_vector:%d\n", taxon_ind, temp, taxon, hashTaxa->get_string(temp), __LINE__); // FIXME: remove this printf.
       return true;
     }
   } else {
     for(int taxon_id = 0;taxon_id<taxon_length;taxon_id++) {
       if(hashProtein[taxon_id].is_equal(taxon)) {
 	taxon_ind = taxon_id;
+	// printf("\t return taxon_id=%d, where taxon=\"%s\"==\"%s\", at protein_vector:%d\n", taxon_ind, taxon, hashProtein[taxon_id].getName(), __LINE__); // FIXME: remove this printf.
 // 	if(true) {
 // 	  if(hashTaxa) {
 // 	    int temp = -1;
@@ -102,7 +104,7 @@ bool protein_vector::getTaxonIndex(char *taxon, int &taxon_ind/*, const bool deb
 bool protein_vector::getProteinIndex(int taxon_id, char *protein, int &protein_ind) {
   if(taxon_id < taxon_length) {
     if(hashProtein) {
-      if(hashProtein[taxon_id].getIndex(protein, protein_ind)) return true;
+      if(hashProtein[taxon_id].getIndex(protein, protein_ind, true)) return true;
       else {
 	protein_ind = INT_MAX;
 	return false;
@@ -133,6 +135,7 @@ bool protein_vector::set_taxon(Parse p, const bool is_inner, const bool is_equal
   if(is_equal) { // both has changed
     if(!getTaxonIndex(p.get_taxon_in(), this_taxon_in_prev)) format_is_correct=false;
     this_taxon_out_prev  = this_taxon_in_prev;
+    // printf("(set-as-non-exists) this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_in(), __LINE__); // FIXME: remove.
     if(string_taxon_out_prev) memset(string_taxon_out_prev, '\0', string_taxon_out_prev_size); // Do not set name due to the fact that an equal hit will only occure once
     // Updates the name:
     copy_name(string_taxon_in_prev, string_taxon_in_prev_size, p.get_taxon_in(), p.get_taxon_in_length());
@@ -141,7 +144,12 @@ bool protein_vector::set_taxon(Parse p, const bool is_inner, const bool is_equal
     if(!getTaxonIndex(p.get_taxon_in(), this_taxon_in_prev)) format_is_correct=false;
   } else { // right has changed: string_taxon_out_prev --> p.taxo_out;  Updates the name.
     copy_name(string_taxon_out_prev, string_taxon_out_prev_size, p.get_taxon_out(), p.get_taxon_out_length());
-    if(!getTaxonIndex(p.get_taxon_out(), this_taxon_out_prev)) {format_is_correct=false;}
+    if(!getTaxonIndex(p.get_taxon_out(), this_taxon_out_prev)) {
+      format_is_correct=false;
+      // printf("[wrong-format](set-as-non-exists) this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove
+    } else {
+      //printf("(updated) this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove.
+    }
   }
   return format_is_correct;
 }
@@ -162,7 +170,7 @@ void protein_vector::setOverlap(int this_taxon_in_prev, mem_loc this_index_in_pr
    @REQURES: Executes after the update of the taxon
    @Return: false if the relation is not consisten (in accordance with the rules defined in the assumptions of the blast file)
 */
-bool protein_vector::set_protein(Parse p, const bool is_inner, const bool is_outer, const bool is_equal, bool &overlap_is_inserted) {
+bool protein_vector::set_protein(Parse p, const bool is_inner, const bool is_outer, const bool is_equal, bool &overlap_is_inserted, taxa *listTaxa) {
   bool format_is_correct = true;
   #ifndef NDEBUG
   if(is_equal) {
@@ -173,6 +181,8 @@ bool protein_vector::set_protein(Parse p, const bool is_inner, const bool is_out
   } 
   #endif
 
+  //printf("for name(%s, %s), taxa(%s, %s), %s(, %d, %d, %d, ), at protein_vector:%d\n", p.get_name_in(), p.get_name_out(),p.get_taxon_in(), p.get_taxon_out(), __FUNCTION__, is_inner, is_outer, is_equal, __LINE__);
+
   if(is_equal) { // both has changed; updates:
     if(!(getProteinIndex(this_taxon_in_prev, p.get_name_in(), this_index_in_prev))) format_is_correct=false;
     else {
@@ -181,6 +191,11 @@ bool protein_vector::set_protein(Parse p, const bool is_inner, const bool is_out
       has_data = true;
     }
     this_index_out_prev = this_index_in_prev; // equal
+    assert(this_index_in_prev != INT_MAX);
+    //! Then validate that the prev index is actually 'this'
+    if(listTaxa) {
+      assert(0 == strcmp(p.get_name_out(), listTaxa[this_taxon_out_prev].getArrKey(this_index_out_prev))); // todo: validate correctness of this
+    }
     // Updates the name:
     copy_name(string_name_in_prev, string_name_in_prev_size, p.get_name_in(), p.get_name_in_length());
     copy_name(string_name_out_prev, string_name_out_prev_size, p.get_name_out(), p.get_name_out_length());
@@ -191,7 +206,13 @@ bool protein_vector::set_protein(Parse p, const bool is_inner, const bool is_out
       copy_name(string_name_in_prev, string_name_in_prev_size, p.get_name_in(), p.get_name_in_length());
     } 
     if(is_outer) { // right has changed
-      if(!(getProteinIndex(this_taxon_out_prev, p.get_name_out(), this_index_out_prev))) format_is_correct=false;
+      //const int old_this_index_out_prev = this_index_out_prev;
+      if(!(getProteinIndex(this_taxon_out_prev, p.get_name_out(), this_index_out_prev))) {
+	format_is_correct=false;
+	//printf("\t changed: [%d]-->[%d]=\"%s\", given taxa_index=\"%d\", at protein_vector:%d\n", old_this_index_out_prev, (int)this_index_out_prev,  p.get_name_out(), (int)this_taxon_out_prev, __LINE__);
+      } else {
+	//printf("\t changed: [%d]-->[%d]=\"%s\", given taxa_index=\"%d\", at protein_vector:%d\n", old_this_index_out_prev, (int)this_index_out_prev,  p.get_name_out(), (int)this_taxon_out_prev, __LINE__);
+      }
       // Updates the name:
       copy_name(string_name_out_prev, string_name_out_prev_size, p.get_name_out(), p.get_name_out_length());
     }
@@ -215,11 +236,21 @@ char *get_string_with_newlines_cleared(char *string) {
 //! Updates the setting for the inner (left)/ and outer (right)  protein:
 struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overlap_is_inserted, taxa *listTaxa) {
   struct protein_relation data = protein_relation();
+#ifndef NDEBUG
+  static slock_t taxa_upd;
+  { 
+    // TODO: set [”elow] when investigating reasons for failure.
+    //slock_t::scoped_lock taxalock(taxa_upd);
+#endif
   // Updates the setting for the inner (left) protein:
   overlap_is_inserted = false;
   //! Ensures that only one "global overlap" is inserte:
   overlaps_inserted_by_curret_call = 0;
 
+  // printf("-----------------------------------, protein_vector:%d\n", __LINE__); // FIXME: remove.
+  // if(this_taxon_out_prev != INT_MAX) {
+  //   printf("-- this_taxon_out_prev=%u, given \"%s\"=?=\"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), hashProtein[this_taxon_out_prev].getName(), __LINE__); // FIXME: remove.
+  // }
   //! Our summary of the parsing:
   enum {id_taxon_in, id_taxon_out, id_name_in, id_name_out} field_id;
   if(false && field_id) ; // To hide the indirect usage of the above enum.
@@ -274,11 +305,13 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
       else {
 	if(0 == strcmp(p.get_name_in(), p.get_taxon_out())) {
 	  this_taxon_out_prev = this_taxon_in_prev; // Protein in changed from string_name_out_prev --> p.get_name_out());
+	  //printf("this_taxon_out_prev=%u, given \"%s\"==\"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), p.get_name_in(), __LINE__); // FIXME: remove.
 	  field_has_changed[id_taxon_out] = true;
 	} else {
 	  //! Then it is a special case where the protein does not have a self-comparison as its first case.
 	  //! This could be due to parallell exeuction when constructing the input Blast file.
 	  getTaxonIndex(p.get_taxon_out(), this_taxon_out_prev);
+	  //printf("this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove.
 	  field_has_changed[id_taxon_out] = true;
 	}
 	int temp_index = 0;  getTaxonIndex(p.get_taxon_out(), temp_index);
@@ -288,6 +321,9 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
   } else if(this_index_in_prev == INT_MAX) data.set_as_no_exsists();  
   // Updates the setting for the outer (right) protein:
   // NOTE: At frist look at the blastp-file it seems like it follows the label-id-format (AA->AA, AA->BB, AA->CC, DD->BB), but sometimes (AA->BB, AA->AA, AA->CC, DD->BB), therefore the last label must be checked independently of the first label.    
+  if(input_is_valid[id_taxon_out] && field_has_changed[id_taxon_out]) {
+    field_has_changed[id_name_out] = true; // as the protein-names may not neccessarily be unique across different taxa.
+  }
   if(input_is_valid[id_taxon_in] && field_has_changed[id_name_out]) { // Assumes that the names are unique
     // Protein out changed from string_name_out_prev --> p.get_name_out()
     if(field_has_changed[id_name_out]) { // Not equal; Assumes that the names are unique
@@ -295,19 +331,26 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
 	data.set_as_no_exsists();
 	input_is_valid[id_taxon_out] = false;
       }
-    } else if(this_taxon_out_prev == INT_MAX) data.set_as_no_exsists();
+    } else if(this_taxon_out_prev == INT_MAX) {
+      data.set_as_no_exsists();
+      //printf("(set-as-non-exists) this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove.
+    }   
   } else {if(this_index_out_prev == INT_MAX) data.set_as_no_exsists();}
-
+  
   //! Updates the data for the inner relation:
   //! Note: A bunch of taxa may not be valid, as the user may choose to ignroe txa having less than a threshold-size of proteins.
   if(data.exsists() && input_is_valid[id_taxon_out] && input_is_valid[id_taxon_in]) {
     //! Tests if the labels are equal
     bool is_equal = false;
     char *name_in = p.get_name_in(); char *name_out = p.get_name_out();
-    if(0 == strcmp(name_in, name_out)) is_equal = true;
-
+    if(
+       (0 == strcmp(name_in, name_out)) &&
+       (0 == strcmp(p.get_taxon_in(), p.get_taxon_out()))       
+       ) {is_equal = true;}
+    
     //    bool format_is_correct = true;
-    if(!set_protein(p, field_has_changed[id_name_in], field_has_changed[id_name_out], is_equal, overlap_is_inserted)){ // sets the protein
+    //printf("this_taxon_out_prev=%u, given \"%s\", name-out-prev=\"%s\", name-out=\"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), string_name_out_prev, p.get_name_out(), __LINE__); // FIXME: remove.
+    if(!set_protein(p, field_has_changed[id_name_in], field_has_changed[id_name_out], is_equal, overlap_is_inserted, listTaxa)){ // sets the protein
       data.set_as_no_exsists();
       //      format_is_correct = false;
       // input_is_valid[id_name_in] = false;
@@ -322,13 +365,18 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
     }
     is_initiated = true; // Update the variable for the next run:
 
-    if(this_taxon_out_prev == INT_MAX) data.set_as_no_exsists();
+    if(this_taxon_out_prev == INT_MAX) {
+      data.set_as_no_exsists();
+      //printf("(set-as-non-exists) this_taxon_out_prev=%u, given \"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), __LINE__); // FIXME: remove.
+    }
     data.protein_in = this_index_in_prev;
     data.taxon_in = this_taxon_in_prev;
     data.protein_out = this_index_out_prev;
     data.taxon_out = this_taxon_out_prev;
+    // assert(0 == strcmp(p.get_name_out(), listTaxa[this_taxon_out_prev.getArrKey(this_index_out_prev)))
 #ifndef NDEBUG
     if(this_taxon_out_prev != INT_MAX) {
+      //printf("(assert) this_taxon_out_prev=%u, given \"%s\"=?=\"%s\", at protein_vector:%d\n", this_taxon_out_prev, p.get_taxon_out(), hashProtein[this_taxon_out_prev].getName(), __LINE__); // FIXME: remove.
       assert(hashProtein[this_taxon_out_prev].is_equal(p.get_taxon_out()));
     }
 
@@ -377,6 +425,10 @@ struct protein_relation protein_vector::get_protein_indexes(Parse p, bool &overl
     }
 #endif
   } else if(data.exsists()) {data.set_as_no_exsists();}
+
+#ifndef NDEBUG
+  }
+#endif
 
   return data;
 }
@@ -482,14 +534,14 @@ void protein_vector::assert_private_parts() {
   bool is_inner = true, is_equal = true;
   bool overlap_is_inserted = false;
   if(false) printf("is_inner(%d), is_equal(%d)\n", is_inner, is_equal);
-  assert(!set_protein(p, is_inner, !is_inner, is_equal, overlap_is_inserted));
+  assert(!set_protein(p, is_inner, !is_inner, is_equal, overlap_is_inserted, NULL));
   assert(0 == compare_strings(string_name_in_prev, p.getInnerName()));
   assert(0 != compare_strings(string_name_out_prev, p.getOuterName()));
   assert(0 != compare_strings(string_taxon_in_prev, p.getTaxonInName()));
   assert(0 != compare_strings(string_name_out_prev, p.getTaxonOutName()));
 
   is_inner = false, is_equal = false;
-  assert(!set_protein(p, is_inner, !is_inner, is_equal, overlap_is_inserted));
+  assert(!set_protein(p, is_inner, !is_inner, is_equal, overlap_is_inserted, NULL));
   assert(0 == compare_strings(string_name_in_prev, p.getInnerName()));
   assert(0 == compare_strings(string_name_out_prev, p.getOuterName()));
   assert(0 != compare_strings(string_taxon_in_prev, p.getTaxonInName()));

@@ -48,12 +48,13 @@ int cnt = 0;
     const clock_t tend = times(NULL); 
     log->append_measurement(read_first, 0, tstart, tend); 
   } else {
+    //printf("\t get buffer-section, at pipe_parse_file:%d\n", __LINE__); // FIXME: remove.
     section = get_section();
     const clock_t tend = times(NULL); 
     log->append_measurement(read_second, 0, tstart, tend);
   }
   //  debug_sum_time_usage(false, (tend-tstart).seconds());
-  //  printf("returns\tat line %d in file %s\n", __LINE__, __FILE__);
+  //printf("returns\tat line %d in file %s\n", __LINE__, __FILE__);
   return section;
 }
 

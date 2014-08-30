@@ -382,39 +382,76 @@ list_file_parse_t *pipe_parse_parse::free_memory(list_file_parse_t *data) {
 
 //-----------
 
-char *get_startOf_next_column(char *string, const int line_caller = INT_MAX) {
-  assert(string);
-  const uint string_length = (uint)strlen(string);
-  assert(string[string_length] == '\0'); // which is what we expect from the 'strlen(..)' function.
-  uint pos_first_occurence = UINT_MAX;
-  for(uint i = 0; i < string_length; i++) {
-    if(pos_first_occurence == UINT_MAX) {
-      if( (string[i] == '\t') || (string[i] == ' ') ) {
-	//! Then we've found the character:
-	pos_first_occurence = i;
-      }
-    }
+//! @return the offset to be used when blank chars are not to be taken into consideration.
+//! @remarks grabbed from the Knitting-Tools software under limited permissions by oekseth@gmail.com
+uint get_offset_blanks(const char *string) {
+  uint offset = 0;
+  //assert(strlen(string) > 0); // as we expect there to be at least one elment in the string.
+  while(((*(string + offset) == ' ')
+	 //|| (*(string + offset) == '\t') 
+	 ) && (*(string + offset) != '\0') 
+	//&& (*(remaining_row + offset) != '\t') 
+	) {
+    offset++; // in order to incremnet past the space.
   }
-  //! Remove consequative spaces (as we assume that consquative spaces does not indicate empty columns).
-  if(pos_first_occurence != UINT_MAX) {
-    assert(pos_first_occurence < string_length);
-    bool is_a_space = true;
-    for(uint i = pos_first_occurence; i < string_length; i++) {
-      if(is_a_space) {
-	if( (string[i] == '\t') || (string[i] == ' ') ) {
-	  pos_first_occurence++;
-	} else {is_a_space = false;} // in order to avoid disjoint scopes of white spots.
-      } 
-    }
-    assert(pos_first_occurence < string_length);
-    return string + pos_first_occurence;
+  return offset;
+}
+
+
+char *get_startOf_next_column(char *string, const int line_caller, const uint string_size) {
+  assert(string);
+  //const uint string_length = (uint)strlen(string);
+  //  printf("string_length=%u, at pipe_parse_parse:%d\n", string_length, __LINE__); // FIXME: remove!
+  //assert(string[string_length] == '\0'); // which is what we expect from the 'strlen(..)' function.
+  //uint pos_first_occurence = UINT_MAX;
+
+  uint pos_first_occurence = 0;
+  assert(string_size > 0);
+  //assert(strlen(string) > 0); // as we expect there to be at least one elment in the string.
+  while(((*(string + pos_first_occurence) != ' ') && (*(string + pos_first_occurence) != '\t') ) && (*(string + pos_first_occurence) != '\0') 
+	//&& (*(remaining_row + pos_first_occurence) != '\t') 
+	) {
+    pos_first_occurence++; // in order to incremnet past the space.
+  }
+  // //! Note: there is a signfiicant performance-improvement including [below] "(pos_first_occurence == UINT_MAX)" in the if-sentence.
+  // for(uint i = 0; (i < string_length) && (pos_first_occurence == UINT_MAX); i++) {
+  //   if( (string[i] == '\t') || (string[i] == ' ') ) {
+  //     //! Then we've found the character:
+  //     pos_first_occurence = i;
+  //   }    
+  // }
+  // //! Remove consequative spaces (as we assume that consquative spaces does not indicate empty columns).
+  if((pos_first_occurence != 0) && (pos_first_occurence < string_size) ) {
+    assert(pos_first_occurence != 0); // as it's otherwise not found.
+    assert(pos_first_occurence < string_size);
+    assert(
+	   (string[pos_first_occurence] == ' ') || 
+	   (string[pos_first_occurence] == '\t') 
+	   );
+    // FIXME: include [below]
+    const uint offset = get_offset_blanks(string + pos_first_occurence);
+    //    const uint offset = get_offset_blanks(string + pos_first_occurence);
+    //   assert(pos_first_occurence < string_length);
+  //   bool is_a_space = true;
+  //   for(uint i = pos_first_occurence; (i < string_length) && is_a_space; i++) {
+  //     if(is_a_space) {
+  // 	if(string[i] == ' ') {
+  // 	//	if( (string[i] == '\t') || (string[i] == ' ') ) {
+  // 	  pos_first_occurence++;
+  // 	} else {is_a_space = false;} // in order to avoid disjoint scopes of white spots.
+  //     } 
+  //   }
+  //   assert(pos_first_occurence < string_length);
+    return string + pos_first_occurence + offset;
   } else {
     if(line_caller != INT_MAX) {
       fprintf(stderr, 
 	      "!!\t Did not find the expected BlastP-column in your input-file:\n"
+	      "-\t pos_first_occurence=%u, strlen(string)=%u;\n"
 	      "-\t We have now tested for ' ' (ie, space), and '\\t' (ie, tab), without finding the column of interest.\n"
 	      "-\t The column was requested from %s:%d\n"
 	      "If this error is seen, please contact the developer at oekseth@gmail.com",
+	      pos_first_occurence, (uint)strlen(string),
 	      __FILE__, line_caller);
     }
     return NULL;
@@ -426,52 +463,37 @@ char *pipe_parse_parse::getOverlapAndUpdate(Parse &p, char *&pos_column_start) {
   pos_column_start++; // jumps beyound the tab
   assert(pos_column_start);
   //  char *pos_column_end = strchr(pos_column_start, '\t'); // After the 3. column
-  char *pos_column_end = get_startOf_next_column(pos_column_start, __LINE__); // After the 3. column
+  //assert(strlen(pos_column_start) > 0); // TODO: may we skip this line?  (27. aug. 2014 by oekseth):
+  char *line_end = strchr(pos_column_start, '\n');
+  if(!line_end) {
+    line_end = strchr(pos_column_start, '\0');
+  }
+assert(line_end); // is what we expect: if this does not hold, then get the pos of the '\0' char.
+  uint max_string_length = line_end - pos_column_start;
+  char *pos_column_end = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); // After the 3. column
   pos_column_end++; // jumps over the 'tab'
   if(use_improved_overlap_algo) {
     // jumps over column 4, 5, 6:
-    pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 5. column
+    max_string_length = line_end - pos_column_end;
+    pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 5. column
+    pos_column_end++; // jumps over the 'tab'    
+    assert(pos_column_end); max_string_length = line_end - pos_column_end; pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 6. column
     pos_column_end++; // jumps over the 'tab'
-    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 6. column
-    pos_column_end++; // jumps over the 'tab'
-    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 7. column
+    assert(pos_column_end);  max_string_length = line_end - pos_column_end; pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 7. column
     pos_column_end++; // jumps over the 'tab'
     const int val_in_first = atoi(pos_column_end);
-    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 8. column
+    assert(pos_column_end); max_string_length = line_end - pos_column_end; pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 8. column
     pos_column_end++; // jumps over the 'tab'
     const int val_in_second = atoi(pos_column_end);
     p.overlap_in = val_in_second - val_in_first; // Sets the overlap for the inner
-    assert(pos_column_end);  pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 9. column
+    assert(pos_column_end);  max_string_length = line_end - pos_column_end; pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 9. column
     pos_column_end++; // jumps over the 'tab'
     const int val_out_first = atoi(pos_column_end);
-    pos_column_end = get_startOf_next_column(pos_column_end, __LINE__); // Now situated at the start of the 10. column
+    max_string_length = line_end - pos_column_end; pos_column_end = get_startOf_next_column(pos_column_end, __LINE__, max_string_length); // Now situated at the start of the 10. column
     assert(pos_column_end);
     pos_column_end++; // jumps over the 'tab'
     const int val_out_second = atoi(pos_column_end);
     p.overlap_out = val_out_second - val_out_first; // Sets the overlap for the outer
-    // printf("\t pos_column_end=%p, at pipe_parse_parse:%d\n", pos_column_end, __LINE__); // FIXME: remove this printf!
-    // assert(pos_column_end);  
-    // pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 5. column
-    // printf("\t pos_column_end=%p, at pipe_parse_parse:%d\n", pos_column_end, __LINE__); // FIXME: remove this printf!
-    // pos_column_end++; // jumps over the 'tab'
-    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 6. column
-    // pos_column_end++; // jumps over the 'tab'
-    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 7. column
-    // pos_column_end++; // jumps over the 'tab'
-    // const int val_in_first = atoi(pos_column_end);
-    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 8. column
-    // pos_column_end++; // jumps over the 'tab'
-    // const int val_in_second = atoi(pos_column_end);
-    // p.overlap_in = val_in_second - val_in_first; // Sets the overlap for the inner
-    // assert(pos_column_end);  pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 9. column
-    // pos_column_end++; // jumps over the 'tab'
-    // const int val_out_first = atoi(pos_column_end);
-    // pos_column_end = strchr(pos_column_end, '\t'); // Now situated at the start of the 10. column
-    // assert(pos_column_end);
-    // pos_column_end++; // jumps over the 'tab'
-    // const int val_out_second = atoi(pos_column_end);
-    // p.overlap_out = val_out_second - val_out_first; // Sets the overlap for the outer
-    //    printf("(%d - %d) && (%d - %d)  ", val_in_second, val_in_first, val_out_second, val_out_first);
   } else p.overlap_in = atoi(pos_column_end);
 
   return pos_column_end;
@@ -483,12 +505,17 @@ char *pipe_parse_parse::getDistanceUpdate(Parse &p, char *&pos_column_start, flo
   // Jumps past 6 Columns:
   char *start = pos_column_start;
   if(!use_improved_overlap_algo) {
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 1
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 2
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 3
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 4
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 5
-    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 6
+  char *line_end = strchr(pos_column_start, '\n');
+  if(!line_end) {line_end = strchr(pos_column_start, '\0');}
+  assert(line_end); // is what we expect: if this does not hold, then get the pos of the '\0' char.
+  uint max_string_length = line_end - pos_column_start;
+
+    assert(pos_column_start);    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 1
+    assert(pos_column_start);  max_string_length = line_end - pos_column_start; pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 2
+    assert(pos_column_start); max_string_length = line_end - pos_column_start;    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 3
+    assert(pos_column_start); max_string_length = line_end - pos_column_start;    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 4
+    assert(pos_column_start); max_string_length = line_end - pos_column_start;    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 5
+    assert(pos_column_start); max_string_length = line_end - pos_column_start;    pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 6
     // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 1
     // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 2
     // assert(pos_column_start);    pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 3
@@ -498,7 +525,11 @@ char *pipe_parse_parse::getDistanceUpdate(Parse &p, char *&pos_column_start, flo
     assert(pos_column_start);
   }
   char *before_problem = pos_column_start;
-  pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 7
+  char *line_end = strchr(pos_column_start, '\n');
+  if(!line_end) {line_end = strchr(pos_column_start, '\0');}
+  assert(line_end); // is what we expect: if this does not hold, then get the pos of the '\0' char.
+  uint max_string_length = line_end - pos_column_start; 
+  pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 7
   //pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 7
   if(pos_column_start > logical_end) {
     log_builder::throw_warning(blastp_syntax, __LINE__, __FILE__, __FUNCTION__, "Column in blast file not found while calculating the distance in the blast file");
@@ -510,7 +541,8 @@ char *pipe_parse_parse::getDistanceUpdate(Parse &p, char *&pos_column_start, flo
   } else {
     if(pos_column_start != NULL) {
       if(USE_LAST_BLAST_CLOMUN_AS_DISTANCE) { // uses the last blast column as input
-	pos_column_start = get_startOf_next_column(pos_column_start, __LINE__); pos_column_start++;//column to jump over is 8
+	uint max_string_length = line_end - pos_column_start; 
+	pos_column_start = get_startOf_next_column(pos_column_start, __LINE__, max_string_length); pos_column_start++;//column to jump over is 8
 	//pos_column_start = strchr(pos_column_start, '\t'); pos_column_start++;//column to jump over is 8
 	assert(pos_column_start);
 	p.distance = atof(pos_column_start);
@@ -576,38 +608,46 @@ uint pipe_parse_parse::parse_blast_blocks_data(int my_id, char *buffer_one, char
       if((logical_end-start_row)>50) {
 	lines_in_file_found++;
       }
+      // // printf("\t at line %u, at pipe_parse_parse:%d\n", (uint)lines_in_file_found, __LINE__); // FIXME: remove.
       assert(buffer_one);      
       buffer_one = getOverlapAndUpdate(p, buffer_one);
       assert(buffer_one);
+   
       buffer_one = getDistanceUpdate(
-				     p,
-				     buffer_one,
-				     max_sim_value[my_id],
-				     logical_end, USE_LAST_BLAST_CLOMUN_AS_DISTANCE);
+      				     p,
+      				     buffer_one,
+      				     max_sim_value[my_id],
+      				     logical_end, USE_LAST_BLAST_CLOMUN_AS_DISTANCE);
       if(!buffer_one) {
-	blast_extractors::print_segment(start_row, logical_end);
-	buffer_one = logical_end;
+      	blast_extractors::print_segment(start_row, logical_end);
+      	buffer_one = logical_end;
       } else {
-	buffer_one = getUpdatedLineEndPosition(buffer_one, logical_end);
+      	buffer_one = getUpdatedLineEndPosition(buffer_one, logical_end);
       }
-      
+   
+      //buffer_one = strchr(buffer_one, '\n');   // FIXME: remove this, and include [below]  
+      // // FIXME: include:   
+      // FIXME: include:
+      //{ // FIXME: remove this, and include [below]
       bool overlap_is_inserted = false;
       protein_relation prot = proteinVector[my_id].get_protein_indexes(p, overlap_is_inserted, listTaxa); // Gets the indexes for the row
       if(prot.exsists()) { // Must have labels recognised int the first parsing:
-	const bool prot_pair_seen_before = first_protein[my_id].is_set();
-	if(!prot_pair_seen_before) { // Not set, and thereby the first protein
-	  first_protein[my_id].copy(prot);
-	} 
-	bool is_a_new_protein = false;
-	if(parseData[my_id]->insert_new_rel(prot.taxon_in, prot.taxon_out, p, prot)) {
-	  cnt_inserted_pairs++;
-	  is_a_new_protein = true;
-	} else {cnt_overlapping_pairs++;}	
-	if(USE_EVERYREL_AS_ARRNORM_BASIS) {
-	  assert(local_arrNorm[my_id]);
-	  local_arrNorm[my_id]->insert((uint)prot.taxon_in, (uint)prot.taxon_out, p.distance, prot.protein_in, prot.protein_out, listTaxa, !is_a_new_protein);	  
-	}
-      } 
+	//FIXME: include [below]
+      	const bool prot_pair_seen_before = first_protein[my_id].is_set();
+      	if(!prot_pair_seen_before) { // Not set, and thereby the first protein
+      	  first_protein[my_id].copy(prot);
+      	} 
+	//FIXME: include [below]
+      	bool is_a_new_protein = false;
+      	if(parseData[my_id]->insert_new_rel(prot.taxon_in, prot.taxon_out, p, prot)) {
+      	  cnt_inserted_pairs++;
+      	  is_a_new_protein = true;
+      	} else {cnt_overlapping_pairs++;}	
+      	if(USE_EVERYREL_AS_ARRNORM_BASIS) {
+      	  assert(local_arrNorm[my_id]);
+      	  local_arrNorm[my_id]->insert((uint)prot.taxon_in, (uint)prot.taxon_out, p.distance, prot.protein_in, prot.protein_out, listTaxa, !is_a_new_protein);	  
+      	}
+      }
     } else { // The header is incorrect: Moves to the line end, in order to start the next read
       buffer_one = strchr(buffer_one, '\n');       // update: This implies that if a blink line is added, no damage is done.
     }
@@ -698,6 +738,7 @@ mem_loc pipe_parse_parse::parse_blast_blocks_ids(int my_id, char *buffer_one, ch
   loint found_at_index_pos = 0;
   { 
     slock_t::scoped_lock taxalock(taxa_upd);
+    //printf("\t starts a new block, at pipe_parse_parse:%d\n", __LINE__); // FIXME: remove.
     for(int i = 0;i<CPU_TOT;i++) {
       if (in_use[i] == false) {in_use[i]=true; my_id=i;i=CPU_TOT;}
     }    

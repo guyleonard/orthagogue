@@ -183,11 +183,13 @@ void taxa::setProteinName(uint local_index, char *&string) {
 */
 char *taxa::getCompleteProteinName(uint local_index) {
   if(local_index < (uint)total_cnt) {
-    char* string = new char[40]; 
+    const uint string_size = 40 + strlen(name) + strlen(arrKey[local_index]);    // TODO: validate this assignment (oekseth, 27. aug 2014)
+    assert(string_size < 100000); // is what we expect, though not a neccessary condition.
+    char* string = new char[string_size]; 
     log_builder::test_memory_condition_and_if_not_abort(string!=NULL, __LINE__, __FILE__, __FUNCTION__);
-    memset(string, '\0', 40);
+    memset(string, '\0', string_size);
     char *end_of_string = string;
-    if(INDEX_IN_FILE_FOR_TAXON_NAME > INDEX_IN_FILE_FOR_PROTEIN_NAME) {
+    if(INDEX_IN_FILE_FOR_TAXON_NAME > INDEX_IN_FILE_FOR_PROTEIN_NAME) {      
       setProteinName(local_index, end_of_string);
       *end_of_string++ = SEPERATOR;
       setTaxonName(end_of_string, true);

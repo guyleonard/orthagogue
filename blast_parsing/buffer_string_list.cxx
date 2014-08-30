@@ -15,10 +15,11 @@ void buffer_string_list::merge(char *&str, loint &length, char *&temp, loint tem
 		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
       }
     }
+    memset(res, '\0', res_size);
     res[res_size] = '\0';
     assert(res);
     memcpy(res, str, length); memcpy(res + length, temp, temp_length);
-    delete [] temp;
+    delete [] temp; temp = NULL;
     delete [] str; str = res; length = res_size;
   }
 }
@@ -145,6 +146,7 @@ bool buffer_string_list::get_section(string_section *&section, loint &found_at_i
 		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
       }
     }
+    //printf("return section at index-pos=%u, with length=%.3e, at buffer_string_list:%d\n", (uint)found_at_index_pos, (float)length, __LINE__); // FIXME: remove.
     //    section = new string_section(str, str + length, 0, 0, false);
     return true;
   } else {

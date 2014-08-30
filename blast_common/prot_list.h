@@ -94,8 +94,17 @@ class prot_list {
     //cmph_config_set_algo(config, CMPH_BRZ); // An alternative hashing algo
     hash = cmph_new(config);
     if(hash==NULL) {
+      fprintf(stderr, "!!\t Hash was not constructed, probably due to rececing a non-sorted Blast input file.\n"
+	      "-\t The execution-time will therefore be severly hampered;"
+	      "-\t We would be utmost thankful if you would forward this message to the developer,\n"
+	      " \t either through orthAgogue's issue-page (at our home-page), or directly to the developer at [oekseth@gmail.som].\n"
+	      "This message was printed at [%s]:%s:%d\n",
+	      __FUNCTION__, __FILE__, __LINE__); 
       use_hash = false;
-    }  else cmph_config_destroy(config), use_hash = true;
+    }  else {
+      //printf("(ok: constructed hash, at prot_list:%d.)\n", __LINE__);
+      cmph_config_destroy(config), use_hash = true;
+    }
   }
 
   //! Builds the 'overlap' and 'list of keys' vectors: Called from the constructor
@@ -176,14 +185,22 @@ class prot_list {
     return false;
   }
   
+  //! @return the string corresponding to the index.
+  const char *get_string(const int index) const {
+    if(arrKey && (index < (int)prots_length) && arrKey[index]) {
+      return arrKey[index];
+    } else {return NULL;}
+  }
+
   /**
      @brief Calculates the index of the given string.
      @param <key>  The name of the protein (witout the taxon identifier)
      @param <index> The index found in the hash table (and therefore the unique identifier inside this taxon)
+     @param <debug> if set to true, then print debugging-information at special poins in the exeuction.
      @return True if reciprocal; the index given as a parameter is set
      @date 26.08.2011 by oekseth (asserts).
   */
-  bool getIndex(char *key, int &index) {
+  bool getIndex(char *key, int &index, const bool debug=false) {
     if(key != NULL) {
       if(*key == '\n') key++; // Sometimes a 'newline' is set at its start.
       if(use_hash) {
@@ -212,6 +229,7 @@ class prot_list {
 	  */
 	}
       } else {
+	if(debug) {printf("\t get the key \"%s\" through the slow approach, as prot_list:%d\n", key, __LINE__);} // FIXME: remove.
 	for(mem_loc i = 0;i<prots_length;i++) { // Iterates thorugh the list
 	  if(0==(strncmp(arrKey[i], key, strlen(arrKey[i])))) {index=i; return true;}
 	  //	  if(0==(strncmp(arrKey[i], key, SIZE_PROTEIN-1))) {index=i; return true;}

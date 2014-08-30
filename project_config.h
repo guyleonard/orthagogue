@@ -23,7 +23,7 @@
 #endif
 
 //! The patch version number of the software:
-#define CPACK_PACKAGE_VERSION_PATCH 2
+#define CPACK_PACKAGE_VERSION_PATCH 3
 #ifndef CPACK_PACKAGE_VERSION_PATCH
 #define CPACK_PACKAGE_VERSION_PATCH 9
 #endif
@@ -80,8 +80,8 @@ LOG_FOLDER_NAME report_orthaGogue
 //! Set if asserts of the functions is to be compiled in.
 /* #undef assert_code */
 //! If set disables the extra asserts to be run during execution: practical if software behaves in an unexpected manner.
-/* #undef NDEBUG */
-/* #undef NDEBUG */
+//#define NDEBUG
+//#define NDEBUG 
 //! Includes extra parameters to the software for debugging purposes (named DEUBG_*).
 #define INCLUDE_CMD_DEBUG_PARAMS 
 

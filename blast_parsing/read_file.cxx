@@ -145,7 +145,8 @@ void read_file::verify_correctness_of_block(int myrank, char *start, char *buffe
 	start++;
       } 
       if(verbouse)       printf("\n|\n");
-      if(sep_cnt!=2) {
+      //if(sep_cnt != 2) { // TODO: validate [below] modificaiton, and if so, remove this line.
+      if(sep_cnt < 2) {
 	fprintf(stderr, "!!\t Identified a difficult row in the blastp file; suggest you remove it, or fix the problems with the fields of it. To help identify details, we will now include details which should be forwarded to [oekseth@gmail.com]:\n[myrank=%d]\tPlease verify the setting used launching this software. (Merging of blocks in blast_p failed: Found #(sperators)=%u, at %s:%d, originally called from %s:%d\n", myrank, (uint)sep_cnt, __FILE__, __LINE__, file_caller, line_caller);
 	log_builder::throw_warning(software_error, __LINE__, __FILE__, __FUNCTION__, "handling of blastp-row failed");
 	//! Print the last line: important during debugging, ie..e understanding of the problem. Last tie it helped solving a problem was April 26, 2013.

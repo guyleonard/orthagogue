@@ -31,11 +31,12 @@ void taxon_data::setTaxonName(char *taxon) {
 void taxon_data::get_taxon_name(char *&name, loint &size_arg) {
   const loint size_this = strlen(taxon_name);
   if(!name || (size_this > (size_arg-1))) {
-    if(name) delete [] name; 
+    if(name) {delete [] name; }
     name = new char[size_this+1];
+    memset(name, '\0', size_this);
     log_builder::test_memory_condition_and_if_not_abort(name!=NULL, __LINE__, __FILE__, __FUNCTION__);
     size_arg = size_this+1;
-  }
+  } 
   name[size_this]='\0'; // Sets an end
   strncpy(name, taxon_name, size_this);
 }

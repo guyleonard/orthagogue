@@ -8,10 +8,15 @@ void taxon_list::copy_name(char *&dest, loint &size_dest, char *src, const loint
   if(src) {
     if(dest) {
       if(size_dest < size_src) {
-	delete [] dest; dest = new char[size_src+1]; dest[size_src] = '\0';	
+	delete [] dest; dest = new char[size_src+1]; 
+	dest[size_src] = '\0';	
       }
     } else {dest = new char[size_src+1]; dest[size_src] = '\0';}
+    memset(dest, '\0', size_src);
+
     strncpy(dest, src, size_src);
+    // FIXME: validate below (27. aug. 2014 by oekseth):
+    size_dest = size_src;
   }
 }
 
@@ -230,7 +235,7 @@ void taxon_list::merge(taxon_list *arg) {
       for(int i = 0; i< length; i++) {
 	taxon_data buff = taxon_data(); // An empty object.
 	if(arg->hasTaxon(listTaxon[i].get_taxon_name(), buff)) { // iterate thwough all of 'args' possibilities
-	  const bool has_overlap = is_overlap(arg[0], listTaxon[i].get_taxon_name());
+	  const bool has_overlap = is_overlap(*arg, listTaxon[i].get_taxon_name());
 	  listTaxon[i].mergeData(buff, has_overlap);
 	} 
       }
@@ -414,6 +419,8 @@ bool taxon_list::compare_strings(char *name_1, char *name_2, uint length_string)
 //!  @return True if the strings given are equal.
 bool taxon_list::compare_strings(char *name_1, char *name_2) {
   if(name_1 && name_2) {
+    assert(strlen(name_1));
+    assert(strlen(name_2));
     return (0 == strcmp(name_1, name_2));
   } else { // If both are not set, they are equal.
     if((name_1 == NULL) && (name_2 == NULL)) return true;
@@ -680,7 +687,7 @@ char* taxon_list::init_name(uint size) {
 void taxon_list::delete_buffer() {
   taxon_data::close(listTaxon, (uint)taxon_reserved);
   if(taxon_name_first_read) {  delete [] taxon_name_first_read; taxon_name_first_read = NULL;}
-  if(taxon_name_last_read) {delete [] taxon_name_last_read; taxon_name_last_read = NULL;}
+  if(taxon_name_last_read) {delete [] taxon_name_last_read; taxon_name_last_read = NULL; taxon_name_last_read_size = 0;}
   if(protein_name_first_read) {delete [] protein_name_first_read; protein_name_first_read = NULL;}
   if(protein_name_last_read) {delete [] protein_name_last_read; protein_name_last_read = NULL;}
   taxon_used = -1; taxon_reserved = 0;

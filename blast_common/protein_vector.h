@@ -4,6 +4,7 @@
  
 #include "protein_relation.h"
 #include "prot_list.h"
+#include "tbb_libs.h"
 
 /**
    @file
@@ -99,7 +100,7 @@ bool getProteinIndex(int taxon_id, char *protein, mem_loc &protein_ind) {
      @brief Sets the protein and returns the id of it
      @return false if the relation is not consisten (in accordance with the rules defined in the assumptions of the blast file)
   **/
-  bool set_protein(Parse p, const bool is_inner, const bool is_outer, const bool is_equal, bool &overlap_is_inserted);
+  bool set_protein(Parse p, const bool is_inner, const bool is_outer, const bool is_equal, bool &overlap_is_inserted, taxa *listTaxa);
   //! Returns a list of objects using 'this' type.
   static protein_vector* init(uint size);
   /**

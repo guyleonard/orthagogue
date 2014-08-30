@@ -17,25 +17,29 @@ bool aboveOverlapLimit(overlap_t overlap_left_left, overlap_t overlap_left_right
       fprintf(stderr, "overlap_proteins(%u), largest_overlap(%u)\n", overlap_proteins, largest_overlap);
     }
     //  assert((float)(final_bastard < (float)(100+1)));
-    if(!((float)final_bastard < (float)(100+1))) printf("----.sadfsa\fn");
-    printf("__final_bastard(%u)\n", final_bastard);
-    assert(((float)final_bastard < (float)(100+1)));
+    // if(!((float)final_bastard < (float)(100+1))) printf("----.sadfsa\fn");
+    // printf("__final_bastard(%u)\n", final_bastard);
+    //assert(((float)final_bastard < (float)(100+1)));
   }
   //  assert(final_bastard < (100+1));
   if(final_bastard < (overlap_t)AMINO_LIMIT) {
 
     return false;
   }  else if(final_bastard >= 101) {
-    if(PRINT_OVERLAP_VALUES_ABOVE) {
-      printf("overlap=%u due to ", final_bastard);
-      if(overlap_left_left == largest_overlap) printf("left_protein(%u) > right_protein(%u) ", overlap_left_left, overlap_right_right);
-      else  printf("right_protein(%u) > left_protein(%u) ", overlap_right_right, overlap_left_left);
-      printf(" and ");
-      if(overlap_left_right == overlap_proteins) printf("left_right_protein(%u) < right_left_protein(%u) ", overlap_left_right, overlap_right_left);
-      else printf("right_left_protein(%u) < left_right_rotein(%u) ", overlap_right_left, overlap_left_right);
-    }
-    //    printf("\tabove\t(%u)\t", final_bastard);
-    return false;
+    //! Then, if the parssing is correct, two different proteins have a bigger overlap the the proteins overlap with itself, which might be a bit strange.
+    return true; // FIXME: validate that this si correct. <-- change made by oekseth at Wed. of August 27. 2014
+    // if(PRINT_OVERLAP_VALUES_ABOVE || true) {
+    //   printf("overlap=%u due to ", final_bastard);
+    //   if(overlap_left_left == largest_overlap) printf("left_protein(%u) > right_protein(%u) ", overlap_left_left, overlap_right_right);
+    //   else  printf("right_protein(%u) > left_protein(%u) ", overlap_right_right, overlap_left_left);
+    //   printf(" and ");
+    //   if(overlap_left_right == overlap_proteins) printf("left_right_protein(%u) < right_left_protein(%u) ", overlap_left_right, overlap_right_left);
+    //   else printf("right_left_protein(%u) < left_right_rotein(%u) ", overlap_right_left, overlap_left_right);
+    //   printf("\t at %s:%d\t ", __FILE__, __LINE__);
+    // }
+    // //assert(((float)final_bastard < (float)(100+1)));
+    // //    printf("\tabove\t(%u)\t", final_bastard);
+    // return false;
   }   else return true; // Conclusion: greater or equal implies holding it';
 }
 

@@ -25,6 +25,7 @@ void blast_filtering::exec_filtering(int n_thread, log_builder_t *log, const boo
   uint taxon_start = 0, taxon_end = 0;
   while(listParseData->get_interval(list_length, array, current_position, taxon_start, taxon_end, is_ortholog, is_inpa, is_co_orth)) {
     if(taxon_end != 0) {
+      // printf("\t taxa-range[%u, %u], at blast_filtering:%d\n", taxon_start, taxon_end, __LINE__); // FIXME: remove.
       pipe_bucket buck(is_inpa, taxon_start, taxon_end, taxon_length, log, listParseData, listStructData, listTaxa, n_thread);
       pipe_ortholog_inparalog parse(taxon_length, is_inpa, USE_EVERYREL_AS_ARRNORM_BASIS, n_thread, log,
 				    listOrtho, listParseData, AMINO_LIMIT, max_input_value, MIN_SIMILARITY_LIMIT,
@@ -293,6 +294,9 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
     log->start_measurement(filter_orthologs);
     uint n_thread = CPU_TOT;     
     task_scheduler_init init(n_thread);
+    if(f_log) fprintf(f_log, "before_filtering(%u), ", listParseData->getTotalLengthOfData());
+    if(f_log) fprintf(f_log, "before_filtering_inpa(%u), ", listParseData->getTotalLengthOfData_for_inparalogs());
+    if(f_log) fprintf(f_log, "before_filtering_ortho(%u), ", listParseData->getTotalLengthOfData_for_orthologs());
     exec_filtering(n_thread, log, /*is_inpa=*/false);
 #ifdef USE_MPI
     if(!arrNorm) arrNorm = new list_norm(taxon_length, max_input_value, PRINT_NORMALIXATION_BASIS, DEBUG_NORM);
@@ -310,9 +314,13 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	listStructData->copy_list_of_nodes_taxa_responsibilities(listParseData);
       }
 #endif
+      if(f_log) fprintf(f_log, "after_filtering(%u), ", listParseData->getTotalLengthOfData());
+      if(f_log) fprintf(f_log, "after_filtering_ortho(%u), ", listParseData->getTotalLengthOfData_for_orthologs());
       if(f_log) fprintf(f_log, "before_inpa(%u)", listStructData->getTotalLengthOfData());
 
       exec_filtering(n_thread, log, /*is_inpa=*/true);
+
+      if(f_log) fprintf(f_log, "after_filtering_inpa(%u), ", listParseData->getTotalLengthOfData_for_inparalogs());
 
       listOrtho.set_DEBUG_PRINT_DISCARDED_PAIRS(DEBUG_PRINT_DISCARDED_PAIRS, taxon_length, listTaxa);
 #ifdef USE_MPI
@@ -339,6 +347,7 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
       if(blastInfo.build_meta_blast) {
 	//! Adds meta-data, i.e. after the filtering is performed:
 	//blastInfo.cnt_relations_orthologs_After_filtering = listStructData->getTotalLengthOfData_for_orthologs();
+	printf("cnt_relations_Total_Before_filtering=%u, at blast_filtering:%d\n", listStructData->getTotalLengthOfData_for_orthologs(), __LINE__);
 	blastInfo.cnt_relations_orthologs_Before_filtering = listOrtho.get_total_number_of_pairs();	
       }
       listOrtho.execInternGlobalReciProc(listTaxa[taxon_length-1].rel_end);

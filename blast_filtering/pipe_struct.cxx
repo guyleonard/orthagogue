@@ -138,8 +138,10 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
       for(uint o = 0; o < size_o; o++) {
 	const uint taxon_out   =  taxa::getTaxonId(ortho_p[o].ind_out, listTaxa, taxon_length);
 	const int world_out = ortho_p[o].ind_out; const float sim_score = ortho_p[o].distance;
+	assert(taxon_out < (uint)taxon_length);
 	const uint protein_out = listTaxa[taxon_out].getLocalIndex(world_out);
 	char *protein_name_out = listTaxa[taxon_out].getCompleteProteinName(protein_out);
+	assert(protein_name_out); // todo: will this walsywa hold?
 	mclData[my_id]->insert_pair_ortho(world_index_in, world_out, protein_name_in, protein_name_out, sim_score, arrAvgNorm[taxon_in][taxon_out]);
 	delete [] protein_name_out;
       }

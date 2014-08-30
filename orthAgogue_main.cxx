@@ -36,7 +36,7 @@ int main_operation_turbo(int array_cnt, char **array) {
   // Gets the user configuration parameters:
   tsettings_input_t settings_input;
   blast->get_input_settings(settings_input);
-  
+
   // Updates with the settings given by the user.
   log->update_settings(settings_input);
   // Starts the logg tool gaining spesific measurements of time usage:

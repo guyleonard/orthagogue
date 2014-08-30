@@ -26,6 +26,7 @@ void blast_parsing::get_input_settings(tsettings_input_t &obj) {
   obj.DEBUG_NORM = DEBUG_NORM;
   obj.PRINT_NORMALIXATION_BASIS = PRINT_NORMALIXATION_BASIS;
   obj.CPU_TOT = CPU_TOT;
+  //printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
   obj.USE_EVERYREL_AS_ARRNORM_BASIS = USE_EVERYREL_AS_ARRNORM_BASIS; 
 }
 
@@ -159,6 +160,8 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
   log->start_measurement(read_first);
   //
   //! Sets the correct disk buffer size:
+
+  //printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
   const uint file_size = (uint)log_builder::get_file_size(FILE_INPUT_NAME, __LINE__, __FILE__);
   if(disk_buffer_size == 0) {
     const loint minimum_number_ofchars_for_paralisation = 9*1024*1024; // 9MB.
@@ -181,6 +184,8 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
     }
   }
   if(disk_buffer_size == file_size) disk_buffer_size+=10; // In order to satisfy some constraints in the code.
+
+  //printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
 
   if((number_of_nodes > 1) && ((disk_buffer_size*number_of_nodes) > file_size)) {    
     // Will not be able to utilize all the nodes, and choose to abort instead of wasting resources, as our mpi implementation is designated for big files, ie, this would imply a wrong usage:
@@ -229,6 +234,7 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
 #else
   const bool use_modified_blast_reading = false; // TODO: Bekreft at dette er rett gjennom empiri!
 #endif
+  //printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
   if(FOPEN_MAX < (CPU_TOT*number_of_nodes)) {
     if(true || DEBUG) printf("Not able to use more than %d cpus on this system. Updates.\n", FOPEN_MAX*number_of_nodes);
     CPU_TOT = FOPEN_MAX;
@@ -241,7 +247,9 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
   pipe_parse_file create(SEPERATOR, disk_buffer_size, FILE_INPUT_NAME, log);
 #endif
 
-  //  printf("disk_buffer_size=%u, at blast_parsing:%d\n", (uint)disk_buffer_size, __LINE__); // FIXME: remove this printf!
+  //printf("disk_buffer_size=%u, at blast_parsing:%d\n", (uint)disk_buffer_size, __LINE__); // FIXME: remove this printf!
+
+  // printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
 
   {
     pipe_parse_parse parse(reading_file_start_position, reading_file_length, disk_buffer_size, 0, USE_EVERYREL_AS_ARRNORM_BASIS, log, SEPERATOR, FILE_INPUT_NAME, CPU_TOT, USE_LAST_BLAST_CLOMUN_AS_DISTANCE,
@@ -273,12 +281,14 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
 #endif
     listProteins->log_produce_memory_allocations(); // Produces a  log file of memory allocations if macro variable is set in the .in file.
     assert(collect.parseBlocks);
+    //printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
     collect.parseBlocks->log_generate_memory_allocation_overview(CPU_TOT);
     parse.log_generate_memory_allocation_overview(CPU_TOT);
     //  const bool wait_reading_until_end = true; // TODO: ta en avgjorelse
-    //    printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
+    //printf("\t CPU_TOT=%u, at blast_parsing:%d\n", CPU_TOT, __LINE__); // FIXME: remove this printf!
     collect.set_cpu_number(CPU_TOT);
-    listTaxa =  parse.initSecondRead(listProteins, taxon_length, CPU_TOT); // sets the taxon length
+    listTaxa =  parse.initSecondRead(listProteins, taxon_length, CPU_TOT); // sets the taxon length    
+    //printf("\t start the second-read, with %u taxa, at blast_parsing:%d\n", taxon_length, __LINE__); // FIXME: remvoe.
     if(use_modified_blast_reading) parse.set_parse_blocks_second_read(collect.parseBlocks);
     else  {
       create.rewind_file(collect.parseBlocks); // resets the file to the start position      
@@ -287,11 +297,12 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
     collect.initSecondRead(listTaxa, taxon_length, parse.hashProtein);
     log->end_measurement(collect_read_medio);
     log->start_measurement(read_second);
+    //printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
     pipe.add_filter(parse);      
     pipe.add_filter(collect);
     pipe.run(CPU_TOT);
     pipe.clear();
-
+    //printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
     /*
     printf("[myrank=%d]\tlines_found(%u)\t pairs_overlapping(%u), overlap_cnt_in_parse(%u) =?= parse_overlaps_found(%u) =?= overlap_cnt_merge(%u), in blast_parse:%d\n", myrank,
 	   parse.get_lines_in_file_found_last_read(),

@@ -49,10 +49,13 @@ void buffer_string::print_second_buffer(){if(second_buffer)print_segment(second_
 
 //! Sets the input param as the merged result of the two internal buffers.
 void buffer_string::get_string(loint &length, char *&str) {
+  length = 0;
   if(first_buffer == NULL) {length =size_second_buffer; str = second_buffer; size_second_buffer = 0;}
   else if(second_buffer == NULL) {length =size_first_buffer; str = first_buffer; size_first_buffer = 0;}
   else { // Merge:
-    length = size_first_buffer + size_second_buffer+1;
+    // FIXME: validate [”elow] (oekseth, augs. 27, 2014)
+    length = size_first_buffer + size_second_buffer;
+    //    length = size_first_buffer + size_second_buffer+1;
     //    str = new char[length+1]; 
     try {str = new char[length+1];} 
     catch (std::exception& ba) {
@@ -63,6 +66,7 @@ void buffer_string::get_string(loint &length, char *&str) {
 		"Error generated at [%s]:%s:%d\n",  ba.what(), __FUNCTION__, __FILE__, __LINE__);
       }
     }   
+    memset(str, '\0', size_first_buffer + size_second_buffer+1); // TODO: is this intiation neccessary, ie, does it solve the problesm Valgrind is complaining of?
     //    str = new char[length+1]; str[length] = '\0';
     memcpy(str, first_buffer, size_first_buffer);
     str[size_first_buffer] = '\n'; 
