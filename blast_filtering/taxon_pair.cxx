@@ -113,12 +113,28 @@ taxon_pair *taxon_pair::init_taxon_pair(uint taxon_start, uint taxon_end, uint t
     //! Get the length of the data to process.    
     if(listParseData) {
       data_length = listParseData->getTotalLengthOfData(taxon_start, taxon_end, only_inpa, biggest_collection_size);
+      //printf("\t data_length=%u, listParseData=%p, listStructData=%p, at %s:%d\n", data_length, listParseData, listStructData, __FILE__, __LINE__);
     }
     else if(listStructData) {
       data_length = listStructData->getTotalLengthOfData(taxon_start, taxon_end, only_inpa, biggest_collection_size);
+      //printf("\t data_length=%u, range[%u, %u], taxon_length=%u, listParseData=%p, listStructData=%p, at %s:%d\n", data_length, taxon_start, taxon_end, taxon_length, listParseData, listStructData, __FILE__, __LINE__);
+    } else {log_builder::test_memory_condition_and_if_not_abort(!listStructData && !listParseData, __LINE__, __FILE__, __FUNCTION__);}
+    //printf("\t data_length=%u, listParseData=%p, listStructData=%p, at %s:%d\n", data_length, listParseData, listStructData, __FILE__, __LINE__);    
+    bool use_brute_force_count = false;
+    if(!data_length) { // then we explcitily update it for the given taxa:      
+      biggest_collection_size = 0;
+      for(uint taxon_id = min(taxon_start, taxon_length); taxon_id < min(taxon_length, taxon_end); taxon_id++) {
+	data_length += listTaxa[taxon_id].total_cnt;
+	if((uint)listTaxa[taxon_id].total_cnt > (uint)biggest_collection_size) {
+	  biggest_collection_size = listTaxa[taxon_id].total_cnt;
+	}
+	
+      }
+      use_brute_force_count = true;
     }
-    else {log_builder::test_memory_condition_and_if_not_abort(!listStructData && !listParseData, __LINE__, __FILE__, __FUNCTION__);}
+
     if(data_length > 0) {
+      //printf("\t data_length=%u, at %s:%d\n", data_length, __FILE__, __LINE__);
       //! Estimates preferable size for each chunk of data a thread shall process before "continuing":
       uint size_list = n_threads*2; // TODO: Consider updating this number iaw emprical experiences.
       const uint taxon_set_length = taxon_end-taxon_start;
@@ -130,6 +146,7 @@ taxon_pair *taxon_pair::init_taxon_pair(uint taxon_start, uint taxon_end, uint t
       const uint temp_size = taxon_set_length*(1+(biggest_collection_size / avg_size)); // the upper bound
       size_list = max(size_list, temp_size)+1; // In order to have an empty element stating the end of it.
       taxon_pair_t *pair = taxon_pair::initList(size_list);    
+      //printf("\t size_list=%u, range-taxa=[%u, %u], at %s:%d\n", (uint)size_list, (uint)taxon_start, (uint)taxon_end, __FILE__, __LINE__);
       uint index = 0;  // the index to add data
       //      uint cnt_proteins_allocated = 0; // 
       for(uint taxon_id = taxon_start; taxon_id < taxon_end; taxon_id++) {
@@ -139,6 +156,11 @@ taxon_pair *taxon_pair::init_taxon_pair(uint taxon_start, uint taxon_end, uint t
 	else if(listStructData) taxon_is_our_responsibility = listStructData->taxon_is_myranks_responsibility(taxon_id);
 	if(taxon_is_our_responsibility) {
 	  if(listTaxa[taxon_id].total_cnt > 0) {
+	    // if(use_brute_force_count) {
+	    //   //! Then, given our sparse data-sets, we only use a rough exsitamtion:
+	    //   pair[index] = taxon_pair(taxon_id, start_pos, end_pos, listParseData, listStructData, listTaxa);
+	    //   continue
+	    // }
 	    int start_pos = 0; // defining the start of the block
 	    const uint max_cnt_proteins = (uint)((float)1.3*avg_size); //1 + listTaxa[taxon_id].total_cnt / n_threads;
 	    bool values_changed = true;
@@ -147,8 +169,8 @@ taxon_pair *taxon_pair::init_taxon_pair(uint taxon_start, uint taxon_end, uint t
 	    //! Divides the elements for a taxon into blocks, depending on the max number of proteins set:
 	    while(start_pos < listTaxa[taxon_id].total_cnt && values_changed) { // Iterates through the data for the given inner taxa:
 	      int end_pos = 0;
-	      if(listParseData)       end_pos = listParseData->getProteinStartOfNextBuffer(start_pos, taxon_id, only_inpa, max_cnt_proteins);
-	      else if(listStructData) end_pos = listStructData->getProteinStartOfNextBuffer(start_pos, taxon_id, only_inpa, max_cnt_proteins);
+	      if(listParseData)       end_pos = listParseData->getProteinStartOfNextBuffer(start_pos, taxon_id, only_inpa || use_brute_force_count, max_cnt_proteins);
+	      else if(listStructData) end_pos = listStructData->getProteinStartOfNextBuffer(start_pos, taxon_id, only_inpa || use_brute_force_count, max_cnt_proteins);
 	      const int length_of_data = end_pos - start_pos;
 	      if((length_of_data) > 0) {
 		//		cnt_proteins_allocated += length_of_data; //(end_pos - start_pos);
@@ -202,6 +224,7 @@ taxon_pair *taxon_pair::init_taxon_pair(uint taxon_start, uint taxon_end, uint t
 
 taxon_pair *taxon_pair::get_taxon_pairs(taxon_pair *listPair, uint &list_pair_pos) {
   // Only do the oepration iof it has any data:
+  //printf("\t at %s:%d\n", __FILE__, __LINE__);
   if(listPair && listPair[list_pair_pos].has_data()) {
     // First find the number of elements we need:
     uint start = list_pair_pos;
@@ -212,6 +235,7 @@ taxon_pair *taxon_pair::get_taxon_pairs(taxon_pair *listPair, uint &list_pair_po
       start++;
     }
     const uint lst_length =  start - list_pair_pos;
+    //printf("\t lst_length=%u, at %s:%d\n", lst_length, __FILE__, __LINE__);
     if(lst_length) {
       taxon_pair *lst = (taxon_pair*)malloc(sizeof(taxon_pair)*(lst_length+1));
       log_builder::test_memory_condition_and_if_not_abort(lst!=NULL, __LINE__, __FILE__, __FUNCTION__);

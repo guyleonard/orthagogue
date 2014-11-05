@@ -50,6 +50,7 @@ float pipe_ortholog_inparalog::insert_relation(uint my_id, uint taxon_in, uint t
   if(!INPARALOG_OPERATION || (listTaxa[taxon_in].aboveInparalogLimit(/*taxon_in, */protein_in, sim_avg, INPARALOG_OPERATION)
 			      && listTaxa[taxon_out].aboveInparalogLimit(/*taxon_out,*/ protein_out, sim_avg, INPARALOG_OPERATION))) {
     if(sim_avg > MIN_SIMILARITY_LIMIT) { // Store elements
+      //printf("\t inserts relation, at [%s]:%s:%d\n", __FUNCTION__, __FILE__, __LINE__);
       l_fileStruct[my_id]->insert_relation(taxon_in, taxon_out, protein_in, protein_out, sim_avg);
       if(INPARALOG_OPERATION && !USE_EVERYREL_AS_ARRNORM_BASIS) { // Inserts the normative basis into the list of basis
 	assert(l_arrNorm[my_id]);
@@ -88,6 +89,7 @@ void pipe_ortholog_inparalog::getProteinRelations(const uint my_id, basket_parse
   // Containers for the maximum score:
   float this_sim_max = 0.0;
   stack<uint> max_sim_key;
+  const bool debug = false;
   // Reads the in_out relations:
   if(listParseData->has_data(taxon_in, taxon_out, protein_in)) {// The binary_buffer is not empty
     // There exists some relations between 'out' and 'inn'
@@ -121,6 +123,8 @@ void pipe_ortholog_inparalog::getProteinRelations(const uint my_id, basket_parse
 						    sim_in_out, sim_out_in);
 
 	      if(!INPARALOG_OPERATION) { // Inserts a possible orhtolog pair:
+		if(debug) {printf("(possible-ortholog-above-overlap-limit)\tpair (%s, %s), where sim_avg=%.3f must be above zero for being of interestat %s:%d\n",
+				  listTaxa[taxon_in].getArrKey(protein_in), listTaxa[taxon_out].getArrKey(protein_out), sim_avg, __FILE__, __LINE__);}
 		if(sim_avg > 0) {
 		  if(sim_avg > this_sim_max) { 
 		    while(!max_sim_key.empty()) {
@@ -157,6 +161,8 @@ void pipe_ortholog_inparalog::getProteinRelations(const uint my_id, basket_parse
 	while(!max_sim_key.empty()) {
 	  const uint this_protein_max = max_sim_key.top();
 	  max_sim_key.pop(); 
+	  if(debug) {printf("(possible-ortholog)\tpair (%s, %s), with sim_max=%.3f, at %s:%d\n",
+			    listTaxa[taxon_in].getProteinNameWorld(real_protein_in), listTaxa[taxon_out].getProteinNameWorld(this_protein_max), this_sim_max, __FILE__, __LINE__);}
 	  listOrtho.insertGlobalElement(real_protein_in, this_protein_max, this_sim_max);
 	}
       }
@@ -292,6 +298,7 @@ void finalizeTempList(uint **arrOrtho, uint taxon_in, uint protein_start, uint p
 	logid_t id = filter_orthologs;
 	if(INPARALOG_OPERATION) id = filter_inparalogs;
 	log->append_measurement(id, 1, tstart, tend);
+	//printf("(return-pipe)\t bucket-cnt=%u, at pipe_ortholog_inparalog:%d\n", bucket->structData->getTotalLengthOfData(), __LINE__);
 	return bucket; 	
       }
     }

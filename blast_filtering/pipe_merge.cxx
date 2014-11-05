@@ -50,7 +50,9 @@ void pipe_merge::mergeArrNorm(list_norm_t *norm) {
 /*override*/void * pipe_merge::operator()(void* item) {
   const clock_t tstart = times(NULL);
   bucket_pipe_binary *bucket = static_cast<bucket_pipe_binary*>(item);
+  //printf("(merge) at [%s]:%s:%d\n",  __FUNCTION__, __FILE__, __LINE__);
   if(bucket != NULL) {
+    //printf("# (merge) at [%s]:%s:%d\n",  __FUNCTION__, __FILE__, __LINE__);
     if(bucket->isNotEmpty()) {
       if(fileStruct) {
 	const loint cnt_this_before = fileStruct->getTotalLengthOfData();
@@ -58,6 +60,7 @@ void pipe_merge::mergeArrNorm(list_norm_t *norm) {
 	fileStruct->merge(bucket->structData);
 	bucket->free_structdata();
 	const loint cnt_this_after = fileStruct->getTotalLengthOfData();
+	//printf("(merge)\t has %u elements in the structre after the insertion-buncj, at [%s]:%s:%d\n", (uint)cnt_this_after, __FUNCTION__, __FILE__, __LINE__);
 	if(!(cnt_this_after == (cnt_this_before + cnt_arg_before))) {
 	  fprintf(stderr, "!!\tHad in this %lld elements and %lld in argument before parsing, while %lld pairs after, giving a difference of %lld pairs. (This error is found at line %d in %s and PIPE_TYPE==ORTH(%d). Please contact oekseth@gmail.com if this message is seen.)\n",
 		  cnt_this_before, cnt_arg_before, cnt_this_after, ((cnt_this_before + cnt_arg_before)-cnt_this_after), __LINE__, __FILE__, (PIPE_TYPE == ORTH));
@@ -65,6 +68,7 @@ void pipe_merge::mergeArrNorm(list_norm_t *norm) {
 	}
       } else {
 	fileStruct = bucket->structData;
+	//printf("# (merge) cnt=%u, at [%s]:%s:%d\n",  (uint)fileStruct->getTotalLengthOfData(),  __FUNCTION__, __FILE__, __LINE__);
       }
       if(arrNorm != NULL) {
 	mergeArrNorm(bucket->arrNorm);

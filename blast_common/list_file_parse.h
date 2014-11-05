@@ -1514,7 +1514,12 @@ template<class T> class list_file_parse {
 	  // Mem:           125         42         83          0          0          0 
  	  if(!sscanf(buffer, "%*s %*d %*d %lld   %*d %*d  %*d", &amount_of_free_memory_b)) { 
 	    log_builder::throw_warning(software_dependencies, __LINE__, __FILE__, __FUNCTION__, "Did not find a value in the fird column of numbers using the tool 'free -b| grep \"Mem\"' on your system, therefore unable to predict the amount of free memory available. As a susbstitution, it's assumed that 16GB of data is avialable.");
-	    amount_of_free_memory_b = 16*1024*1024*2014;
+	    //! Note: Below updated after tip from Mark DeBeen, which received a message named "integer overflow in expression" when setting "amount_of_free_memory_b = 16*1024*1024*2014;"
+	    const loint max_on_system = std::numeric_limits<int>::max();
+	    assert(max_on_system);
+	    if((max_on_system / 1024) > (16*1024*1024)) {	      
+	      amount_of_free_memory_b = 16*1024*1024*2014;
+	    } else {amount_of_free_memory_b = max_on_system;}
  	  }  
 	} 
        }

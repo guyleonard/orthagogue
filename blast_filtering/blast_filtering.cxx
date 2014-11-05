@@ -44,7 +44,7 @@ void blast_filtering::exec_filtering(int n_thread, log_builder_t *log, const boo
       buck.free_data();
       parse.free_additional_blocks();
       listStructData = merge.getFileStruct(n_thread, MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, FILE_BINARY_LOCATION);
-
+      // printf("# (constructed-ortho) cnt=%u, at [%s]:%s:%d\n",  (uint)listStructData->getTotalLengthOfData(),  __FUNCTION__, __FILE__, __LINE__);
     }
     /*
     if(is_ortholog && taxon_end == (uint)taxon_length) {
@@ -129,6 +129,9 @@ void blast_filtering::write_result_file(int n_thread, log_builder_t *log, stack_
       pipeline pipe; 
       pipe.add_filter(parse);
       pipe.add_filter(write);
+      // printf("\t cnt-total=%u, at blast_filtering:%d\n",  (uint)listStructData->getTotalLengthOfData(), __LINE__); // FIXME: remove.
+
+      //uint biggest_collection_size = UINT_MAX; printf("# cnt-in-range[%u, %u]=%u, taxon_length=%u, listParseData=%p, listStructData=%p, at %s:%d\n", taxon_start, taxon_end, listStructData->getTotalLengthOfData(taxon_start, taxon_end, /*only_inpa=*/true, biggest_collection_size), taxon_length, listParseData, listStructData, __FILE__, __LINE__);
       pipe.run(n_thread);
       pipe.clear();	  
       parse.finalize_memory(taxon_length); 
@@ -298,6 +301,7 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
     if(f_log) fprintf(f_log, "before_filtering_inpa(%u), ", listParseData->getTotalLengthOfData_for_inparalogs());
     if(f_log) fprintf(f_log, "before_filtering_ortho(%u), ", listParseData->getTotalLengthOfData_for_orthologs());
     exec_filtering(n_thread, log, /*is_inpa=*/false);
+    if(f_log) fprintf(f_log, "{after_filtering_ortho_beforeRecip(%u), cnt_total=%u}, ", listStructData->getTotalLengthOfData_for_orthologs(), (uint)listStructData->getTotalLengthOfData());
 #ifdef USE_MPI
     if(!arrNorm) arrNorm = new list_norm(taxon_length, max_input_value, PRINT_NORMALIXATION_BASIS, DEBUG_NORM);
     //! Sends- and receives the list of arrInpaLimit* objects accross nodes.
@@ -315,12 +319,12 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
       }
 #endif
       if(f_log) fprintf(f_log, "after_filtering(%u), ", listParseData->getTotalLengthOfData());
-      if(f_log) fprintf(f_log, "after_filtering_ortho(%u), ", listParseData->getTotalLengthOfData_for_orthologs());
+      if(f_log) fprintf(f_log, "after_filtering_ortho(%u), ", listStructData->getTotalLengthOfData_for_orthologs());
       if(f_log) fprintf(f_log, "before_inpa(%u)", listStructData->getTotalLengthOfData());
 
       exec_filtering(n_thread, log, /*is_inpa=*/true);
 
-      if(f_log) fprintf(f_log, "after_filtering_inpa(%u), ", listParseData->getTotalLengthOfData_for_inparalogs());
+      if(f_log) fprintf(f_log, "after_filtering_inpa(%u), ", listStructData->getTotalLengthOfData_for_inparalogs());
 
       listOrtho.set_DEBUG_PRINT_DISCARDED_PAIRS(DEBUG_PRINT_DISCARDED_PAIRS, taxon_length, listTaxa);
 #ifdef USE_MPI
@@ -336,29 +340,31 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
       //#ifndef NDEBUG
       //! Write the data to a file before performing the reciprocal ortholog-pair-matching:
       //! Note: Motiavted by the need to exemplify why higher overlap-threshold may result in more ortholog-pairs:
-      if(false) { 
-	FILE *f_log = log_builder::get_log_file_pointer("orthologs_not_recip", CPU_TOT, __FILE__, __LINE__);
+      if(f_log) { 
+	//FILE *f_log = log_builder::get_log_file_pointer("orthologs_not_recip", CPU_TOT, __FILE__, __LINE__);
 	assert(f_log);
 	listOrtho.printGlobalArr(f_log, true, listTaxa,taxon_length);
-	fclose(f_log);
+	//fclose(f_log);
       }
       //#endif
       //      const uint relations_before_recip = listOrtho.get_total_number_of_pairs();
-      if(blastInfo.build_meta_blast) {
+      if(f_log || blastInfo.build_meta_blast) {
 	//! Adds meta-data, i.e. after the filtering is performed:
 	//blastInfo.cnt_relations_orthologs_After_filtering = listStructData->getTotalLengthOfData_for_orthologs();
-	printf("cnt_relations_Total_Before_filtering=%u, at blast_filtering:%d\n", listStructData->getTotalLengthOfData_for_orthologs(), __LINE__);
+	//printf("\ncnt_relations_Total_Before_filtering=%u, at blast_filtering:%d\n", listStructData->getTotalLengthOfData_for_orthologs(), __LINE__);
+	fprintf(f_log, "#\t Print the list of orthologs Before the \"listOrtho.execInternGlobalReciProc(...)\" call, where cnt_orthologs=%u, at [%s]:%s:%d\n", listStructData->getTotalLengthOfData_for_orthologs(), __FUNCTION__, __FILE__, __LINE__);
 	blastInfo.cnt_relations_orthologs_Before_filtering = listOrtho.get_total_number_of_pairs();	
       }
       listOrtho.execInternGlobalReciProc(listTaxa[taxon_length-1].rel_end);
       //#ifndef NDEBUG
       //! Write the data to a file before performing the reciprocal ortholog-pair-matching:
       //! Note: Motiavted by the need to exemplify why higher overlap-threshold may result in more ortholog-pairs:
-      if(false) { 
-	f_log = log_builder::get_log_file_pointer("orthologs_reciprocal", CPU_TOT, __FILE__, __LINE__);
+      if(f_log) { 
+	//f_log = log_builder::get_log_file_pointer("orthologs_reciprocal", CPU_TOT, __FILE__, __LINE__);
 	assert(f_log);
+	fprintf(f_log, "#\t Print the list of orthologs After the \"listOrtho.execInternGlobalReciProc(...)\" call, at [%s]:%s:%d\n", __FUNCTION__, __FILE__, __LINE__);
 	listOrtho.printGlobalArr(f_log, true, listTaxa,taxon_length);
-	fclose(f_log);
+	//fclose(f_log);
       }
       //#endif
       if(f_log) fprintf(f_log, " after_inpa(%u)", listStructData->getTotalLengthOfData());
@@ -381,6 +387,8 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	if(f_log) fprintf(f_log, " co-orthologs(%lld)", rel_cnt);
 #endif
 
+	//printf("\t at blast_filtering:%d\n", __LINE__); // FIXME: remove.
+
 	//
 	//------------- The File Writing Operation
 	log->end_measurement(filter_co_orthologs);
@@ -396,7 +404,6 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	      }
 	      arrNorm->mpi_make_data_consistent_accross_nodes(MPI_COMM_WORLD, myrank, number_of_nodes);
 	    }
-	    
 	    // Sends- and receives the co-orthologs (stackRel)
 	    id_simil_list::mpi_send_co_orthologs_accross_nodes(listTaxa, taxon_length, stackRel, listStructData);
 	  }
@@ -411,7 +418,6 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	    listParseData->free_memory(true);
 	    delete listParseData; listParseData = NULL;
 	  }
-
 	  if(blastInfo.build_meta_blast) {
 	    //! Adds meta-data, i.e. after the filtering is performed:
 	    //blastInfo.cnt_relations_orthologs_After_filtering = listStructData->getTotalLengthOfData_for_orthologs();
@@ -426,6 +432,7 @@ void blast_filtering::start_filtering(log_builder_t *log, bp_container_t &bp) {
 	  else       log_builder::throw_warning(pointer,  __LINE__, __FILE__, __FUNCTION__, "arrNorm not defined");
 	  pipe_write write(log, listTaxa, taxon_length, FILE_BINARY_LOCATION, MODE_PAIRWISE_OUTPUT_ABC, MODE_PAIRWISE_OUTPUT_MCL, PRINT_IN_ABC_FORMAT, PRINT_IN_MCL_FORMAT, TYPE_OF_RESULTFILE_TO_STDOUT, SORT_ABC_DATA);
 	  write_result_file(n_thread, log, stackRel, write, arrAvgNorm);
+	  //printf("\t at blast_filtering:%d\n", __LINE__); // FIXME: remove.
 	  write.free_mem(SORT_ABC_DATA, FILE_BINARY_LOCATION, CPU_TOT); 
 	  log->end_measurement(write_resultfile);
 	  // Deallocates the arrAvgNorm;

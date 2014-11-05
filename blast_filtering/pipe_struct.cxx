@@ -53,6 +53,9 @@ void pipe_struct::finalize_memory(const uint taxon_length) {
       assert(result_this.cnt_names == elements_expectation.cnt_names);
     } // else no names are wirtten, as no result were created.
     assert(result_this.cnt_inpa  == elements_expectation.cnt_inpa);
+    if(result_this.cnt_ortho != elements_expectation.cnt_ortho) {
+      printf("result_this.cnt_ortho(%u) =?= elements_expectation.cnt_ortho(%u), at [%s]:%s:%d\n", result_this.cnt_ortho, elements_expectation.cnt_ortho, __FUNCTION__, __FILE__, __LINE__);
+    }
     assert(result_this.cnt_ortho == elements_expectation.cnt_ortho);
     assert(result_this.cnt_co_orth <= elements_expectation.cnt_co_orth);
 
@@ -95,8 +98,10 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
   mclData[my_id]->set_name_index(protein_name_in, world_index_in); // sets the name of the protein (a seperate file)
 
   const uint debug_cnt_inparalogs_inserted = listStructData->produceInparalogs(mclData[my_id], protein_name_in, taxon_in, world_index_in, protein_in, arrAvgNorm[taxon_in][taxon_in]);
+  //printf("(write) at pipe_struct:%d\n", __LINE__);
   uint debug_cnt_co_orthologs_inserted = 0;
   if(size_outer > 0) {
+    //printf("(write-inparalogs)\t, at pipe_struct:%d\n", __LINE__);
     mclData[my_id]->set_header_ortho_inpa(protein_name_in, world_index_in);
     o_rel_t out_pair;
     while(stackRel[world_index_in].try_pop(out_pair)) {
@@ -128,6 +133,7 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
   rel_t *ortho_p =  listOrtho.getGlobalRow(world_in, size_o);
   if(ortho_p != NULL) { // The protein has orthologs
     if(size_o > 0) {
+      //printf("(write-orthologs)\t, at pipe_struct:%d\n", __LINE__);
 #ifndef NDEBUG
       //! Get the start position of the string contaning the orthologs
       //      char *orthologs_start_position = mclData[my_id]->get_ortholog_current_eof(/*type_integer=*/true);
@@ -143,6 +149,7 @@ void pipe_struct::produce_row(uint my_id, uint protein_in, uint taxon_in) {
 	char *protein_name_out = listTaxa[taxon_out].getCompleteProteinName(protein_out);
 	assert(protein_name_out); // todo: will this walsywa hold?
 	mclData[my_id]->insert_pair_ortho(world_index_in, world_out, protein_name_in, protein_name_out, sim_score, arrAvgNorm[taxon_in][taxon_out]);
+	//printf("(write-orthologs-pair)\t\t, at pipe_struct:%d\n", __LINE__);
 	delete [] protein_name_out;
       }
     }
@@ -325,6 +332,7 @@ void pipe_struct::insertInpaInpaRelations(uint my_id, rel_t *buff_in_in, uint ta
 	if(in_use[i]==false) {in_use[i]= true, my_id=i, i = n_threads;}
       }
     }
+    //printf("(main)\t\t, list_pair_pos=%u, at pipe_struct:%d\n", list_pair_pos, __LINE__);
     bucket = taxon_pair::get_taxon_pairs(listPair, list_pair_pos);      
     this_list_pair_pos = (uint)list_pair_pos;
   } 
@@ -335,6 +343,7 @@ void pipe_struct::insertInpaInpaRelations(uint my_id, rel_t *buff_in_in, uint ta
     return NULL;
   }
   //  if (listPair && protein_end > 0 ) 
+
   if(bucket) {
     if(PIPE_TYPE == DUMP) {
       mclData[my_id] = mcl_format::init(taxon_length, listTaxa, DIVIDE_BY_NORMALIZATION_VALUE_FOR_ABC_FORMAT, DIVIDE_BY_NORMALIZATION_VALUE_FOR_MCL_FORMAT,
@@ -345,6 +354,7 @@ void pipe_struct::insertInpaInpaRelations(uint my_id, rel_t *buff_in_in, uint ta
       uint bucket_cnt = 0;
       do {
 	bucket[bucket_cnt++].getVariables(taxon_in, protein_start, protein_end); // The dataset to work ok    
+	//printf("(main-write)\t\t, taxon=%u, protein-range=[%u, %u], at pipe_struct:%d\n", taxon_in, protein_start, protein_end, __LINE__);
 	if(protein_end != 0) {
 	  for(uint protein_in = protein_start; protein_in < protein_end; protein_in++) {
 	    produce_row(my_id, protein_in, taxon_in);
@@ -541,6 +551,7 @@ pipe_struct::pipe_struct(uint _nthread, uint taxon_start, uint _taxon_length, pi
   uint taxon_end = taxon_length;
   if(listParseData != NULL) fprintf(stderr, "in pipe_struct only uses the listStructData, i.e. listParseData should be emptied (set to NULL, but is not..)\n");
   if(true) assert(listParseData==NULL);
+  //printf("#\t cnt-total=%u, at pipe_struct:%d\n",  (uint)listStructData->getTotalLengthOfData(), __LINE__); // FIXME: remove.
   listPair = taxon_pair::init_taxon_pair(taxon_start, taxon_end, taxon_length, n_threads,
 					 true, // only the inpralogs
 					 NULL, listStructData, listTaxa

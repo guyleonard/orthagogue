@@ -303,12 +303,11 @@ list_file_parse<p_rel> *blast_parsing::start_parsing(log_builder_t *log, int num
     pipe.run(CPU_TOT);
     pipe.clear();
     //printf("\t at blast_parsing:%d\n", __LINE__); // FIXME: remove this printf!
-    /*
-    printf("[myrank=%d]\tlines_found(%u)\t pairs_overlapping(%u), overlap_cnt_in_parse(%u) =?= parse_overlaps_found(%u) =?= overlap_cnt_merge(%u), in blast_parse:%d\n", myrank,
-	   parse.get_lines_in_file_found_last_read(),
-	   parse.get_total_number_of_pairs_overlapping(),
-	   collect.debug_sum_inserted_overlap_values , parse.debug_sum_inserted_overlap_values_found, parse.debug_sum_inserted_overlap_values, __LINE__); // TODO: remove this printf!
-*/
+    
+    // printf("[myrank=%d]\tlines_found(%u)\t pairs_overlapping(%u), overlap_cnt_in_parse(%u) =?= parse_overlaps_found(%u) =?= overlap_cnt_merge(%u), in blast_parse:%d\n", myrank,
+    // 	   parse.get_lines_in_file_found_last_read(),
+    // 	   parse.get_total_number_of_pairs_overlapping(),
+    // 	   collect.debug_sum_inserted_overlap_values , parse.debug_sum_inserted_overlap_values_found, parse.debug_sum_inserted_overlap_values, __LINE__); // TODO: remove this printf!
     assert(collect.debug_sum_inserted_overlap_values == parse.debug_sum_inserted_overlap_values);
 
     //
